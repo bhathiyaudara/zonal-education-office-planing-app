@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\School;
 use App\Models\StudentCount;
 use App\Models\Teacher;
-use App\Models\TransferRequest;
+use App\Models\Subject;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,7 +27,7 @@ class DashboardController extends Controller
     {
         $teacherCount = Teacher::count();
         $schoolCount = School::count();
-        $pendingTransfers = TransferRequest::where('status', 'PENDING')->count();
+        $subjectCount = Subject::count();
 
         $year = date('Y');
         $studentAgg = StudentCount::where('academicYear', $year)
@@ -36,7 +36,7 @@ class DashboardController extends Controller
         $totalStudents = ($studentAgg->totalMale ?? 0) + ($studentAgg->totalFemale ?? 0);
 
         return view('dashboard.zonal.index', compact(
-            'teacherCount', 'schoolCount', 'pendingTransfers', 'totalStudents'
+            'teacherCount', 'schoolCount', 'subjectCount', 'totalStudents'
         ));
     }
 

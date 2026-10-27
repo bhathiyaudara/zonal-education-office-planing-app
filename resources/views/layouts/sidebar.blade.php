@@ -120,7 +120,6 @@
                 </div>
 
                 @include('layouts.partials.nav-item', ['route' => 'zonal.subjects', 'label' => 'Subject Management', 'icon' => 'book-open'])
-                @include('layouts.partials.nav-item', ['route' => 'zonal.transfers', 'label' => 'Transfers', 'icon' => 'arrow-right-left'])
                 @include('layouts.partials.nav-item', ['route' => 'zonal.users', 'label' => 'User Management', 'icon' => 'user-plus'])
             </div>
 
@@ -154,7 +153,6 @@
             <div class="space-y-1">
                 @include('layouts.partials.nav-item', ['route' => 'dashboard', 'label' => 'My Profile', 'icon' => 'user'])
                 @include('layouts.partials.nav-item', ['route' => 'teacher.salary', 'label' => 'Salary Requests', 'icon' => 'receipt'])
-                @include('layouts.partials.nav-item', ['route' => 'teacher.transfer', 'label' => 'Transfer Request', 'icon' => 'arrow-right-left'])
             </div>
         @endif
     </nav>

@@ -106,18 +106,6 @@
                 <svg class="w-5 h-5 text-slate-300 group-hover:text-blue-500 ml-auto transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </div>
         </a>
-        <a href="{{ route('teacher.transfer') }}" class="zems-card-base p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
-            <div class="flex items-center gap-4">
-                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-white shadow-lg">
-                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-900">Transfer Request</h3>
-                    <p class="text-sm text-slate-500">Request a school transfer</p>
-                </div>
-                <svg class="w-5 h-5 text-slate-300 group-hover:text-blue-500 ml-auto transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </div>
-        </a>
     </div>
 
     @else

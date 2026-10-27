@@ -20,7 +20,7 @@
             </p>
 
             <div class="mt-12 space-y-4 text-left">
-                @foreach(['Manage Schools & Teachers', 'Process Transfer Requests', 'Generate Reports & Analytics'] as $feature)
+                @foreach(['Manage Schools & Teachers', 'Manage Student Demographics', 'Generate Reports & Analytics'] as $feature)
                 <div class="flex items-center gap-3 text-blue-100">
                     <div class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
                         <span class="text-amber-300 text-xs">✦</span>

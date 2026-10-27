@@ -48,9 +48,6 @@ Route::middleware('auth')->group(function () {
         Route::put('/subjects/{id}', [Zonal\SubjectController::class, 'update'])->name('zonal.subjects.update');
         Route::delete('/subjects/{id}', [Zonal\SubjectController::class, 'destroy'])->name('zonal.subjects.destroy');
 
-        // Transfers
-        Route::get('/transfers', [Zonal\TransferController::class, 'index'])->name('zonal.transfers');
-        Route::put('/transfers/{id}', [Zonal\TransferController::class, 'updateStatus'])->name('zonal.transfers.update');
 
         // Users
         Route::get('/users', [Zonal\UserController::class, 'index'])->name('zonal.users');
@@ -94,8 +91,6 @@ Route::middleware('auth')->group(function () {
 
     // Teacher routes
     Route::prefix('dashboard/teacher')->middleware(RoleMiddleware::class . ':TEACHER')->group(function () {
-        Route::get('/transfer', [\App\Http\Controllers\TeacherPanel\TransferController::class, 'index'])->name('teacher.transfer');
-        Route::post('/transfer', [\App\Http\Controllers\TeacherPanel\TransferController::class, 'store'])->name('teacher.transfer.store');
         Route::get('/salary-requests', [\App\Http\Controllers\TeacherPanel\SalaryRequestController::class, 'index'])->name('teacher.salary');
         Route::post('/salary-requests', [\App\Http\Controllers\TeacherPanel\SalaryRequestController::class, 'store'])->name('teacher.salary.store');
     });
