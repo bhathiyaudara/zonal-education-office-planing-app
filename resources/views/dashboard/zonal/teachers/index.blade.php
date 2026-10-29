@@ -61,7 +61,7 @@
                 <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Retiring Soon</p>
                 <div class="flex items-baseline gap-2 mt-1">
                     <p class="text-2xl font-black text-slate-900">{{ $retiringCount }}</p>
-                    <p class="text-xs font-bold text-orange-500 bg-orange-100 px-2 py-0.5 rounded-md">Dalam 5 Tahun</p>
+                    <p class="text-xs font-bold text-orange-500 bg-orange-100 px-2 py-0.5 rounded-md">Within 5 Years</p>
                 </div>
             </div>
         </div>
@@ -72,7 +72,7 @@
                 <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
             </div>
             <div class="flex-1">
-                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Principals (SLPS)</p>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Principals</p>
                 <div class="flex flex-col gap-1">
                     <div class="flex justify-between items-center text-xs">
                         <span class="font-bold text-slate-500">Grade III:</span>
@@ -87,7 +87,11 @@
                         <span class="font-black text-slate-900">{{ $slpsGrade1 }}</span>
                     </div>
                     <div class="flex justify-between items-center pt-1 border-t border-slate-100 mt-1">
-                        <span class="font-black text-slate-700 text-xs">Total:</span>
+                        <span class="font-bold text-slate-500">Acting:</span>
+                        <span class="font-black text-slate-900">{{ $actingPrincipals }}</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-1 border-t border-slate-100 mt-1">
+                        <span class="font-black text-slate-700 text-xs">Total Heading Schools:</span>
                         <span class="font-black text-purple-600 text-sm">{{ $totalPrincipals }}</span>
                     </div>
                 </div>
@@ -163,8 +167,8 @@
                     <tr class="zems-table-header-row">
                         <th class="zems-table-th">Staff Identity</th>
                         <th class="zems-table-th">NIC / Gender</th>
-                        <th class="zems-table-th">Unit</th>
-                        <th class="zems-table-th">Classification</th>
+                        <th class="zems-table-th">School</th>
+                        <th class="zems-table-th">Position</th>
                         <th class="zems-table-th">Retirement</th>
                         <th class="zems-table-th">Next Increment</th>
                         <th class="zems-table-th text-right">Actions</th>
@@ -192,15 +196,16 @@
                             }
                         }
 
-                        $isPrincipal = in_array($teacher->currentPosition, ['Principal', 'Deputy Principal', 'Assistant Principal']);
+                        $positionTitle = $teacher->position ?: ($teacher->currentPosition ?: 'Teacher');
+                        $isPrincipal = \App\Models\Teacher::isPrincipalPosition($positionTitle);
                     @endphp
                     <tr class="teacher-row zems-table-row"
                         data-name="{{ strtolower($teacher->nameWithInitials . ' ' . $teacher->fullName) }}"
                         data-nic="{{ strtolower($teacher->nic) }}"
                         data-school="{{ $teacher->schoolId }}"
                         data-gender="{{ $teacher->gender }}"
-                        data-position="{{ $teacher->currentPosition }}"
-                        data-grade="{{ $teacher->serviceGrade }}">
+                        data-position="{{ strtolower($positionTitle) }}"
+                        data-grade="{{ strtolower($teacher->serviceGrade ?: ($teacher->class_grade ?? '')) }}">
                         {{-- Staff Identity --}}
                         <td class="zems-table-td">
                             <div class="flex items-center gap-3">
@@ -231,16 +236,11 @@
                             </div>
                         </td>
 
-                        {{-- Classification --}}
+                        {{-- Position --}}
                         <td class="zems-table-td">
-                            <div class="flex flex-col gap-1.5">
-                                <span class="inline-flex w-max px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-wider {{ $isPrincipal ? 'bg-indigo-600 text-white' : 'bg-slate-900 text-white' }}">
-                                    {{ $teacher->currentPosition ?? 'Teacher' }}
-                                </span>
-                                <div class="text-[9px] text-slate-500 font-bold uppercase tracking-wider">
-                                    {{ $teacher->serviceGrade ?? '' }}{{ $teacher->serviceGrade && $teacher->appointmentType ? ' • ' : '' }}{{ $teacher->appointmentType ?? '' }}
-                                </div>
-                            </div>
+                            <span class="inline-flex px-2.5 py-1 rounded-lg text-xs font-bold leading-tight {{ $isPrincipal ? 'bg-purple-100 text-purple-800 border border-purple-200' : 'bg-slate-100 text-slate-800 border border-slate-200' }}">
+                                {{ $positionTitle }}
+                            </span>
                         </td>
 
                         {{-- Retirement --}}
@@ -358,9 +358,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const matchesSearch = !search || name.includes(search) || nic.includes(search);
             const matchesSchool = !school || rowSchool === school;
-            const matchesGender = !gender || rowGender === gender;
-            const matchesPosition = !position || rowPosition === position;
-            const matchesGrade = !grade || rowGrade === grade;
+            const matchesGender = !gender || rowGender.includes(gender.toLowerCase());
+            const matchesPosition = !position || rowPosition.includes(position.toLowerCase());
+            const matchesGrade = !grade || rowGrade.includes(grade.toLowerCase());
 
             if (matchesSearch && matchesSchool && matchesGender && matchesPosition && matchesGrade) {
                 row.style.display = '';

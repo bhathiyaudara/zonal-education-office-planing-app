@@ -25,27 +25,65 @@ class TeacherController extends Controller
 
         // Compute stats
         $totalTeachers = $teachers->count();
-        $maleCount = $teachers->where('gender', 'Male')->count();
-        $femaleCount = $teachers->where('gender', 'Female')->count();
 
-        // Retiring within 5 years
+        $maleCount = $teachers->filter(function ($t) {
+            $g = $t->gender ?? '';
+            return stripos($g, 'Male') !== false && stripos($g, 'Female') === false;
+        })->count();
+
+        $femaleCount = $teachers->filter(function ($t) {
+            return stripos($t->gender ?? '', 'Female') !== false;
+        })->count();
+
+        // Retiring within 5 years (Retirement age: 60)
         $currentYear = now()->year;
         $retiringCount = $teachers->filter(function ($t) use ($currentYear) {
             if (!$t->dateOfBirth) return false;
-            $birthYear = $t->dateOfBirth->year;
+            $birthYear = ($t->dateOfBirth instanceof \Carbon\Carbon)
+                ? $t->dateOfBirth->year
+                : (int)substr((string)$t->dateOfBirth, 0, 4);
+            if ($birthYear < 1950 || $birthYear > $currentYear) return false;
             $yearsToRetirement = 60 - ($currentYear - $birthYear);
             return $yearsToRetirement > 0 && $yearsToRetirement <= 5;
         })->count();
 
-        // SLPS (Principals) grade counts
-        $slpsGrade3 = $teachers->where('serviceGrade', 'SLPS Grade III')->count();
-        $slpsGrade2 = $teachers->where('serviceGrade', 'SLPS Grade II')->count();
-        $slpsGrade1 = $teachers->where('serviceGrade', 'SLPS Grade I')->count();
-        $totalPrincipals = $slpsGrade3 + $slpsGrade2 + $slpsGrade1;
+        // SLPS (Principals) grade counts and Acting Principals
+        $slpsGrade1 = $teachers->filter(function ($t) {
+            $g = $t->serviceGrade ?: $t->class_grade;
+            $s = $t->service ?: $t->appointmentType;
+            $p = $t->position ?: $t->currentPosition;
+            $isSLPS = stripos($s ?? '', 'Principal') !== false || stripos($p ?? '', 'Principal') !== false;
+            return $isSLPS && stripos($g ?? '', 'Grade I') !== false && stripos($g ?? '', 'Grade II') === false && stripos($g ?? '', 'Grade III') === false;
+        })->count();
+
+        $slpsGrade2 = $teachers->filter(function ($t) {
+            $g = $t->serviceGrade ?: $t->class_grade;
+            $s = $t->service ?: $t->appointmentType;
+            $p = $t->position ?: $t->currentPosition;
+            $isSLPS = stripos($s ?? '', 'Principal') !== false || stripos($p ?? '', 'Principal') !== false;
+            return $isSLPS && stripos($g ?? '', 'Grade II') !== false && stripos($g ?? '', 'Grade III') === false;
+        })->count();
+
+        $slpsGrade3 = $teachers->filter(function ($t) {
+            $g = $t->serviceGrade ?: $t->class_grade;
+            $s = $t->service ?: $t->appointmentType;
+            $p = $t->position ?: $t->currentPosition;
+            $isSLPS = stripos($s ?? '', 'Principal') !== false || stripos($p ?? '', 'Principal') !== false;
+            return $isSLPS && stripos($g ?? '', 'Grade III') !== false;
+        })->count();
+
+        $actingPrincipals = $teachers->filter(function ($t) {
+            $p = $t->position ?: $t->currentPosition;
+            return stripos($p ?? '', 'Acting') !== false;
+        })->count();
+
+        $totalPrincipals = $teachers->filter(function ($t) {
+            return Teacher::isPrincipalPosition($t->position ?: $t->currentPosition);
+        })->count();
 
         return view('dashboard.zonal.teachers.index', compact(
             'teachers', 'schools', 'totalTeachers', 'maleCount', 'femaleCount',
-            'retiringCount', 'slpsGrade3', 'slpsGrade2', 'slpsGrade1', 'totalPrincipals'
+            'retiringCount', 'slpsGrade3', 'slpsGrade2', 'slpsGrade1', 'actingPrincipals', 'totalPrincipals'
         ));
     }
 
