@@ -21,10 +21,23 @@ class TeacherController extends Controller
             ->orderBy('nameWithInitials')
             ->get();
 
-        $schools = School::where('isActive', true)->orderBy('name')->get(['id', 'name']);
+        $schools = School::where('isActive', true)->orderBy('name')->get(['id', 'name', 'censusNo', 'eduDivision']);
 
         // Compute stats
         $totalTeachers = $teachers->count();
+
+        $wilgamuwaCount = $teachers->filter(function ($t) {
+            return strcasecmp($t->school->eduDivision ?? '', 'Wilgamuwa') === 0;
+        })->count();
+
+        $laggalaCount = $teachers->filter(function ($t) {
+            return strcasecmp($t->school->eduDivision ?? '', 'Laggala') === 0;
+        })->count();
+
+        $primaryCount = $teachers->filter(function ($t) {
+            $s = ($t->appt_code ?? '') . ' ' . ($t->t1_code ?? '') . ' ' . ($t->appointmentSubject ?? '');
+            return stripos($s, 'Primary') !== false || stripos($s, '101') !== false;
+        })->count();
 
         $maleCount = $teachers->filter(function ($t) {
             $g = $t->gender ?? '';
@@ -83,7 +96,8 @@ class TeacherController extends Controller
 
         return view('dashboard.zonal.teachers.index', compact(
             'teachers', 'schools', 'totalTeachers', 'maleCount', 'femaleCount',
-            'retiringCount', 'slpsGrade3', 'slpsGrade2', 'slpsGrade1', 'actingPrincipals', 'totalPrincipals'
+            'retiringCount', 'slpsGrade3', 'slpsGrade2', 'slpsGrade1', 'actingPrincipals', 'totalPrincipals',
+            'wilgamuwaCount', 'laggalaCount', 'primaryCount'
         ));
     }
 

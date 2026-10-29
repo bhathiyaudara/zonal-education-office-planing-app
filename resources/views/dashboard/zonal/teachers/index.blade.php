@@ -28,16 +28,17 @@
         </div>
     </div>
 
-    {{-- Summary Stats Cards --}}
+    {{-- Summary Stats Cards (Interactive) --}}
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {{-- Active Pool --}}
-        <div class="zems-card-base p-6 flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        <div onclick="setQuickFilter('all')" class="zems-card-base p-6 flex items-center gap-4 cursor-pointer hover:shadow-md hover:border-blue-300 transition group" title="Click to view all active teachers">
+            <div class="w-12 h-12 rounded-xl bg-blue-50 group-hover:bg-blue-600 flex items-center justify-center shrink-0 transition">
+                <svg class="w-6 h-6 text-blue-600 group-hover:text-white transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
             </div>
             <div>
                 <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Active Pool</p>
                 <p class="text-2xl font-black text-slate-900 mt-1">{{ $totalTeachers }}</p>
+                <span class="text-[10px] text-blue-600 font-bold group-hover:underline">Click to view all</span>
             </div>
         </div>
 
@@ -47,15 +48,24 @@
                 <svg class="w-6 h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
             <div>
-                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Male / Female</p>
-                <p class="text-2xl font-black text-slate-900 mt-1">{{ $maleCount }} <span class="text-slate-300 text-lg">/</span> {{ $femaleCount }}</p>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Staff Gender</p>
+                <div class="flex items-center gap-2 mt-1">
+                    <button type="button" onclick="setQuickFilter('male')" class="text-lg font-black text-slate-800 hover:text-cyan-600 transition underline-offset-4 hover:underline" title="Filter Male">
+                        {{ $maleCount }} <span class="text-xs font-bold text-slate-400 uppercase">M</span>
+                    </button>
+                    <span class="text-slate-300 text-lg">/</span>
+                    <button type="button" onclick="setQuickFilter('female')" class="text-lg font-black text-slate-800 hover:text-emerald-600 transition underline-offset-4 hover:underline" title="Filter Female">
+                        {{ $femaleCount }} <span class="text-xs font-bold text-slate-400 uppercase">F</span>
+                    </button>
+                </div>
+                <span class="text-[10px] text-slate-400 font-semibold">Click M or F to filter</span>
             </div>
         </div>
 
         {{-- Retiring Soon --}}
-        <div class="zems-card-base p-6 flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+        <div onclick="setQuickFilter('retiring')" class="zems-card-base p-6 flex items-center gap-4 cursor-pointer hover:shadow-md hover:border-orange-300 transition group" title="Click to view teachers retiring within 5 years">
+            <div class="w-12 h-12 rounded-xl bg-orange-50 group-hover:bg-orange-500 flex items-center justify-center shrink-0 transition">
+                <svg class="w-6 h-6 text-orange-600 group-hover:text-white transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
             </div>
             <div>
                 <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Retiring Soon</p>
@@ -63,35 +73,31 @@
                     <p class="text-2xl font-black text-slate-900">{{ $retiringCount }}</p>
                     <p class="text-xs font-bold text-orange-500 bg-orange-100 px-2 py-0.5 rounded-md">Within 5 Years</p>
                 </div>
+                <span class="text-[10px] text-orange-600 font-bold group-hover:underline">Click to filter</span>
             </div>
         </div>
 
         {{-- Principals (SLPS) --}}
-        <div class="zems-card-base p-6 flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        <div onclick="setQuickFilter('principals')" class="zems-card-base p-6 flex items-center gap-4 cursor-pointer hover:shadow-md hover:border-purple-300 transition group" title="Click to view all principals heading schools">
+            <div class="w-12 h-12 rounded-xl bg-purple-50 group-hover:bg-purple-600 flex items-center justify-center shrink-0 transition">
+                <svg class="w-6 h-6 text-purple-600 group-hover:text-white transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z"/></svg>
             </div>
             <div class="flex-1">
-                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Principals</p>
-                <div class="flex flex-col gap-1">
+                <div class="flex items-center justify-between mb-1">
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Principals</p>
+                    <span class="text-[10px] text-purple-600 font-bold group-hover:underline">Click to filter</span>
+                </div>
+                <div class="flex flex-col gap-0.5">
                     <div class="flex justify-between items-center text-xs">
-                        <span class="font-bold text-slate-500">Grade III:</span>
-                        <span class="font-black text-slate-900">{{ $slpsGrade3 }}</span>
+                        <span class="font-bold text-slate-500">Grade III / II / I:</span>
+                        <span class="font-black text-slate-900">{{ $slpsGrade3 }} / {{ $slpsGrade2 }} / {{ $slpsGrade1 }}</span>
                     </div>
                     <div class="flex justify-between items-center text-xs">
-                        <span class="font-bold text-slate-500">Grade II:</span>
-                        <span class="font-black text-slate-900">{{ $slpsGrade2 }}</span>
-                    </div>
-                    <div class="flex justify-between items-center text-xs">
-                        <span class="font-bold text-slate-500">Grade I:</span>
-                        <span class="font-black text-slate-900">{{ $slpsGrade1 }}</span>
-                    </div>
-                    <div class="flex justify-between items-center pt-1 border-t border-slate-100 mt-1">
-                        <span class="font-bold text-slate-500">Acting:</span>
+                        <span class="font-bold text-slate-500">Acting Principals:</span>
                         <span class="font-black text-slate-900">{{ $actingPrincipals }}</span>
                     </div>
                     <div class="flex justify-between items-center pt-1 border-t border-slate-100 mt-1">
-                        <span class="font-black text-slate-700 text-xs">Total Heading Schools:</span>
+                        <span class="font-black text-slate-700 text-xs">Heading Schools:</span>
                         <span class="font-black text-purple-600 text-sm">{{ $totalPrincipals }}</span>
                     </div>
                 </div>
@@ -99,32 +105,174 @@
         </div>
     </div>
 
-    {{-- Search & Filter Bar --}}
-    <div class="zems-card-base p-5">
-        <div class="flex gap-4 items-center flex-col sm:flex-row">
-            <div class="relative flex-1 w-full">
-                <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-                <input type="text" id="teacherSearchInput" placeholder="Search by Name or NIC Number..."
-                       class="zems-input pl-12 h-[46px] w-full">
-            </div>
-            <button id="filtersToggleBtn" onclick="toggleFilters()" class="zems-btn-secondary h-[46px] w-full sm:w-auto uppercase tracking-wide text-xs">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
-                Filters
+    {{-- Search & Advanced Filter Section --}}
+    <div class="zems-card-base p-5 space-y-4">
+        {{-- Quick Filter Chips --}}
+        <div class="flex items-center gap-2 overflow-x-auto pb-2 border-b border-slate-100 no-scrollbar text-xs">
+            <span class="text-slate-400 font-bold uppercase text-[10px] tracking-wider shrink-0 mr-1 flex items-center gap-1">
+                <svg class="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                Quick Filters:
+            </span>
+            <button type="button" onclick="setQuickFilter('all')" id="chip-all" class="quick-chip px-3 py-1.5 rounded-xl font-bold transition border border-slate-900 bg-slate-900 text-white shrink-0 shadow-sm">
+                All ({{ $totalTeachers }})
+            </button>
+            <button type="button" onclick="setQuickFilter('principals')" id="chip-principals" class="quick-chip px-3 py-1.5 rounded-xl font-bold transition border border-purple-200 bg-purple-50 text-purple-700 hover:bg-purple-100 shrink-0">
+                🏛️ Principals ({{ $totalPrincipals }})
+            </button>
+            <button type="button" onclick="setQuickFilter('retiring')" id="chip-retiring" class="quick-chip px-3 py-1.5 rounded-xl font-bold transition border border-orange-200 bg-orange-50 text-orange-700 hover:bg-orange-100 shrink-0">
+                ⏳ Retiring &le; 5 Yrs ({{ $retiringCount }})
+            </button>
+            <button type="button" onclick="setQuickFilter('wilgamuwa')" id="chip-wilgamuwa" class="quick-chip px-3 py-1.5 rounded-xl font-bold transition border border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 shrink-0">
+                Wilgamuwa Div ({{ $wilgamuwaCount }})
+            </button>
+            <button type="button" onclick="setQuickFilter('laggala')" id="chip-laggala" class="quick-chip px-3 py-1.5 rounded-xl font-bold transition border border-indigo-200 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 shrink-0">
+                Laggala Div ({{ $laggalaCount }})
+            </button>
+            <button type="button" onclick="setQuickFilter('female')" id="chip-female" class="quick-chip px-3 py-1.5 rounded-xl font-bold transition border border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 shrink-0">
+                Female ({{ $femaleCount }})
+            </button>
+            <button type="button" onclick="setQuickFilter('male')" id="chip-male" class="quick-chip px-3 py-1.5 rounded-xl font-bold transition border border-cyan-200 bg-cyan-50 text-cyan-700 hover:bg-cyan-100 shrink-0">
+                Male ({{ $maleCount }})
+            </button>
+            <button type="button" onclick="setQuickFilter('primary')" id="chip-primary" class="quick-chip px-3 py-1.5 rounded-xl font-bold transition border border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100 shrink-0">
+                Primary Ed ({{ $primaryCount }})
             </button>
         </div>
 
-        {{-- Advanced Filters (hidden by default) --}}
-        <div id="advancedFilters" style="display:none;" class="pt-5 mt-5 border-t border-slate-100 hidden-transition">
+        {{-- Search Input & Filter Toggle Bar --}}
+        <div class="flex gap-4 items-center flex-col sm:flex-row">
+            <div class="relative flex-1 w-full">
+                <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <input type="text" id="teacherSearchInput" placeholder="Search by Name, NIC, Mobile, File No, or School..."
+                       class="zems-input pl-12 h-[46px] w-full">
+            </div>
+            <div class="flex items-center gap-2 w-full sm:w-auto">
+                <button id="filtersToggleBtn" onclick="toggleFilters()" class="zems-btn-secondary h-[46px] flex-1 sm:flex-none uppercase tracking-wide text-xs relative flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
+                    <span>Filters</span>
+                    <span id="activeFiltersBadge" style="display:none;" class="flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-[10px] font-black text-white">0</span>
+                </button>
+                <button id="resetFiltersTopBtn" onclick="resetFilters()" style="display:none;" class="zems-btn-secondary h-[46px] text-rose-600 hover:text-rose-700 hover:bg-rose-50" title="Reset all filters">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+        </div>
+
+        {{-- Advanced Filter Drawer --}}
+        <div id="advancedFilters" style="display:none;" class="pt-5 border-t border-slate-100 hidden-transition">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {{-- 1. Educational Division --}}
                 <div>
-                    <label class="zems-input-label">Assigned Institution</label>
-                    <select id="filterSchool" class="zems-input">
-                        <option value="">All Schools</option>
-                        @foreach($schools as $school)
-                        <option value="{{ $school->id }}">{{ $school->name }}</option>
-                        @endforeach
+                    <label class="zems-input-label">Educational Division</label>
+                    <select id="filterDivision" class="zems-input">
+                        <option value="">All Divisions (Wilgamuwa & Laggala)</option>
+                        <option value="Wilgamuwa">Wilgamuwa Division (28 Schools)</option>
+                        <option value="Laggala">Laggala / Pallegama Division (17 Schools)</option>
                     </select>
                 </div>
+
+                {{-- 2. Assigned School --}}
+                <div>
+                    <label class="zems-input-label">Assigned School / Institution</label>
+                    <select id="filterSchool" class="zems-input">
+                        <option value="">All Schools (45)</option>
+                        <optgroup label="Wilgamuwa Division (28 Schools)">
+                            @foreach($schools->where('eduDivision', 'Wilgamuwa') as $school)
+                            <option value="{{ $school->id }}" data-division="wilgamuwa">{{ $school->name }}</option>
+                            @endforeach
+                        </optgroup>
+                        <optgroup label="Laggala / Pallegama Division (17 Schools)">
+                            @foreach($schools->where('eduDivision', 'Laggala') as $school)
+                            <option value="{{ $school->id }}" data-division="laggala">{{ $school->name }}</option>
+                            @endforeach
+                        </optgroup>
+                    </select>
+                </div>
+
+                {{-- 3. Current Position --}}
+                <div>
+                    <label class="zems-input-label">Current Position / Role</label>
+                    <select id="filterPosition" class="zems-input">
+                        <option value="">All Positions</option>
+                        <option value="all_principals">★ All Heading Schools (Principal & Acting)</option>
+                        <option value="principal_only">1 - Principal</option>
+                        <option value="acting_principal">2 - Acting Principal / Cover up Duties</option>
+                        <option value="deputy_principal">3 - Deputy Principal</option>
+                        <option value="assistant_principal">4 - Assistant Principal</option>
+                        <option value="sectional_head">5 - Sectional Head</option>
+                        <option value="grade_head">6 - Grade Head</option>
+                        <option value="teacher">7 - Teacher</option>
+                        <option value="do">8 - DO (Development Officer)</option>
+                    </select>
+                </div>
+
+                {{-- 4. Service / Cadre --}}
+                <div>
+                    <label class="zems-input-label">Service / Cadre</label>
+                    <select id="filterService" class="zems-input">
+                        <option value="">All Services</option>
+                        <option value="slts">3 - Sri Lanka Teacher Service (SLTS)</option>
+                        <option value="slps">2 - Sri Lanka Principal Service (SLPrS)</option>
+                        <option value="do">4 - Development Officer Service (DO)</option>
+                        <option value="other">5 - Other / Not belongs to a Service</option>
+                    </select>
+                </div>
+
+                {{-- 5. Service Grade / Class --}}
+                <div>
+                    <label class="zems-input-label">Grade / Class</label>
+                    <select id="filterGrade" class="zems-input">
+                        <option value="">All Grades & Classes</option>
+                        <optgroup label="SLPS (Principal Service)">
+                            <option value="slps_1">SLPS Grade I</option>
+                            <option value="slps_2">SLPS Grade II</option>
+                            <option value="slps_3">SLPS Grade III</option>
+                        </optgroup>
+                        <optgroup label="SLTS (Teacher Service Classes)">
+                            <option value="class_1">Class 1</option>
+                            <option value="class_2_1">Class 2-I</option>
+                            <option value="class_2_2">Class 2-II</option>
+                            <option value="class_3_1_a">Class 3-I (A)</option>
+                            <option value="class_3_1_b">Class 3-I (B)</option>
+                            <option value="class_3_1_c">Class 3-I (C)</option>
+                            <option value="class_3_2">Class 3-II</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                {{-- 6. Retirement Timeline --}}
+                <div>
+                    <label class="zems-input-label">Retirement Timeline (Age 60)</label>
+                    <select id="filterRetirement" class="zems-input">
+                        <option value="">All Timelines</option>
+                        <option value="1">⚠️ Retiring within 1 Year (&le; 1 Year)</option>
+                        <option value="3">⏳ Retiring within 3 Years (&le; 3 Years)</option>
+                        <option value="5">📅 Retiring within 5 Years (&le; 5 Years)</option>
+                        <option value="over_5">✅ Over 5 Years Left (&gt; 5 Years)</option>
+                    </select>
+                </div>
+
+                {{-- 7. Teaching / Appointment Subject --}}
+                <div>
+                    <label class="zems-input-label">Teaching Subject / Specialization</label>
+                    <select id="filterSubject" class="zems-input">
+                        <option value="">All Subjects</option>
+                        <option value="primary">Primary Education (General / Other)</option>
+                        <option value="maths">Mathematics</option>
+                        <option value="science">Science</option>
+                        <option value="english">English Language</option>
+                        <option value="sinhala">Sinhala Language & Literature</option>
+                        <option value="ict">Information Technology (ICT)</option>
+                        <option value="buddhism">Buddhism / Religious Studies</option>
+                        <option value="history">History</option>
+                        <option value="geography">Geography</option>
+                        <option value="civics">Civic Education</option>
+                        <option value="health">Health & Physical Education</option>
+                        <option value="commerce">Business & Accounting Studies / Commerce</option>
+                    </select>
+                </div>
+
+                {{-- 8. Staff Gender --}}
                 <div>
                     <label class="zems-input-label">Staff Gender</label>
                     <select id="filterGender" class="zems-input">
@@ -133,28 +281,56 @@
                         <option value="Female">Female</option>
                     </select>
                 </div>
+
+                {{-- 9. Appointment Medium --}}
                 <div>
-                    <label class="zems-input-label">Current Position</label>
-                    <select id="filterPosition" class="zems-input">
-                        <option value="">All Positions</option>
-                        <option value="Principal">Principal</option>
-                        <option value="Deputy Principal">Deputy Principal</option>
-                        <option value="Assistant Principal">Assistant Principal</option>
-                        <option value="Teacher">Teacher</option>
+                    <label class="zems-input-label">Appointment Medium</label>
+                    <select id="filterMedium" class="zems-input">
+                        <option value="">All Mediums</option>
+                        <option value="sinhala">1 - Sinhala Medium</option>
+                        <option value="tamil">2 - Tamil Medium</option>
+                        <option value="english">3 - English Medium</option>
                     </select>
                 </div>
+
+                {{-- 10. Attachment / Release Status --}}
                 <div>
-                    <label class="zems-input-label">Service Grade</label>
-                    <select id="filterGrade" class="zems-input">
-                        <option value="">All Grades</option>
-                        <option value="SLPS Grade III">SLPS Grade III</option>
-                        <option value="SLPS Grade II">SLPS Grade II</option>
-                        <option value="SLPS Grade I">SLPS Grade I</option>
-                        <option value="SLTS Grade III">SLTS Grade III</option>
-                        <option value="SLTS Grade II">SLTS Grade II</option>
-                        <option value="SLTS Grade I">SLTS Grade I</option>
+                    <label class="zems-input-label">Attachment / Release Status</label>
+                    <select id="filterAttachment" class="zems-input">
+                        <option value="">All Staff</option>
+                        <option value="attached_any">Any Attached / Released Staff</option>
+                        <option value="attached_office">Attached to Educational Office (ZEO/PDC/DEO/ITDLH)</option>
+                        <option value="attached_school">Attached to Another School</option>
+                        <option value="not_attached">Regular / Not Attached</option>
                     </select>
                 </div>
+            </div>
+
+            {{-- Filter Footer Actions --}}
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between flex-wrap gap-2">
+                <span class="text-xs text-slate-400 font-semibold flex items-center gap-1.5">
+                    <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    10 interactive filters ready
+                </span>
+                <button type="button" onclick="resetFilters()" class="text-xs font-bold text-rose-600 hover:text-rose-700 flex items-center gap-1.5 bg-rose-50 hover:bg-rose-100 px-3.5 py-1.5 rounded-xl transition">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                    Clear All Filters
+                </button>
+            </div>
+        </div>
+
+        {{-- Dynamic Results & Active Filter Pills Bar --}}
+        <div class="pt-2 flex items-center justify-between flex-wrap gap-3">
+            <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Showing:</span>
+                <span id="filteredTeacherCount" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-black bg-blue-100 text-blue-800">
+                    {{ $totalTeachers }}
+                </span>
+                <span class="text-xs text-slate-400 font-medium">of {{ $totalTeachers }} teachers</span>
+            </div>
+
+            <div id="activeFilterPills" class="flex items-center gap-1.5 flex-wrap">
+                {{-- Dynamic pills injected via JS --}}
             </div>
         </div>
     </div>
@@ -200,12 +376,22 @@
                         $isPrincipal = \App\Models\Teacher::isPrincipalPosition($positionTitle);
                     @endphp
                     <tr class="teacher-row zems-table-row"
-                        data-name="{{ strtolower($teacher->nameWithInitials . ' ' . $teacher->fullName) }}"
-                        data-nic="{{ strtolower($teacher->nic) }}"
+                        data-name="{{ strtolower(($teacher->nameWithInitials ?? '') . ' ' . ($teacher->fullName ?? '')) }}"
+                        data-nic="{{ strtolower($teacher->nic ?? '') }}"
+                        data-contact="{{ strtolower(($teacher->phone ?? '') . ' ' . ($teacher->mobile ?? '')) }}"
+                        data-file="{{ strtolower(($teacher->fileNumber ?? '') . ' ' . ($teacher->paysheet ?? '') . ' ' . ($teacher->personal_file_no ?? '')) }}"
                         data-school="{{ $teacher->schoolId }}"
-                        data-gender="{{ $teacher->gender }}"
+                        data-school-name="{{ strtolower($teacher->school->name ?? '') }}"
+                        data-division="{{ strtolower($teacher->school->eduDivision ?? '') }}"
+                        data-gender="{{ strtolower($teacher->gender ?? '') }}"
                         data-position="{{ strtolower($positionTitle) }}"
-                        data-grade="{{ strtolower($teacher->serviceGrade ?: ($teacher->class_grade ?? '')) }}">
+                        data-service="{{ strtolower($teacher->service ?: ($teacher->appointmentType ?: '')) }}"
+                        data-grade="{{ strtolower($teacher->serviceGrade ?: ($teacher->class_grade ?? ($teacher->class ?? '')) ) }}"
+                        data-medium="{{ strtolower($teacher->appointmentMedium ?: ($teacher->appt_medium ?? '')) }}"
+                        data-subject="{{ strtolower(($teacher->appointmentSubject ?? '') . ' ' . ($teacher->appt_code ?? '') . ' ' . ($teacher->t1_code ?? '')) }}"
+                        data-years-left="{{ $yearsLeft !== null ? $yearsLeft : 999 }}"
+                        data-attached="{{ strtolower($teacher->otherschool ?? 'no') }}"
+                        data-attached-census="{{ strtolower($teacher->otherschool_census ?? '') }}">
                         {{-- Staff Identity --}}
                         <td class="zems-table-td">
                             <div class="flex items-center gap-3">
@@ -332,98 +518,412 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('teacherSearchInput');
-    const filterSchool = document.getElementById('filterSchool');
-    const filterGender = document.getElementById('filterGender');
-    const filterPosition = document.getElementById('filterPosition');
-    const filterGrade = document.getElementById('filterGrade');
-    const rows = document.querySelectorAll('.teacher-row');
-    const noResults = document.getElementById('teacherNoResults');
+    window.teacherFilterState = {
+        search: document.getElementById('teacherSearchInput'),
+        division: document.getElementById('filterDivision'),
+        school: document.getElementById('filterSchool'),
+        position: document.getElementById('filterPosition'),
+        service: document.getElementById('filterService'),
+        grade: document.getElementById('filterGrade'),
+        retirement: document.getElementById('filterRetirement'),
+        subject: document.getElementById('filterSubject'),
+        gender: document.getElementById('filterGender'),
+        medium: document.getElementById('filterMedium'),
+        attachment: document.getElementById('filterAttachment'),
+        rows: document.querySelectorAll('.teacher-row'),
+        noResults: document.getElementById('teacherNoResults'),
+        counter: document.getElementById('filteredTeacherCount'),
+        badge: document.getElementById('activeFiltersBadge'),
+        topReset: document.getElementById('resetFiltersTopBtn'),
+        pillsContainer: document.getElementById('activeFilterPills')
+    };
 
-    function filterTeachers() {
-        const search = searchInput.value.toLowerCase().trim();
-        const school = filterSchool.value;
-        const gender = filterGender.value;
-        const position = filterPosition.value;
-        const grade = filterGrade.value;
-        let visibleCount = 0;
+    const s = window.teacherFilterState;
 
-        rows.forEach(function(row) {
-            const name = row.getAttribute('data-name') || '';
-            const nic = row.getAttribute('data-nic') || '';
-            const rowSchool = row.getAttribute('data-school') || '';
-            const rowGender = row.getAttribute('data-gender') || '';
-            const rowPosition = row.getAttribute('data-position') || '';
-            const rowGrade = row.getAttribute('data-grade') || '';
-
-            const matchesSearch = !search || name.includes(search) || nic.includes(search);
-            const matchesSchool = !school || rowSchool === school;
-            const matchesGender = !gender || rowGender.includes(gender.toLowerCase());
-            const matchesPosition = !position || rowPosition.includes(position.toLowerCase());
-            const matchesGrade = !grade || rowGrade.includes(grade.toLowerCase());
-
-            if (matchesSearch && matchesSchool && matchesGender && matchesPosition && matchesGrade) {
-                row.style.display = '';
-                visibleCount++;
+    // Division change syncs with School options
+    s.division.addEventListener('change', function() {
+        const selectedDiv = (this.value || '').toLowerCase();
+        const schoolOptions = s.school.querySelectorAll('option');
+        schoolOptions.forEach(opt => {
+            if (!opt.value) return; // Keep "All Schools"
+            const optDiv = (opt.getAttribute('data-division') || '').toLowerCase();
+            if (!selectedDiv || optDiv === selectedDiv) {
+                opt.style.display = '';
             } else {
-                row.style.display = 'none';
+                opt.style.display = 'none';
             }
         });
+        // If current school doesn't match selected division, reset school
+        const curOpt = s.school.options[s.school.selectedIndex];
+        if (curOpt && curOpt.value && selectedDiv) {
+            const curDiv = (curOpt.getAttribute('data-division') || '').toLowerCase();
+            if (curDiv !== selectedDiv) {
+                s.school.value = '';
+            }
+        }
+        filterTeachers();
+    });
 
-        noResults.style.display = (visibleCount === 0 && rows.length > 0) ? '' : 'none';
+    s.search.addEventListener('input', filterTeachers);
+    s.school.addEventListener('change', filterTeachers);
+    s.position.addEventListener('change', filterTeachers);
+    s.service.addEventListener('change', filterTeachers);
+    s.grade.addEventListener('change', filterTeachers);
+    s.retirement.addEventListener('change', filterTeachers);
+    s.subject.addEventListener('change', filterTeachers);
+    s.gender.addEventListener('change', filterTeachers);
+    s.medium.addEventListener('change', filterTeachers);
+    s.attachment.addEventListener('change', filterTeachers);
+
+    filterTeachers();
+});
+
+function filterTeachers() {
+    const s = window.teacherFilterState;
+    if (!s) return;
+
+    const search = (s.search.value || '').toLowerCase().trim();
+    const division = (s.division.value || '').toLowerCase().trim();
+    const school = s.school.value;
+    const position = s.position.value;
+    const service = s.service.value;
+    const grade = s.grade.value;
+    const retirement = s.retirement.value;
+    const subject = s.subject.value;
+    const gender = s.gender.value;
+    const medium = s.medium.value;
+    const attachment = s.attachment.value;
+
+    let visibleCount = 0;
+    let activeFilterCount = 0;
+    const activePills = [];
+
+    if (search) activeFilterCount++;
+    if (division) {
+        activeFilterCount++;
+        activePills.push({ label: 'Division: ' + (division === 'wilgamuwa' ? 'Wilgamuwa' : 'Laggala'), clear: () => { s.division.value = ''; filterTeachers(); } });
+    }
+    if (school) {
+        activeFilterCount++;
+        const schoolName = s.school.options[s.school.selectedIndex]?.text || 'School';
+        activePills.push({ label: 'School: ' + schoolName.slice(0, 18) + '...', clear: () => { s.school.value = ''; filterTeachers(); } });
+    }
+    if (position) {
+        activeFilterCount++;
+        const posText = s.position.options[s.position.selectedIndex]?.text || 'Position';
+        activePills.push({ label: 'Role: ' + posText.replace(/^★\s*|^[0-9]+\s*-\s*/, ''), clear: () => { s.position.value = ''; filterTeachers(); } });
+    }
+    if (service) {
+        activeFilterCount++;
+        activePills.push({ label: 'Service: ' + service.toUpperCase(), clear: () => { s.service.value = ''; filterTeachers(); } });
+    }
+    if (grade) {
+        activeFilterCount++;
+        const gradeText = s.grade.options[s.grade.selectedIndex]?.text || 'Grade';
+        activePills.push({ label: 'Grade: ' + gradeText, clear: () => { s.grade.value = ''; filterTeachers(); } });
+    }
+    if (retirement) {
+        activeFilterCount++;
+        const retMap = { '1': 'Retiring ≤ 1 Yr', '3': 'Retiring ≤ 3 Yrs', '5': 'Retiring ≤ 5 Yrs', 'over_5': '> 5 Yrs Left' };
+        activePills.push({ label: retMap[retirement] || 'Retirement', clear: () => { s.retirement.value = ''; filterTeachers(); } });
+    }
+    if (subject) {
+        activeFilterCount++;
+        const subjText = s.subject.options[s.subject.selectedIndex]?.text || 'Subject';
+        activePills.push({ label: 'Subject: ' + subjText.split('(')[0].trim(), clear: () => { s.subject.value = ''; filterTeachers(); } });
+    }
+    if (gender) {
+        activeFilterCount++;
+        activePills.push({ label: 'Gender: ' + gender, clear: () => { s.gender.value = ''; filterTeachers(); } });
+    }
+    if (medium) {
+        activeFilterCount++;
+        activePills.push({ label: 'Medium: ' + medium.charAt(0).toUpperCase() + medium.slice(1), clear: () => { s.medium.value = ''; filterTeachers(); } });
+    }
+    if (attachment) {
+        activeFilterCount++;
+        const attMap = { 'attached_any': 'Attached (Any)', 'attached_office': 'Office Attached', 'attached_school': 'School Attached', 'not_attached': 'Regular' };
+        activePills.push({ label: 'Status: ' + (attMap[attachment] || 'Attachment'), clear: () => { s.attachment.value = ''; filterTeachers(); } });
     }
 
-    searchInput.addEventListener('input', filterTeachers);
-    filterSchool.addEventListener('change', filterTeachers);
-    filterGender.addEventListener('change', filterTeachers);
-    filterPosition.addEventListener('change', filterTeachers);
-    filterGrade.addEventListener('change', filterTeachers);
-});
+    s.rows.forEach(function(row) {
+        const name = row.getAttribute('data-name') || '';
+        const nic = row.getAttribute('data-nic') || '';
+        const contact = row.getAttribute('data-contact') || '';
+        const file = row.getAttribute('data-file') || '';
+        const rowSchool = row.getAttribute('data-school') || '';
+        const rowSchoolName = row.getAttribute('data-school-name') || '';
+        const rowDivision = row.getAttribute('data-division') || '';
+        const rowGender = row.getAttribute('data-gender') || '';
+        const rowPosition = row.getAttribute('data-position') || '';
+        const rowService = row.getAttribute('data-service') || '';
+        const rowGrade = row.getAttribute('data-grade') || '';
+        const rowMedium = row.getAttribute('data-medium') || '';
+        const rowSubject = row.getAttribute('data-subject') || '';
+        const rowYearsLeft = parseFloat(row.getAttribute('data-years-left')) || 999;
+        const rowAttached = row.getAttribute('data-attached') || '';
+        const rowAttachedCensus = row.getAttribute('data-attached-census') || '';
+
+        // 1. Search filter
+        const matchesSearch = !search || name.includes(search) || nic.includes(search) || contact.includes(search) || file.includes(search) || rowSchoolName.includes(search);
+
+        // 2. Division filter
+        const matchesDivision = !division || rowDivision === division;
+
+        // 3. School filter
+        const matchesSchool = !school || rowSchool === school;
+
+        // 4. Position filter
+        let matchesPosition = true;
+        if (position) {
+            if (position === 'all_principals') {
+                matchesPosition = rowPosition.includes('principal') && !rowPosition.includes('deputy') && !rowPosition.includes('assistant');
+            } else if (position === 'principal_only') {
+                matchesPosition = rowPosition.startsWith('1 - principal') || (rowPosition.includes('principal') && !rowPosition.includes('acting') && !rowPosition.includes('deputy') && !rowPosition.includes('assistant'));
+            } else if (position === 'acting_principal') {
+                matchesPosition = rowPosition.includes('acting');
+            } else if (position === 'deputy_principal') {
+                matchesPosition = rowPosition.includes('deputy');
+            } else if (position === 'assistant_principal') {
+                matchesPosition = rowPosition.includes('assistant');
+            } else if (position === 'sectional_head') {
+                matchesPosition = rowPosition.includes('sectional');
+            } else if (position === 'grade_head') {
+                matchesPosition = rowPosition.includes('grade head');
+            } else if (position === 'teacher') {
+                matchesPosition = rowPosition.includes('teacher') && !rowPosition.includes('acting') && !rowPosition.includes('principal') && !rowPosition.includes('sectional') && !rowPosition.includes('grade head');
+            } else if (position === 'do') {
+                matchesPosition = rowPosition.includes('do(') || rowPosition.includes('development officer');
+            }
+        }
+
+        // 5. Service filter
+        let matchesService = true;
+        if (service) {
+            if (service === 'slts') {
+                matchesService = rowService.includes('teacher') || rowService.includes('slts');
+            } else if (service === 'slps') {
+                matchesService = rowService.includes('principal') || rowService.includes('slprs') || rowService.includes('slps');
+            } else if (service === 'do') {
+                matchesService = rowService.includes('development officer');
+            } else if (service === 'other') {
+                matchesService = !rowService.includes('teacher') && !rowService.includes('principal') && !rowService.includes('development officer');
+            }
+        }
+
+        // 6. Grade filter
+        let matchesGrade = true;
+        if (grade) {
+            if (grade === 'slps_1') matchesGrade = rowGrade.includes('grade i') && !rowGrade.includes('grade ii') && !rowGrade.includes('grade iii');
+            else if (grade === 'slps_2') matchesGrade = rowGrade.includes('grade ii') && !rowGrade.includes('grade iii');
+            else if (grade === 'slps_3') matchesGrade = rowGrade.includes('grade iii');
+            else if (grade === 'class_1') matchesGrade = rowGrade.includes('class 1') && !rowGrade.includes('class 2') && !rowGrade.includes('class 3');
+            else if (grade === 'class_2_1') matchesGrade = rowGrade.includes('class 2-i') && !rowGrade.includes('class 2-ii');
+            else if (grade === 'class_2_2') matchesGrade = rowGrade.includes('class 2-ii');
+            else if (grade === 'class_3_1_a') matchesGrade = rowGrade.includes('class 3-i (a)') || rowGrade.includes('3-i (a)');
+            else if (grade === 'class_3_1_b') matchesGrade = rowGrade.includes('class 3-i (b)') || rowGrade.includes('3-i (b)');
+            else if (grade === 'class_3_1_c') matchesGrade = rowGrade.includes('class 3-i (c)') || rowGrade.includes('3-i (c)');
+            else if (grade === 'class_3_2') matchesGrade = rowGrade.includes('class 3-ii');
+        }
+
+        // 7. Retirement filter
+        let matchesRetirement = true;
+        if (retirement) {
+            if (retirement === '1') matchesRetirement = rowYearsLeft !== 999 && rowYearsLeft <= 1;
+            else if (retirement === '3') matchesRetirement = rowYearsLeft !== 999 && rowYearsLeft <= 3;
+            else if (retirement === '5') matchesRetirement = rowYearsLeft !== 999 && rowYearsLeft <= 5;
+            else if (retirement === 'over_5') matchesRetirement = rowYearsLeft > 5 && rowYearsLeft !== 999;
+        }
+
+        // 8. Subject filter
+        let matchesSubject = true;
+        if (subject) {
+            if (subject === 'primary') matchesSubject = rowSubject.includes('primary') || rowSubject.includes('101') || rowSubject.includes('199');
+            else if (subject === 'maths') matchesSubject = rowSubject.includes('math') || rowSubject.includes('232');
+            else if (subject === 'science') matchesSubject = rowSubject.includes('science') || rowSubject.includes('234');
+            else if (subject === 'english') matchesSubject = rowSubject.includes('english') || rowSubject.includes('231') || rowSubject.includes('131');
+            else if (subject === 'sinhala') matchesSubject = rowSubject.includes('sinhala') || rowSubject.includes('221');
+            else if (subject === 'ict') matchesSubject = rowSubject.includes('ict') || rowSubject.includes('information') || rowSubject.includes('280');
+            else if (subject === 'buddhism') matchesSubject = rowSubject.includes('buddh') || rowSubject.includes('211');
+            else if (subject === 'history') matchesSubject = rowSubject.includes('history') || rowSubject.includes('233');
+            else if (subject === 'geography') matchesSubject = rowSubject.includes('geography') || rowSubject.includes('261');
+            else if (subject === 'civics') matchesSubject = rowSubject.includes('civic') || rowSubject.includes('262');
+            else if (subject === 'health') matchesSubject = rowSubject.includes('health') || rowSubject.includes('physical') || rowSubject.includes('286');
+            else if (subject === 'commerce') matchesSubject = rowSubject.includes('accounting') || rowSubject.includes('business') || rowSubject.includes('commerce') || rowSubject.includes('260');
+        }
+
+        // 9. Gender filter (Strict matching)
+        let matchesGender = true;
+        if (gender) {
+            if (gender === 'Male') {
+                matchesGender = rowGender.includes('1 - male') || (rowGender.includes('male') && !rowGender.includes('female'));
+            } else if (gender === 'Female') {
+                matchesGender = rowGender.includes('female');
+            }
+        }
+
+        // 10. Medium filter
+        let matchesMedium = true;
+        if (medium) {
+            if (medium === 'sinhala') matchesMedium = rowMedium.includes('sinhala');
+            else if (medium === 'tamil') matchesMedium = rowMedium.includes('tamil');
+            else if (medium === 'english') matchesMedium = rowMedium.includes('english');
+        }
+
+        // 11. Attachment filter
+        let matchesAttachment = true;
+        if (attachment) {
+            if (attachment === 'attached_any') matchesAttachment = rowAttached.startsWith('yes');
+            else if (attachment === 'attached_office') matchesAttachment = rowAttached.startsWith('yes') && rowAttachedCensus.startsWith('office_');
+            else if (attachment === 'attached_school') matchesAttachment = rowAttached.startsWith('yes') && !rowAttachedCensus.startsWith('office_');
+            else if (attachment === 'not_attached') matchesAttachment = !rowAttached.startsWith('yes');
+        }
+
+        if (matchesSearch && matchesDivision && matchesSchool && matchesPosition && matchesService &&
+            matchesGrade && matchesRetirement && matchesSubject && matchesGender && matchesMedium && matchesAttachment) {
+            row.style.display = '';
+            visibleCount++;
+        } else {
+            row.style.display = 'none';
+        }
+    });
+
+    // Update Counter & UI elements
+    s.counter.textContent = visibleCount;
+    s.noResults.style.display = (visibleCount === 0 && s.rows.length > 0) ? '' : 'none';
+
+    // Badge on Filters toggle button
+    if (activeFilterCount > 0) {
+        s.badge.textContent = activeFilterCount;
+        s.badge.style.display = 'flex';
+        s.topReset.style.display = '';
+    } else {
+        s.badge.style.display = 'none';
+        s.topReset.style.display = 'none';
+    }
+
+    // Render active pills
+    s.pillsContainer.innerHTML = '';
+    activePills.forEach(p => {
+        const span = document.createElement('span');
+        span.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-100 text-slate-800 border border-slate-200';
+        span.innerHTML = `<span>${p.label}</span><button type="button" class="text-slate-400 hover:text-rose-600 font-black ml-0.5">&times;</button>`;
+        span.querySelector('button').onclick = p.clear;
+        s.pillsContainer.appendChild(span);
+    });
+
+    if (activePills.length > 1) {
+        const clearBtn = document.createElement('button');
+        clearBtn.type = 'button';
+        clearBtn.className = 'text-xs font-bold text-rose-600 hover:underline ml-1';
+        clearBtn.textContent = 'Clear All';
+        clearBtn.onclick = resetFilters;
+        s.pillsContainer.appendChild(clearBtn);
+    }
+}
+
+function setQuickFilter(type) {
+    resetFilters(false);
+
+    document.querySelectorAll('.quick-chip').forEach(c => {
+        c.classList.remove('bg-slate-900', 'text-white', 'border-slate-900');
+    });
+    const chip = document.getElementById('chip-' + type);
+    if (chip) {
+        chip.classList.add('bg-slate-900', 'text-white', 'border-slate-900');
+    }
+
+    const s = window.teacherFilterState;
+    if (!s) return;
+
+    if (type === 'principals') {
+        s.position.value = 'all_principals';
+    } else if (type === 'retiring') {
+        s.retirement.value = '5';
+    } else if (type === 'wilgamuwa') {
+        s.division.value = 'Wilgamuwa';
+    } else if (type === 'laggala') {
+        s.division.value = 'Laggala';
+    } else if (type === 'female') {
+        s.gender.value = 'Female';
+    } else if (type === 'male') {
+        s.gender.value = 'Male';
+    } else if (type === 'primary') {
+        s.subject.value = 'primary';
+    }
+
+    filterTeachers();
+}
 
 function toggleFilters() {
     const filters = document.getElementById('advancedFilters');
     const btn = document.getElementById('filtersToggleBtn');
     if (filters.style.display === 'none') {
         filters.style.display = '';
-        btn.style.background = '#0f172a';
-        btn.style.color = '#fff';
-        btn.style.borderColor = '#0f172a';
+        btn.classList.add('!bg-slate-900', '!text-white', '!border-slate-900');
     } else {
         filters.style.display = 'none';
-        btn.style.background = '#fff';
-        btn.style.color = '#475569';
-        btn.style.borderColor = '#e2e8f0';
+        btn.classList.remove('!bg-slate-900', '!text-white', '!border-slate-900');
     }
 }
 
-function resetFilters() {
-    document.getElementById('teacherSearchInput').value = '';
-    document.getElementById('filterSchool').value = '';
-    document.getElementById('filterGender').value = '';
-    document.getElementById('filterPosition').value = '';
-    document.getElementById('filterGrade').value = '';
-    document.querySelectorAll('.teacher-row').forEach(function(row) { row.style.display = ''; });
-    document.getElementById('teacherNoResults').style.display = 'none';
+function resetFilters(runFilter = true) {
+    const s = window.teacherFilterState;
+    if (s) {
+        s.search.value = '';
+        s.division.value = '';
+        s.school.value = '';
+        s.position.value = '';
+        s.service.value = '';
+        s.grade.value = '';
+        s.retirement.value = '';
+        s.subject.value = '';
+        s.gender.value = '';
+        s.medium.value = '';
+        s.attachment.value = '';
+
+        // Reset school options visibility
+        s.school.querySelectorAll('option').forEach(opt => opt.style.display = '');
+    }
+
+    document.querySelectorAll('.quick-chip').forEach(c => {
+        c.classList.remove('bg-slate-900', 'text-white', 'border-slate-900');
+    });
+    const allChip = document.getElementById('chip-all');
+    if (allChip) {
+        allChip.classList.add('bg-slate-900', 'text-white', 'border-slate-900');
+    }
+
+    if (runFilter) {
+        filterTeachers();
+    }
 }
 
 function exportTeachers() {
-    const rows = document.querySelectorAll('.teacher-row');
-    let csv = 'Name,NIC,Gender,School,Position,Service Grade\n';
-    rows.forEach(function(row) {
+    const s = window.teacherFilterState;
+    if (!s) return;
+
+    let csv = 'Name,NIC,Gender,School,Division,Position,Service,Grade,Retirement Left (Yrs),Attached\n';
+    s.rows.forEach(function(row) {
         if (row.style.display === 'none') return;
-        const cells = row.querySelectorAll('td');
-        const name = cells[0].querySelector('div > div > div').textContent.trim();
-        const nic = cells[1].querySelector('div').textContent.trim();
-        const gender = row.getAttribute('data-gender');
-        const school = cells[2].querySelector('span') ? cells[2].querySelector('span').textContent.trim() : 'N/A';
-        const position = row.getAttribute('data-position') || 'Teacher';
-        const grade = row.getAttribute('data-grade') || 'N/A';
-        csv += `"${name}","${nic}","${gender}","${school}","${position}","${grade}"\n`;
+        const name = (row.getAttribute('data-name') || '').toUpperCase();
+        const nic = (row.getAttribute('data-nic') || '').toUpperCase();
+        const gender = row.getAttribute('data-gender') || '';
+        const school = row.getAttribute('data-school-name') || '';
+        const division = row.getAttribute('data-division') || '';
+        const position = row.getAttribute('data-position') || '';
+        const service = row.getAttribute('data-service') || '';
+        const grade = row.getAttribute('data-grade') || '';
+        const yearsLeft = row.getAttribute('data-years-left') || '';
+        const attached = row.getAttribute('data-attached') || 'No';
+
+        csv += `"${name}","${nic}","${gender}","${school}","${division}","${position}","${service}","${grade}","${yearsLeft === '999' ? 'N/A' : yearsLeft}","${attached}"\n`;
     });
+
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement('a');
     link.setAttribute('href', URL.createObjectURL(blob));
-    link.setAttribute('download', 'Teachers_Report_' + new Date().toISOString().split('T')[0] + '.csv');
+    link.setAttribute('download', 'Wilgamuwa_Teachers_Filtered_' + new Date().toISOString().split('T')[0] + '.csv');
     link.style.visibility = 'hidden';
     document.body.appendChild(link);
     link.click();
