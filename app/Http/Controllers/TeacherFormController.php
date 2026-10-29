@@ -24,7 +24,7 @@ class TeacherFormController extends Controller
     {
         $validated = $request->validate([
             'census_no' => 'required|string',
-            'nic' => 'required|string|regex:/^(\d{9}[VvXx]|\d{12})$/',
+            'nic' => ['required', 'string', 'regex:/^(\d{9}[VvXx]|\d{12})$/'],
             'full_name' => 'required|string|min:2|max:200',
             'date_of_birth' => 'required|date',
             'mobile' => 'nullable|string',
