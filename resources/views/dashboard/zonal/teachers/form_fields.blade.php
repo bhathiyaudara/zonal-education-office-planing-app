@@ -161,12 +161,18 @@
             {{-- 07. Position --}}
             <div>
                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">07. Position Held in this School</label>
-                <select name="position" class="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-2.5 text-sm font-medium text-slate-800 transition focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-blue-500/10">
+                <select name="position" id="position_select" class="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-2.5 text-sm font-medium text-slate-800 transition focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-blue-500/10">
                     <option value="">— Select —</option>
                     @foreach($options['q07position'] ?? [] as $opt)
                         <option value="{{ $opt }}" {{ $v('position') == $opt ? 'selected' : '' }}>{{ $opt }}</option>
                     @endforeach
                 </select>
+                <div id="principal_assigned_badge" class="hidden mt-2 p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs flex items-center gap-2">
+                    <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <span><strong>Principal Auto-Assignment:</strong> Selecting Principal will automatically assign this person as Principal of the related school with School Administrator access.</span>
+                </div>
             </div>
 
             {{-- 08. Salary By --}}
@@ -827,6 +833,23 @@
             if (otherCensusSelect.value) {
                 updateSchoolCard(otherCensusSelect.value, otherInfoCard, otherInfoGrid);
             }
+        }
+
+        // Principal notice auto-check
+        const posSelect = document.getElementById('position_select');
+        const principalBadge = document.getElementById('principal_assigned_badge');
+        if (posSelect && principalBadge) {
+            function updatePrincipalNotice() {
+                const val = (posSelect.value || '').trim();
+                const isPrin = val.startsWith('1 - Principal') || val.startsWith('2 - Acting Principal') || (val.toLowerCase().includes('principal') && !val.toLowerCase().includes('deputy') && !val.toLowerCase().includes('assistant'));
+                if (isPrin) {
+                    principalBadge.classList.remove('hidden');
+                } else {
+                    principalBadge.classList.add('hidden');
+                }
+            }
+            posSelect.addEventListener('change', updatePrincipalNotice);
+            updatePrincipalNotice();
         }
     });
 </script>

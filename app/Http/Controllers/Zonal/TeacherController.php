@@ -97,13 +97,16 @@ class TeacherController extends Controller
         $allInputs = $request->all();
         $allInputs['nic'] = $nic;
 
+        $isPrincipal = Teacher::isPrincipalPosition($request->input('position'));
+        $targetRole = $isPrincipal ? User::ROLE_SCHOOL_ADMIN : User::ROLE_TEACHER;
+
         // Create User account
         $userEmail = $request->input('email') ?: ($nic . '@wilgamuwa.com');
         $user = User::create([
             'name' => $nameWithInitials,
             'email' => $userEmail,
             'password' => Hash::make('password123'),
-            'role' => User::ROLE_TEACHER,
+            'role' => $targetRole,
             'schoolId' => $schoolId,
             'isActive' => true,
         ]);
@@ -204,6 +207,14 @@ class TeacherController extends Controller
             'mobile' => $request->input('mobile') ?: $request->input('phone'),
             'data' => json_encode($allInputs),
         ]);
+
+        // Ensure principal is automatically assigned to the related school
+        if ($schoolId && $isPrincipal) {
+            $sc = School::find($schoolId);
+            if ($sc) {
+                Teacher::syncPrincipalToSchool($sc, $request->input('position'), $nameWithInitials, $nic, $request->input('mobile') ?: $request->input('phone'), $user);
+            }
+        }
 
         \App\Models\AuditLog::create([
             'userId' => auth()->id(),
@@ -357,6 +368,8 @@ class TeacherController extends Controller
 
         $teacher->update($updateData);
 
+        $isPrincipal = Teacher::isPrincipalPosition($request->input('position'));
+
         // Sync User details if linked
         if ($teacher->userId) {
             $user = User::find($teacher->userId);
@@ -368,7 +381,19 @@ class TeacherController extends Controller
                 if (!empty($updateData['schoolId'])) {
                     $user->schoolId = $updateData['schoolId'];
                 }
+                if ($isPrincipal) {
+                    $user->role = User::ROLE_SCHOOL_ADMIN;
+                }
                 $user->save();
+            }
+        }
+
+        // Ensure principal is automatically assigned to the related school
+        $activeSchoolId = $updateData['schoolId'] ?: $teacher->schoolId;
+        if ($activeSchoolId && $isPrincipal) {
+            $sc = School::find($activeSchoolId);
+            if ($sc) {
+                Teacher::syncPrincipalToSchool($sc, $request->input('position'), $nameWithInitials, $nic, $request->input('mobile') ?: $request->input('phone'), $user ?? null);
             }
         }
 

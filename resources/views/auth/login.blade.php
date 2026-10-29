@@ -36,8 +36,11 @@
     <div class="w-full lg:w-1/2 flex flex-col items-center justify-center p-6 sm:p-12 bg-gradient-to-br from-slate-50 via-white to-blue-50">
         <div class="w-full max-w-md animate-fade-in-up">
             {{-- Mobile Logo --}}
-            <div class="lg:hidden text-center mb-8">
-                <img src="{{ asset('images/logo.png') }}" alt="ZEMS" class="mx-auto w-48 drop-shadow-xl">
+            <div class="lg:hidden flex flex-col items-center justify-center mb-6">
+                <div class="inline-flex items-center justify-center px-6 py-3.5 rounded-2xl bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 shadow-xl border border-indigo-500/30 max-w-[280px]">
+                    <img src="{{ asset('images/logo.png') }}" alt="Wilgamuwa Zonal Education Office" class="h-11 w-auto max-w-full drop-shadow-md">
+                </div>
+                <p class="text-xs font-bold text-slate-600 mt-2.5 tracking-wider uppercase">Wilgamuwa Education Zone</p>
             </div>
 
             {{-- Login Card --}}

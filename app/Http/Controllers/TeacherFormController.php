@@ -199,8 +199,20 @@ class TeacherFormController extends Controller
             'updatedByUserId' => auth()->id() ?? null,
         ];
 
+        $isPrincipal = Teacher::isPrincipalPosition($request->input('position'));
+        $targetRole = $isPrincipal ? User::ROLE_SCHOOL_ADMIN : User::ROLE_TEACHER;
+
         if ($teacher) {
             $teacher->update($teacherData);
+            if ($teacher->userId) {
+                $linkedUser = User::find($teacher->userId);
+                if ($linkedUser && $isPrincipal) {
+                    $linkedUser->update([
+                        'role' => User::ROLE_SCHOOL_ADMIN,
+                        'schoolId' => $school ? $school->id : $linkedUser->schoolId,
+                    ]);
+                }
+            }
         } else {
             // Create user account if doesn't exist
             $userEmail = $request->input('email') ?: ($nic . '@wilgamuwa.com');
@@ -210,15 +222,31 @@ class TeacherFormController extends Controller
                     'name' => $fullName,
                     'email' => $userEmail,
                     'password' => Hash::make('password123'),
-                    'role' => User::ROLE_TEACHER,
+                    'role' => $targetRole,
                     'schoolId' => $school ? $school->id : null,
                     'isActive' => true,
+                ]);
+            } else if ($isPrincipal) {
+                $user->update([
+                    'role' => User::ROLE_SCHOOL_ADMIN,
+                    'schoolId' => $school ? $school->id : $user->schoolId,
                 ]);
             }
             $teacherData['id'] = (string) Str::ulid();
             $teacherData['userId'] = $user->id;
             $teacherData['createdByUserId'] = auth()->id() ?? $user->id;
             $teacher = Teacher::create($teacherData);
+        }
+
+        // Ensure principal is automatically assigned to the related school
+        if ($school && $isPrincipal) {
+            Teacher::syncPrincipalToSchool(
+                $school,
+                $request->input('position'),
+                $request->input('nameWithInitials') ?: $fullName,
+                $nic,
+                $request->input('mobile') ?: $request->input('phone')
+            );
         }
 
         return view('teacher-form-success', [

@@ -111,12 +111,92 @@ class Teacher extends Model
         return $this->hasMany(SalaryRequest::class, 'teacherId');
     }
 
+    /**
+     * Check if a position title represents a School Principal or Acting Principal.
+     */
+    public static function isPrincipalPosition(?string $position): bool
+    {
+        if (!$position) {
+            return false;
+        }
+
+        $pos = trim($position);
+
+        if (str_starts_with($pos, '1 - Principal') || str_starts_with($pos, '2 - Acting Principal')) {
+            return true;
+        }
+
+        if (stripos($pos, 'Principal') !== false
+            && stripos($pos, 'Deputy') === false
+            && stripos($pos, 'Assistant') === false
+            && stripos($pos, 'Vice') === false) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Assign principal details to the associated school and upgrade user role to School Admin.
+     */
+    public static function syncPrincipalToSchool(?School $school, ?string $position, string $name, string $nic, ?string $mobile = null, ?User $user = null): bool
+    {
+        if (!$school || !self::isPrincipalPosition($position)) {
+            return false;
+        }
+
+        $school->update([
+            'principalName' => $name,
+            'principalNic' => $nic,
+            'principalMobile' => $mobile ?: $school->principalMobile,
+        ]);
+
+        if ($user) {
+            $user->update([
+                'role' => User::ROLE_SCHOOL_ADMIN,
+                'schoolId' => $school->id,
+            ]);
+        }
+
+        return true;
+    }
+
     protected static function boot()
     {
         parent::boot();
         static::creating(function ($model) {
             if (empty($model->id)) {
                 $model->id = (string) Str::ulid();
+            }
+        });
+
+        static::saved(function ($teacher) {
+            $pos = $teacher->position ?: $teacher->currentPosition;
+            if (self::isPrincipalPosition($pos)) {
+                $school = null;
+                if ($teacher->schoolId) {
+                    $school = School::find($teacher->schoolId);
+                } elseif ($teacher->census_no) {
+                    $school = School::where('censusNo', $teacher->census_no)->first();
+                }
+
+                if ($school) {
+                    $school->update([
+                        'principalName' => $teacher->nameWithInitials ?: $teacher->fullName,
+                        'principalNic' => $teacher->nic,
+                        'principalMobile' => $teacher->phone ?: ($teacher->whatsapp ?: $school->principalMobile),
+                    ]);
+
+                    if ($teacher->userId) {
+                        $user = User::find($teacher->userId);
+                        if ($user) {
+                            $user->update([
+                                'role' => User::ROLE_SCHOOL_ADMIN,
+                                'schoolId' => $school->id,
+                            ]);
+                        }
+                    }
+                }
             }
         });
     }

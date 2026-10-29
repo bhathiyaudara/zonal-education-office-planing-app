@@ -77,12 +77,15 @@ class TeacherController extends Controller
         $allInputs['nic'] = $nic;
 
         // Create teacher user account
+        $isPrincipal = Teacher::isPrincipalPosition($request->input('position'));
+        $targetRole = $isPrincipal ? User::ROLE_SCHOOL_ADMIN : User::ROLE_TEACHER;
+
         $userEmail = $request->input('email') ?: ($nic . '@wilgamuwa.com');
         $user = User::create([
             'name' => $nameWithInitials,
             'email' => $userEmail,
             'password' => Hash::make('password123'),
-            'role' => User::ROLE_TEACHER,
+            'role' => $targetRole,
             'schoolId' => $schoolId,
             'isActive' => true,
         ]);
@@ -170,6 +173,11 @@ class TeacherController extends Controller
         ];
 
         $teacher = Teacher::create($teacherData);
+
+        // Ensure principal is automatically assigned to the related school
+        if ($schoolId && $isPrincipal && $school) {
+            Teacher::syncPrincipalToSchool($school, $request->input('position'), $nameWithInitials, $nic, $request->input('mobile') ?: $request->input('phone'), $user);
+        }
 
         // Also record submission in teacher_submissions
         DB::table('teacher_submissions')->insert([
