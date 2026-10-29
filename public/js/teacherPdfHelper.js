@@ -77,25 +77,21 @@ function buildTeacherPdf(v, schoolName, otherSchoolName) {
 
     // Header
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(9);
-    doc.text("PROVINCIAL DEPARTMENT OF EDUCATION", 196, 15, { align: "right" });
-    doc.text("CENTRAL PROVINCE", 196, 20, { align: "right" });
-
     doc.setFontSize(14);
-    doc.text("Zonal Education Office - Wilgamuwa", 105, 30, { align: "center" });
-    doc.setFontSize(12);
-    doc.text(title, 105, 38, { align: "center" });
+    doc.text("Zonal Education Office - Wilgamuwa", 105, 18, { align: "center" });
+    doc.setFontSize(11);
+    doc.text(title, 105, 25, { align: "center" });
 
     doc.setFont("helvetica", "normal");
     doc.setFontSize(8);
     const dateStr = new Date().toLocaleString("en-GB", { timeZone: "Asia/Colombo" });
-    doc.text(`Zone: 52204 | Generated: ${dateStr}`, 105, 45, { align: "center" });
-    doc.line(14, 49, 196, 49);
+    doc.text(`Zone: 52204 | Generated: ${dateStr}`, 105, 31, { align: "center" });
+    doc.line(14, 35, 196, 35);
 
     // Table
     const tableData = getTeacherPdfRows(v, schoolName, otherSchoolName);
     doc.autoTable({
-        startY: 53,
+        startY: 39,
         head: [["Question", "Answer"]],
         body: tableData,
         styles: { fontSize: 8.5, cellPadding: 1.8, overflow: "linebreak" },
