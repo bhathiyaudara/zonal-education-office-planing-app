@@ -109,6 +109,13 @@
                                       : 'text-slate-300 hover:bg-white/10 hover:text-white' }}">
                             Overview
                         </a>
+                        <a href="{{ route('zonal.teachers.create') }}"
+                           class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-200
+                                  {{ request()->routeIs('zonal.teachers.create')
+                                      ? 'bg-white/15 text-white font-semibold'
+                                      : 'text-slate-300 hover:bg-white/10 hover:text-white' }}">
+                            Add Teacher (Census)
+                        </a>
                         <a href="{{ route('zonal.teachers.remove') }}"
                            class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-200
                                   {{ request()->routeIs('zonal.teachers.remove')

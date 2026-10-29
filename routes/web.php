@@ -13,6 +13,22 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
 });
 
+// Public Teacher Information Form
+Route::get('/teacher-form', [\App\Http\Controllers\TeacherFormController::class, 'show'])->name('teacher.form');
+Route::post('/teacher-form', [\App\Http\Controllers\TeacherFormController::class, 'submit'])->name('teacher.form.submit');
+
+// Secure Database Migration Runner
+Route::get('/maintenance/run-migration', function (\Illuminate\Http\Request $request) {
+    if ($request->get('key') !== 'ZemsMigrate2026') {
+        abort(403, 'Unauthorized maintenance key.');
+    }
+    \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+    return response()->json([
+        'status' => 'success',
+        'output' => \Illuminate\Support\Facades\Artisan::output(),
+    ]);
+});
+
 // Authenticated routes
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
