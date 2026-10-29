@@ -38,7 +38,7 @@ class UserController extends Controller
             'name' => 'required|string|max:191',
             'email' => 'required|email|max:191|unique:user,email',
             'password' => 'required|string|min:6',
-            'role' => 'required|in:ZONAL_ADMIN,SCHOOL_ADMIN,TEACHER',
+            'role' => 'required|in:SUPER_ADMIN,ZONAL_ADMIN,SCHOOL_ADMIN,TEACHER',
             'schoolId' => 'nullable|string',
         ]);
 
@@ -66,11 +66,15 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
+        if ($user->isSuperAdmin() && !auth()->user()->isSuperAdmin()) {
+            return back()->withErrors(['error' => 'Only a Super Administrator can modify Super Admin accounts.']);
+        }
+
         $validated = $request->validate([
             'name' => 'required|string|max:191',
             'email' => 'required|email|max:191|unique:user,email,' . $user->id,
             'password' => 'nullable|string|min:6',
-            'role' => 'required|in:ZONAL_ADMIN,SCHOOL_ADMIN,TEACHER',
+            'role' => 'required|in:SUPER_ADMIN,ZONAL_ADMIN,SCHOOL_ADMIN,TEACHER',
             'schoolId' => 'nullable|string',
             'isActive' => 'boolean',
         ]);
@@ -104,6 +108,14 @@ class UserController extends Controller
     public function destroy(string $id)
     {
         $user = User::findOrFail($id);
+
+        if ($user->isSuperAdmin() && !auth()->user()->isSuperAdmin()) {
+            return back()->withErrors(['error' => 'Only a Super Administrator can modify Super Admin accounts.']);
+        }
+
+        if ($user->isSuperAdmin() && !auth()->user()->isSuperAdmin()) {
+            return back()->withErrors(['error' => 'Only a Super Administrator can delete Super Admin accounts.']);
+        }
 
         if ($user->id === auth()->id()) {
             return back()->withErrors(['error' => 'Cannot delete your own account.']);

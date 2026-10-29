@@ -102,12 +102,23 @@
                             </div>
                         </td>
                         <td class="zems-table-td">
+                            @if($user->isSuperAdmin())
+                            <span class="zems-badge-primary !bg-purple-100 !text-purple-800 !border-purple-300 font-bold">
+                                Super Administrator
+                            </span>
+                            @elseif($user->role === 'ZONAL_ADMIN')
                             <span class="zems-badge-primary">
-                                <svg class="w-3.5 h-3.5 inline-block mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                </svg>
                                 {{ $user->role_label }}
                             </span>
+                            @elseif($user->role === 'SCHOOL_ADMIN')
+                            <span class="zems-badge-primary !bg-emerald-50 !text-emerald-700 !border-emerald-200">
+                                {{ $user->role_label }}
+                            </span>
+                            @else
+                            <span class="zems-badge-primary !bg-slate-100 !text-slate-700 !border-slate-200">
+                                {{ $user->role_label }}
+                            </span>
+                            @endif
                         </td>
                         <td class="zems-table-td font-semibold text-slate-600">
                             {{ $user->school->name ?? 'Zonal Education Office' }}
@@ -189,9 +200,12 @@
                 <div>
                     <label class="zems-input-label">Role *</label>
                     <select name="role" required class="zems-input">
-                        <option value="TEACHER">Teacher</option>
-                        <option value="SCHOOL_ADMIN">School Admin</option>
+                        @if(auth()->user()->isSuperAdmin())
+                        <option value="SUPER_ADMIN">Super Admin (Full System Control)</option>
+                        @endif
                         <option value="ZONAL_ADMIN">Zonal Admin</option>
+                        <option value="SCHOOL_ADMIN">School Admin</option>
+                        <option value="TEACHER">Teacher</option>
                     </select>
                 </div>
                 <div>
@@ -235,9 +249,12 @@
                 <div>
                     <label class="zems-input-label">Role *</label>
                     <select id="edit_role" name="role" required class="zems-input">
-                        <option value="TEACHER">Teacher</option>
-                        <option value="SCHOOL_ADMIN">School Admin</option>
+                        @if(auth()->user()->isSuperAdmin())
+                        <option value="SUPER_ADMIN">Super Admin (Full System Control)</option>
+                        @endif
                         <option value="ZONAL_ADMIN">Zonal Admin</option>
+                        <option value="SCHOOL_ADMIN">School Admin</option>
+                        <option value="TEACHER">Teacher</option>
                     </select>
                 </div>
                 <div>

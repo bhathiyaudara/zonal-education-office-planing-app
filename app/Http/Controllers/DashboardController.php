@@ -16,6 +16,7 @@ class DashboardController extends Controller
         $user = Auth::user();
 
         return match ($user->role) {
+            User::ROLE_SUPER_ADMIN,
             User::ROLE_ZONAL_ADMIN => $this->zonalDashboard(),
             User::ROLE_SCHOOL_ADMIN => $this->schoolDashboard(),
             User::ROLE_TEACHER => $this->teacherDashboard(),

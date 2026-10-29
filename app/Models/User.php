@@ -32,18 +32,24 @@ class User extends Authenticatable
     ];
 
     // Roles
+    const ROLE_SUPER_ADMIN = 'SUPER_ADMIN';
     const ROLE_ZONAL_ADMIN = 'ZONAL_ADMIN';
     const ROLE_SCHOOL_ADMIN = 'SCHOOL_ADMIN';
     const ROLE_TEACHER = 'TEACHER';
 
+    public function isSuperAdmin(): bool
+    {
+        return $this->role === self::ROLE_SUPER_ADMIN;
+    }
+
     public function isZonalAdmin(): bool
     {
-        return $this->role === self::ROLE_ZONAL_ADMIN;
+        return $this->role === self::ROLE_ZONAL_ADMIN || $this->role === self::ROLE_SUPER_ADMIN;
     }
 
     public function isSchoolAdmin(): bool
     {
-        return $this->role === self::ROLE_SCHOOL_ADMIN;
+        return $this->role === self::ROLE_SCHOOL_ADMIN || $this->role === self::ROLE_SUPER_ADMIN;
     }
 
     public function isTeacher(): bool
@@ -54,6 +60,7 @@ class User extends Authenticatable
     public function getRoleLabelAttribute(): string
     {
         return match ($this->role) {
+            self::ROLE_SUPER_ADMIN => 'Super Administrator',
             self::ROLE_ZONAL_ADMIN => 'Zonal Administrator',
             self::ROLE_SCHOOL_ADMIN => 'School Administrator',
             self::ROLE_TEACHER => 'Teacher',

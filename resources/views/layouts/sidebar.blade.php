@@ -160,13 +160,14 @@
     {{-- User Section --}}
     <div class="p-4 border-t border-white/10 bg-black/20">
         <div class="flex items-center gap-3 mb-4 p-3 rounded-xl bg-white/5">
-            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+            <div class="w-11 h-11 rounded-xl @if(auth()->user()->isSuperAdmin()) bg-gradient-to-br from-purple-500 to-indigo-600 ring-2 ring-purple-400/50 @else bg-gradient-to-br from-blue-400 to-indigo-600 @endif flex items-center justify-center text-white font-bold text-lg shadow-lg">
                 {{ strtoupper(substr(auth()->user()->email ?? 'U', 0, 1)) }}
             </div>
             <div class="flex-1 min-w-0">
                 <p class="text-sm font-semibold text-white truncate">{{ auth()->user()->email }}</p>
                 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold
-                    @if(auth()->user()->isZonalAdmin()) bg-amber-500/20 text-amber-300
+                    @if(auth()->user()->isSuperAdmin()) bg-purple-500/30 text-purple-200 border border-purple-400/40
+                    @elseif(auth()->user()->isZonalAdmin()) bg-amber-500/20 text-amber-300
                     @elseif(auth()->user()->isSchoolAdmin()) bg-emerald-500/20 text-emerald-300
                     @else bg-sky-500/20 text-sky-300 @endif">
                     ✦ {{ auth()->user()->role_label }}

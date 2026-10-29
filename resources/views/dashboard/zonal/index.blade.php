@@ -8,8 +8,19 @@
     <div class="zems-header">
         <div class="flex items-center gap-4">
             <div>
-                <h1 class="zems-header-title">Welcome to Wilgamuwa - ZEOMS</h1>
-                <p class="zems-header-subtitle">Zonal Education Office Management System — Manage schools, teachers, and administrative tasks efficiently.</p>
+                <div class="flex items-center gap-3 flex-wrap">
+                    <h1 class="zems-header-title">Welcome to Wilgamuwa - ZEOMS</h1>
+                    @if(auth()->user()->isSuperAdmin())
+                        <span class="px-3 py-1 rounded-full text-xs font-black bg-purple-500/30 text-purple-100 border border-purple-300/40 uppercase tracking-widest backdrop-blur-sm">✦ Super Admin Mode</span>
+                    @endif
+                </div>
+                <p class="zems-header-subtitle">
+                    @if(auth()->user()->isSuperAdmin())
+                        Super Administrator Console — Full control across all schools, teachers, users, and zonal operations.
+                    @else
+                        Zonal Education Office Management System — Manage schools, teachers, and administrative tasks efficiently.
+                    @endif
+                </p>
             </div>
         </div>
     </div>
