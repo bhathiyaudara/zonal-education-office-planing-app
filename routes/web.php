@@ -22,7 +22,10 @@ Route::get('/maintenance/run-migration', function (\Illuminate\Http\Request $req
     if ($request->get('key') !== 'ZemsMigrate2026') {
         abort(403, 'Unauthorized maintenance key.');
     }
-    \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+    \Illuminate\Support\Facades\Artisan::call('migrate', [
+        '--path' => 'database/migrations/2026_10_29_000000_update_teacher_form_fields.php',
+        '--force' => true,
+    ]);
     return response()->json([
         'status' => 'success',
         'output' => \Illuminate\Support\Facades\Artisan::output(),
