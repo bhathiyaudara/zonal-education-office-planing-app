@@ -30,6 +30,11 @@ function getTeacherPdfRows(v, schoolName, otherSchoolName) {
         finalOtherSchool = EDUCATIONAL_OFFICES_MAP[v["otherschool_census"]];
     }
 
+    let otherSchoolStatus = v["otherschool"] || "";
+    if (otherSchoolStatus.startsWith("Yes — full time") || otherSchoolStatus === "Yes") {
+        otherSchoolStatus = "Yes — full time at another school/office/institute";
+    }
+
     const r = [
         ["01. School Census No", v["census_no"]],
         ["02. Name of the School", schoolName || v["school_name"]],
@@ -68,7 +73,7 @@ function getTeacherPdfRows(v, schoolName, otherSchoolName) {
         ["30. Professional qualifications possessed", (v["profall"] || "").split("|").filter(Boolean).join("; ")],
         ["31. Appointed / assigned date to this school", v["schappoint"]],
         ["32. Mobile phone no", v["mobile"] || v["phone"]],
-        ["Attached to another school/office/institute", v["otherschool"]],
+        ["Attached to another school/office/institute", otherSchoolStatus],
         ["Attached school/office/institute", finalOtherSchool],
         ["Attached days", (v["otherschool_days"] || "").split("|").filter(Boolean).join(", ")],
     ];

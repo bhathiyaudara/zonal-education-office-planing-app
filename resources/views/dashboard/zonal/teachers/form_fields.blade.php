@@ -730,7 +730,7 @@
                 <select name="otherschool" id="otherschool_select" class="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-2.5 text-sm font-medium text-slate-800 transition focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-blue-500/10">
                     <option value="">— Select —</option>
                     <option value="No" {{ $v('otherschool') == 'No' ? 'selected' : '' }}>No</option>
-                    <option value="Yes — full time at another school" {{ (str_starts_with((string)$v('otherschool'), 'Yes — full time') || $v('otherschool') == 'Yes') ? 'selected' : '' }}>Yes — full time at another school / office / institute</option>
+                    <option value="Yes — full time at another school/office/institute" {{ (str_starts_with((string)$v('otherschool'), 'Yes — full time') || $v('otherschool') == 'Yes') ? 'selected' : '' }}>Yes — full time at another school/office/institute</option>
                     <option value="Yes — on specific days of the week" {{ str_starts_with((string)$v('otherschool'), 'Yes — on specific days') ? 'selected' : '' }}>Yes — on specific days of the week</option>
                 </select>
             </div>
@@ -916,7 +916,7 @@
 
                 // If Section 07 attachment select is not already set to Yes, set it automatically
                 if (otherSelect && (!otherSelect.value || otherSelect.value === 'No')) {
-                    otherSelect.value = 'Yes — full time at another school';
+                    otherSelect.value = 'Yes — full time at another school/office/institute';
                 }
                 if (otherBox) {
                     otherBox.classList.remove('hidden');

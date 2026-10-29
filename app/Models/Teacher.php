@@ -79,6 +79,14 @@ class Teacher extends Model
         return \App\Services\TeacherOptions::institutionName($this->otherschool_census);
     }
 
+    public function getOtherschoolAttribute($value)
+    {
+        if ($value && (str_starts_with($value, 'Yes — full time') || $value === 'Yes')) {
+            return 'Yes — full time at another school/office/institute';
+        }
+        return $value;
+    }
+
     public function spouseSchool()
     {
         return $this->belongsTo(School::class, 'spouseSchoolId');
