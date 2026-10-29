@@ -92,11 +92,20 @@ function buildTeacherPdf(v, schoolName, otherSchoolName) {
     const tableData = getTeacherPdfRows(v, schoolName, otherSchoolName);
     doc.autoTable({
         startY: 39,
-        head: [["Question", "Answer"]],
         body: tableData,
-        styles: { fontSize: 8.5, cellPadding: 1.8, overflow: "linebreak" },
-        headStyles: { fillColor: [40, 60, 90] },
-        columnStyles: { 0: { cellWidth: 68, fontStyle: "bold" } },
+        theme: 'grid',
+        styles: {
+            fontSize: 8.5,
+            cellPadding: 2,
+            overflow: "linebreak",
+            lineColor: [203, 213, 225],
+            lineWidth: 0.25,
+            textColor: [30, 41, 59]
+        },
+        columnStyles: {
+            0: { cellWidth: 70, fontStyle: "bold", fillColor: [248, 250, 252], textColor: [15, 23, 42] },
+            1: { cellWidth: 112, fillColor: [255, 255, 255] }
+        },
     });
 
     let y = doc.lastAutoTable.finalY + 10;
