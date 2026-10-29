@@ -2,6 +2,31 @@
 @section('title', 'Manage Teachers')
 
 @section('content')
+<style>
+    /* Filters Toggle Button Active State */
+    .filter-btn-open {
+        background-color: #0f172a !important;
+        color: #ffffff !important;
+        border-color: #0f172a !important;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25) !important;
+    }
+    .filter-btn-open:hover {
+        background-color: #1e293b !important;
+        border-color: #1e293b !important;
+        color: #ffffff !important;
+    }
+    .filter-btn-open * {
+        color: #ffffff !important;
+    }
+    .filter-btn-open svg {
+        stroke: #ffffff !important;
+        color: #ffffff !important;
+    }
+    .filter-btn-open #activeFiltersBadge {
+        background-color: #3b82f6 !important;
+        color: #ffffff !important;
+    }
+</style>
 <div class="space-y-6 animate-fade-in" x-data="confirmDelete">
 
     {{-- Gradient Header --}}
@@ -147,20 +172,52 @@
                        class="zems-input pl-12 h-[46px] w-full">
             </div>
             <div class="flex items-center gap-2 w-full sm:w-auto">
-                <button id="filtersToggleBtn" onclick="toggleFilters()" class="zems-btn-secondary h-[46px] flex-1 sm:flex-none uppercase tracking-wide text-xs relative flex items-center justify-center gap-2">
-                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
-                    <span>Filters</span>
-                    <span id="activeFiltersBadge" style="display:none;" class="flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-[10px] font-black text-white">0</span>
+                <button type="button" id="filtersToggleBtn" onclick="toggleFilters()" class="zems-btn-secondary h-[46px] px-4 flex-1 sm:flex-none uppercase tracking-wide text-xs relative flex items-center justify-center gap-2 font-bold transition-all duration-200" title="Toggle advanced filters">
+                    <svg id="filtersIcon" class="w-4 h-4 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
+                    </svg>
+                    <span id="filtersBtnText">Filters</span>
+                    <span id="activeFiltersBadge" style="display:none;" class="flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-[10px] font-black text-white shrink-0">0</span>
+                    <svg id="filtersChevron" class="w-3.5 h-3.5 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+                    </svg>
                 </button>
-                <button id="resetFiltersTopBtn" onclick="resetFilters()" style="display:none;" class="zems-btn-secondary h-[46px] text-rose-600 hover:text-rose-700 hover:bg-rose-50" title="Reset all filters">
-                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                <button type="button" id="resetFiltersTopBtn" onclick="resetFilters()" style="display:none;" class="zems-btn-secondary h-[46px] px-3 text-rose-600 hover:text-rose-700 hover:bg-rose-50 border-rose-200 transition" title="Reset all filters">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
                 </button>
             </div>
         </div>
 
         {{-- Advanced Filter Drawer --}}
-        <div id="advancedFilters" style="display:none;" class="pt-5 border-t border-slate-100 hidden-transition">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div id="advancedFilters" style="display:none;" class="pt-2">
+            <div class="bg-slate-50/90 border border-slate-200 rounded-2xl p-5 shadow-inner space-y-4">
+                {{-- Drawer Top Header Bar --}}
+                <div class="flex items-center justify-between pb-3 border-b border-slate-200/80 flex-wrap gap-2">
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center shadow-sm">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                        </div>
+                        <div>
+                            <span class="text-xs font-black uppercase tracking-wider text-slate-800">Advanced Filter Studio</span>
+                            <span class="ml-2 text-[10px] font-bold text-slate-500 bg-white border border-slate-200 px-2 py-0.5 rounded-full">10 Dimensions</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button type="button" onclick="resetFilters()" class="text-xs font-bold text-rose-600 hover:text-rose-700 bg-white hover:bg-rose-50 border border-slate-200 px-3 py-1.5 rounded-xl transition flex items-center gap-1.5 shadow-sm">
+                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            Clear All
+                        </button>
+                        <button type="button" onclick="toggleFilters(false)" class="text-xs font-bold text-slate-600 hover:text-slate-900 bg-white hover:bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-xl transition flex items-center gap-1 shadow-sm" title="Close filter panel">
+                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                            Close
+                        </button>
+                    </div>
+                </div>
+
+                {{-- Filter Options Grid --}}
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {{-- 1. Educational Division --}}
                 <div>
                     <label class="zems-input-label">Educational Division</label>
@@ -307,17 +364,18 @@
             </div>
 
             {{-- Filter Footer Actions --}}
-            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between flex-wrap gap-2">
-                <span class="text-xs text-slate-400 font-semibold flex items-center gap-1.5">
+            <div class="pt-3 border-t border-slate-200/70 flex items-center justify-between flex-wrap gap-2">
+                <span class="text-xs text-slate-500 font-semibold flex items-center gap-1.5">
                     <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    10 interactive filters ready
+                    10 interactive filters ready &bull; instant results
                 </span>
-                <button type="button" onclick="resetFilters()" class="text-xs font-bold text-rose-600 hover:text-rose-700 flex items-center gap-1.5 bg-rose-50 hover:bg-rose-100 px-3.5 py-1.5 rounded-xl transition">
+                <button type="button" onclick="resetFilters()" class="text-xs font-bold text-rose-600 hover:text-rose-700 flex items-center gap-1.5 bg-white hover:bg-rose-50 border border-slate-200 px-3.5 py-1.5 rounded-xl transition shadow-sm">
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-                    Clear All Filters
+                    Reset All Filters
                 </button>
             </div>
         </div>
+    </div>
 
         {{-- Dynamic Results & Active Filter Pills Bar --}}
         <div class="pt-2 flex items-center justify-between flex-wrap gap-3">
@@ -855,15 +913,23 @@ function setQuickFilter(type) {
     filterTeachers();
 }
 
-function toggleFilters() {
+function toggleFilters(forceState = null) {
     const filters = document.getElementById('advancedFilters');
     const btn = document.getElementById('filtersToggleBtn');
-    if (filters.style.display === 'none') {
-        filters.style.display = '';
-        btn.classList.add('!bg-slate-900', '!text-white', '!border-slate-900');
+    const chevron = document.getElementById('filtersChevron');
+    if (!filters || !btn) return;
+
+    const isCurrentlyOpen = (filters.style.display !== 'none');
+    const shouldOpen = forceState !== null ? forceState : !isCurrentlyOpen;
+
+    if (shouldOpen) {
+        filters.style.display = 'block';
+        btn.classList.add('filter-btn-open');
+        if (chevron) chevron.classList.add('rotate-180');
     } else {
         filters.style.display = 'none';
-        btn.classList.remove('!bg-slate-900', '!text-white', '!border-slate-900');
+        btn.classList.remove('filter-btn-open');
+        if (chevron) chevron.classList.remove('rotate-180');
     }
 }
 
