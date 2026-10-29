@@ -98,33 +98,3 @@ Route::middleware('auth')->group(function () {
     // Change Password (all roles)
     Route::post('/change-password', [\App\Http\Controllers\Auth\PasswordController::class, 'update'])->name('password.change');
 });
-
-// Setup & Initialize Super Admin
-Route::get('/init-super-admin', function () {
-    try {
-        \Illuminate\Support\Facades\DB::statement("ALTER TABLE `user` MODIFY COLUMN `role` ENUM('SUPER_ADMIN', 'ZONAL_ADMIN', 'SCHOOL_ADMIN', 'TEACHER') NOT NULL DEFAULT 'TEACHER'");
-
-        $user = \App\Models\User::updateOrCreate(
-            ['email' => 'superadmin@wilgamuwa.com'],
-            [
-                'id' => '01JMQZXK00000000000SUPERADM',
-                'name' => 'Super Administrator',
-                'password' => \Illuminate\Support\Facades\Hash::make('password123'),
-                'role' => 'SUPER_ADMIN',
-                'isActive' => 1,
-            ]
-        );
-
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Super Administrator role and user created successfully!',
-            'user' => [
-                'name' => $user->name,
-                'email' => $user->email,
-                'role' => $user->role,
-            ]
-        ]);
-    } catch (\Throwable $e) {
-        return response()->json(['error' => $e->getMessage()], 500);
-    }
-});
