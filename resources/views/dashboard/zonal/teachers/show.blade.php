@@ -16,7 +16,7 @@
         return $default;
     };
     $schoolName = $teacher->school ? $teacher->school->name : ($teacher->census_no ?: '-');
-    $otherSchoolName = $teacher->otherSchool ? $teacher->otherSchool->name : ($getVal('otherschool_name') ?: '-');
+    $otherSchoolName = $teacher->attached_institution_name ?: ($teacher->otherSchool ? $teacher->otherSchool->name : ($getVal('otherschool_name') ?: '-'));
 @endphp
 
 @section('content')
@@ -211,15 +211,18 @@
             </div>
         </div>
 
-        {{-- Section 07: Attachment to Another School --}}
+        {{-- Section 07: Attachment to Another School/Office/Institute --}}
         <div class="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm">
             <div class="flex items-center gap-3 mb-4 pb-3 border-b border-slate-100">
                 <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-600 text-xs font-bold text-white">07</span>
-                <h3 class="text-base font-bold text-slate-800">Attachment to Another School</h3>
+                <div>
+                    <h3 class="text-base font-bold text-slate-800">Attachment to Another School/Office/Institute</h3>
+                    <p class="text-xs text-slate-500 font-medium">Service sharing across Schools/Offices/Institutes in the Wilgamuwa Zone</p>
+                </div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-y-3 gap-x-6 text-sm">
-                <div><span class="text-slate-400 block text-xs font-semibold">Attached to Another School</span><span class="font-bold text-slate-800">{{ $teacher->otherschool ?: 'No' }}</span></div>
-                <div><span class="text-slate-400 block text-xs font-semibold">Attached School</span><span class="font-bold text-slate-800">{{ $otherSchoolName }}</span></div>
+                <div><span class="text-slate-400 block text-xs font-semibold">Attached to School / Office / Institute</span><span class="font-bold text-slate-800">{{ $teacher->otherschool ?: 'No' }}</span></div>
+                <div><span class="text-slate-400 block text-xs font-semibold">Attached Institution</span><span class="font-bold text-slate-800">{{ $otherSchoolName }}</span></div>
                 <div><span class="text-slate-400 block text-xs font-semibold">Days Worked</span><span class="font-bold text-slate-800">{{ implode(', ', array_filter(explode('|', (string)$teacher->otherschool_days))) ?: '-' }}</span></div>
             </div>
         </div>

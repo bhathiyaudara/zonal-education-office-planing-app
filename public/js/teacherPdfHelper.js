@@ -14,7 +14,22 @@ function subjFormat(v, p) {
     return parts.join(' | ');
 }
 
+const EDUCATIONAL_OFFICES_MAP = {
+    'OFFICE_ZEO': 'Zonal Education Office - Wilgamuwa',
+    'OFFICE_PDC': 'Professional Development Centre for Teachers (PDC)',
+    'OFFICE_DEO_WIL': 'Divisional Education Office - Wilgamuwa',
+    'OFFICE_DEO_PAL': 'Divisional Education Office - Pallegama',
+    'OFFICE_ITDLH': 'Information Technology and Distance Learning Hub (ITDLH)'
+};
+
 function getTeacherPdfRows(v, schoolName, otherSchoolName) {
+    let finalOtherSchool = otherSchoolName || v["otherschool_name"];
+    if (!finalOtherSchool && v["otherschool_census"]) {
+        finalOtherSchool = EDUCATIONAL_OFFICES_MAP[v["otherschool_census"]] || v["otherschool_census"];
+    } else if (v["otherschool_census"] && EDUCATIONAL_OFFICES_MAP[v["otherschool_census"]]) {
+        finalOtherSchool = EDUCATIONAL_OFFICES_MAP[v["otherschool_census"]];
+    }
+
     const r = [
         ["01. School Census No", v["census_no"]],
         ["02. Name of the School", schoolName || v["school_name"]],
@@ -53,8 +68,8 @@ function getTeacherPdfRows(v, schoolName, otherSchoolName) {
         ["30. Professional qualifications possessed", (v["profall"] || "").split("|").filter(Boolean).join("; ")],
         ["31. Appointed / assigned date to this school", v["schappoint"]],
         ["32. Mobile phone no", v["mobile"] || v["phone"]],
-        ["Attached to another school", v["otherschool"]],
-        ["Attached school", otherSchoolName || v["otherschool_name"]],
+        ["Attached to another school/office/institute", v["otherschool"]],
+        ["Attached school/office/institute", finalOtherSchool],
         ["Attached days", (v["otherschool_days"] || "").split("|").filter(Boolean).join(", ")],
     ];
 

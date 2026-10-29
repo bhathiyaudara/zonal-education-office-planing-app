@@ -18,8 +18,45 @@ class TeacherOptions
             } else {
                 self::$data = [];
             }
+            self::$data['educationalOffices'] = self::educationalOffices();
         }
         return self::$data;
+    }
+
+    public static function educationalOffices(): array
+    {
+        return [
+            'OFFICE_ZEO'     => 'Zonal Education Office - Wilgamuwa',
+            'OFFICE_PDC'     => 'Professional Development Centre for Teachers (PDC)',
+            'OFFICE_DEO_WIL' => 'Divisional Education Office - Wilgamuwa',
+            'OFFICE_DEO_PAL' => 'Divisional Education Office - Pallegama',
+            'OFFICE_ITDLH'   => 'Information Technology and Distance Learning Hub (ITDLH)',
+        ];
+    }
+
+    public static function institutionName(?string $censusOrCode): string
+    {
+        if (!$censusOrCode) {
+            return '';
+        }
+        $offices = self::educationalOffices();
+        if (isset($offices[$censusOrCode])) {
+            return $offices[$censusOrCode];
+        }
+        try {
+            $school = \App\Models\School::where('censusNo', $censusOrCode)->first();
+            if ($school) {
+                return $school->name;
+            }
+        } catch (\Throwable $e) {
+            // Fallback to JSON options if database is not reachable
+        }
+        foreach (self::schools() as $s) {
+            if (($s['censusNo'] ?? '') === $censusOrCode) {
+                return $s['name'] ?? $censusOrCode;
+            }
+        }
+        return $censusOrCode;
     }
 
     public static function get(string $key, array $default = []): array

@@ -71,6 +71,14 @@ class Teacher extends Model
         return $this->belongsTo(School::class, 'otherschool_census', 'censusNo');
     }
 
+    public function getAttachedInstitutionNameAttribute(): string
+    {
+        if (!$this->otherschool_census) {
+            return '';
+        }
+        return \App\Services\TeacherOptions::institutionName($this->otherschool_census);
+    }
+
     public function spouseSchool()
     {
         return $this->belongsTo(School::class, 'spouseSchoolId');

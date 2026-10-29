@@ -71,22 +71,9 @@ class TeacherFormController extends Controller
             }
         }
 
-        // Other school lookup
+        // Other school/office/institute lookup
         $otherSchoolCensus = $request->input('otherschool_census');
-        $otherSchoolName = '';
-        if ($otherSchoolCensus) {
-            $otherSc = School::where('censusNo', $otherSchoolCensus)->first();
-            if ($otherSc) {
-                $otherSchoolName = $otherSc->name;
-            } else {
-                foreach (TeacherOptions::schools() as $s) {
-                    if ($s['censusNo'] === $otherSchoolCensus) {
-                        $otherSchoolName = $s['name'];
-                        break;
-                    }
-                }
-            }
-        }
+        $otherSchoolName = $otherSchoolCensus ? TeacherOptions::institutionName($otherSchoolCensus) : '';
 
         // Prepare profall
         $profall = $request->input('profall');

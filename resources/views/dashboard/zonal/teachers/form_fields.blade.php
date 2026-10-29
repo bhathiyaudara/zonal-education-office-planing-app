@@ -481,12 +481,19 @@
             <div class="grid gap-4 sm:grid-cols-2">
                 <div>
                     <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">24. First Most Work Involved</label>
-                    <select name="mainduty" class="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-2.5 text-sm font-medium text-slate-800 transition focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-blue-500/10">
+                    <select name="mainduty" id="mainduty_select" class="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-2.5 text-sm font-medium text-slate-800 transition focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-blue-500/10">
                         <option value="">— Select —</option>
                         @foreach($options['q24fmostwork'] ?? [] as $opt)
                             <option value="{{ $opt }}" {{ $v('mainduty') == $opt ? 'selected' : '' }}>{{ $opt }}</option>
                         @endforeach
                     </select>
+                    <div id="q24_attached_hint" class="hidden mt-2 rounded-xl bg-blue-50 border border-blue-200 p-2.5 text-xs text-blue-800 flex items-center justify-between">
+                        <div class="flex items-center gap-1.5">
+                            <svg class="h-4 w-4 text-blue-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <span>Marked as attached/released — please specify destination in <strong>Section 07</strong> below.</span>
+                        </div>
+                        <a href="#section_attachment" class="ml-2 font-bold text-blue-700 underline hover:text-blue-900 shrink-0">Section 07 &darr;</a>
+                    </div>
                 </div>
                 <div>
                     <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">First Most Work (Specify if Other)</label>
@@ -701,51 +708,78 @@
         </div>
     </div>
 
-    {{-- Section 07: Attachment to Another School --}}
-    <div class="rounded-2xl border border-slate-200/80 bg-white p-6 md:p-8 shadow-sm">
-        <div class="mb-6 flex items-center gap-3 border-b border-slate-100 pb-4">
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600 text-sm font-black text-white shadow-md shadow-blue-500/20">07</span>
-            <div>
-                <h2 class="text-xl font-black text-slate-800">Attachment to Another School</h2>
-                <p class="text-xs text-slate-500">Service sharing across schools in the Wilgamuwa Zone</p>
+    {{-- Section 07: Attachment to Another School/Office/Institute --}}
+    <div id="section_attachment" class="rounded-2xl border border-slate-200/80 bg-white p-6 md:p-8 shadow-sm transition-all duration-300">
+        <div class="mb-6 flex items-start justify-between border-b border-slate-100 pb-4 gap-4 flex-wrap">
+            <div class="flex items-center gap-3">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600 text-sm font-black text-white shadow-md shadow-blue-500/20">07</span>
+                <div>
+                    <h2 class="text-xl font-black text-slate-800">Attachment to Another School/Office/Institute</h2>
+                    <p class="text-xs text-slate-500 font-medium">(Service sharing across Schools/Offices/Institutes in the Wilgamuwa Zone)</p>
+                </div>
+            </div>
+            <div id="q24_attached_badge" class="hidden items-center gap-1.5 rounded-xl bg-amber-50 border border-amber-300 px-3 py-1.5 text-xs font-bold text-amber-800">
+                <svg class="h-4 w-4 text-amber-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Required by Q24 (91 - Attached/released to other Office/Institute)</span>
             </div>
         </div>
 
         <div class="grid gap-5 sm:grid-cols-2">
             <div class="sm:col-span-2">
-                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Is this teacher attached to any other school?</label>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Is this teacher attached/released to another school, office, or institute?</label>
                 <select name="otherschool" id="otherschool_select" class="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-4 py-2.5 text-sm font-medium text-slate-800 transition focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-blue-500/10">
                     <option value="">— Select —</option>
                     <option value="No" {{ $v('otherschool') == 'No' ? 'selected' : '' }}>No</option>
-                    <option value="Yes — full time at another school" {{ $v('otherschool') == 'Yes — full time at another school' ? 'selected' : '' }}>Yes — full time at another school</option>
-                    <option value="Yes — on specific days of the week" {{ $v('otherschool') == 'Yes — on specific days of the week' ? 'selected' : '' }}>Yes — on specific days of the week</option>
+                    <option value="Yes — full time at another school" {{ (str_starts_with((string)$v('otherschool'), 'Yes — full time') || $v('otherschool') == 'Yes') ? 'selected' : '' }}>Yes — full time at another school / office / institute</option>
+                    <option value="Yes — on specific days of the week" {{ str_starts_with((string)$v('otherschool'), 'Yes — on specific days') ? 'selected' : '' }}>Yes — on specific days of the week</option>
                 </select>
             </div>
 
             <div id="otherschool_details" class="sm:col-span-2 space-y-4 rounded-xl bg-slate-50 p-5 border border-slate-200 {{ str_starts_with((string)$v('otherschool'), 'Yes') ? '' : 'hidden' }}">
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Which other school is the teacher attached to?</label>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Which School / Educational Office / Institute is the teacher attached to? <span class="text-rose-500">*</span></label>
                     <select name="otherschool_census" id="otherschool_census_select" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-medium text-slate-800 transition focus:border-blue-500 focus:outline-none">
-                        <option value="">— Select School —</option>
-                        @foreach($options['schools'] ?? [] as $s)
-                            <option value="{{ $s['censusNo'] }}" {{ $v('otherschool_census') == $s['censusNo'] ? 'selected' : '' }}>
-                                {{ $s['name'] }} ({{ $s['censusNo'] }})
+                        <option value="">— Select School, Educational Office or Institute —</option>
+                        
+                        <optgroup label="Educational Offices / Institutes in Wilgamuwa Zone">
+                            <option value="OFFICE_ZEO" {{ $v('otherschool_census') == 'OFFICE_ZEO' ? 'selected' : '' }}>
+                                Zonal Education Office - Wilgamuwa
                             </option>
-                        @endforeach
+                            <option value="OFFICE_PDC" {{ $v('otherschool_census') == 'OFFICE_PDC' ? 'selected' : '' }}>
+                                Professional Development Centre for Teachers (PDC)
+                            </option>
+                            <option value="OFFICE_DEO_WIL" {{ $v('otherschool_census') == 'OFFICE_DEO_WIL' ? 'selected' : '' }}>
+                                Divisional Education Office - Wilgamuwa
+                            </option>
+                            <option value="OFFICE_DEO_PAL" {{ $v('otherschool_census') == 'OFFICE_DEO_PAL' ? 'selected' : '' }}>
+                                Divisional Education Office - Pallegama
+                            </option>
+                            <option value="OFFICE_ITDLH" {{ $v('otherschool_census') == 'OFFICE_ITDLH' ? 'selected' : '' }}>
+                                Information Technology and Distance Learning Hub (ITDLH)
+                            </option>
+                        </optgroup>
+
+                        <optgroup label="Schools in Wilgamuwa Zone">
+                            @foreach($options['schools'] ?? [] as $s)
+                                <option value="{{ $s['censusNo'] }}" {{ $v('otherschool_census') == $s['censusNo'] ? 'selected' : '' }}>
+                                    {{ $s['name'] }} ({{ $s['censusNo'] }})
+                                </option>
+                            @endforeach
+                        </optgroup>
                     </select>
                 </div>
 
-                {{-- Attached School Info Card --}}
+                {{-- Attached Destination Overview Card --}}
                 <div id="otherschool-info-card" class="hidden rounded-xl border border-slate-200 bg-white p-4">
                     <div class="flex items-center gap-2 mb-2 text-xs font-bold uppercase tracking-wider text-slate-700">
                         <svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span>Attached School Overview</span>
+                        <span>Attached Destination Overview</span>
                     </div>
                     <div id="otherschool-info-grid" class="grid gap-x-6 gap-y-1.5 text-xs text-slate-700 sm:grid-cols-3"></div>
                 </div>
 
-                <div id="otherschool_days_box" class="{{ $v('otherschool') == 'Yes — on specific days of the week' ? '' : 'hidden' }}">
-                    <span class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Days Worked at the Other School</span>
+                <div id="otherschool_days_box" class="{{ str_starts_with((string)$v('otherschool'), 'Yes — on specific days') ? '' : 'hidden' }}">
+                    <span class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Days Worked at the Other School/Office/Institute</span>
                     <div class="grid gap-2 sm:grid-cols-4">
                         @foreach(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] as $d)
                             <label class="flex items-center gap-2 text-xs font-medium text-slate-700">
@@ -803,7 +837,34 @@
             }
         }
 
-        // Other school
+        // Destination overview (schools & offices)
+        const educationalOffices = {
+            'OFFICE_ZEO': { name: 'Zonal Education Office - Wilgamuwa', type: 'Zonal Educational Administration', location: 'Wilgamuwa' },
+            'OFFICE_PDC': { name: 'Professional Development Centre for Teachers (PDC)', type: 'Teacher Training & Professional Development', location: 'Wilgamuwa Zone' },
+            'OFFICE_DEO_WIL': { name: 'Divisional Education Office - Wilgamuwa', type: 'Divisional Educational Administration', location: 'Wilgamuwa' },
+            'OFFICE_DEO_PAL': { name: 'Divisional Education Office - Pallegama', type: 'Divisional Educational Administration', location: 'Pallegama' },
+            'OFFICE_ITDLH': { name: 'Information Technology and Distance Learning Hub (ITDLH)', type: 'ICT Education & Distance Learning', location: 'Wilgamuwa Zone' }
+        };
+
+        function updateDestinationCard(census, card, grid) {
+            if (!census) {
+                card.classList.add('hidden');
+                return;
+            }
+            if (educationalOffices[census]) {
+                const off = educationalOffices[census];
+                grid.innerHTML = `
+                    <div><span class="text-slate-400 font-semibold">Destination:</span> <span class="font-bold text-blue-700">${off.name}</span></div>
+                    <div><span class="text-slate-400 font-semibold">Type:</span> <span class="font-medium text-slate-800">${off.type}</span></div>
+                    <div><span class="text-slate-400 font-semibold">Location:</span> <span class="font-medium text-slate-800">${off.location}</span></div>
+                `;
+                card.classList.remove('hidden');
+                return;
+            }
+            updateSchoolCard(census, card, grid);
+        }
+
+        // Other school/office/institute
         const otherSelect = document.getElementById('otherschool_select');
         const otherBox = document.getElementById('otherschool_details');
         const otherDaysBox = document.getElementById('otherschool_days_box');
@@ -829,10 +890,61 @@
         }
 
         if (otherCensusSelect) {
-            otherCensusSelect.addEventListener('change', () => updateSchoolCard(otherCensusSelect.value, otherInfoCard, otherInfoGrid));
+            otherCensusSelect.addEventListener('change', () => updateDestinationCard(otherCensusSelect.value, otherInfoCard, otherInfoGrid));
             if (otherCensusSelect.value) {
-                updateSchoolCard(otherCensusSelect.value, otherInfoCard, otherInfoGrid);
+                updateDestinationCard(otherCensusSelect.value, otherInfoCard, otherInfoGrid);
             }
+        }
+
+        // Auto trigger Section 07 when Q24 is "91 - Attached/released to other Office/Institute"
+        const mainDutySelect = document.getElementById('mainduty_select');
+        const q24Hint = document.getElementById('q24_attached_hint');
+        const q24Badge = document.getElementById('q24_attached_badge');
+        const sectionAttachment = document.getElementById('section_attachment');
+
+        function handleQ24Attachment(userTriggered = false) {
+            if (!mainDutySelect) return;
+            const val = (mainDutySelect.value || '').trim();
+            const is91Attached = val.startsWith('91') || val.toLowerCase().includes('attached/released');
+
+            if (is91Attached) {
+                if (q24Hint) q24Hint.classList.remove('hidden');
+                if (q24Badge) {
+                    q24Badge.classList.remove('hidden');
+                    q24Badge.classList.add('flex');
+                }
+
+                // If Section 07 attachment select is not already set to Yes, set it automatically
+                if (otherSelect && (!otherSelect.value || otherSelect.value === 'No')) {
+                    otherSelect.value = 'Yes — full time at another school';
+                }
+                if (otherBox) {
+                    otherBox.classList.remove('hidden');
+                }
+
+                if (userTriggered && sectionAttachment) {
+                    sectionAttachment.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    sectionAttachment.classList.add('ring-2', 'ring-blue-500', 'bg-blue-50/20');
+                    setTimeout(() => {
+                        sectionAttachment.classList.remove('ring-2', 'ring-blue-500', 'bg-blue-50/20');
+                    }, 2500);
+                    if (otherCensusSelect && !otherCensusSelect.value) {
+                        otherCensusSelect.focus();
+                    }
+                }
+            } else {
+                if (q24Hint) q24Hint.classList.add('hidden');
+                if (q24Badge) {
+                    q24Badge.classList.add('hidden');
+                    q24Badge.classList.remove('flex');
+                }
+            }
+        }
+
+        if (mainDutySelect) {
+            mainDutySelect.addEventListener('change', () => handleQ24Attachment(true));
+            // Check immediately on initial load
+            handleQ24Attachment(false);
         }
 
         // Principal notice auto-check
