@@ -97,6 +97,16 @@ class School extends Model
         return 'bg-slate-50 text-slate-700 border-slate-200';
     }
 
+    public function getMaleTeachersCountAttribute(): int
+    {
+        return $this->teachers->filter(fn($t) => $t->is_male)->count();
+    }
+
+    public function getFemaleTeachersCountAttribute(): int
+    {
+        return $this->teachers->filter(fn($t) => $t->is_female)->count();
+    }
+
     protected static function boot()
     {
         parent::boot();

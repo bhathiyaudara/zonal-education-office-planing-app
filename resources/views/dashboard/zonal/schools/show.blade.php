@@ -196,11 +196,11 @@
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div class="p-3 bg-blue-50 rounded-xl text-center">
-                        <p class="text-lg font-black text-blue-600">{{ $school->teachers->where('gender', 'Male')->count() }}</p>
+                        <p class="text-lg font-black text-blue-600">{{ $school->male_teachers_count }}</p>
                         <p class="text-[10px] font-bold uppercase text-blue-500">Male</p>
                     </div>
                     <div class="p-3 bg-pink-50 rounded-xl text-center">
-                        <p class="text-lg font-black text-pink-600">{{ $school->teachers->where('gender', 'Female')->count() }}</p>
+                        <p class="text-lg font-black text-pink-600">{{ $school->female_teachers_count }}</p>
                         <p class="text-[10px] font-bold uppercase text-pink-500">Female</p>
                     </div>
                 </div>
@@ -352,7 +352,7 @@
                     <tr class="hover:bg-slate-50 transition-colors">
                         <td class="px-6 py-4">
                             <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold {{ $teacher->gender === 'Male' ? 'bg-blue-100 text-blue-600' : 'bg-pink-100 text-pink-600' }}">
+                                <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold {{ $teacher->is_male ? 'bg-blue-100 text-blue-600' : ($teacher->is_female ? 'bg-pink-100 text-pink-600' : 'bg-slate-100 text-slate-600') }}">
                                     {{ substr($teacher->fullName ?: $teacher->nameWithInitials, 0, 1) }}
                                 </div>
                                 <p class="text-sm font-bold text-slate-900">{{ $teacher->fullName ?: $teacher->nameWithInitials }}</p>

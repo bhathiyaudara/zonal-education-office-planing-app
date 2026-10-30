@@ -266,4 +266,56 @@ class SchoolExtendedFieldsTest extends TestCase
         $response->assertOk();
         $response->assertSee('Kamal Perera');
     }
+
+    public function test_school_show_staff_overview_male_and_female_counts_with_coded_genders(): void
+    {
+        $this->signInZonalAdmin();
+
+        $school = School::create([
+            'id' => 'sch-gender-test',
+            'name' => 'Gender Test School',
+            'censusNo' => '09999',
+        ]);
+
+        \App\Models\Teacher::create([
+            'id' => 't-male-1',
+            'schoolId' => $school->id,
+            'fullName' => 'Male Teacher 1',
+            'nic' => '199011111111',
+            'gender' => '1 - Male',
+        ]);
+
+        \App\Models\Teacher::create([
+            'id' => 't-male-2',
+            'schoolId' => $school->id,
+            'fullName' => 'Male Teacher 2',
+            'nic' => '199022222222',
+            'gender' => 'Male',
+        ]);
+
+        \App\Models\Teacher::create([
+            'id' => 't-female-1',
+            'schoolId' => $school->id,
+            'fullName' => 'Female Teacher 1',
+            'nic' => '199033333333',
+            'gender' => '2 - Female',
+        ]);
+
+        \App\Models\Teacher::create([
+            'id' => 't-female-2',
+            'schoolId' => $school->id,
+            'fullName' => 'Female Teacher 2',
+            'nic' => '199044444444',
+            'gender' => 'Female',
+        ]);
+
+        $this->assertEquals(2, $school->fresh()->male_teachers_count);
+        $this->assertEquals(2, $school->fresh()->female_teachers_count);
+
+        $response = $this->get(route('zonal.schools.show', $school->id));
+        $response->assertOk();
+        $response->assertSee('Staff Overview');
+        $response->assertSee('bg-blue-100 text-blue-600', false);
+        $response->assertSee('bg-pink-100 text-pink-600', false);
+    }
 }

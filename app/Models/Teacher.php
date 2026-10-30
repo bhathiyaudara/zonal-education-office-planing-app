@@ -216,6 +216,29 @@ class Teacher extends Model
         }
     }
 
+    public function getIsMaleAttribute(): bool
+    {
+        $g = (string) ($this->gender ?? '');
+        return stripos($g, 'Male') !== false && stripos($g, 'Female') === false;
+    }
+
+    public function getIsFemaleAttribute(): bool
+    {
+        $g = (string) ($this->gender ?? '');
+        return stripos($g, 'Female') !== false;
+    }
+
+    public function getGenderLabelAttribute(): string
+    {
+        if ($this->is_female) {
+            return 'Female';
+        }
+        if ($this->is_male) {
+            return 'Male';
+        }
+        return (string) ($this->gender ?? '');
+    }
+
     /**
      * Check if a position title represents a School Principal or Acting Principal.
      */
