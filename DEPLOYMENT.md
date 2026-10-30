@@ -1,4 +1,17 @@
 # ZEMS Laravel Deployment Guide
+
+## Updating the building forms
+
+Deploy the building views, both building controllers, and the compiled Vite assets together. Pushing to GitHub alone does not update the Plesk installation unless a deployment hook is configured.
+
+1. Run `npm ci` and `npm run build` in the checkout being deployed.
+2. Upload both `resources/views/dashboard/{zonal,school}/buildings/index.blade.php` views and both `app/Http/Controllers/{Zonal,School}/BuildingController.php` controllers to the Laravel application root.
+3. Upload the generated `public/build/assets/` files first, then `public/build/manifest.json`. Keep older asset files until the updated manifest is in place.
+4. Run `php artisan view:clear` on the server, then reload the buildings page.
+5. Open Add Building, click the building-name field, and enter text. Confirm the form appears above the header/sidebar and that Cancel and Escape close it.
+
+The earlier teleported form used the Tailwind `z-[70]` class. Production's `app-BBBnx37r.css` did not contain that rule, so the form appeared behind the page and its controls could not be clicked. The current native dialog avoids that stacking dependency, but its updated templates and compiled layout styles still need to be deployed together. Backend tests alone cannot verify which templates or CSS the live server is serving.
+
 ## Deploy to growmusicians.com (Shared Hosting / cPanel)
 
 ---
