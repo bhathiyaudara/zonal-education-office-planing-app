@@ -325,9 +325,9 @@
 
     {{-- Physical Infrastructure & Buildings Section --}}
     <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-        <div class="px-6 py-4 border-b border-slate-100 bg-slate-50 flex justify-between items-center flex-wrap gap-2">
-            <div class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="p-4 sm:px-6 sm:py-4 border-b border-slate-100 bg-slate-50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+            <div class="flex items-center gap-2 flex-wrap">
+                <svg class="w-4 h-4 text-blue-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                 </svg>
                 <h3 class="text-sm font-bold text-slate-900">Physical Infrastructure & Buildings ({{ $school->buildings->count() }})</h3>
@@ -337,12 +337,12 @@
                 </span>
                 @endif
             </div>
-            <a href="{{ route('zonal.buildings', ['school_id' => $school->id]) }}" class="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1 bg-blue-50 px-3 py-1.5 rounded-lg border border-blue-100 transition">
+            <a href="{{ route('zonal.buildings', ['school_id' => $school->id]) }}" class="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1 bg-blue-50 px-3 py-1.5 rounded-lg border border-blue-100 transition w-full sm:w-auto justify-center">
                 <span>Manage in Building Studio &rarr;</span>
             </a>
         </div>
         <div class="overflow-x-auto">
-            <table class="min-w-full divide-y divide-slate-200">
+            <table class="min-w-[640px] w-full divide-y divide-slate-200">
                 <thead class="bg-slate-50">
                     <tr>
                         <th class="px-6 py-3 text-left text-[10px] font-black text-slate-500 uppercase tracking-wider">Building Name</th>
