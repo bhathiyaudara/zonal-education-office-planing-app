@@ -46,6 +46,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/schools', [Zonal\SchoolController::class, 'store'])->name('zonal.schools.store');
         Route::get('/schools/student-overview', [Zonal\SchoolController::class, 'studentOverview'])->name('zonal.schools.students');
         Route::match(['get', 'post'], '/schools/student-overview/export', [Zonal\SchoolController::class, 'exportStudentOverview'])->name('zonal.schools.students.export');
+        Route::post('/schools/subject-statistics', [Zonal\SchoolController::class, 'saveSubjectStatistic'])->name('zonal.schools.subject-statistics.save');
+        Route::delete('/schools/subject-statistics', [Zonal\SchoolController::class, 'deleteSubjectStatistic'])->name('zonal.schools.subject-statistics.delete');
         Route::get('/schools/remove', [Zonal\SchoolController::class, 'removeForm'])->name('zonal.schools.remove');
         Route::get('/schools/{id}', [Zonal\SchoolController::class, 'show'])->name('zonal.schools.show');
         Route::put('/schools/{id}', [Zonal\SchoolController::class, 'update'])->name('zonal.schools.update');

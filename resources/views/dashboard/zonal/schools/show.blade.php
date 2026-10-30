@@ -376,6 +376,17 @@
 
         {{-- TAB 2: O/L Subjects (Grades 10 & 11) --}}
         <div x-show="studentTab === 'ol'" style="display: none;">
+            <div class="px-6 py-3.5 bg-slate-50 border-b border-slate-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                <div>
+                    <h4 class="text-xs font-black uppercase tracking-wider text-slate-700">G.C.E. O/L Basket Subjects (Grades 10 & 11)</h4>
+                    <p class="text-xs text-slate-500">Student enrollments in Grade 10 & 11 optional basket subjects</p>
+                </div>
+                <button type="button" @click="openAddSubjectModal('OL')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-sm transition">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    <span>+ Add O/L Subject</span>
+                </button>
+            </div>
+
             @if(!empty($schoolSubjects['ol_subjects']))
                 @php
                     $olGr10Total = array_sum(array_map(fn($s) => $s['grade_10']['total'], $schoolSubjects['ol_subjects']));
@@ -416,6 +427,7 @@
                                 <th class="px-4 py-3 text-center text-[10px] font-black text-blue-600 uppercase tracking-wider" colspan="3">Grade 10</th>
                                 <th class="px-4 py-3 text-center text-[10px] font-black text-indigo-600 uppercase tracking-wider" colspan="3">Grade 11</th>
                                 <th class="px-4 py-3 text-center text-[10px] font-black text-emerald-600 uppercase tracking-wider" colspan="3">Total Enrolled</th>
+                                <th class="px-3 py-3 text-center text-[10px] font-black text-slate-500 uppercase tracking-wider">Action</th>
                             </tr>
                             <tr class="bg-slate-100/60 text-[10px] font-bold text-slate-500 border-t border-slate-200">
                                 <th colspan="2"></th>
@@ -428,6 +440,7 @@
                                 <th class="px-2 py-1 text-center text-blue-600">Male</th>
                                 <th class="px-2 py-1 text-center text-pink-600">Female</th>
                                 <th class="px-2 py-1 text-center font-black text-emerald-700">Total</th>
+                                <th class="px-2 py-1"></th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-slate-100">
@@ -451,6 +464,11 @@
                                             {{ $s['all']['total'] }}
                                         </span>
                                     </td>
+                                    <td class="px-3 py-3 text-center">
+                                        <button type="button" @click="openEditModal('OL', @js($s['subject']), {{ $s['grade_10']['male'] }}, {{ $s['grade_10']['female'] }}, {{ $s['grade_11']['male'] }}, {{ $s['grade_11']['female'] }})" class="p-1.5 rounded-lg text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition" title="Edit student count">
+                                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                                        </button>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -462,13 +480,36 @@
                         <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
                     </div>
                     <h4 class="text-base font-bold text-slate-700">No O/L Optional Subjects Recorded</h4>
-                    <p class="text-sm text-slate-500 max-w-md mx-auto mt-1">This school is categorized as a primary or junior school without Grades 10–11 basket subject offerings in the census.</p>
+                    <p class="text-sm text-slate-500 max-w-md mx-auto mt-1">This school currently has no Grades 10–11 basket subject offerings recorded.</p>
+                    <div class="mt-4">
+                        <button type="button" @click="openAddSubjectModal('OL')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-sm transition">
+                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                            <span>+ Add O/L Subject to School</span>
+                        </button>
+                    </div>
                 </div>
             @endif
         </div>
 
         {{-- TAB 3: A/L Subjects & Streams (Grades 12 & 13) --}}
         <div x-show="studentTab === 'al'" style="display: none;">
+            <div class="px-6 py-3.5 bg-slate-50 border-b border-slate-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                <div>
+                    <h4 class="text-xs font-black uppercase tracking-wider text-purple-700">G.C.E. A/L Collegiate Streams & Subjects (Grades 12 & 13)</h4>
+                    <p class="text-xs text-slate-500">Collegiate stream distribution and taught subjects</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button type="button" @click="openAddSubjectModal('STREAM')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold shadow-sm transition">
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                        <span>+ Add Stream</span>
+                    </button>
+                    <button type="button" @click="openAddSubjectModal('AL')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-sm transition">
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                        <span>+ Add A/L Subject</span>
+                    </button>
+                </div>
+            </div>
+
             @if(!empty($schoolSubjects['al_streams']) || !empty($schoolSubjects['al_subjects']))
                 {{-- Stream Distribution Cards --}}
                 @if(!empty($schoolSubjects['al_streams']))
@@ -479,7 +520,12 @@
                                 <div class="bg-white rounded-xl p-4 border border-purple-200 shadow-sm hover:shadow-md transition-shadow">
                                     <div class="flex items-center justify-between">
                                         <span class="text-xs font-bold text-purple-700 uppercase tracking-wider">{{ $st['stream_en'] }}</span>
-                                        <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-purple-100 text-purple-800">{{ $st['all']['total'] }} Students</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-purple-100 text-purple-800">{{ $st['all']['total'] }} Students</span>
+                                            <button type="button" @click="openEditModal('STREAM', @js($st['stream']), {{ $st['grade_12']['male'] }}, {{ $st['grade_12']['female'] }}, {{ $st['grade_13']['male'] }}, {{ $st['grade_13']['female'] }})" class="p-1 rounded text-purple-400 hover:text-purple-700 hover:bg-purple-50 transition" title="Edit stream counts">
+                                                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                                            </button>
+                                        </div>
                                     </div>
                                     <p class="text-sm font-semibold text-slate-800 mt-1">{{ $st['stream'] }}</p>
                                     <div class="mt-3 pt-3 border-t border-slate-100 grid grid-cols-2 gap-2 text-xs">
@@ -511,6 +557,7 @@
                                     <th class="px-4 py-3 text-center text-[10px] font-black text-blue-600 uppercase tracking-wider" colspan="3">Grade 12</th>
                                     <th class="px-4 py-3 text-center text-[10px] font-black text-indigo-600 uppercase tracking-wider" colspan="3">Grade 13</th>
                                     <th class="px-4 py-3 text-center text-[10px] font-black text-purple-600 uppercase tracking-wider" colspan="3">Total Enrolled</th>
+                                    <th class="px-3 py-3 text-center text-[10px] font-black text-slate-500 uppercase tracking-wider">Action</th>
                                 </tr>
                                 <tr class="bg-slate-100/60 text-[10px] font-bold text-slate-500 border-t border-slate-200">
                                     <th colspan="2"></th>
@@ -523,6 +570,7 @@
                                     <th class="px-2 py-1 text-center text-blue-600">Male</th>
                                     <th class="px-2 py-1 text-center text-pink-600">Female</th>
                                     <th class="px-2 py-1 text-center font-black text-purple-700">Total</th>
+                                    <th class="px-2 py-1"></th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-slate-100">
@@ -546,6 +594,11 @@
                                                 {{ $s['all']['total'] }}
                                             </span>
                                         </td>
+                                        <td class="px-3 py-3 text-center">
+                                            <button type="button" @click="openEditModal('AL', @js($s['subject']), {{ $s['grade_12']['male'] }}, {{ $s['grade_12']['female'] }}, {{ $s['grade_13']['male'] }}, {{ $s['grade_13']['female'] }})" class="p-1.5 rounded-lg text-slate-400 hover:text-purple-600 hover:bg-purple-50 transition" title="Edit student count">
+                                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                                            </button>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -558,7 +611,17 @@
                         <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
                     </div>
                     <h4 class="text-base font-bold text-slate-700">No G.C.E. A/L Streams Offered</h4>
-                    <p class="text-sm text-slate-500 max-w-md mx-auto mt-1">This school does not offer collegiate classes (Grades 12 & 13 1AB / 1C streams).</p>
+                    <p class="text-sm text-slate-500 max-w-md mx-auto mt-1">This school does not have recorded collegiate classes (Grades 12 & 13 1AB / 1C streams).</p>
+                    <div class="mt-4 flex items-center justify-center gap-2">
+                        <button type="button" @click="openAddSubjectModal('STREAM')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold shadow-sm transition">
+                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                            <span>+ Add Stream to School</span>
+                        </button>
+                        <button type="button" @click="openAddSubjectModal('AL')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-sm transition">
+                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                            <span>+ Add A/L Subject to School</span>
+                        </button>
+                    </div>
                 </div>
             @endif
         </div>
@@ -687,6 +750,151 @@
                     @endforelse
                 </tbody>
             </table>
+        </div>
+    </div>
+
+    {{-- Add / Edit Subject & Stream Modal --}}
+    <div x-show="showModal" style="display: none;" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" @click="showModal = false"></div>
+        <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg p-6 border border-slate-200">
+                <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-9 h-9 rounded-xl flex items-center justify-center"
+                             :class="modalData.level === 'OL' ? 'bg-blue-100 text-blue-600' : (modalData.level === 'STREAM' ? 'bg-purple-100 text-purple-600' : 'bg-indigo-100 text-indigo-600')">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-slate-900">
+                                <span x-text="modalData.level === 'STREAM' ? 'Collegiate Stream Record' : (modalData.level === 'OL' ? 'O/L Subject Statistics' : 'A/L Subject Statistics')"></span>
+                            </h3>
+                            <p class="text-xs text-slate-500">{{ $school->name }} (#{{ $school->censusNo }})</p>
+                        </div>
+                    </div>
+                    <button type="button" @click="showModal = false" class="p-1 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+
+                {{-- Alert Messages --}}
+                <div x-show="modalErrorMsg" class="mt-3 p-3 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700 font-semibold" x-text="modalErrorMsg"></div>
+                <div x-show="modalSuccessMsg" class="mt-3 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-700 font-semibold" x-text="modalSuccessMsg"></div>
+
+                <div class="mt-4 space-y-4">
+                    {{-- Level Selector --}}
+                    <div>
+                        <label class="block text-[11px] font-black uppercase tracking-wider text-slate-500 mb-1">Education Level / Category</label>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button type="button" @click="modalData.level = 'OL'"
+                                    :class="modalData.level === 'OL' ? 'bg-blue-50 border-blue-500 text-blue-700 font-bold' : 'border-slate-200 text-slate-600 hover:bg-slate-50'"
+                                    class="py-2 px-3 text-xs rounded-xl border text-center transition">
+                                O/L (Gr. 10 & 11)
+                            </button>
+                            <button type="button" @click="modalData.level = 'AL'"
+                                    :class="modalData.level === 'AL' ? 'bg-indigo-50 border-indigo-500 text-indigo-700 font-bold' : 'border-slate-200 text-slate-600 hover:bg-slate-50'"
+                                    class="py-2 px-3 text-xs rounded-xl border text-center transition">
+                                A/L Subject
+                            </button>
+                            <button type="button" @click="modalData.level = 'STREAM'"
+                                    :class="modalData.level === 'STREAM' ? 'bg-purple-50 border-purple-500 text-purple-700 font-bold' : 'border-slate-200 text-slate-600 hover:bg-slate-50'"
+                                    class="py-2 px-3 text-xs rounded-xl border text-center transition">
+                                A/L Stream
+                            </button>
+                        </div>
+                    </div>
+
+                    {{-- Subject / Stream Select --}}
+                    <div>
+                        <div class="flex items-center justify-between mb-1">
+                            <label class="block text-[11px] font-black uppercase tracking-wider text-slate-500"
+                                   x-text="modalData.level === 'STREAM' ? 'Collegiate Stream' : 'Subject Name'"></label>
+                            <button type="button" @click="modalData.isCustomSubject = !modalData.isCustomSubject" class="text-[11px] text-indigo-600 hover:underline font-bold">
+                                <span x-text="modalData.isCustomSubject ? 'Pick from List' : '+ Enter Custom Subject'"></span>
+                            </button>
+                        </div>
+
+                        <div x-show="!modalData.isCustomSubject">
+                            <template x-if="modalData.level === 'OL'">
+                                <select x-model="modalData.subject" class="w-full border border-slate-300 rounded-xl py-2 px-3 text-xs bg-white font-medium focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                                    @foreach($availableOlSubjects as $si => $en)
+                                        <option value="{{ $si }}">{{ $si }} ({{ $en }})</option>
+                                    @endforeach
+                                </select>
+                            </template>
+
+                            <template x-if="modalData.level === 'AL'">
+                                <select x-model="modalData.subject" class="w-full border border-slate-300 rounded-xl py-2 px-3 text-xs bg-white font-medium focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                                    @foreach($availableAlSubjects as $si => $en)
+                                        <option value="{{ $si }}">{{ $si }} ({{ $en }})</option>
+                                    @endforeach
+                                </select>
+                            </template>
+
+                            <template x-if="modalData.level === 'STREAM'">
+                                <select x-model="modalData.subject" class="w-full border border-slate-300 rounded-xl py-2 px-3 text-xs bg-white font-medium focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                                    @foreach($availableAlStreams as $si => $en)
+                                        <option value="{{ $si }}">{{ $en }}</option>
+                                    @endforeach
+                                </select>
+                            </template>
+                        </div>
+
+                        <div x-show="modalData.isCustomSubject">
+                            <input type="text" x-model="modalData.customSubject" placeholder="e.g. French, Psychology, Japanese..." class="w-full border border-slate-300 rounded-xl py-2 px-3 text-xs bg-white font-medium focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        </div>
+                    </div>
+
+                    {{-- Grade Numbers Input Grid --}}
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/80 space-y-3">
+                        <p class="text-[10px] font-black uppercase tracking-wider text-slate-400"
+                           x-text="modalData.level === 'OL' ? 'Grades 10 & 11 Student Counts' : 'Grades 12 & 13 Student Counts'"></p>
+
+                        {{-- Grade First (10 or 12) --}}
+                        <div class="grid grid-cols-3 gap-2 items-center">
+                            <span class="text-xs font-bold text-slate-700" x-text="modalData.level === 'OL' ? 'Grade 10' : 'Grade 12'"></span>
+                            <div>
+                                <label class="block text-[9px] text-blue-500 font-bold uppercase">Male</label>
+                                <input type="number" min="0" x-model.number="modalData.grade_first_male" class="w-full border border-blue-200 rounded-lg h-8 text-xs text-center font-bold text-blue-700 bg-white focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-[9px] text-pink-500 font-bold uppercase">Female</label>
+                                <input type="number" min="0" x-model.number="modalData.grade_first_female" class="w-full border border-pink-200 rounded-lg h-8 text-xs text-center font-bold text-pink-700 bg-white focus:ring-2 focus:ring-pink-500">
+                            </div>
+                        </div>
+
+                        {{-- Grade Second (11 or 13) --}}
+                        <div class="grid grid-cols-3 gap-2 items-center pt-2 border-t border-slate-200">
+                            <span class="text-xs font-bold text-slate-700" x-text="modalData.level === 'OL' ? 'Grade 11' : 'Grade 13'"></span>
+                            <div>
+                                <label class="block text-[9px] text-blue-500 font-bold uppercase">Male</label>
+                                <input type="number" min="0" x-model.number="modalData.grade_second_male" class="w-full border border-blue-200 rounded-lg h-8 text-xs text-center font-bold text-blue-700 bg-white focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-[9px] text-pink-500 font-bold uppercase">Female</label>
+                                <input type="number" min="0" x-model.number="modalData.grade_second_female" class="w-full border border-pink-200 rounded-lg h-8 text-xs text-center font-bold text-pink-700 bg-white focus:ring-2 focus:ring-pink-500">
+                            </div>
+                        </div>
+
+                        {{-- Live Total Badge --}}
+                        <div class="pt-2 border-t border-slate-200 flex items-center justify-between text-xs">
+                            <span class="font-bold text-slate-600">Calculated Total Enrolled:</span>
+                            <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 font-black rounded-lg text-xs"
+                                  x-text="(parseInt(modalData.grade_first_male) || 0) + (parseInt(modalData.grade_first_female) || 0) + (parseInt(modalData.grade_second_male) || 0) + (parseInt(modalData.grade_second_female) || 0)"></span>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Modal Footer --}}
+                <div class="mt-6 flex items-center justify-end gap-2 pt-3 border-t border-slate-100">
+                    <button type="button" @click="showModal = false" class="px-4 py-2 text-xs font-bold text-slate-600 hover:bg-slate-100 rounded-xl transition">
+                        Cancel
+                    </button>
+                    <button type="button" @click="saveSubjectStats()" :disabled="modalLoading" class="px-5 py-2 text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shadow-md transition flex items-center gap-1.5 disabled:opacity-50">
+                        <svg x-show="modalLoading" class="w-3.5 h-3.5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                        <span>Save Changes</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -985,6 +1193,108 @@
                 @endfor
             ],
             studentData: {},
+
+            // Modal State for O/L and A/L Subject & Stream adding/editing
+            showModal: false,
+            modalLoading: false,
+            modalSuccessMsg: '',
+            modalErrorMsg: '',
+            modalData: {
+                level: 'OL',
+                schoolCensusNo: '{{ $school->censusNo }}',
+                subject: '',
+                isCustomSubject: false,
+                customSubject: '',
+                academicYear: '2025',
+                grade_first_male: 0,
+                grade_first_female: 0,
+                grade_second_male: 0,
+                grade_second_female: 0,
+            },
+
+            openAddSubjectModal(level, presetSubject = '') {
+                this.modalData.level = level;
+                this.modalData.schoolCensusNo = '{{ $school->censusNo }}';
+                this.modalData.subject = presetSubject || (level === 'STREAM' ? 'කලා' : (level === 'OL' ? 'භූගෝල විද්‍යාව' : 'ආර්ථික විද්‍යාව'));
+                this.modalData.isCustomSubject = false;
+                this.modalData.customSubject = '';
+                this.modalData.academicYear = '2025';
+                this.modalData.grade_first_male = 0;
+                this.modalData.grade_first_female = 0;
+                this.modalData.grade_second_male = 0;
+                this.modalData.grade_second_female = 0;
+                this.modalSuccessMsg = '';
+                this.modalErrorMsg = '';
+                this.showModal = true;
+            },
+
+            openEditModal(level, subject, g1M = 0, g1F = 0, g2M = 0, g2F = 0) {
+                this.modalData.level = level;
+                this.modalData.schoolCensusNo = '{{ $school->censusNo }}';
+                this.modalData.subject = subject;
+                this.modalData.isCustomSubject = false;
+                this.modalData.customSubject = '';
+                this.modalData.academicYear = '2025';
+                this.modalData.grade_first_male = g1M;
+                this.modalData.grade_first_female = g1F;
+                this.modalData.grade_second_male = g2M;
+                this.modalData.grade_second_female = g2F;
+                this.modalSuccessMsg = '';
+                this.modalErrorMsg = '';
+                this.showModal = true;
+            },
+
+            async saveSubjectStats() {
+                this.modalLoading = true;
+                this.modalErrorMsg = '';
+                this.modalSuccessMsg = '';
+
+                const subj = this.modalData.isCustomSubject && this.modalData.customSubject 
+                    ? this.modalData.customSubject 
+                    : this.modalData.subject;
+
+                if (!subj) {
+                    this.modalErrorMsg = 'Please select or enter a subject name.';
+                    this.modalLoading = false;
+                    return;
+                }
+
+                try {
+                    const response = await fetch('{{ route('zonal.schools.subject-statistics.save') }}', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            schoolCensusNo: this.modalData.schoolCensusNo,
+                            schoolId: '{{ $school->id }}',
+                            level: this.modalData.level,
+                            subject: subj,
+                            academicYear: this.modalData.academicYear,
+                            grade_first_male: parseInt(this.modalData.grade_first_male) || 0,
+                            grade_first_female: parseInt(this.modalData.grade_first_female) || 0,
+                            grade_second_male: parseInt(this.modalData.grade_second_male) || 0,
+                            grade_second_female: parseInt(this.modalData.grade_second_female) || 0,
+                        })
+                    });
+
+                    const res = await response.json();
+                    if (response.ok && res.success) {
+                        this.modalSuccessMsg = 'Saved successfully! Reloading...';
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 500);
+                    } else {
+                        this.modalErrorMsg = res.message || 'Error saving subject data.';
+                    }
+                } catch (err) {
+                    this.modalErrorMsg = 'Network error saving subject data.';
+                } finally {
+                    this.modalLoading = false;
+                }
+            },
 
             init() {
                 const serverData = @json($school->studentCounts);

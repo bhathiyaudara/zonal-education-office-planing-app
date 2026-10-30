@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\School;
 use App\Models\StudentCount;
+use App\Models\SubjectStatistic;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
@@ -120,6 +121,21 @@ class StudentCensusService
         return self::loadJson('pirivena_census_2025.json');
     }
 
+    public static function getAvailableOlSubjects(): array
+    {
+        return self::$olSubjectTranslations;
+    }
+
+    public static function getAvailableAlSubjects(): array
+    {
+        return self::$alSubjectTranslations;
+    }
+
+    public static function getAvailableAlStreams(): array
+    {
+        return self::$streamTranslations;
+    }
+
     /**
      * Get OL subjects statistics.
      */
@@ -130,6 +146,18 @@ class StudentCensusService
             $s = $row['subject'];
             $row['subject_en'] = self::$olSubjectTranslations[$s] ?? $s;
         }
+
+        if (Schema::hasTable('subject_statistic')) {
+            try {
+                $dbStats = SubjectStatistic::where('level', 'OL')->get();
+                if ($dbStats->isNotEmpty()) {
+                    $data = self::overlayStatsOntoMatrix($data, $dbStats, 'Grade 10', 'Grade 11', 'grade_10', 'grade_11', false);
+                }
+            } catch (\Throwable $e) {
+                // Fallback cleanly if table query fails
+            }
+        }
+
         return $data;
     }
 
@@ -143,6 +171,18 @@ class StudentCensusService
             $s = $row['subject'];
             $row['subject_en'] = self::$alSubjectTranslations[$s] ?? $s;
         }
+
+        if (Schema::hasTable('subject_statistic')) {
+            try {
+                $dbStats = SubjectStatistic::where('level', 'AL')->get();
+                if ($dbStats->isNotEmpty()) {
+                    $data = self::overlayStatsOntoMatrix($data, $dbStats, 'Grade 12', 'Grade 13', 'grade_12', 'grade_13', false);
+                }
+            } catch (\Throwable $e) {
+                // Fallback cleanly
+            }
+        }
+
         return $data;
     }
 
@@ -156,7 +196,200 @@ class StudentCensusService
             $s = $row['stream'];
             $row['stream_en'] = self::$streamTranslations[$s] ?? $s;
         }
+
+        if (Schema::hasTable('subject_statistic')) {
+            try {
+                $dbStats = SubjectStatistic::where('level', 'STREAM')->get();
+                if ($dbStats->isNotEmpty()) {
+                    $data = self::overlayStatsOntoMatrix($data, $dbStats, 'Grade 12', 'Grade 13', 'grade_12', 'grade_13', true);
+                }
+            } catch (\Throwable $e) {
+                // Fallback cleanly
+            }
+        }
+
         return $data;
+    }
+
+    /**
+     * Overlay database records onto the subject/stream matrix.
+     */
+    protected static function overlayStatsOntoMatrix(
+        array $data,
+        $dbStats,
+        string $firstGradeName,
+        string $secondGradeName,
+        string $firstGradeKey,
+        string $secondGradeKey,
+        bool $isStream = false
+    ): array {
+        if ($dbStats->isEmpty()) {
+            return $data;
+        }
+
+        $rowKey = $isStream ? 'stream' : 'subject';
+        $enKey = $isStream ? 'stream_en' : 'subject_en';
+
+        // Extract list of all schools from first row
+        $sampleRow = $data[0] ?? [];
+        $knownSchoolKeys = array_keys($sampleRow['schools'] ?? []);
+
+        // Re-index data by subject/stream name
+        $dataBySubj = [];
+        $totalRow = null;
+        foreach ($data as $item) {
+            $name = $item[$rowKey] ?? '';
+            if ($name === 'Total') {
+                $totalRow = $item;
+            } else {
+                $dataBySubj[$name] = $item;
+            }
+        }
+
+        // Group db stats by subject/stream
+        $grouped = $dbStats->groupBy('subject');
+
+        foreach ($grouped as $subjName => $records) {
+            $matchedKey = null;
+            if (isset($dataBySubj[$subjName])) {
+                $matchedKey = $subjName;
+            } else {
+                foreach ($dataBySubj as $k => $row) {
+                    if (($row[$enKey] ?? '') === $subjName || stripos($k, $subjName) !== false) {
+                        $matchedKey = $k;
+                        break;
+                    }
+                }
+            }
+
+            if (!$matchedKey) {
+                // Newly added subject!
+                $matchedKey = $subjName;
+                $newRow = [
+                    $rowKey => $subjName,
+                    $enKey => $isStream 
+                        ? (self::$streamTranslations[$subjName] ?? $subjName) 
+                        : (self::$olSubjectTranslations[$subjName] ?? (self::$alSubjectTranslations[$subjName] ?? $subjName)),
+                    'schools' => [],
+                    'total' => [
+                        'all' => ['male' => 0, 'female' => 0, 'total' => 0],
+                        $firstGradeKey => ['male' => 0, 'female' => 0, 'total' => 0],
+                        $secondGradeKey => ['male' => 0, 'female' => 0, 'total' => 0],
+                    ]
+                ];
+                foreach ($knownSchoolKeys as $sk) {
+                    $newRow['schools'][$sk] = [
+                        'all' => ['male' => 0, 'female' => 0, 'total' => 0],
+                        $firstGradeKey => ['male' => 0, 'female' => 0, 'total' => 0],
+                        $secondGradeKey => ['male' => 0, 'female' => 0, 'total' => 0],
+                    ];
+                }
+                $dataBySubj[$matchedKey] = $newRow;
+            }
+
+            // Apply each record
+            foreach ($records as $stat) {
+                $schKey = self::$censusToKey[$stat->schoolCensusNo] ?? null;
+                if (!$schKey && $stat->schoolName) {
+                    foreach ($knownSchoolKeys as $k) {
+                        if (stripos($k, $stat->schoolName) !== false || stripos($stat->schoolName, str_replace('CP/WIL/', '', $k)) !== false) {
+                            $schKey = $k;
+                            break;
+                        }
+                    }
+                }
+                if (!$schKey) {
+                    $schKey = $stat->schoolName ?: $stat->schoolCensusNo;
+                }
+
+                if (!isset($dataBySubj[$matchedKey]['schools'][$schKey])) {
+                    $dataBySubj[$matchedKey]['schools'][$schKey] = [
+                        'all' => ['male' => 0, 'female' => 0, 'total' => 0],
+                        $firstGradeKey => ['male' => 0, 'female' => 0, 'total' => 0],
+                        $secondGradeKey => ['male' => 0, 'female' => 0, 'total' => 0],
+                    ];
+                }
+
+                $gKey = ($stat->grade === $firstGradeName) ? $firstGradeKey : $secondGradeKey;
+                $dataBySubj[$matchedKey]['schools'][$schKey][$gKey] = [
+                    'male' => (int)$stat->maleCount,
+                    'female' => (int)$stat->femaleCount,
+                    'total' => (int)$stat->totalCount,
+                ];
+
+                // Recompute 'all' for this school
+                $sData = &$dataBySubj[$matchedKey]['schools'][$schKey];
+                $sData['all'] = [
+                    'male' => ($sData[$firstGradeKey]['male'] ?? 0) + ($sData[$secondGradeKey]['male'] ?? 0),
+                    'female' => ($sData[$firstGradeKey]['female'] ?? 0) + ($sData[$secondGradeKey]['female'] ?? 0),
+                    'total' => ($sData[$firstGradeKey]['total'] ?? 0) + ($sData[$secondGradeKey]['total'] ?? 0),
+                ];
+            }
+
+            // Recompute subject row totals
+            $rowRef = &$dataBySubj[$matchedKey];
+            $g1M = 0; $g1F = 0; $g1T = 0;
+            $g2M = 0; $g2F = 0; $g2T = 0;
+            foreach ($rowRef['schools'] as $sCounts) {
+                $g1M += ($sCounts[$firstGradeKey]['male'] ?? 0);
+                $g1F += ($sCounts[$firstGradeKey]['female'] ?? 0);
+                $g1T += ($sCounts[$firstGradeKey]['total'] ?? 0);
+                $g2M += ($sCounts[$secondGradeKey]['male'] ?? 0);
+                $g2F += ($sCounts[$secondGradeKey]['female'] ?? 0);
+                $g2T += ($sCounts[$secondGradeKey]['total'] ?? 0);
+            }
+            $rowRef['total'] = [
+                $firstGradeKey => ['male' => $g1M, 'female' => $g1F, 'total' => $g1T],
+                $secondGradeKey => ['male' => $g2M, 'female' => $g2F, 'total' => $g2T],
+                'all' => ['male' => $g1M + $g2M, 'female' => $g1F + $g2F, 'total' => $g1T + $g2T],
+            ];
+        }
+
+        // Recompute Grand Total row
+        $result = array_values($dataBySubj);
+        if ($totalRow) {
+            $grandG1M = 0; $grandG1F = 0; $grandG1T = 0;
+            $grandG2M = 0; $grandG2F = 0; $grandG2T = 0;
+            $schoolTotals = [];
+
+            foreach ($result as $row) {
+                $grandG1M += ($row['total'][$firstGradeKey]['male'] ?? 0);
+                $grandG1F += ($row['total'][$firstGradeKey]['female'] ?? 0);
+                $grandG1T += ($row['total'][$firstGradeKey]['total'] ?? 0);
+                $grandG2M += ($row['total'][$secondGradeKey]['male'] ?? 0);
+                $grandG2F += ($row['total'][$secondGradeKey]['female'] ?? 0);
+                $grandG2T += ($row['total'][$secondGradeKey]['total'] ?? 0);
+
+                foreach ($row['schools'] as $sk => $sCounts) {
+                    if (!isset($schoolTotals[$sk])) {
+                        $schoolTotals[$sk] = [
+                            'all' => ['male' => 0, 'female' => 0, 'total' => 0],
+                            $firstGradeKey => ['male' => 0, 'female' => 0, 'total' => 0],
+                            $secondGradeKey => ['male' => 0, 'female' => 0, 'total' => 0],
+                        ];
+                    }
+                    $schoolTotals[$sk][$firstGradeKey]['male'] += ($sCounts[$firstGradeKey]['male'] ?? 0);
+                    $schoolTotals[$sk][$firstGradeKey]['female'] += ($sCounts[$firstGradeKey]['female'] ?? 0);
+                    $schoolTotals[$sk][$firstGradeKey]['total'] += ($sCounts[$firstGradeKey]['total'] ?? 0);
+                    $schoolTotals[$sk][$secondGradeKey]['male'] += ($sCounts[$secondGradeKey]['male'] ?? 0);
+                    $schoolTotals[$sk][$secondGradeKey]['female'] += ($sCounts[$secondGradeKey]['female'] ?? 0);
+                    $schoolTotals[$sk][$secondGradeKey]['total'] += ($sCounts[$secondGradeKey]['total'] ?? 0);
+                    $schoolTotals[$sk]['all']['male'] += ($sCounts['all']['male'] ?? 0);
+                    $schoolTotals[$sk]['all']['female'] += ($sCounts['all']['female'] ?? 0);
+                    $schoolTotals[$sk]['all']['total'] += ($sCounts['all']['total'] ?? 0);
+                }
+            }
+
+            $totalRow['total'] = [
+                $firstGradeKey => ['male' => $grandG1M, 'female' => $grandG1F, 'total' => $grandG1T],
+                $secondGradeKey => ['male' => $grandG2M, 'female' => $grandG2F, 'total' => $grandG2T],
+                'all' => ['male' => $grandG1M + $grandG2M, 'female' => $grandG1F + $grandG2F, 'total' => $grandG1T + $grandG2T],
+            ];
+            $totalRow['schools'] = $schoolTotals;
+            $result[] = $totalRow;
+        }
+
+        return $result;
     }
 
     /**
@@ -249,6 +482,11 @@ class StudentCensusService
         '04149' => 'CP/WIL/GURUWELAYAYA JUNIOR SCHOOL',
     ];
 
+    public static function getCensusToKey(): array
+    {
+        return self::$censusToKey;
+    }
+
     /**
      * Get subject breakdown for an individual school by its census number or name.
      */
@@ -265,15 +503,23 @@ class StudentCensusService
             }
         }
 
+        $lookupKeys = array_values(array_unique(array_filter([$schKey, $censusNo, $schoolName])));
+
         $olList = [];
         $alList = [];
         $streamList = [];
 
-        if ($schKey) {
+        if (!empty($lookupKeys)) {
             $allOl = self::getOlSubjects();
             foreach ($allOl as $r) {
                 if ($r['subject'] === 'Total') continue;
-                $sData = $r['schools'][$schKey] ?? null;
+                $sData = null;
+                foreach ($lookupKeys as $lk) {
+                    if (isset($r['schools'][$lk])) {
+                        $sData = $r['schools'][$lk];
+                        break;
+                    }
+                }
                 if ($sData && ($sData['all']['total'] ?? 0) > 0) {
                     $olList[] = [
                         'subject' => $r['subject'],
@@ -288,7 +534,13 @@ class StudentCensusService
             $allAl = self::getAlSubjects();
             foreach ($allAl as $r) {
                 if ($r['subject'] === 'Total') continue;
-                $sData = $r['schools'][$schKey] ?? null;
+                $sData = null;
+                foreach ($lookupKeys as $lk) {
+                    if (isset($r['schools'][$lk])) {
+                        $sData = $r['schools'][$lk];
+                        break;
+                    }
+                }
                 if ($sData && ($sData['all']['total'] ?? 0) > 0) {
                     $alList[] = [
                         'subject' => $r['subject'],
@@ -303,7 +555,13 @@ class StudentCensusService
             $allStreams = self::getAlStreams();
             foreach ($allStreams as $r) {
                 if ($r['stream'] === 'Total') continue;
-                $sData = $r['schools'][$schKey] ?? null;
+                $sData = null;
+                foreach ($lookupKeys as $lk) {
+                    if (isset($r['schools'][$lk])) {
+                        $sData = $r['schools'][$lk];
+                        break;
+                    }
+                }
                 if ($sData && ($sData['all']['total'] ?? 0) > 0) {
                     $streamList[] = [
                         'stream' => $r['stream'],

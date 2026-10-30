@@ -35,8 +35,11 @@ class SchoolController extends Controller
         ])->findOrFail($id);
 
         $schoolSubjects = StudentCensusService::getSchoolSubjects($school->censusNo, $school->name);
+        $availableOlSubjects = StudentCensusService::getAvailableOlSubjects();
+        $availableAlSubjects = StudentCensusService::getAvailableAlSubjects();
+        $availableAlStreams = StudentCensusService::getAvailableAlStreams();
 
-        return view('dashboard.zonal.schools.show', compact('school', 'schoolSubjects'));
+        return view('dashboard.zonal.schools.show', compact('school', 'schoolSubjects', 'availableOlSubjects', 'availableAlSubjects', 'availableAlStreams'));
     }
 
     public function store(Request $request)
@@ -254,11 +257,126 @@ class SchoolController extends Controller
         $wilgamuwaStudents = $schoolsData->where('eduDivision', 'Wilgamuwa')->sum('totalStudents') ?: $kpis['wilgamuwaStudents'];
         $laggalaStudents = $schoolsData->where('eduDivision', 'Laggala')->sum('totalStudents') ?: $kpis['laggalaStudents'];
 
+        $allSchools = School::where('isActive', true)->orderBy('name')->get(['id', 'name', 'nameSinhala', 'censusNo', 'schoolType']);
+        $availableOlSubjects = StudentCensusService::getAvailableOlSubjects();
+        $availableAlSubjects = StudentCensusService::getAvailableAlSubjects();
+        $availableAlStreams = StudentCensusService::getAvailableAlStreams();
+        $censusToKey = StudentCensusService::getCensusToKey();
+
         return view('dashboard.zonal.schools.student-overview', compact(
             'schoolsData', 'academicYear', 'totalStudents', 'totalMale',
             'totalFemale', 'totalSchools', 'wilgamuwaStudents', 'laggalaStudents',
-            'kpis', 'olSubjects', 'alSubjects', 'alStreams', 'pirivenas'
+            'kpis', 'olSubjects', 'alSubjects', 'alStreams', 'pirivenas',
+            'allSchools', 'availableOlSubjects', 'availableAlSubjects', 'availableAlStreams', 'censusToKey'
         ));
+    }
+
+    public function saveSubjectStatistic(Request $request)
+    {
+        $validated = $request->validate([
+            'schoolId' => 'nullable|string',
+            'schoolCensusNo' => 'nullable|string',
+            'schoolName' => 'nullable|string',
+            'level' => 'required|in:OL,AL,STREAM',
+            'subject' => 'required|string|max:191',
+            'academicYear' => 'nullable|string|max:20',
+            'grade_first_male' => 'nullable|integer|min:0',
+            'grade_first_female' => 'nullable|integer|min:0',
+            'grade_second_male' => 'nullable|integer|min:0',
+            'grade_second_female' => 'nullable|integer|min:0',
+        ]);
+
+        $year = $validated['academicYear'] ?: '2025';
+        $school = null;
+        if (!empty($validated['schoolId'])) {
+            $school = School::find($validated['schoolId']);
+        } elseif (!empty($validated['schoolCensusNo'])) {
+            $school = School::where('censusNo', $validated['schoolCensusNo'])
+                ->orWhere('censusNo', str_pad($validated['schoolCensusNo'], 5, '0', STR_PAD_LEFT))
+                ->first();
+        }
+
+        $cNo = $school ? $school->censusNo : ($validated['schoolCensusNo'] ?? null);
+        $sName = $school ? $school->name : ($validated['schoolName'] ?? 'Unknown School');
+
+        $isOl = ($validated['level'] === 'OL');
+        $gradeFirst = $isOl ? 'Grade 10' : 'Grade 12';
+        $gradeSecond = $isOl ? 'Grade 11' : 'Grade 13';
+
+        $g1M = (int)($validated['grade_first_male'] ?? 0);
+        $g1F = (int)($validated['grade_first_female'] ?? 0);
+        $g2M = (int)($validated['grade_second_male'] ?? 0);
+        $g2F = (int)($validated['grade_second_female'] ?? 0);
+
+        \App\Models\SubjectStatistic::updateOrCreate(
+            [
+                'schoolCensusNo' => $cNo,
+                'level' => $validated['level'],
+                'grade' => $gradeFirst,
+                'subject' => $validated['subject'],
+                'academicYear' => $year,
+            ],
+            [
+                'schoolId' => $school?->id,
+                'schoolName' => $sName,
+                'maleCount' => $g1M,
+                'femaleCount' => $g1F,
+                'totalCount' => $g1M + $g1F,
+            ]
+        );
+
+        \App\Models\SubjectStatistic::updateOrCreate(
+            [
+                'schoolCensusNo' => $cNo,
+                'level' => $validated['level'],
+                'grade' => $gradeSecond,
+                'subject' => $validated['subject'],
+                'academicYear' => $year,
+            ],
+            [
+                'schoolId' => $school?->id,
+                'schoolName' => $sName,
+                'maleCount' => $g2M,
+                'femaleCount' => $g2F,
+                'totalCount' => $g2M + $g2F,
+            ]
+        );
+
+        if ($request->wantsJson() || $request->ajax()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Subject statistics updated successfully!'
+            ]);
+        }
+
+        return back()->with('success', 'Subject statistics updated successfully!');
+    }
+
+    public function deleteSubjectStatistic(Request $request)
+    {
+        $validated = $request->validate([
+            'schoolCensusNo' => 'required|string',
+            'level' => 'required|in:OL,AL,STREAM',
+            'subject' => 'required|string',
+            'academicYear' => 'nullable|string',
+        ]);
+
+        $year = $validated['academicYear'] ?: '2025';
+
+        \App\Models\SubjectStatistic::where('schoolCensusNo', $validated['schoolCensusNo'])
+            ->where('level', $validated['level'])
+            ->where('subject', $validated['subject'])
+            ->where('academicYear', $year)
+            ->delete();
+
+        if ($request->wantsJson() || $request->ajax()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Subject removed successfully!'
+            ]);
+        }
+
+        return back()->with('success', 'Subject removed successfully!');
     }
 
     public function removeForm()

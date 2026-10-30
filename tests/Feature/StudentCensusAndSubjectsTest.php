@@ -88,6 +88,22 @@ class StudentCensusAndSubjectsTest extends TestCase
             $table->timestamp('updatedAt')->nullable();
         });
 
+        Schema::create('subject_statistic', function (Blueprint $table) {
+            $table->string('id')->primary();
+            $table->string('schoolId')->nullable();
+            $table->string('schoolCensusNo')->nullable();
+            $table->string('schoolName')->nullable();
+            $table->string('level');
+            $table->string('subject');
+            $table->string('grade');
+            $table->string('academicYear')->default('2025');
+            $table->integer('maleCount')->default(0);
+            $table->integer('femaleCount')->default(0);
+            $table->integer('totalCount')->default(0);
+            $table->timestamp('createdAt')->nullable();
+            $table->timestamp('updatedAt')->nullable();
+        });
+
         $this->zonalAdmin = User::create([
             'id' => 'u-admin-test',
             'name' => 'Zonal Admin',
@@ -212,5 +228,48 @@ class StudentCensusAndSubjectsTest extends TestCase
         $response->assertSee('A/L Subjects & Streams (Grades 12 & 13)', false);
         $response->assertSee('Geography');
         $response->assertSee('Commerce (වාණිජ)');
+    }
+
+    public function test_save_and_delete_subject_statistic(): void
+    {
+        $this->actingAs($this->zonalAdmin);
+
+        $school = School::create([
+            'id' => 'sch-stat-test',
+            'name' => 'Test School Stat',
+            'censusNo' => '04143',
+            'eduDivision' => 'Wilgamuwa',
+        ]);
+
+        $postData = [
+            'schoolCensusNo' => '04143',
+            'level' => 'OL',
+            'subject' => 'ICT',
+            'academicYear' => '2025',
+            'grade_first_male' => 15,
+            'grade_first_female' => 20,
+            'grade_second_male' => 12,
+            'grade_second_female' => 18,
+        ];
+
+        $res = $this->postJson(route('zonal.schools.subject-statistics.save'), $postData);
+        $res->assertOk();
+        $res->assertJson(['success' => true]);
+
+        $this->assertDatabaseHas('subject_statistic', [
+            'schoolCensusNo' => '04143',
+            'grade' => 'Grade 10',
+            'maleCount' => 15,
+            'femaleCount' => 20,
+            'totalCount' => 35,
+        ]);
+
+        $this->assertDatabaseHas('subject_statistic', [
+            'schoolCensusNo' => '04143',
+            'grade' => 'Grade 11',
+            'maleCount' => 12,
+            'femaleCount' => 18,
+            'totalCount' => 30,
+        ]);
     }
 }
