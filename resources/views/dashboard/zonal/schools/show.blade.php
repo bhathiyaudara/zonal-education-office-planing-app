@@ -58,8 +58,12 @@
                     <span class="px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-lg text-xs font-bold uppercase">
                         {{ $school->eduDivision ?? 'Wilgamuwa' }}
                     </span>
+                    @if($school->dsDivision)
+                    <span class="px-3 py-1.5 bg-indigo-500/20 backdrop-blur-sm rounded-lg text-xs font-bold uppercase text-indigo-100">
+                        DSD: {{ $school->dsDivision }}
+                    </span>
+                    @endif
                     <span class="px-3 py-1.5 bg-emerald-500/25 backdrop-blur-sm rounded-lg text-xs font-bold text-emerald-100">
-                        {{-- Logic for description --}}
                         @php
                             $range = "Grade " . ($school->gradeStart ?? 1) . "-" . ($school->gradeEnd ?? 13);
                             $desc = $range;
@@ -70,17 +74,23 @@
                         @endphp
                         {{ $desc }}
                     </span>
+                    @if($school->difficultyCategory)
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-bold {{ $school->difficulty_badge_class }} backdrop-blur-sm shadow-sm flex items-center gap-1.5 border">
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        {{ $school->bilingual_difficulty }}
+                    </span>
+                    @endif
                 </div>
             </div>
         </div>
     </div>
 
-    {{-- Info Cards --}}
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {{-- Info Cards (4-column responsive grid) --}}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {{-- Contact Info --}}
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 h-full">
             <h3 class="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-4 flex items-center gap-2">
-                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <svg class="w-3.5 h-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                 Contact Information
             </h3>
             <div class="space-y-4">
@@ -102,7 +112,7 @@
         {{-- Administration --}}
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 h-full">
             <h3 class="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-4 flex items-center gap-2">
-                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                <svg class="w-3.5 h-3.5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                 Administration
             </h3>
             <div class="space-y-4">
@@ -115,16 +125,68 @@
                     <p class="text-sm font-bold text-slate-900">{{ $school->principalMobile ?: 'N/A' }}</p>
                 </div>
                 <div>
-                    <span class="text-[10px] text-slate-500 font-bold uppercase tracking-tight">Education Zone</span>
-                    <p class="text-sm font-bold text-slate-900">{{ $school->eduZone ?: 'Wilgamuwa' }}</p>
+                    <span class="text-[10px] text-slate-500 font-bold uppercase tracking-tight">Education Zone & Division</span>
+                    <p class="text-sm font-bold text-slate-900">{{ $school->eduZone ?: 'Wilgamuwa' }} / {{ $school->eduDivision ?: 'Wilgamuwa' }}</p>
                 </div>
             </div>
+        </div>
+
+        {{-- Geographic, Land & Location Details --}}
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 h-full flex flex-col justify-between">
+            <div>
+                <h3 class="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-4 flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    Geographic & Land Area
+                </h3>
+                <div class="space-y-3">
+                    <div>
+                        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-tight">Land Area / ඉඩම් ප්‍රමාණය</span>
+                        <p class="text-sm font-bold text-slate-900">{{ $school->landArea ?: 'Not Recorded' }}</p>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-tight">Difficulty / දුෂ්කරතාව</span>
+                        <div class="mt-0.5">
+                            @if($school->difficultyCategory)
+                            <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-bold border {{ $school->difficulty_badge_class }}">
+                                {{ $school->bilingual_difficulty }}
+                            </span>
+                            @else
+                            <p class="text-sm font-bold text-slate-400 italic">Not Set</p>
+                            @endif
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-tight">DS Division (DSD) / ප්‍රා.ලේ.</span>
+                        <p class="text-sm font-bold text-slate-900">{{ $school->dsDivision ?: 'Not Recorded' }}</p>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-tight">GN Division (GND) / ග්‍රා.නි.</span>
+                        <p class="text-sm font-bold text-slate-900">{{ $school->gnDivision ?: 'Not Recorded' }}</p>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-tight">Coordinates (Lat, Long)</span>
+                        @if($school->latitude && $school->longitude)
+                        <p class="text-xs font-mono font-bold text-slate-700">{{ number_format($school->latitude, 6) }}, {{ number_format($school->longitude, 6) }}</p>
+                        @else
+                        <p class="text-xs text-slate-400 italic">Not Recorded</p>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            @if($school->latitude && $school->longitude)
+            <div class="pt-3 mt-3 border-t border-slate-100">
+                <a href="https://www.google.com/maps?q={{ $school->latitude }},{{ $school->longitude }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 w-full px-3 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-xl text-xs font-bold transition">
+                    <svg class="w-3.5 h-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    <span>View on Google Maps</span>
+                </a>
+            </div>
+            @endif
         </div>
 
         {{-- Staff Stats --}}
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 h-full">
             <h3 class="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-4 flex items-center gap-2">
-                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                <svg class="w-3.5 h-3.5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
                 Staff Overview
             </h3>
             <div class="space-y-4">
@@ -388,75 +450,292 @@
     </div>
 </div>
 
-{{-- Edit School Modal (Same as Index Page) --}}
-<div id="editSchoolModal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-    <form method="POST" action="{{ route('zonal.schools.update', $school->id) }}" class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl overflow-hidden animate-scale-in max-h-[90vh] flex flex-col">
+{{-- Edit School Modal --}}
+<div id="editSchoolModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="fixed inset-0 bg-black/60 backdrop-blur-sm -z-10" onclick="document.getElementById('editSchoolModal').classList.add('hidden')"></div>
+    <form method="POST" action="{{ route('zonal.schools.update', $school->id) }}" class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl overflow-hidden animate-scale-in max-h-[90vh] flex flex-col relative z-20">
         @csrf
         @method('PUT')
-        {{-- ... Edit Form Content ... --}}
-        {{-- For brevity, reusing the form structure but I should copy it here --}}
-         <div class="flex justify-between items-center px-6 py-4 bg-slate-50 border-b">
+        <div class="flex justify-between items-center px-6 py-4 bg-slate-50 border-b border-slate-200 shrink-0">
             <h3 class="font-bold text-xl text-slate-900">Edit School Information</h3>
-            <button type="button" onclick="document.getElementById('editSchoolModal').classList.add('hidden')" class="p-1 hover:bg-slate-200 rounded-full transition-colors">
-                <svg class="w-5 h-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            <button type="button" onclick="document.getElementById('editSchoolModal').classList.add('hidden')" class="p-1.5 hover:bg-slate-200 rounded-full transition-colors text-slate-500">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
         </div>
-        <div class="p-6 space-y-6 overflow-y-auto">
-             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="p-6 overflow-y-auto flex flex-col gap-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="md:col-span-2">
-                    <label class="block text-sm font-semibold text-slate-700 mb-1">School Name *</label>
-                    <input type="text" name="name" value="{{ $school->name }}" required class="w-full border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm">
+                    <label class="zems-input-label">School Name *</label>
+                    <input type="text" name="name" value="{{ old('name', $school->name) }}" required class="zems-input">
                 </div>
                 <div>
-                    <label class="block text-sm font-semibold text-slate-700 mb-1">CENSUS No</label>
-                    <input type="text" name="censusNo" value="{{ $school->censusNo }}" class="w-full border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm">
+                    <label class="zems-input-label">CENSUS No</label>
+                    <input type="text" name="censusNo" value="{{ old('censusNo', $school->censusNo) }}" class="zems-input">
                 </div>
-                 <div>
-                    <label class="block text-sm font-semibold text-slate-700 mb-1">School Type</label>
-                    <select name="schoolType" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm bg-white">
-                        <option value="1AB" {{ $school->schoolType == '1AB' ? 'selected' : '' }}>Type 1AB</option>
-                        <option value="1C" {{ $school->schoolType == '1C' ? 'selected' : '' }}>Type 1C</option>
-                        <option value="Type II" {{ $school->schoolType == 'Type II' ? 'selected' : '' }}>Type II</option>
-                        <option value="Type III" {{ $school->schoolType == 'Type III' ? 'selected' : '' }}>Type III</option>
+                <div>
+                    <label class="zems-input-label">School Type (Classification)</label>
+                    <select name="schoolType" id="showSchoolType" onchange="updateShowGradeRange()" class="zems-input cursor-pointer">
+                        <option value="">Select Type</option>
+                        <optgroup label="Senior Secondary Schools (A/L)">
+                            <option value="1AB" {{ old('schoolType', $school->schoolType) == '1AB' ? 'selected' : '' }}>Type 1AB - All Streams</option>
+                            <option value="1C" {{ old('schoolType', $school->schoolType) == '1C' ? 'selected' : '' }}>Type 1C - Arts & Commerce Only</option>
+                        </optgroup>
+                        <optgroup label="Junior Schools">
+                            <option value="Type II" {{ old('schoolType', $school->schoolType) == 'Type II' ? 'selected' : '' }}>Type II - Junior School (Grade 1-11)</option>
+                        </optgroup>
+                        <optgroup label="Primary Schools">
+                            <option value="Type III" {{ old('schoolType', $school->schoolType) == 'Type III' ? 'selected' : '' }}>Type III - Primary School (Grade 1-5)</option>
+                        </optgroup>
                     </select>
                 </div>
-                <div class="md:col-span-2">
-                    <label class="block text-sm font-semibold text-slate-700 mb-1">Address</label>
-                    <input type="text" name="address" value="{{ $school->address }}" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm">
+
+                {{-- Grade Range --}}
+                <div class="md:col-span-2 p-4 bg-emerald-50 rounded-xl border border-emerald-200">
+                    <label class="block text-sm font-bold text-emerald-800 mb-3">Grade Range</label>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1">Starting Grade</label>
+                            <select name="gradeStart" id="showGradeStart" onchange="updateShowInfoText()" class="zems-input cursor-pointer">
+                                @for($g = 1; $g <= 13; $g++)
+                                <option value="{{ $g }}" {{ old('gradeStart', $school->gradeStart ?? 1) == $g ? 'selected' : '' }}>Grade {{ $g }}</option>
+                                @endfor
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1">Ending Grade</label>
+                            <select name="gradeEnd" id="showGradeEnd" onchange="updateShowInfoText()" class="zems-input cursor-pointer">
+                                @for($g = 1; $g <= 13; $g++)
+                                <option value="{{ $g }}" {{ old('gradeEnd', $school->gradeEnd ?? 13) == $g ? 'selected' : '' }}>Grade {{ $g }}</option>
+                                @endfor
+                            </select>
+                        </div>
+                    </div>
+                    <p id="showInfoText" class="text-xs text-emerald-600 mt-2">
+                        This school will show grades from <strong>Grade {{ old('gradeStart', $school->gradeStart ?? 1) }}</strong> to <strong>Grade {{ old('gradeEnd', $school->gradeEnd ?? 13) }}</strong>
+                    </p>
+                </div>
+
+                {{-- Address & Land Area --}}
+                <div>
+                    <label class="zems-input-label">Address / ලිපිනය</label>
+                    <input type="text" name="address" value="{{ old('address', $school->address) }}" class="zems-input">
                 </div>
                 <div>
-                    <label class="block text-sm font-semibold text-slate-700 mb-1">Division</label>
-                    <select name="eduDivision" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm bg-white">
-                        <option value="Wilgamuwa" {{ $school->eduDivision == 'Wilgamuwa' ? 'selected' : '' }}>Wilgamuwa</option>
-                        <option value="Laggala" {{ $school->eduDivision == 'Laggala' ? 'selected' : '' }}>Laggala</option>
+                    <label class="zems-input-label">School Land Area / ඉඩම් ප්‍රමාණය</label>
+                    <input type="text" name="landArea" value="{{ old('landArea', $school->landArea) }}" placeholder="e.g. 2 Acres 1 Rood 15 Perches" class="zems-input">
+                </div>
+
+                {{-- School Difficulty & Education Division --}}
+                <div>
+                    <label class="zems-input-label">School Difficulty Category / දුෂ්කරතා වර්ගීකරණය</label>
+                    <select name="difficultyCategory" class="zems-input cursor-pointer font-semibold">
+                        <option value="">Select Difficulty Category</option>
+                        <option value="Very Convenient" {{ old('difficultyCategory', $school->difficultyCategory) == 'Very Convenient' ? 'selected' : '' }}>Very Convenient (ඉතා පහසු)</option>
+                        <option value="Convenient" {{ old('difficultyCategory', $school->difficultyCategory) == 'Convenient' ? 'selected' : '' }}>Convenient (පහසු)</option>
+                        <option value="Difficult" {{ old('difficultyCategory', $school->difficultyCategory) == 'Difficult' ? 'selected' : '' }}>Difficult (දුෂ්කර)</option>
+                        <option value="Very Difficult" {{ old('difficultyCategory', $school->difficultyCategory) == 'Very Difficult' ? 'selected' : '' }}>Very Difficult (ඉතා දුෂ්කර)</option>
                     </select>
                 </div>
                 <div>
-                    <label class="block text-sm font-semibold text-slate-700 mb-1">Email</label>
-                    <input type="email" name="email" value="{{ $school->email }}" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm">
+                    <label class="zems-input-label">Education Division / අධ්‍යාපන කොට්ඨාසය</label>
+                    <select name="eduDivision" class="zems-input cursor-pointer">
+                        <option value="">Select Division</option>
+                        <option value="Wilgamuwa" {{ old('eduDivision', $school->eduDivision) == 'Wilgamuwa' ? 'selected' : '' }}>Wilgamuwa (විල්ගමුව)</option>
+                        <option value="Laggala" {{ old('eduDivision', $school->eduDivision) == 'Laggala' ? 'selected' : '' }}>Laggala (ලග්ගල)</option>
+                    </select>
+                </div>
+
+                {{-- DS Division & Grama Niladhari Division --}}
+                <div>
+                    <label class="zems-input-label">Divisional Secretariat (DSD) / ප්‍රාදේශීය ලේකම් කොට්ඨාසය</label>
+                    <select name="dsDivision" class="zems-input cursor-pointer font-semibold">
+                        <option value="">Select DS Division</option>
+                        <option value="Wilgamuwa" {{ old('dsDivision', $school->dsDivision) == 'Wilgamuwa' ? 'selected' : '' }}>Wilgamuwa (විල්ගමුව)</option>
+                        <option value="Laggala-Pallegama" {{ old('dsDivision', $school->dsDivision) == 'Laggala-Pallegama' ? 'selected' : '' }}>Laggala-Pallegama (ලග්ගල පල්ලේගම)</option>
+                        <option value="Naula" {{ old('dsDivision', $school->dsDivision) == 'Naula' ? 'selected' : '' }}>Naula (නාවුල)</option>
+                        <option value="Rattota" {{ old('dsDivision', $school->dsDivision) == 'Rattota' ? 'selected' : '' }}>Rattota (රත්තොට)</option>
+                        <option value="Ambanganga Korale" {{ old('dsDivision', $school->dsDivision) == 'Ambanganga Korale' ? 'selected' : '' }}>Ambanganga Korale (අඹන්ගඟ කෝරළේ)</option>
+                    </select>
                 </div>
                 <div>
-                    <label class="block text-sm font-semibold text-slate-700 mb-1">Phone</label>
-                    <input type="text" name="contactNumber" value="{{ $school->contactNumber }}" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm">
+                    <label class="zems-input-label">Grama Niladhari Division (GND) / ග්‍රාම නිලධාරී වසම</label>
+                    <select name="gnDivision" class="zems-input cursor-pointer">
+                        <option value="">Select GN Division</option>
+                        <optgroup label="Wilgamuwa DS Division (39 GN Divisions)">
+                            @foreach([
+                                '80 Yaya' => '80 Yaya (E393D)',
+                                'Aliyawala' => 'Aliyawala (E395L)',
+                                'Aliwanguwa' => 'Aliwanguwa (E398G)',
+                                'Bathgampola' => 'Bathgampola (E395D)',
+                                'Dewagiriya' => 'Dewagiriya (E394F)',
+                                'Dunuvilapitiya' => 'Dunuvilapitiya (E398F)',
+                                'Gemburuoya' => 'Gemburuoya (E395K)',
+                                'Guruwelayaya' => 'Guruwelayaya (E394D)',
+                                'Handungamuwa' => 'Handungamuwa (E398)',
+                                'Hettipola' => 'Hettipola (E394A)',
+                                'Karawgahawewa' => 'Karawgahawewa (E395B)',
+                                'Kumbukandana' => 'Kumbukandana (E398B)',
+                                'Kumbukoya' => 'Kumbukoya (E398I)',
+                                'Lediyangala' => 'Lediyangala (E395A)',
+                                'Malgammana' => 'Malgammana (E395J)',
+                                'Maraka' => 'Maraka (E395H)',
+                                'Medakanda' => 'Medakanda (E398A)',
+                                'Mewaobey' => 'Mewaobey (E393B)',
+                                'Moragahaulpatha' => 'Moragahaulpatha (E395F)',
+                                'Nagolla' => 'Nagolla (E395E)',
+                                'Naminigama' => 'Naminigama (E393B)',
+                                'Naminioya' => 'Naminioya (E394C)',
+                                'Nugagolla' => 'Nugagolla (E393A)',
+                                'Palupitiya' => 'Palupitiya (E398H)',
+                                'Perakanaththa' => 'Perakanaththa (E395C)',
+                                'Piduruwalla' => 'Piduruwalla (E394E)',
+                                'Radunnewewa' => 'Radunnewewa (E395I)',
+                                'Rattotayaya' => 'Rattotayaya (E398E)',
+                                'Sonuththa' => 'Sonuththa (E393)',
+                                'Sulugune' => 'Sulugune (E398L)',
+                                'Thunhiriyawewa' => 'Thunhiriyawewa (E398C)',
+                                'Topwalapitiya' => 'Topwalapitiya (E398J)',
+                                'Uduwelwala' => 'Uduwelwala (E393C)',
+                                'Veheragala' => 'Veheragala (E398D)',
+                                'Viharagama' => 'Viharagama (E398K)',
+                                'Wanarawa' => 'Wanarawa (E395G)',
+                                'Wilgamuwa' => 'Wilgamuwa (E395)',
+                            ] as $val => $label)
+                            <option value="{{ $val }}" {{ old('gnDivision', $school->gnDivision) == $val ? 'selected' : '' }}>{{ $label }}</option>
+                            @endforeach
+                        </optgroup>
+                        <optgroup label="Laggala-Pallegama DS Division (37 GN Divisions)">
+                            @foreach([
+                                'Akarahadiya' => 'Akarahadiya (E396B)',
+                                'Atanwala' => 'Atanwala',
+                                'Dammanthenna' => 'Dammanthenna',
+                                'Dasgiriya' => 'Dasgiriya',
+                                'Dewaladeniya' => 'Dewaladeniya',
+                                'Diwulgaspathana' => 'Diwulgaspathana',
+                                'Galgedawala' => 'Galgedawala (E396A)',
+                                'Gangahenwala' => 'Gangahenwala',
+                                'Gangala Puwakpitiya' => 'Gangala Puwakpitiya',
+                                'Gonawala' => 'Gonawala (E397B)',
+                                'Guruwela' => 'Guruwela (E397E)',
+                                'Halminiya' => 'Halminiya',
+                                'Haththotaamuna' => 'Haththotaamuna',
+                                'Himbiliyakada' => 'Himbiliyakada (E396C)',
+                                'Ilukkumbura' => 'Ilukkumbura',
+                                'Imaduwa' => 'Imaduwa',
+                                'Kahagala' => 'Kahagala',
+                                'Kaluganga' => 'Kaluganga',
+                                'Kandepitawala' => 'Kandepitawala',
+                                'Karandamulla' => 'Karandamulla (E397C)',
+                                'Kiyulewadiya' => 'Kiyulewadiya',
+                                'Laggala Pallegama' => 'Laggala Pallegama (E397)',
+                                'Lakegala' => 'Lakegala',
+                                'Leloya' => 'Leloya (E396)',
+                                'Mada Ela' => 'Mada Ela',
+                                'Mahalakotuwa' => 'Mahalakotuwa',
+                                'Maoya' => 'Maoya',
+                                'Miniranketiya' => 'Miniranketiya (E397D)',
+                                'Morathenna' => 'Morathenna',
+                                'Narangamuwa' => 'Narangamuwa',
+                                'Pitawala' => 'Pitawala',
+                                'Poththatawela' => 'Poththatawela',
+                                'Rambukoluwa' => 'Rambukoluwa',
+                                'Ranamure' => 'Ranamure',
+                                'Rathninda' => 'Rathninda',
+                                'Rawanagama' => 'Rawanagama (E397A)',
+                                'Waliwaranagolla' => 'Waliwaranagolla',
+                                'Wallewala' => 'Wallewala',
+                            ] as $val => $label)
+                            <option value="{{ $val }}" {{ old('gnDivision', $school->gnDivision) == $val ? 'selected' : '' }}>{{ $label }}</option>
+                            @endforeach
+                        </optgroup>
+                    </select>
+                </div>
+
+                {{-- Geographic Coordinates (Latitude & Longitude) --}}
+                <div>
+                    <label class="zems-input-label">Latitude / අක්ෂාංශය</label>
+                    <input type="number" step="any" name="latitude" value="{{ old('latitude', $school->latitude) }}" placeholder="e.g. 7.7123456" class="zems-input">
                 </div>
                 <div>
-                    <label class="block text-sm font-semibold text-slate-700 mb-1">Principal Name</label>
-                    <input type="text" name="principalName" value="{{ $school->principalName }}" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm">
+                    <label class="zems-input-label">Longitude / දේශාංශය</label>
+                    <input type="number" step="any" name="longitude" value="{{ old('longitude', $school->longitude) }}" placeholder="e.g. 80.9123456" class="zems-input">
                 </div>
-                <div>
-                    <label class="block text-sm font-semibold text-slate-700 mb-1">Principal Mobile</label>
-                    <input type="text" name="principalMobile" value="{{ $school->principalMobile }}" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm">
+
+                <div class="md:col-span-2">
+                    <label class="zems-input-label">Education Zone / අධ්‍යාපන කලාපය</label>
+                    <input type="text" name="eduZone" value="{{ old('eduZone', $school->eduZone ?? 'Wilgamuwa') }}" class="zems-input">
                 </div>
-             </div>
+
+                <div class="md:col-span-2 pt-4 border-t border-slate-200 mt-2">
+                    <p class="text-xs font-bold text-blue-600 uppercase mb-4 tracking-wide">Contact & Principal Information</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="zems-input-label">School Email</label>
+                            <input type="email" name="email" value="{{ old('email', $school->email) }}" class="zems-input">
+                        </div>
+                        <div>
+                            <label class="zems-input-label">School Phone</label>
+                            <input type="text" name="contactNumber" value="{{ old('contactNumber', $school->contactNumber) }}" class="zems-input">
+                        </div>
+                        <div>
+                            <label class="zems-input-label">Principal's Name</label>
+                            <input type="text" name="principalName" value="{{ old('principalName', $school->principalName) }}" class="zems-input">
+                        </div>
+                        <div>
+                            <label class="zems-input-label">Principal's NIC</label>
+                            <input type="text" name="principalNic" value="{{ old('principalNic', $school->principalNic) }}" class="zems-input">
+                        </div>
+                        <div>
+                            <label class="zems-input-label">Principal's Mobile</label>
+                            <input type="text" name="principalMobile" value="{{ old('principalMobile', $school->principalMobile) }}" class="zems-input">
+                        </div>
+                        <div>
+                            <label class="zems-input-label">Sanctioned Positions</label>
+                            <input type="number" name="sanctionedPositions" value="{{ old('sanctionedPositions', $school->sanctionedPositions) }}" min="0" class="zems-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="px-6 py-4 bg-slate-50 border-t flex justify-end gap-3">
+
+        <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex justify-end gap-3 shrink-0">
             <button type="button" onclick="document.getElementById('editSchoolModal').classList.add('hidden')" class="px-5 py-2 text-sm font-medium text-slate-600 hover:bg-slate-200 rounded-lg transition-colors">Cancel</button>
-            <button type="submit" class="px-6 py-2 text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md flex items-center gap-2">Save Changes</button>
+            <button type="submit" class="zems-btn-primary py-2 px-6 shadow-md shadow-blue-500/20">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Update Record
+            </button>
         </div>
     </form>
 </div>
 
 <script>
+    function updateShowGradeRange() {
+        const type = document.getElementById('showSchoolType').value;
+        const gradeStart = document.getElementById('showGradeStart');
+        const gradeEnd = document.getElementById('showGradeEnd');
+
+        if (type === '1AB' || type === '1C') {
+            gradeEnd.value = 13;
+        } else if (type === 'Type II') {
+            gradeStart.value = 1;
+            gradeEnd.value = 11;
+        } else if (type === 'Type III') {
+            gradeStart.value = 1;
+            gradeEnd.value = 5;
+        }
+        updateShowInfoText();
+    }
+
+    function updateShowInfoText() {
+        const start = document.getElementById('showGradeStart').value;
+        const end = document.getElementById('showGradeEnd').value;
+        const textElement = document.getElementById('showInfoText');
+        if (textElement) {
+            textElement.innerHTML = `This school will show grades from <strong>Grade ${start}</strong> to <strong>Grade ${end}</strong>`;
+        }
+    }
+
     function schoolProfile() {
         return {
             isEditingStudents: false,

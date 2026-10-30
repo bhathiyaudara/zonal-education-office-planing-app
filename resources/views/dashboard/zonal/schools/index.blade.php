@@ -108,14 +108,44 @@
 
                 <h3 class="font-bold text-slate-900 text-lg leading-tight mb-2 min-h-[3rem]">{{ $school->name }}</h3>
                 
-                <div class="flex items-center gap-2 text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-4">
-                    @if($school->censusNo)CENSUS: {{ $school->censusNo }} <span class="text-slate-300">|</span> @endif{{ $school->schoolType ?? 'PRIMARY' }}
+                <div class="flex items-center flex-wrap gap-2 text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-3">
+                    @if($school->censusNo)<span>CENSUS: {{ $school->censusNo }}</span> <span class="text-slate-300">|</span> @endif
+                    <span>{{ $school->schoolType ?? 'PRIMARY' }}</span>
+                    @if($school->dsDivision)
+                    <span class="text-slate-300">|</span>
+                    <span class="text-indigo-600 font-semibold">{{ $school->dsDivision }}</span>
+                    @endif
                 </div>
+
+                @if($school->difficultyCategory)
+                <div class="mb-3">
+                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[11px] font-bold border {{ $school->difficulty_badge_class }}">
+                        <svg class="w-3 h-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        {{ $school->bilingual_difficulty }}
+                    </span>
+                </div>
+                @endif
                 
                 <div class="flex items-start gap-2 text-slate-500 text-sm mb-2">
                     <svg class="w-4 h-4 mt-0.5 flex-shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                     <span class="line-clamp-1 italic">{{ $school->address ?? 'No address' }}</span>
                 </div>
+
+                @if($school->landArea || $school->gnDivision)
+                <div class="flex items-center flex-wrap gap-2 text-xs text-slate-500 mb-2">
+                    @if($school->landArea)
+                    <span class="inline-flex items-center gap-1 font-medium bg-slate-50 px-2 py-0.5 rounded border border-slate-200" title="School Land Area">
+                        <svg class="w-3 h-3 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+                        {{ $school->landArea }}
+                    </span>
+                    @endif
+                    @if($school->gnDivision)
+                    <span class="inline-flex items-center gap-1 font-medium bg-slate-50 px-2 py-0.5 rounded border border-slate-200" title="Grama Niladhari Division">
+                        GND: {{ $school->gnDivision }}
+                    </span>
+                    @endif
+                </div>
+                @endif
             </div>
 
             <div class="flex justify-between items-center text-xs font-bold mt-6 pt-4 border-t border-slate-100">
@@ -209,26 +239,156 @@
                     </p>
                 </div>
 
-                {{-- Address --}}
-                <div>
-                    <label class="zems-input-label">Address</label>
-                    <input type="text" name="address" class="zems-input">
-                </div>
-
-                {{-- Education Zone + Education Division --}}
+                {{-- Address & Land Area --}}
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                        <label class="zems-input-label">Education Zone</label>
-                        <input type="text" name="eduZone" value="Wilgamuwa" class="zems-input">
+                        <label class="zems-input-label">Address / ලිපිනය</label>
+                        <input type="text" name="address" placeholder="e.g. Main Street, Hettipola" class="zems-input">
                     </div>
                     <div>
-                        <label class="zems-input-label">Education Division</label>
-                        <select name="eduDivision" class="zems-input cursor-pointer">
-                            <option value="">Select Division</option>
-                            <option value="Wilgamuwa">Wilgamuwa</option>
-                            <option value="Laggala">Laggala</option>
+                        <label class="zems-input-label">School Land Area / ඉඩම් ප්‍රමාණය</label>
+                        <input type="text" name="landArea" placeholder="e.g. 2 Acres 1 Rood 15 Perches" class="zems-input">
+                    </div>
+                </div>
+
+                {{-- School Difficulty & Education Division --}}
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="zems-input-label">School Difficulty Category / දුෂ්කරතා වර්ගීකරණය</label>
+                        <select name="difficultyCategory" class="zems-input cursor-pointer font-semibold">
+                            <option value="">Select Difficulty Category</option>
+                            <option value="Very Convenient">Very Convenient (ඉතා පහසු)</option>
+                            <option value="Convenient">Convenient (පහසු)</option>
+                            <option value="Difficult">Difficult (දුෂ්කර)</option>
+                            <option value="Very Difficult">Very Difficult (ඉතා දුෂ්කර)</option>
                         </select>
                     </div>
+                    <div>
+                        <label class="zems-input-label">Education Division / අධ්‍යාපන කොට්ඨාසය</label>
+                        <select name="eduDivision" class="zems-input cursor-pointer">
+                            <option value="">Select Division</option>
+                            <option value="Wilgamuwa">Wilgamuwa (විල්ගමුව)</option>
+                            <option value="Laggala">Laggala (ලග්ගල)</option>
+                        </select>
+                    </div>
+                </div>
+
+                {{-- DS Division & Grama Niladhari Division --}}
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="zems-input-label">Divisional Secretariat (DSD) / ප්‍රාදේශීය ලේකම් කොට්ඨාසය</label>
+                        <select name="dsDivision" class="zems-input cursor-pointer font-semibold">
+                            <option value="">Select DS Division</option>
+                            <option value="Wilgamuwa">Wilgamuwa (විල්ගමුව)</option>
+                            <option value="Laggala-Pallegama">Laggala-Pallegama (ලග්ගල පල්ලේගම)</option>
+                            <option value="Naula">Naula (නාවුල)</option>
+                            <option value="Rattota">Rattota (රත්තොට)</option>
+                            <option value="Ambanganga Korale">Ambanganga Korale (අඹන්ගඟ කෝරළේ)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="zems-input-label">Grama Niladhari Division (GND) / ග්‍රාම නිලධාරී වසම</label>
+                        <select name="gnDivision" class="zems-input cursor-pointer">
+                            <option value="">Select GN Division</option>
+                            <optgroup label="Wilgamuwa DS Division (39 GN Divisions)">
+                                <option value="80 Yaya">80 Yaya (E393D)</option>
+                                <option value="Aliyawala">Aliyawala (E395L)</option>
+                                <option value="Aliwanguwa">Aliwanguwa (E398G)</option>
+                                <option value="Bathgampola">Bathgampola (E395D)</option>
+                                <option value="Dewagiriya">Dewagiriya (E394F)</option>
+                                <option value="Dunuvilapitiya">Dunuvilapitiya (E398F)</option>
+                                <option value="Gemburuoya">Gemburuoya (E395K)</option>
+                                <option value="Guruwelayaya">Guruwelayaya (E394D)</option>
+                                <option value="Handungamuwa">Handungamuwa (E398)</option>
+                                <option value="Hettipola">Hettipola (E394A)</option>
+                                <option value="Karawgahawewa">Karawgahawewa (E395B)</option>
+                                <option value="Kumbukandana">Kumbukandana (E398B)</option>
+                                <option value="Kumbukoya">Kumbukoya (E398I)</option>
+                                <option value="Lediyangala">Lediyangala (E395A)</option>
+                                <option value="Malgammana">Malgammana (E395J)</option>
+                                <option value="Maraka">Maraka (E395H)</option>
+                                <option value="Medakanda">Medakanda (E398A)</option>
+                                <option value="Mewaobey">Mewaobey (E393B)</option>
+                                <option value="Moragahaulpatha">Moragahaulpatha (E395F)</option>
+                                <option value="Nagolla">Nagolla (E395E)</option>
+                                <option value="Naminigama">Naminigama (E393B)</option>
+                                <option value="Naminioya">Naminioya (E394C)</option>
+                                <option value="Nugagolla">Nugagolla (E393A)</option>
+                                <option value="Palupitiya">Palupitiya (E398H)</option>
+                                <option value="Perakanaththa">Perakanaththa (E395C)</option>
+                                <option value="Piduruwalla">Piduruwalla (E394E)</option>
+                                <option value="Radunnewewa">Radunnewewa (E395I)</option>
+                                <option value="Rattotayaya">Rattotayaya (E398E)</option>
+                                <option value="Sonuththa">Sonuththa (E393)</option>
+                                <option value="Sulugune">Sulugune (E398L)</option>
+                                <option value="Thunhiriyawewa">Thunhiriyawewa (E398C)</option>
+                                <option value="Topwalapitiya">Topwalapitiya (E398J)</option>
+                                <option value="Uduwelwala">Uduwelwala (E393C)</option>
+                                <option value="Veheragala">Veheragala (E398D)</option>
+                                <option value="Viharagama">Viharagama (E398K)</option>
+                                <option value="Wanarawa">Wanarawa (E395G)</option>
+                                <option value="Wilgamuwa">Wilgamuwa (E395)</option>
+                            </optgroup>
+                            <optgroup label="Laggala-Pallegama DS Division (37 GN Divisions)">
+                                <option value="Akarahadiya">Akarahadiya (E396B)</option>
+                                <option value="Atanwala">Atanwala</option>
+                                <option value="Dammanthenna">Dammanthenna</option>
+                                <option value="Dasgiriya">Dasgiriya</option>
+                                <option value="Dewaladeniya">Dewaladeniya</option>
+                                <option value="Diwulgaspathana">Diwulgaspathana</option>
+                                <option value="Galgedawala">Galgedawala (E396A)</option>
+                                <option value="Gangahenwala">Gangahenwala</option>
+                                <option value="Gangala Puwakpitiya">Gangala Puwakpitiya</option>
+                                <option value="Gonawala">Gonawala (E397B)</option>
+                                <option value="Guruwela">Guruwela (E397E)</option>
+                                <option value="Halminiya">Halminiya</option>
+                                <option value="Haththotaamuna">Haththotaamuna</option>
+                                <option value="Himbiliyakada">Himbiliyakada (E396C)</option>
+                                <option value="Ilukkumbura">Ilukkumbura</option>
+                                <option value="Imaduwa">Imaduwa</option>
+                                <option value="Kahagala">Kahagala</option>
+                                <option value="Kaluganga">Kaluganga</option>
+                                <option value="Kandepitawala">Kandepitawala</option>
+                                <option value="Karandamulla">Karandamulla (E397C)</option>
+                                <option value="Kiyulewadiya">Kiyulewadiya</option>
+                                <option value="Laggala Pallegama">Laggala Pallegama (E397)</option>
+                                <option value="Lakegala">Lakegala</option>
+                                <option value="Leloya">Leloya (E396)</option>
+                                <option value="Mada Ela">Mada Ela</option>
+                                <option value="Mahalakotuwa">Mahalakotuwa</option>
+                                <option value="Maoya">Maoya</option>
+                                <option value="Miniranketiya">Miniranketiya (E397D)</option>
+                                <option value="Morathenna">Morathenna</option>
+                                <option value="Narangamuwa">Narangamuwa</option>
+                                <option value="Pitawala">Pitawala</option>
+                                <option value="Poththatawela">Poththatawela</option>
+                                <option value="Rambukoluwa">Rambukoluwa</option>
+                                <option value="Ranamure">Ranamure</option>
+                                <option value="Rathninda">Rathninda</option>
+                                <option value="Rawanagama">Rawanagama (E397A)</option>
+                                <option value="Waliwaranagolla">Waliwaranagolla</option>
+                                <option value="Wallewala">Wallewala</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+
+                {{-- Geographic Coordinates (Latitude & Longitude) --}}
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="zems-input-label">Latitude / අක්ෂාංශය</label>
+                        <input type="number" step="any" name="latitude" placeholder="e.g. 7.7123456" class="zems-input">
+                    </div>
+                    <div>
+                        <label class="zems-input-label">Longitude / දේශාංශය</label>
+                        <input type="number" step="any" name="longitude" placeholder="e.g. 80.9123456" class="zems-input">
+                    </div>
+                </div>
+
+                {{-- Education Zone --}}
+                <div>
+                    <label class="zems-input-label">Education Zone / අධ්‍යාපන කලාපය</label>
+                    <input type="text" name="eduZone" value="Wilgamuwa" class="zems-input">
                 </div>
 
                 {{-- Contact & Principal Information section --}}
@@ -343,21 +503,147 @@
                         </p>
                     </div>
 
-                    <div class="md:col-span-2">
-                        <label class="zems-input-label">Address</label>
+                    {{-- Address & Land Area --}}
+                    <div>
+                        <label class="zems-input-label">Address / ලිපිනය</label>
                         <input type="text" name="address" id="editAddress" class="zems-input">
                     </div>
                     <div>
-                        <label class="zems-input-label">Education Zone</label>
-                        <input type="text" name="eduZone" id="editEduZone" class="zems-input">
+                        <label class="zems-input-label">School Land Area / ඉඩම් ප්‍රමාණය</label>
+                        <input type="text" name="landArea" id="editLandArea" placeholder="e.g. 2 Acres 1 Rood 15 Perches" class="zems-input">
+                    </div>
+
+                    {{-- School Difficulty & Education Division --}}
+                    <div>
+                        <label class="zems-input-label">School Difficulty Category / දුෂ්කරතා වර්ගීකරණය</label>
+                        <select name="difficultyCategory" id="editDifficultyCategory" class="zems-input cursor-pointer font-semibold">
+                            <option value="">Select Difficulty Category</option>
+                            <option value="Very Convenient">Very Convenient (ඉතා පහසු)</option>
+                            <option value="Convenient">Convenient (පහසු)</option>
+                            <option value="Difficult">Difficult (දුෂ්කර)</option>
+                            <option value="Very Difficult">Very Difficult (ඉතා දුෂ්කර)</option>
+                        </select>
                     </div>
                     <div>
-                        <label class="zems-input-label">Education Division</label>
+                        <label class="zems-input-label">Education Division / අධ්‍යාපන කොට්ඨාසය</label>
                         <select name="eduDivision" id="editEduDivision" class="zems-input cursor-pointer">
                             <option value="">Select Division</option>
-                            <option value="Wilgamuwa">Wilgamuwa</option>
-                            <option value="Laggala">Laggala</option>
+                            <option value="Wilgamuwa">Wilgamuwa (විල්ගමුව)</option>
+                            <option value="Laggala">Laggala (ලග්ගල)</option>
                         </select>
+                    </div>
+
+                    {{-- DS Division & Grama Niladhari Division --}}
+                    <div>
+                        <label class="zems-input-label">Divisional Secretariat (DSD) / ප්‍රාදේශීය ලේකම් කොට්ඨාසය</label>
+                        <select name="dsDivision" id="editDsDivision" class="zems-input cursor-pointer font-semibold">
+                            <option value="">Select DS Division</option>
+                            <option value="Wilgamuwa">Wilgamuwa (විල්ගමුව)</option>
+                            <option value="Laggala-Pallegama">Laggala-Pallegama (ලග්ගල පල්ලේගම)</option>
+                            <option value="Naula">Naula (නාවුල)</option>
+                            <option value="Rattota">Rattota (රත්තොට)</option>
+                            <option value="Ambanganga Korale">Ambanganga Korale (අඹන්ගඟ කෝරළේ)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="zems-input-label">Grama Niladhari Division (GND) / ග්‍රාම නිලධාරී වසම</label>
+                        <select name="gnDivision" id="editGnDivision" class="zems-input cursor-pointer">
+                            <option value="">Select GN Division</option>
+                            <optgroup label="Wilgamuwa DS Division (39 GN Divisions)">
+                                <option value="80 Yaya">80 Yaya (E393D)</option>
+                                <option value="Aliyawala">Aliyawala (E395L)</option>
+                                <option value="Aliwanguwa">Aliwanguwa (E398G)</option>
+                                <option value="Bathgampola">Bathgampola (E395D)</option>
+                                <option value="Dewagiriya">Dewagiriya (E394F)</option>
+                                <option value="Dunuvilapitiya">Dunuvilapitiya (E398F)</option>
+                                <option value="Gemburuoya">Gemburuoya (E395K)</option>
+                                <option value="Guruwelayaya">Guruwelayaya (E394D)</option>
+                                <option value="Handungamuwa">Handungamuwa (E398)</option>
+                                <option value="Hettipola">Hettipola (E394A)</option>
+                                <option value="Karawgahawewa">Karawgahawewa (E395B)</option>
+                                <option value="Kumbukandana">Kumbukandana (E398B)</option>
+                                <option value="Kumbukoya">Kumbukoya (E398I)</option>
+                                <option value="Lediyangala">Lediyangala (E395A)</option>
+                                <option value="Malgammana">Malgammana (E395J)</option>
+                                <option value="Maraka">Maraka (E395H)</option>
+                                <option value="Medakanda">Medakanda (E398A)</option>
+                                <option value="Mewaobey">Mewaobey (E393B)</option>
+                                <option value="Moragahaulpatha">Moragahaulpatha (E395F)</option>
+                                <option value="Nagolla">Nagolla (E395E)</option>
+                                <option value="Naminigama">Naminigama (E393B)</option>
+                                <option value="Naminioya">Naminioya (E394C)</option>
+                                <option value="Nugagolla">Nugagolla (E393A)</option>
+                                <option value="Palupitiya">Palupitiya (E398H)</option>
+                                <option value="Perakanaththa">Perakanaththa (E395C)</option>
+                                <option value="Piduruwalla">Piduruwalla (E394E)</option>
+                                <option value="Radunnewewa">Radunnewewa (E395I)</option>
+                                <option value="Rattotayaya">Rattotayaya (E398E)</option>
+                                <option value="Sonuththa">Sonuththa (E393)</option>
+                                <option value="Sulugune">Sulugune (E398L)</option>
+                                <option value="Thunhiriyawewa">Thunhiriyawewa (E398C)</option>
+                                <option value="Topwalapitiya">Topwalapitiya (E398J)</option>
+                                <option value="Uduwelwala">Uduwelwala (E393C)</option>
+                                <option value="Veheragala">Veheragala (E398D)</option>
+                                <option value="Viharagama">Viharagama (E398K)</option>
+                                <option value="Wanarawa">Wanarawa (E395G)</option>
+                                <option value="Wilgamuwa">Wilgamuwa (E395)</option>
+                            </optgroup>
+                            <optgroup label="Laggala-Pallegama DS Division (37 GN Divisions)">
+                                <option value="Akarahadiya">Akarahadiya (E396B)</option>
+                                <option value="Atanwala">Atanwala</option>
+                                <option value="Dammanthenna">Dammanthenna</option>
+                                <option value="Dasgiriya">Dasgiriya</option>
+                                <option value="Dewaladeniya">Dewaladeniya</option>
+                                <option value="Diwulgaspathana">Diwulgaspathana</option>
+                                <option value="Galgedawala">Galgedawala (E396A)</option>
+                                <option value="Gangahenwala">Gangahenwala</option>
+                                <option value="Gangala Puwakpitiya">Gangala Puwakpitiya</option>
+                                <option value="Gonawala">Gonawala (E397B)</option>
+                                <option value="Guruwela">Guruwela (E397E)</option>
+                                <option value="Halminiya">Halminiya</option>
+                                <option value="Haththotaamuna">Haththotaamuna</option>
+                                <option value="Himbiliyakada">Himbiliyakada (E396C)</option>
+                                <option value="Ilukkumbura">Ilukkumbura</option>
+                                <option value="Imaduwa">Imaduwa</option>
+                                <option value="Kahagala">Kahagala</option>
+                                <option value="Kaluganga">Kaluganga</option>
+                                <option value="Kandepitawala">Kandepitawala</option>
+                                <option value="Karandamulla">Karandamulla (E397C)</option>
+                                <option value="Kiyulewadiya">Kiyulewadiya</option>
+                                <option value="Laggala Pallegama">Laggala Pallegama (E397)</option>
+                                <option value="Lakegala">Lakegala</option>
+                                <option value="Leloya">Leloya (E396)</option>
+                                <option value="Mada Ela">Mada Ela</option>
+                                <option value="Mahalakotuwa">Mahalakotuwa</option>
+                                <option value="Maoya">Maoya</option>
+                                <option value="Miniranketiya">Miniranketiya (E397D)</option>
+                                <option value="Morathenna">Morathenna</option>
+                                <option value="Narangamuwa">Narangamuwa</option>
+                                <option value="Pitawala">Pitawala</option>
+                                <option value="Poththatawela">Poththatawela</option>
+                                <option value="Rambukoluwa">Rambukoluwa</option>
+                                <option value="Ranamure">Ranamure</option>
+                                <option value="Rathninda">Rathninda</option>
+                                <option value="Rawanagama">Rawanagama (E397A)</option>
+                                <option value="Waliwaranagolla">Waliwaranagolla</option>
+                                <option value="Wallewala">Wallewala</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    {{-- Geographic Coordinates (Latitude & Longitude) --}}
+                    <div>
+                        <label class="zems-input-label">Latitude / අක්ෂාංශය</label>
+                        <input type="number" step="any" name="latitude" id="editLatitude" placeholder="e.g. 7.7123456" class="zems-input">
+                    </div>
+                    <div>
+                        <label class="zems-input-label">Longitude / දේශාංශය</label>
+                        <input type="number" step="any" name="longitude" id="editLongitude" placeholder="e.g. 80.9123456" class="zems-input">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="zems-input-label">Education Zone / අධ්‍යාපන කලාපය</label>
+                        <input type="text" name="eduZone" id="editEduZone" class="zems-input">
                     </div>
 
                     <div class="md:col-span-2 pt-4 border-t border-slate-200 mt-2">
@@ -483,6 +769,12 @@
         document.getElementById('editPrincipalNic').value = school.principalNic || '';
         document.getElementById('editPrincipalMobile').value = school.principalMobile || '';
         document.getElementById('editSanctionedPositions').value = school.sanctionedPositions || '';
+        document.getElementById('editLandArea').value = school.landArea || '';
+        document.getElementById('editDifficultyCategory').value = school.difficultyCategory || '';
+        document.getElementById('editDsDivision').value = school.dsDivision || '';
+        document.getElementById('editGnDivision').value = school.gnDivision || '';
+        document.getElementById('editLatitude').value = school.latitude || '';
+        document.getElementById('editLongitude').value = school.longitude || '';
 
         updateInfoText('edit');
         document.getElementById('editSchoolModal').classList.remove('hidden');
