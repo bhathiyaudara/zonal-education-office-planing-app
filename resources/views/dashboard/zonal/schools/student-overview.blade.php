@@ -14,9 +14,9 @@
                 <p class="zems-header-subtitle">Comprehensive student enrollment statistics across all schools in Wilgamuwa Zone</p>
             </div>
         </div>
-        <button onclick="exportToCSV()" class="zems-btn-secondary !bg-white/10 !text-white !border-white/20 hover:!bg-white/20 backdrop-blur-sm px-4">
+        <button onclick="exportAllPagesStudentOverview()" class="zems-btn-secondary !bg-white/10 !text-white !border-white/20 hover:!bg-white/20 backdrop-blur-sm px-4 flex items-center gap-2" title="Export complete database records for all matching schools and grade-by-grade enrollments">
             <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-            Export Report
+            <span>Export All Pages</span>
         </button>
     </div>
 
@@ -108,7 +108,7 @@
                 </thead>
                 <tbody id="studentTableBody">
                     @forelse($schoolsData as $index => $school)
-                    <tr class="zems-table-row student-row" data-name="{{ strtolower($school['name']) }}" data-census="{{ strtolower($school['censusNo']) }}" data-division="{{ $school['eduDivision'] }}">
+                    <tr class="zems-table-row student-row" data-id="{{ $school['id'] }}" data-name="{{ strtolower($school['name']) }}" data-census="{{ strtolower($school['censusNo']) }}" data-division="{{ $school['eduDivision'] }}">
                         <td class="zems-table-td text-center font-medium text-slate-400">{{ $index + 1 }}</td>
                         <td class="zems-table-td">
                             <div class="flex items-start gap-4">
@@ -199,32 +199,37 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Export CSV
-function exportToCSV() {
+function exportAllPagesStudentOverview() {
     const rows = document.querySelectorAll('.student-row');
-    let csv = 'School Name,Census No,Division,Total Students,Male Students,Female Students,Total Classes\n';
+    const visibleRows = Array.from(rows).filter(r => r.style.display !== 'none');
 
-    rows.forEach(function(row) {
-        if (row.style.display === 'none') return;
-        const cells = row.querySelectorAll('td');
-        const name = cells[1].querySelector('h3').textContent.trim();
-        const censusEl = cells[1].querySelector('span');
-        const census = censusEl ? censusEl.textContent.replace('#', '').trim() : '';
-        const division = row.getAttribute('data-division');
-        const total = cells[2].textContent.trim();
-        const male = cells[3].textContent.trim();
-        const female = cells[4].textContent.trim();
-        const classes = cells[5].textContent.trim();
-        csv += `"${name}","${census}","${division}",${total},${male},${female},${classes}\n`;
-    });
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = '{{ route("zonal.schools.students.export") }}';
+    form.style.display = 'none';
 
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement('a');
-    link.setAttribute('href', URL.createObjectURL(blob));
-    link.setAttribute('download', 'Student_Overview_{{ str_replace("/", "-", $academicYear) }}_' + new Date().toISOString().split('T')[0] + '.csv');
-    link.style.visibility = 'hidden';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const csrf = document.createElement('input');
+    csrf.type = 'hidden';
+    csrf.name = '_token';
+    csrf.value = '{{ csrf_token() }}';
+    form.appendChild(csrf);
+
+    if (visibleRows.length < rows.length) {
+        const ids = visibleRows.map(r => r.getAttribute('data-id')).filter(Boolean);
+        const idsInput = document.createElement('input');
+        idsInput.type = 'hidden';
+        idsInput.name = 'ids';
+        idsInput.value = ids.join(',');
+        form.appendChild(idsInput);
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+}
+
+function exportToCSV() {
+    exportAllPagesStudentOverview();
 }
 </script>
 @endsection

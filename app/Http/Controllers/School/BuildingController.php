@@ -7,6 +7,7 @@ use App\Models\AuditLog;
 use App\Models\Building;
 use App\Models\School;
 use App\Models\SchoolSanitation;
+use App\Services\ExportService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -240,5 +241,74 @@ class BuildingController extends Controller
         ]);
 
         return back()->with('success', 'Toilet facilities updated successfully!');
+    }
+
+    /**
+     * Export all buildings for the school with ALL collected database columns.
+     */
+    public function export(Request $request)
+    {
+        $user = Auth::user();
+        $school = School::with('sanitation')->findOrFail($user->schoolId);
+
+        $buildingType = $request->get('building_type');
+        $status = $request->get('status');
+        $floors = $request->get('floors');
+        $renovationOnly = $request->boolean('renovation_needed') || $request->boolean('needs_renovation');
+        $search = trim($request->get('search', ''));
+
+        $query = Building::with(['school.sanitation'])
+            ->where('schoolId', $school->id)
+            ->orderBy('buildingName');
+
+        if ($request->filled('ids')) {
+            $ids = is_array($request->get('ids')) ? $request->get('ids') : explode(',', $request->get('ids'));
+            $ids = array_filter(array_map('trim', $ids));
+            if (!empty($ids)) {
+                $query->whereIn('id', $ids);
+            }
+        } else {
+            if ($buildingType) {
+                $query->where('buildingType', $buildingType);
+            }
+
+            if ($status) {
+                $prefix = explode(' (', $status)[0];
+                $query->where(function ($q) use ($status, $prefix) {
+                    $q->where('status', $status)
+                      ->orWhere('status', 'like', "%{$prefix}%");
+                });
+            }
+
+            if ($floors !== null && $floors !== '') {
+                if ($floors === 'multi') {
+                    $query->where('floors', '>', 1);
+                } elseif ($floors === '3' || $floors === '3+') {
+                    $query->where('floors', '>=', 3);
+                } else {
+                    $query->where('floors', (int)$floors);
+                }
+            }
+
+            if ($renovationOnly) {
+                $tenYearsAgo = (int)date('Y') - 10;
+                $query->whereNotNull('lastRepairYear')
+                      ->where('lastRepairYear', '<=', $tenYearsAgo);
+            }
+
+            if ($search) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('buildingName', 'like', "%{$search}%")
+                      ->orWhere('notes', 'like', "%{$search}%")
+                      ->orWhere('size', 'like', "%{$search}%");
+                });
+            }
+        }
+
+        $buildings = $query->get();
+        $safeName = preg_replace('/[^A-Za-z0-9_-]/', '_', $school->name ?: 'School');
+        $filename = 'Buildings_' . $safeName . '_' . date('Y_m_d_His') . '.csv';
+
+        return ExportService::exportBuildings($buildings, $filename);
     }
 }

@@ -8,6 +8,7 @@ use App\Models\Teacher;
 use App\Models\User;
 use App\Models\Subject;
 use App\Models\TeacherSubject;
+use App\Services\ExportService;
 use App\Services\TeacherOptions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -201,5 +202,41 @@ class TeacherController extends Controller
         ]);
 
         return redirect()->route('school.teachers')->with('success', "Teacher '{$teacher->nameWithInitials}' added successfully!");
+    }
+
+    /**
+     * Export all teachers for the school with ALL collected database columns.
+     */
+    public function export(Request $request)
+    {
+        $school = School::find(auth()->user()->schoolId);
+        if (!$school) abort(404, 'No school assigned.');
+
+        $query = Teacher::with(['school', 'spouseSchool', 'subjects.subject'])
+            ->where('teacher.schoolId', $school->id);
+
+        if ($request->filled('ids')) {
+            $ids = is_array($request->get('ids')) ? $request->get('ids') : explode(',', $request->get('ids'));
+            $ids = array_filter(array_map('trim', $ids));
+            if (!empty($ids)) {
+                $query->whereIn('teacher.id', $ids);
+            }
+        } elseif ($search = trim($request->input('search', ''))) {
+            $query->where(function ($q) use ($search) {
+                $q->where('nameWithInitials', 'like', "%{$search}%")
+                  ->orWhere('fullName', 'like', "%{$search}%")
+                  ->orWhere('nic', 'like', "%{$search}%")
+                  ->orWhere('phone', 'like', "%{$search}%")
+                  ->orWhere('fileNumber', 'like', "%{$search}%")
+                  ->orWhere('personal_file_no', 'like', "%{$search}%")
+                  ->orWhere('paysheet', 'like', "%{$search}%");
+            });
+        }
+
+        $teachers = $query->orderBy('nameWithInitials')->get();
+        $safeName = preg_replace('/[^A-Za-z0-9_-]/', '_', $school->name ?: 'School');
+        $filename = 'Teachers_' . $safeName . '_' . date('Y_m_d_His') . '.csv';
+
+        return ExportService::exportTeachers($teachers, $filename);
     }
 }

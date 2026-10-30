@@ -11,11 +11,18 @@
                 <p class="zems-header-subtitle">Create and manage schools across the educational zone</p>
             </div>
         </div>
-        <button onclick="document.getElementById('addSchoolModal').style.display='flex'"
-                class="zems-btn-primary !bg-white !text-blue-700 hover:!bg-blue-50">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-            Add School
-        </button>
+        <div class="flex items-center gap-3">
+            <button type="button" onclick="exportAllPagesSchools()"
+                    class="zems-btn-header" title="Export complete database records for all filtered schools">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span>Export All Pages</span>
+            </button>
+            <button onclick="document.getElementById('addSchoolModal').style.display='flex'"
+                    class="zems-btn-primary !bg-white !text-blue-700 hover:!bg-blue-50">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                Add School
+            </button>
+        </div>
     </div>
 
     {{-- Filters Bar --}}
@@ -74,6 +81,7 @@
     <div id="schoolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         @forelse($schools as $school)
         <div class="school-card zems-card-base p-6 flex flex-col justify-between hover:border-blue-300 hover:shadow-lg transition-all group h-full"
+             data-id="{{ $school->id }}"
              data-name="{{ strtolower($school->name) }}"
              data-census="{{ strtolower($school->censusNo ?? '') }}"
              data-address="{{ strtolower($school->address ?? '') }}"
@@ -876,5 +884,34 @@
             filterSchools();
         });
     });
+
+    function exportAllPagesSchools() {
+        const cards = document.querySelectorAll('.school-card');
+        const visibleCards = Array.from(cards).filter(c => c.style.display !== 'none');
+
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '{{ route("zonal.schools.export") }}';
+        form.style.display = 'none';
+
+        const csrf = document.createElement('input');
+        csrf.type = 'hidden';
+        csrf.name = '_token';
+        csrf.value = '{{ csrf_token() }}';
+        form.appendChild(csrf);
+
+        if (visibleCards.length < cards.length) {
+            const ids = visibleCards.map(c => c.getAttribute('data-id')).filter(Boolean);
+            const idsInput = document.createElement('input');
+            idsInput.type = 'hidden';
+            idsInput.name = 'ids';
+            idsInput.value = ids.join(',');
+            form.appendChild(idsInput);
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
+    }
 </script>
 @endsection

@@ -9,7 +9,12 @@
                 <h1 class="zems-header-title">Teachers - {{ $school->name }}</h1>
                 <p class="zems-header-subtitle">Staff directory for your school</p>
             </div>
-            <a href="{{ route('school.teachers.create') }}" class="zems-btn-primary !bg-emerald-600 hover:!bg-emerald-700">
+            <div class="flex items-center gap-3">
+                <a href="{{ route('school.teachers.export', request()->all()) }}" class="zems-btn-secondary !bg-white/10 !text-white !border-white/20 hover:!bg-white/20 backdrop-blur-sm px-4 flex items-center gap-2" title="Export complete database records for all filtered teachers">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    <span>Export All Pages</span>
+                </a>
+                <a href="{{ route('school.teachers.create') }}" class="zems-btn-primary !bg-emerald-600 hover:!bg-emerald-700">
                 <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                 Add Teacher
             </a>

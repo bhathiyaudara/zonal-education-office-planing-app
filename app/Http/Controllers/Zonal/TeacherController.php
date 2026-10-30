@@ -7,6 +7,7 @@ use App\Models\School;
 use App\Models\Teacher;
 use App\Models\TeacherSubject;
 use App\Models\User;
+use App\Services\ExportService;
 use App\Services\TeacherOptions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -563,5 +564,192 @@ class TeacherController extends Controller
             ->get();
 
         return response()->json($teachers);
+    }
+
+    /**
+     * Export teachers matching active filters with ALL collected database columns.
+     */
+    public function export(Request $request)
+    {
+        $query = Teacher::with(['school', 'spouseSchool', 'subjects.subject'])
+            ->leftJoin('school', 'teacher.schoolId', '=', 'school.id')
+            ->select('teacher.*');
+
+        // Filter by specific IDs (from client-side active filter selection)
+        if ($request->filled('ids')) {
+            $ids = is_array($request->get('ids')) ? $request->get('ids') : explode(',', $request->get('ids'));
+            $ids = array_filter(array_map('trim', $ids));
+            if (!empty($ids)) {
+                $query->whereIn('teacher.id', $ids);
+            }
+        } else {
+            // Apply all individual filter parameters
+
+            // 1. Division
+            if ($division = $request->get('division')) {
+                $query->where('school.eduDivision', $division);
+            }
+
+            // 2. School
+            if ($schoolId = $request->get('school_id') ?: $request->get('school')) {
+                $query->where('teacher.schoolId', $schoolId);
+            }
+
+            // 3. Position
+            if ($pos = $request->get('position')) {
+                if ($pos === 'principals') {
+                    $query->where(function ($q) {
+                        $q->where('teacher.position', 'like', '1 - Principal%')
+                          ->orWhere('teacher.position', 'like', '2 - Acting Principal%')
+                          ->orWhere('teacher.currentPosition', 'like', '1 - Principal%')
+                          ->orWhere('teacher.currentPosition', 'like', '2 - Acting Principal%')
+                          ->orWhere('teacher.service', 'like', '%Principal%');
+                    });
+                } else {
+                    $query->where(function ($q) use ($pos) {
+                        $q->where('teacher.position', 'like', "%{$pos}%")
+                          ->orWhere('teacher.currentPosition', 'like', "%{$pos}%");
+                    });
+                }
+            }
+
+            // 4. Service
+            if ($svc = $request->get('service')) {
+                $query->where(function ($q) use ($svc) {
+                    $q->where('teacher.service', 'like', "%{$svc}%")
+                      ->orWhere('teacher.appointmentType', 'like', "%{$svc}%");
+                });
+            }
+
+            // 5. Grade / Class
+            if ($grd = $request->get('grade')) {
+                $query->where(function ($q) use ($grd) {
+                    $q->where('teacher.serviceGrade', 'like', "%{$grd}%")
+                      ->orWhere('teacher.class_grade', 'like', "%{$grd}%");
+                });
+            }
+
+            // 6. Retirement Timeline
+            if ($retire = $request->get('retirement')) {
+                $currentYear = (int)date('Y');
+                if ($retire === '1') {
+                    $query->whereNotNull('teacher.dateOfBirth')
+                          ->where('teacher.dateOfBirth', '<=', ($currentYear - 59) . '-12-31')
+                          ->where('teacher.dateOfBirth', '>=', ($currentYear - 60) . '-01-01');
+                } elseif ($retire === '3') {
+                    $query->whereNotNull('teacher.dateOfBirth')
+                          ->where('teacher.dateOfBirth', '<=', ($currentYear - 57) . '-12-31')
+                          ->where('teacher.dateOfBirth', '>=', ($currentYear - 60) . '-01-01');
+                } elseif ($retire === '5' || $retire === 'retiring') {
+                    $query->whereNotNull('teacher.dateOfBirth')
+                          ->where('teacher.dateOfBirth', '<=', ($currentYear - 55) . '-12-31')
+                          ->where('teacher.dateOfBirth', '>=', ($currentYear - 60) . '-01-01');
+                } elseif ($retire === 'over_5') {
+                    $query->whereNotNull('teacher.dateOfBirth')
+                          ->where('teacher.dateOfBirth', '>', ($currentYear - 55) . '-12-31');
+                }
+            }
+
+            // 7. Appointment Subject
+            if ($apptSubj = $request->get('appt_subject') ?: $request->get('appointment_subject')) {
+                $query->where(function ($q) use ($apptSubj) {
+                    $q->where('teacher.appt_code', 'like', "%{$apptSubj}%")
+                      ->orWhere('teacher.appointmentSubject', 'like', "%{$apptSubj}%");
+                });
+            }
+
+            // 8. Teaching Subject
+            if ($teachSubj = $request->get('teaching_subject')) {
+                $query->where('teacher.t1_code', 'like', "%{$teachSubj}%");
+            }
+
+            // 9. Current School Service (>=8 Yrs or <8 Yrs)
+            if ($schoolSvc = $request->get('school_service')) {
+                $cutoff = now()->subYears(8)->format('Y-m-d');
+                if ($schoolSvc === '8_plus' || $schoolSvc === 'ge8') {
+                    $query->where(function ($q) use ($cutoff) {
+                        $q->where(function ($sub) use ($cutoff) {
+                            $sub->whereNotNull('teacher.schappoint')->where('teacher.schappoint', '<=', $cutoff);
+                        })->orWhere(function ($sub) use ($cutoff) {
+                            $sub->whereNull('teacher.schappoint')->whereNotNull('teacher.joinedCurrentSchoolDate')->where('teacher.joinedCurrentSchoolDate', '<=', $cutoff);
+                        });
+                    });
+                } elseif ($schoolSvc === 'under_8' || $schoolSvc === 'lt8') {
+                    $query->where(function ($q) use ($cutoff) {
+                        $q->where(function ($sub) use ($cutoff) {
+                            $sub->whereNotNull('teacher.schappoint')->where('teacher.schappoint', '>', $cutoff);
+                        })->orWhere(function ($sub) use ($cutoff) {
+                            $sub->whereNull('teacher.schappoint')->whereNotNull('teacher.joinedCurrentSchoolDate')->where('teacher.joinedCurrentSchoolDate', '>', $cutoff);
+                        });
+                    });
+                }
+            }
+
+            // 10. Gender
+            if ($gender = $request->get('gender')) {
+                $query->where('teacher.gender', 'like', "{$gender}%");
+            }
+
+            // 11. Medium
+            if ($med = $request->get('medium')) {
+                $query->where(function ($q) use ($med) {
+                    $q->where('teacher.appt_medium', 'like', "%{$med}%")
+                      ->orWhere('teacher.appointmentMedium', 'like', "%{$med}%");
+                });
+            }
+
+            // 12. Attachment
+            if ($attach = $request->get('attachment')) {
+                if ($attach === 'attached_any') {
+                    $query->where(function ($q) {
+                        $q->where('teacher.otherschool', 'like', 'Yes%')
+                          ->orWhereNotNull('teacher.otherschool_census');
+                    });
+                } elseif ($attach === 'not_attached') {
+                    $query->where(function ($q) {
+                        $q->whereNull('teacher.otherschool')
+                          ->orWhere('teacher.otherschool', 'like', 'No%')
+                          ->orWhere('teacher.otherschool', '');
+                    });
+                } elseif ($attach === 'attached_office') {
+                    $query->where(function ($q) {
+                        $q->where('teacher.otherschool_census', 'like', '%ZEO%')
+                          ->orWhere('teacher.otherschool_census', 'like', '%PDC%')
+                          ->orWhere('teacher.otherschool_census', 'like', '%DEO%')
+                          ->orWhere('teacher.otherschool_census', 'like', '%ITDLH%');
+                    });
+                } elseif ($attach === 'attached_school') {
+                    $query->where(function ($q) {
+                        $q->whereNotNull('teacher.otherschool_census')
+                          ->where('teacher.otherschool_census', 'not like', '%ZEO%')
+                          ->where('teacher.otherschool_census', 'not like', '%PDC%')
+                          ->where('teacher.otherschool_census', 'not like', '%DEO%')
+                          ->where('teacher.otherschool_census', 'not like', '%ITDLH%');
+                    });
+                }
+            }
+
+            // 13. Search
+            if ($search = trim($request->get('search', ''))) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('teacher.fullName', 'like', "%{$search}%")
+                      ->orWhere('teacher.nameWithInitials', 'like', "%{$search}%")
+                      ->orWhere('teacher.nic', 'like', "%{$search}%")
+                      ->orWhere('teacher.phone', 'like', "%{$search}%")
+                      ->orWhere('teacher.whatsapp', 'like', "%{$search}%")
+                      ->orWhere('teacher.personal_file_no', 'like', "%{$search}%")
+                      ->orWhere('teacher.fileNumber', 'like', "%{$search}%")
+                      ->orWhere('teacher.paysheet', 'like', "%{$search}%")
+                      ->orWhere('teacher.email', 'like', "%{$search}%")
+                      ->orWhere('school.name', 'like', "%{$search}%")
+                      ->orWhere('school.censusNo', 'like', "%{$search}%");
+                });
+            }
+        }
+
+        $teachers = $query->orderBy('school.name')->orderBy('teacher.nameWithInitials')->get();
+
+        $filename = 'Wilgamuwa_Teachers_Export_' . date('Y_m_d_His') . '.csv';
+        return ExportService::exportTeachers($teachers, $filename);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Zonal;
 use App\Http\Controllers\Controller;
 use App\Models\School;
 use App\Models\StudentCount;
+use App\Services\ExportService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -216,5 +217,100 @@ class SchoolController extends Controller
             ->get(['id', 'name', 'censusNo', 'eduDivision']);
 
         return view('dashboard.zonal.schools.remove', compact('schools'));
+    }
+
+    /**
+     * Export schools directory with ALL database columns and infrastructure summaries.
+     */
+    public function export(Request $request)
+    {
+        $query = School::with(['sanitation', 'buildings', 'studentCounts'])
+            ->withCount('teachers')
+            ->where('isActive', true)
+            ->orderBy('name');
+
+        if ($request->filled('ids')) {
+            $ids = is_array($request->get('ids')) ? $request->get('ids') : explode(',', $request->get('ids'));
+            $ids = array_filter(array_map('trim', $ids));
+            if (!empty($ids)) {
+                $query->whereIn('id', $ids);
+            }
+        } else {
+            if ($search = trim($request->get('search', ''))) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('name', 'like', "%{$search}%")
+                      ->orWhere('censusNo', 'like', "%{$search}%")
+                      ->orWhere('address', 'like', "%{$search}%");
+                });
+            }
+
+            if ($schoolType = $request->get('school_type')) {
+                $query->where('schoolType', $schoolType);
+            }
+
+            if ($division = $request->get('division') ?: $request->get('edu_division')) {
+                $query->where('eduDivision', $division);
+            }
+
+            if ($dsDivision = $request->get('ds_division')) {
+                $query->where('dsDivision', $dsDivision);
+            }
+
+            if ($difficulty = $request->get('difficulty') ?: $request->get('difficulty_category')) {
+                $query->where('difficultyCategory', 'like', "%{$difficulty}%");
+            }
+        }
+
+        $schools = $query->get();
+        $filename = 'Wilgamuwa_Schools_Master_Export_' . date('Y_m_d_His') . '.csv';
+
+        return ExportService::exportSchools($schools, $filename);
+    }
+
+    /**
+     * Export student overview with ALL database columns + Grade 1-13 breakdown.
+     */
+    public function exportStudentOverview(Request $request)
+    {
+        $currentYear = date('Y');
+        $academicYear = $currentYear . '/' . ($currentYear + 1);
+
+        $query = School::with([
+                'studentCounts' => fn($q) => $q->where('academicYear', $academicYear),
+                'sanitation',
+                'buildings'
+            ])
+            ->where('isActive', true)
+            ->orderBy('name');
+
+        if ($request->filled('ids')) {
+            $ids = is_array($request->get('ids')) ? $request->get('ids') : explode(',', $request->get('ids'));
+            $ids = array_filter(array_map('trim', $ids));
+            if (!empty($ids)) {
+                $query->whereIn('id', $ids);
+            }
+        } else {
+            if ($search = trim($request->get('search', ''))) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('name', 'like', "%{$search}%")
+                      ->orWhere('censusNo', 'like', "%{$search}%");
+                });
+            }
+
+            if ($division = $request->get('division')) {
+                if (strcasecmp($division, 'All') !== 0) {
+                    $query->where('eduDivision', $division);
+                }
+            }
+
+            if ($schoolType = $request->get('school_type')) {
+                $query->where('schoolType', $schoolType);
+            }
+        }
+
+        $schools = $query->get();
+        $filename = 'Wilgamuwa_Students_Enrollment_All_Grades_' . str_replace('/', '-', $academicYear) . '_' . date('Y_m_d_His') . '.csv';
+
+        return ExportService::exportStudentOverview($schools, $academicYear, $filename);
     }
 }

@@ -7,6 +7,7 @@ use App\Models\AuditLog;
 use App\Models\Building;
 use App\Models\School;
 use App\Models\SchoolSanitation;
+use App\Services\ExportService;
 use Illuminate\Http\Request;
 
 class BuildingController extends Controller
@@ -294,103 +295,65 @@ class BuildingController extends Controller
         $buildingType = $request->get('building_type');
         $status = $request->get('status');
         $floors = $request->get('floors');
+        $search = trim($request->get('search', ''));
 
-        $query = Building::with('school')->orderBy('schoolId');
+        $query = Building::with(['school.sanitation'])->orderBy('schoolId');
 
-        if ($schoolId) {
-            $query->where('schoolId', $schoolId);
-        }
-
-        if ($buildingType) {
-            $query->where('buildingType', $buildingType);
-        }
-
-        if ($status) {
-            $prefix = explode(' (', $status)[0];
-            $query->where(function ($q) use ($status, $prefix) {
-                $q->where('status', $status)
-                  ->orWhere('status', 'like', "%{$prefix}%");
-            });
-        }
-
-        if ($floors !== null && $floors !== '') {
-            if ($floors === 'multi') {
-                $query->where('floors', '>', 1);
-            } elseif ($floors === '3' || $floors === '3+') {
-                $query->where('floors', '>=', 3);
-            } else {
-                $query->where('floors', (int)$floors);
+        if ($request->filled('ids')) {
+            $ids = is_array($request->get('ids')) ? $request->get('ids') : explode(',', $request->get('ids'));
+            $ids = array_filter(array_map('trim', $ids));
+            if (!empty($ids)) {
+                $query->whereIn('id', $ids);
             }
-        }
+        } else {
+            if ($schoolId) {
+                $query->where('schoolId', $schoolId);
+            }
 
-        if ($renovationOnly) {
-            $tenYearsAgo = (int)date('Y') - 10;
-            $query->whereNotNull('lastRepairYear')
-                  ->where('lastRepairYear', '<=', $tenYearsAgo);
+            if ($buildingType) {
+                $query->where('buildingType', $buildingType);
+            }
+
+            if ($status) {
+                $prefix = explode(' (', $status)[0];
+                $query->where(function ($q) use ($status, $prefix) {
+                    $q->where('status', $status)
+                      ->orWhere('status', 'like', "%{$prefix}%");
+                });
+            }
+
+            if ($floors !== null && $floors !== '') {
+                if ($floors === 'multi') {
+                    $query->where('floors', '>', 1);
+                } elseif ($floors === '3' || $floors === '3+') {
+                    $query->where('floors', '>=', 3);
+                } else {
+                    $query->where('floors', (int)$floors);
+                }
+            }
+
+            if ($renovationOnly) {
+                $tenYearsAgo = (int)date('Y') - 10;
+                $query->whereNotNull('lastRepairYear')
+                      ->where('lastRepairYear', '<=', $tenYearsAgo);
+            }
+
+            if ($search) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('buildingName', 'like', "%{$search}%")
+                      ->orWhere('notes', 'like', "%{$search}%")
+                      ->orWhere('size', 'like', "%{$search}%")
+                      ->orWhereHas('school', function ($sq) use ($search) {
+                          $sq->where('name', 'like', "%{$search}%")
+                            ->orWhere('censusNo', 'like', "%{$search}%");
+                      });
+                });
+            }
         }
 
         $buildings = $query->get();
+        $filename = 'Wilgamuwa_Buildings_' . ($renovationOnly ? 'Needing_Renovation_' : 'All_') . date('Y_m_d_His') . '.csv';
 
-        $filename = 'wilgamuwa_buildings_' . ($renovationOnly ? 'needing_renovation_' : 'all_') . date('Y_m_d') . '.csv';
-
-        return response()->streamDownload(function () use ($buildings, $renovationOnly) {
-            $handle = fopen('php://output', 'w');
-            
-            // UTF-8 BOM for Excel compatibility
-            fprintf($handle, chr(0xEF).chr(0xBB).chr(0xBF));
-
-            fputcsv($handle, [
-                $renovationOnly 
-                    ? 'Buildings Needing Renovation (Not repaired in last 10 years) - Wilgamuwa Zone'
-                    : 'School Buildings Directory - Wilgamuwa Zone'
-            ]);
-            fputcsv($handle, [
-                'Census No', 
-                'School Name', 
-                'Division', 
-                'Building Name', 
-                'Category / Type',
-                'Length (ft)',
-                'Width (ft)',
-                'Area (sqft)',
-                'Size String', 
-                'Floors', 
-                'Construction Year', 
-                'Last Repair Year', 
-                'Age (Yrs)', 
-                'Years Since Last Repair', 
-                'Status', 
-                'Notes'
-            ]);
-
-            foreach ($buildings as $b) {
-                $age = $b->constructionYear ? (date('Y') - $b->constructionYear) : 'N/A';
-                $yearsSince = $b->lastRepairYear ? (date('Y') - $b->lastRepairYear) : 'Never / Unknown';
-
-                fputcsv($handle, [
-                    $b->school->censusNo ?? 'N/A',
-                    $b->school->name ?? 'Unknown',
-                    $b->school->eduDivision ?? 'Wilgamuwa',
-                    $b->buildingName,
-                    $b->buildingType ?? 'Learning / ඉගෙනුම්',
-                    $b->lengthFeet ?? '',
-                    $b->widthFeet ?? '',
-                    $b->areaSqft ?? '',
-                    $b->size ?? 'N/A',
-                    $b->floors ?? 1,
-                    $b->constructionYear ?? 'N/A',
-                    $b->lastRepairYear ?? 'N/A',
-                    $age,
-                    $yearsSince,
-                    $b->bilingual_status ?? $b->status ?? 'Good / Usable (හොඳයි)',
-                    $b->notes ?? '',
-                ]);
-            }
-
-            fclose($handle);
-        }, $filename, [
-            'Content-Type' => 'text/csv; charset=utf-8',
-            'Content-Disposition' => "attachment; filename=\"{$filename}\"",
-        ]);
+        return ExportService::exportBuildings($buildings, $filename);
     }
 }

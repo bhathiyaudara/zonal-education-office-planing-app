@@ -42,9 +42,9 @@
         </div>
 
         <div class="flex items-center gap-3 shrink-0">
-            <button onclick="exportTeachers()" class="zems-btn-header">
+            <button onclick="exportAllPagesTeachers()" class="zems-btn-header" title="Export complete database records for all filtered teachers">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                Export
+                <span>Export All Pages</span>
             </button>
             <a href="{{ route('zonal.teachers.create') }}" class="zems-btn-primary !bg-white !text-blue-700 hover:!bg-blue-50">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
@@ -460,6 +460,7 @@
                         $t1SubjectVal = trim($teacher->t1_code ?: '');
                     @endphp
                     <tr class="teacher-row zems-table-row"
+                        data-id="{{ $teacher->id }}"
                         data-name="{{ strtolower(($teacher->nameWithInitials ?? '') . ' ' . ($teacher->fullName ?? '')) }}"
                         data-nic="{{ strtolower($teacher->nic ?? '') }}"
                         data-contact="{{ strtolower(($teacher->phone ?? '') . ' ' . ($teacher->mobile ?? '')) }}"
@@ -1040,38 +1041,41 @@ function resetFilters(runFilter = true) {
     }
 }
 
-function exportTeachers() {
+function exportAllPagesTeachers() {
     const s = window.teacherFilterState;
-    if (!s) return;
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = '{{ route("zonal.teachers.export") }}';
+    form.style.display = 'none';
 
-    let csv = 'Name,NIC,Gender,School,Division,Position,Service,Grade,Appointment Subject,Teaching Subject,Years at School,Retirement Left (Yrs),Attached\n';
-    s.rows.forEach(function(row) {
-        if (row.style.display === 'none') return;
-        const name = (row.getAttribute('data-name') || '').toUpperCase();
-        const nic = (row.getAttribute('data-nic') || '').toUpperCase();
-        const gender = row.getAttribute('data-gender') || '';
-        const school = row.getAttribute('data-school-name') || '';
-        const division = row.getAttribute('data-division') || '';
-        const position = row.getAttribute('data-position') || '';
-        const service = row.getAttribute('data-service') || '';
-        const grade = row.getAttribute('data-grade') || '';
-        const appt = (row.getAttribute('data-appointment-subject') || '').toUpperCase();
-        const teaching = (row.getAttribute('data-teaching-subject') || '').toUpperCase();
-        const yrsSchool = row.getAttribute('data-years-at-school') || '';
-        const yearsLeft = row.getAttribute('data-years-left') || '';
-        const attached = row.getAttribute('data-attached') || 'No';
+    // CSRF Token
+    const csrf = document.createElement('input');
+    csrf.type = 'hidden';
+    csrf.name = '_token';
+    csrf.value = '{{ csrf_token() }}';
+    form.appendChild(csrf);
 
-        csv += `"${name}","${nic}","${gender}","${school}","${division}","${position}","${service}","${grade}","${appt}","${teaching}","${yrsSchool === '-1' ? 'N/A' : yrsSchool}","${yearsLeft === '999' ? 'N/A' : yearsLeft}","${attached}"\n`;
-    });
+    // Get matching visible rows
+    const visibleRows = Array.from(document.querySelectorAll('.teacher-row')).filter(r => r.style.display !== 'none');
+    const totalRowsCount = s && s.rows ? s.rows.length : document.querySelectorAll('.teacher-row').length;
 
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement('a');
-    link.setAttribute('href', URL.createObjectURL(blob));
-    link.setAttribute('download', 'Wilgamuwa_Teachers_Filtered_' + new Date().toISOString().split('T')[0] + '.csv');
-    link.style.visibility = 'hidden';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // If a subset is filtered, send specific IDs; if all visible, export all
+    if (visibleRows.length < totalRowsCount) {
+        const ids = visibleRows.map(r => r.getAttribute('data-id')).filter(Boolean);
+        const idsInput = document.createElement('input');
+        idsInput.type = 'hidden';
+        idsInput.name = 'ids';
+        idsInput.value = ids.join(',');
+        form.appendChild(idsInput);
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+}
+
+function exportTeachers() {
+    exportAllPagesTeachers();
 }
 </script>
 @endsection

@@ -19,6 +19,10 @@
         </div>
 
         <div class="flex items-center gap-2 sm:gap-3 w-full sm:w-auto shrink-0">
+            <a href="{{ route('school.buildings.export', request()->all()) }}" class="zems-btn-secondary !bg-white/10 !text-white !border-white/20 hover:!bg-white/20 backdrop-blur-sm text-xs sm:text-sm !py-2.5 !px-4 w-full sm:w-auto justify-center flex items-center gap-2" title="Export complete database records for all filtered buildings">
+                <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span>Export All Pages</span>
+            </a>
             <button type="button" @click="openCreateModal()" class="zems-btn-primary !bg-white !text-blue-700 hover:!bg-blue-50 text-xs sm:text-sm !py-2.5 !px-4 w-full sm:w-auto justify-center shadow-md">
                 <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                 <span>Add Building</span>

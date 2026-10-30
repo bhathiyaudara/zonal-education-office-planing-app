@@ -42,8 +42,10 @@ Route::middleware('auth')->group(function () {
     Route::prefix('dashboard/zonal')->middleware(RoleMiddleware::class . ':ZONAL_ADMIN')->group(function () {
         // Schools
         Route::get('/schools', [Zonal\SchoolController::class, 'index'])->name('zonal.schools');
+        Route::match(['get', 'post'], '/schools/export', [Zonal\SchoolController::class, 'export'])->name('zonal.schools.export');
         Route::post('/schools', [Zonal\SchoolController::class, 'store'])->name('zonal.schools.store');
         Route::get('/schools/student-overview', [Zonal\SchoolController::class, 'studentOverview'])->name('zonal.schools.students');
+        Route::match(['get', 'post'], '/schools/student-overview/export', [Zonal\SchoolController::class, 'exportStudentOverview'])->name('zonal.schools.students.export');
         Route::get('/schools/remove', [Zonal\SchoolController::class, 'removeForm'])->name('zonal.schools.remove');
         Route::get('/schools/{id}', [Zonal\SchoolController::class, 'show'])->name('zonal.schools.show');
         Route::put('/schools/{id}', [Zonal\SchoolController::class, 'update'])->name('zonal.schools.update');
@@ -52,6 +54,7 @@ Route::middleware('auth')->group(function () {
 
         // Teachers
         Route::get('/teachers', [Zonal\TeacherController::class, 'index'])->name('zonal.teachers');
+        Route::match(['get', 'post'], '/teachers/export', [Zonal\TeacherController::class, 'export'])->name('zonal.teachers.export');
         Route::get('/teachers/create', [Zonal\TeacherController::class, 'create'])->name('zonal.teachers.create');
         Route::get('/teachers/search', [Zonal\TeacherController::class, 'search'])->name('zonal.teachers.search');
         Route::get('/teachers/remove', [Zonal\TeacherController::class, 'removeForm'])->name('zonal.teachers.remove');
@@ -81,7 +84,7 @@ Route::middleware('auth')->group(function () {
         // Buildings & Physical Data
         Route::get('/buildings', [Zonal\BuildingController::class, 'index'])->name('zonal.buildings');
         Route::post('/buildings', [Zonal\BuildingController::class, 'store'])->name('zonal.buildings.store');
-        Route::get('/buildings/export', [Zonal\BuildingController::class, 'export'])->name('zonal.buildings.export');
+        Route::match(['get', 'post'], '/buildings/export', [Zonal\BuildingController::class, 'export'])->name('zonal.buildings.export');
         Route::put('/buildings/{id}', [Zonal\BuildingController::class, 'update'])->name('zonal.buildings.update');
         Route::delete('/buildings/{id}', [Zonal\BuildingController::class, 'destroy'])->name('zonal.buildings.destroy');
         Route::put('/schools/{schoolId}/sanitation', [Zonal\BuildingController::class, 'updateSanitation'])->name('zonal.schools.sanitation.update');
@@ -105,6 +108,7 @@ Route::middleware('auth')->group(function () {
     // School Admin routes
     Route::prefix('dashboard/school')->middleware(RoleMiddleware::class . ':SCHOOL_ADMIN')->group(function () {
         Route::get('/teachers', [\App\Http\Controllers\School\TeacherController::class, 'index'])->name('school.teachers');
+        Route::match(['get', 'post'], '/teachers/export', [\App\Http\Controllers\School\TeacherController::class, 'export'])->name('school.teachers.export');
         Route::get('/teachers/new', [\App\Http\Controllers\School\TeacherController::class, 'create'])->name('school.teachers.create');
         Route::post('/teachers', [\App\Http\Controllers\School\TeacherController::class, 'store'])->name('school.teachers.store');
         
@@ -118,6 +122,7 @@ Route::middleware('auth')->group(function () {
 
         // Buildings & Facilities
         Route::get('/buildings', [\App\Http\Controllers\School\BuildingController::class, 'index'])->name('school.buildings');
+        Route::match(['get', 'post'], '/buildings/export', [\App\Http\Controllers\School\BuildingController::class, 'export'])->name('school.buildings.export');
         Route::post('/buildings', [\App\Http\Controllers\School\BuildingController::class, 'store'])->name('school.buildings.store');
         Route::put('/buildings/{id}', [\App\Http\Controllers\School\BuildingController::class, 'update'])->name('school.buildings.update');
         Route::delete('/buildings/{id}', [\App\Http\Controllers\School\BuildingController::class, 'destroy'])->name('school.buildings.destroy');
