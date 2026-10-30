@@ -5,7 +5,7 @@
 <div class="space-y-6 animate-fade-in" x-data="studentOverviewApp()">
 
     {{-- Header --}}
-    <div class="zems-header flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div class="zems-header !overflow-visible flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-30">
         <div class="flex items-center gap-4">
             <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm shrink-0 shadow-inner">
                 <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -22,13 +22,21 @@
         </div>
 
         {{-- Export Dropdown --}}
-        <div class="relative self-start md:self-auto" @click.away="exportOpen = false">
-            <button type="button" @click="exportOpen = !exportOpen" class="zems-btn-secondary !bg-white/10 !text-white !border-white/20 hover:!bg-white/20 backdrop-blur-sm px-4 py-2.5 flex items-center gap-2 rounded-xl text-xs font-bold transition">
+        <div class="relative self-start md:self-auto" @click.outside="exportOpen = false">
+            <button type="button" @click.stop="exportOpen = !exportOpen" class="zems-btn-secondary !bg-white/10 !text-white !border-white/20 hover:!bg-white/20 backdrop-blur-sm px-4 py-2.5 flex items-center gap-2 rounded-xl text-xs font-bold transition shadow-sm">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                 <span>Export Datasets</span>
                 <svg class="w-3.5 h-3.5 opacity-70 transition-transform" :class="exportOpen ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div x-show="exportOpen" x-transition.origin.top.right class="absolute right-0 mt-2 w-72 bg-white rounded-2xl shadow-2xl border border-slate-100 py-2 z-50 text-slate-800" style="display: none;">
+            <div x-show="exportOpen" 
+                 x-transition:enter="transition ease-out duration-150"
+                 x-transition:enter-start="opacity-0 scale-95"
+                 x-transition:enter-end="opacity-100 scale-100"
+                 x-transition:leave="transition ease-in duration-100"
+                 x-transition:leave-start="opacity-100 scale-100"
+                 x-transition:leave-end="opacity-0 scale-95"
+                 class="absolute right-0 mt-2 w-72 bg-white rounded-2xl shadow-2xl border border-slate-200 py-2 z-50 text-slate-800"
+                 style="display: none;">
                 <div class="px-4 py-2 border-b border-slate-100">
                     <p class="text-[10px] font-black uppercase text-slate-400 tracking-wider">Download Official Census CSVs</p>
                 </div>
@@ -188,20 +196,27 @@
                 </select>
             </div>
 
-            {{-- 3-Way View Mode Toggle (Summary, Detailed, Combined) --}}
-            <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl self-start md:self-auto shrink-0 flex-wrap">
-                <button type="button" @click="viewMode = 'summary'" :class="viewMode === 'summary' ? 'bg-white shadow text-slate-900 font-black' : 'text-slate-500 hover:text-slate-900'" class="px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                    <span>Summary View</span>
-                </button>
-                <button type="button" @click="viewMode = 'detailed'" :class="viewMode === 'detailed' ? 'bg-white shadow text-slate-900 font-black' : 'text-slate-500 hover:text-slate-900'" class="px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
-                    <span>Detailed (Grades 1 - 13)</span>
-                </button>
-                <button type="button" @click="viewMode = 'all'" :class="viewMode === 'all' ? 'bg-white shadow text-indigo-700 font-black' : 'text-slate-500 hover:text-slate-900'" class="px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5" title="View Section Summaries and Grades 1-13 side-by-side">
-                    <svg class="w-3.5 h-3.5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
-                    <span>Combined (All Columns)</span>
-                </button>
+            <div class="flex items-center gap-2 flex-wrap">
+                {{-- 3-Way View Mode Toggle (Summary, Detailed, Combined) --}}
+                <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl self-start md:self-auto shrink-0 flex-wrap">
+                    <button type="button" @click="viewMode = 'summary'" :class="viewMode === 'summary' ? 'bg-white shadow text-slate-900 font-black' : 'text-slate-500 hover:text-slate-900'" class="px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5">
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                        <span>Summary View</span>
+                    </button>
+                    <button type="button" @click="viewMode = 'detailed'" :class="viewMode === 'detailed' ? 'bg-white shadow text-slate-900 font-black' : 'text-slate-500 hover:text-slate-900'" class="px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5">
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+                        <span>Detailed (Grades 1 - 13)</span>
+                    </button>
+                    <button type="button" @click="viewMode = 'all'" :class="viewMode === 'all' ? 'bg-white shadow text-indigo-700 font-black' : 'text-slate-500 hover:text-slate-900'" class="px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5" title="View Section Summaries and Grades 1-13 side-by-side">
+                        <svg class="w-3.5 h-3.5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                        <span>Combined (All Columns)</span>
+                    </button>
+                </div>
+
+                <a href="{{ route('zonal.schools.students.export', ['type' => 'grades', 'academic_year' => $academicYear]) }}" class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition flex items-center gap-1.5 shadow-sm" title="Download Grades 1-13 Census CSV">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    <span>Export CSV</span>
+                </a>
             </div>
         </div>
 
@@ -341,6 +356,10 @@
                         <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                         <span>+ Add / Edit O/L Subject</span>
                     </button>
+                    <a href="{{ route('zonal.schools.students.export', ['type' => 'ol_subjects', 'academic_year' => $academicYear]) }}" class="px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 shadow-sm flex items-center gap-1.5 transition" title="Export O/L Subjects Matrix to CSV">
+                        <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        <span>Export O/L CSV</span>
+                    </a>
                     <input type="text" x-model="olSearch" placeholder="Search subject..." class="zems-input h-9 text-xs w-full sm:w-48">
                     <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
                         <button type="button" @click="olMode = 'total'" :class="olMode === 'total' ? 'bg-white text-slate-900 shadow' : 'text-slate-500'" class="px-3 py-1 rounded-lg text-xs font-bold transition">Combined</button>
@@ -530,6 +549,10 @@
                     <h3 class="text-sm font-black text-slate-900 uppercase tracking-wider">A/L Streams Distribution (විෂයය ධාරාව)</h3>
                     <p class="text-xs text-slate-500 mt-0.5">Stream enrollments across the collegiate schools in Wilgamuwa Zone</p>
                 </div>
+                <a href="{{ route('zonal.schools.students.export', ['type' => 'al_streams', 'academic_year' => $academicYear]) }}" class="px-3.5 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold shadow-sm flex items-center gap-1.5 transition" title="Export A/L Streams Matrix to CSV">
+                    <svg class="w-3.5 h-3.5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    <span>Export Streams CSV</span>
+                </a>
             </div>
             <div class="overflow-x-auto w-full">
                 <table class="zems-table min-w-[900px] text-xs" style="min-width: 900px;">
@@ -610,7 +633,11 @@
                     <h3 class="text-sm font-black text-slate-900 uppercase tracking-wider">A/L Subject-wise Student Counts (Grades 12 & 13)</h3>
                     <p class="text-xs text-slate-500 mt-0.5">Subject enrollment matrix across collegiate schools</p>
                 </div>
-                <div class="flex flex-wrap items-center gap-3">
+                <div class="flex flex-wrap items-center gap-2.5">
+                    <a href="{{ route('zonal.schools.students.export', ['type' => 'al_subjects', 'academic_year' => $academicYear]) }}" class="px-3.5 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold shadow-sm flex items-center gap-1.5 transition" title="Export A/L Subjects Matrix to CSV">
+                        <svg class="w-3.5 h-3.5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        <span>Export A/L CSV</span>
+                    </a>
                     <input type="text" x-model="alSearch" placeholder="Search A/L subject..." class="zems-input h-9 text-xs w-full sm:w-48">
                     <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
                         <button type="button" @click="alMode = 'total'" :class="alMode === 'total' ? 'bg-white text-slate-900 shadow' : 'text-slate-500'" class="px-3 py-1 rounded-lg text-xs font-bold transition">Combined</button>

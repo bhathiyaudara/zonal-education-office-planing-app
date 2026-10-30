@@ -540,25 +540,59 @@ class ExportService
             'Active Status'
         ];
 
-        return self::streamCsv($filename, $headers, $schools, function (School $school) use ($academicYear) {
+        $censusByNo = collect(\App\Services\StudentCensusService::getSchoolsCensus())->keyBy('census_no');
+        $allCensus = \App\Services\StudentCensusService::getSchoolsCensus();
+
+        return self::streamCsv($filename, $headers, $schools, function (School $school) use ($academicYear, $censusByNo, $allCensus) {
             $counts = $school->studentCounts;
             $sanitation = $school->sanitation;
+
+            $cData = $censusByNo->get($school->censusNo)
+                ?: $censusByNo->get(str_pad($school->censusNo ?? '', 5, '0', STR_PAD_LEFT));
+
+            if (!$cData && $school->name) {
+                $cleanName = strtoupper(preg_replace('/[^A-Za-z0-9]/', '', $school->name));
+                foreach ($allCensus as $scItem) {
+                    $cleanCName = strtoupper(preg_replace('/[^A-Za-z0-9]/', '', $scItem['name_en'] ?? ''));
+                    if ($cleanName === $cleanCName || str_contains($cleanName, $cleanCName) || str_contains($cleanCName, $cleanName)) {
+                        $cData = $scItem;
+                        break;
+                    }
+                }
+            }
 
             // Map by grade string or number
             $gradeMap = [];
             foreach ($counts as $sc) {
-                $g = (string)$sc->grade;
-                $gradeMap[$g] = [
+                $rawG = (string)$sc->grade;
+                $numG = preg_replace('/[^0-9]/', '', $rawG);
+                $info = [
                     'm' => (int)$sc->maleCount,
                     'f' => (int)$sc->femaleCount,
                     't' => (int)$sc->maleCount + (int)$sc->femaleCount,
                     'c' => (int)$sc->classCount,
                 ];
+                $gradeMap[$rawG] = $info;
+                if ($numG !== '') {
+                    $gradeMap[$numG] = $info;
+                }
             }
 
-            $getG = function ($grade) use ($gradeMap) {
+            $getG = function ($grade) use ($gradeMap, $cData) {
                 $key = (string)$grade;
-                return $gradeMap[$key] ?? ['m' => 0, 'f' => 0, 't' => 0, 'c' => 0];
+                $strKey = 'Grade ' . $grade;
+                if (isset($gradeMap[$key])) return $gradeMap[$key];
+                if (isset($gradeMap[$strKey])) return $gradeMap[$strKey];
+                if ($cData && isset($cData['grades'][$strKey])) {
+                    $cg = $cData['grades'][$strKey];
+                    return [
+                        'm' => (int)($cg['male'] ?? 0),
+                        'f' => (int)($cg['female'] ?? 0),
+                        't' => (int)($cg['total'] ?? 0),
+                        'c' => (int)($cg['classes'] ?? 0),
+                    ];
+                }
+                return ['m' => 0, 'f' => 0, 't' => 0, 'c' => 0];
             };
 
             // Calculate Primary Section (1-5)
@@ -586,6 +620,13 @@ class ExportService
             $totalF = (int)$counts->sum('femaleCount');
             $totalStudents = $totalM + $totalF;
             $totalClasses = (int)$counts->sum('classCount');
+
+            if ($totalStudents == 0 && $cData) {
+                $totalM = (int)($cData['grand_total']['male'] ?? 0);
+                $totalF = (int)($cData['grand_total']['female'] ?? 0);
+                $totalStudents = $totalM + $totalF;
+                $totalClasses = (int)($cData['total_classes'] ?? 0);
+            }
 
             $row = [
                 $school->id,
