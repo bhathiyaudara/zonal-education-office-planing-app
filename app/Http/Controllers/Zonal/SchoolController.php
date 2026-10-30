@@ -187,8 +187,21 @@ class SchoolController extends Controller
             ->get();
 
         // Compute per-school aggregates
-        $schoolsData = $schools->map(function ($school) use ($censusByNo, $academicYear) {
-            $cData = $censusByNo->get($school->censusNo);
+        $schoolsData = $schools->map(function ($school) use ($censusByNo, $schoolsCensus, $academicYear) {
+            $cData = $censusByNo->get($school->censusNo)
+                ?: $censusByNo->get(str_pad($school->censusNo ?? '', 5, '0', STR_PAD_LEFT));
+
+            if (!$cData && $school->name) {
+                $cleanName = strtoupper(preg_replace('/[^A-Za-z0-9]/', '', $school->name));
+                foreach ($schoolsCensus as $scItem) {
+                    $cleanCName = strtoupper(preg_replace('/[^A-Za-z0-9]/', '', $scItem['name_en'] ?? ''));
+                    if ($cleanName === $cleanCName || str_contains($cleanName, $cleanCName) || str_contains($cleanCName, $cleanName)) {
+                        $cData = $scItem;
+                        break;
+                    }
+                }
+            }
+
             $sc = $school->studentCounts->where('academicYear', $academicYear);
             if ($sc->isEmpty()) {
                 $sc = $school->studentCounts->where('academicYear', '2025');
