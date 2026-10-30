@@ -273,14 +273,15 @@
             }
 
             // Condition status
+            $bilingualStatus = $b->bilingual_status;
             $statusClass = 'bg-slate-100 text-slate-800 border-slate-200';
-            if (stripos($b->status, 'Good') !== false || stripos($b->status, 'හොද') !== false || stripos($b->status, 'භාවිතා') !== false) {
+            if (stripos($bilingualStatus, 'Good') !== false) {
                 $statusClass = 'bg-emerald-50 text-emerald-700 border-emerald-200';
-            } elseif (stripos($b->status, 'Minor') !== false || stripos($b->status, 'සාමාන්‍ය') !== false) {
+            } elseif (stripos($bilingualStatus, 'Minor') !== false) {
                 $statusClass = 'bg-blue-50 text-blue-700 border-blue-200';
-            } elseif (stripos($b->status, 'Major') !== false || stripos($b->status, 'අලුත්වැඩියා') !== false) {
+            } elseif (stripos($bilingualStatus, 'Major') !== false) {
                 $statusClass = 'bg-amber-50 text-amber-700 border-amber-200';
-            } elseif (stripos($b->status, 'Danger') !== false || stripos($b->status, 'අබලන්') !== false || stripos($b->status, 'Condemn') !== false) {
+            } elseif (stripos($bilingualStatus, 'Dilapidated') !== false || stripos($bilingualStatus, 'Dangerous') !== false || stripos($bilingualStatus, 'Condemn') !== false) {
                 $statusClass = 'bg-rose-50 text-rose-700 border-rose-200';
             }
         @endphp
@@ -307,7 +308,7 @@
                     </div>
                 </div>
                 <span class="inline-flex px-2 py-0.5 rounded-md text-[10px] font-bold border shrink-0 {{ $statusClass }}">
-                    {{ $b->status ?: 'Good / Usable' }}
+                    {{ $bilingualStatus }}
                 </span>
             </div>
 
@@ -383,7 +384,7 @@
                         <th class="zems-table-th">Floors</th>
                         <th class="zems-table-th">Year Built</th>
                         <th class="zems-table-th">Last Repair</th>
-                        <th class="zems-table-th">Status</th>
+                        <th class="zems-table-th">Structural Condition / තත්ත්වය</th>
                         <th class="zems-table-th text-right">Actions</th>
                     </tr>
                 </thead>
@@ -505,8 +506,21 @@
 
                         {{-- Status Pill --}}
                         <td class="zems-table-td">
+                            @php
+                                $bilingualStatus = $b->bilingual_status;
+                                $statusClass = 'bg-slate-100 text-slate-800 border-slate-200';
+                                if (stripos($bilingualStatus, 'Good') !== false) {
+                                    $statusClass = 'bg-emerald-50 text-emerald-700 border-emerald-200';
+                                } elseif (stripos($bilingualStatus, 'Minor') !== false) {
+                                    $statusClass = 'bg-blue-50 text-blue-700 border-blue-200';
+                                } elseif (stripos($bilingualStatus, 'Major') !== false) {
+                                    $statusClass = 'bg-amber-50 text-amber-700 border-amber-200';
+                                } elseif (stripos($bilingualStatus, 'Dilapidated') !== false || stripos($bilingualStatus, 'Dangerous') !== false || stripos($bilingualStatus, 'Condemn') !== false) {
+                                    $statusClass = 'bg-rose-50 text-rose-700 border-rose-200';
+                                }
+                            @endphp
                             <span class="inline-flex px-2.5 py-1 rounded-lg text-xs font-bold border {{ $statusClass }}">
-                                {{ $b->status ?: 'Good / Usable' }}
+                                {{ $bilingualStatus }}
                             </span>
                         </td>
 
@@ -665,20 +679,14 @@
 
                         {{-- Condition / Status (1 column on PC) --}}
                         <div class="md:col-span-1">
-                            <label class="zems-input-label">Structural Condition / Status</label>
-                            <input type="text" name="status" x-model="formData.status" list="status-suggestions" placeholder="e.g. Good / Usable, හෝදයි, වහලය අලුත්වැඩියා කල යුතුයි" class="zems-input h-[44px] text-xs sm:text-sm">
-                            <datalist id="status-suggestions">
-                                <option value="Good / Usable">Good / Usable</option>
-                                <option value="Minor Repairs Needed">Minor Repairs Needed</option>
-                                <option value="Needs Major Renovation">Needs Major Renovation (&ge;10 yrs)</option>
-                                <option value="Dangerous / Condemned">Dangerous / Condemned</option>
-                                <option value="හොදයි">හොදයි</option>
-                                <option value="භාවිතා කරයි">භාවිතා කරයි</option>
-                                <option value="සාමාන්‍ය මට්ටමක ඇත.">සාමාන්‍ය මට්ටමක ඇත.</option>
-                                <option value="වහලය අලුත්වැඩියා කල යුතුයි">වහලය අලුත්වැඩියා කල යුතුයි</option>
-                                <option value="වහලය ඉතා අබලන්">වහලය ඉතා අබලන්</option>
-                                <option value="අබලන් තත්ත්වයේ පවතී">අබලන් තත්ත්වයේ පවතී</option>
-                            </datalist>
+                            <label class="zems-input-label">Structural Condition / තත්ත්වය <span class="text-rose-500">*</span></label>
+                            <select name="status" x-model="formData.status" required class="zems-input h-[44px] text-xs sm:text-sm font-semibold">
+                                <option value="Good / Usable (හොඳයි / භාවිතයට සුදුසුයි)">Good / Usable (හොඳයි / භාවිතයට සුදුසුයි)</option>
+                                <option value="Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)">Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)</option>
+                                <option value="Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)">Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)</option>
+                                <option value="Dilapidated / Dangerous (ඉතා අබලන් / අවදානම්)">Dilapidated / Dangerous (ඉතා අබලන් / අවදානම්)</option>
+                                <option value="Condemned / Unusable (භාවිතයෙන් ඉවත් කළ යුතු)">Condemned / Unusable (භාවිතයෙන් ඉවත් කළ යුතු)</option>
+                            </select>
                         </div>
 
                         {{-- Year Built (1 column on PC) --}}
@@ -761,7 +769,7 @@ function buildingManager() {
         'floors' => old('floors', 1),
         'constructionYear' => old('constructionYear', ''),
         'lastRepairYear' => old('lastRepairYear', ''),
-        'status' => old('status', 'Good / Usable'),
+        'status' => old('status', 'Good / Usable (හොඳයි / භාවිතයට සුදුසුයි)'),
         'notes' => old('notes', ''),
     ]);
     return {
@@ -774,6 +782,24 @@ function buildingManager() {
         showDeleteModal: false,
         deleteAction: '',
         deleteBuildingName: '',
+
+        normalizeStatus(raw) {
+            if (!raw) return 'Good / Usable (හොඳයි / භාවිතයට සුදුසුයි)';
+            const s = ('' + raw).toLowerCase();
+            if (s.includes('dilapidated') || s.includes('danger') || s.includes('condemn') || s.includes('ඉතා අබලන්') || s.includes('අයහපත්') || s.includes('පරිහරණයට නොගනී')) {
+                return 'Dilapidated / Dangerous (ඉතා අබලන් / අවදානම්)';
+            }
+            if (s.includes('major') || s.includes('ප්‍රතිසංස්කරණ') || s.includes('අලුත්වැඩියා') || s.includes('වහල') || s.includes('දොර') || s.includes('ජනෙල්') || s.includes('කපරාරු') || s.includes('සිවිලිම') || s.includes('බිම') || s.includes('විදුලිය නොමැත') || s.includes('පේමන්ට්') || s.includes('පිළිසකර') || s.includes('වයරින්')) {
+                if (s.includes('minor') || s.includes('සුළු')) {
+                    return 'Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)';
+                }
+                return 'Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)';
+            }
+            if (s.includes('minor') || s.includes('fair') || s.includes('සුළු') || s.includes('සාමාන්‍ය') || s.includes('තීන්ත')) {
+                return 'Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)';
+            }
+            return 'Good / Usable (හොඳයි / භාවිතයට සුදුසුයි)';
+        },
 
         calculateArea() {
             const len = parseFloat(this.formData.lengthFeet);
@@ -804,7 +830,7 @@ function buildingManager() {
                 floors: 1,
                 constructionYear: '',
                 lastRepairYear: '',
-                status: 'Good / Usable',
+                status: 'Good / Usable (හොඳයි / භාවිතයට සුදුසුයි)',
                 notes: ''
             };
             this.showFormModal = true;
@@ -826,7 +852,7 @@ function buildingManager() {
                 floors: building.floors || 1,
                 constructionYear: building.constructionYear || '',
                 lastRepairYear: building.lastRepairYear || '',
-                status: building.status || 'Good / Usable',
+                status: this.normalizeStatus(building.bilingual_status || building.status),
                 notes: building.notes || ''
             };
             this.showFormModal = true;

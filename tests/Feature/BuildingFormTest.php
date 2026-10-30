@@ -41,6 +41,8 @@ class BuildingFormTest extends TestCase
         });
         (require database_path('migrations/2026_10_30_000000_create_buildings_and_facilities_tables.php'))->up();
         (require database_path('migrations/2026_10_30_000001_add_details_and_import_all_buildings.php'))->up();
+        (require database_path('migrations/2026_10_30_000002_clear_imported_census_notes.php'))->up();
+        (require database_path('migrations/2026_10_30_000003_standardize_bilingual_building_status.php'))->up();
 
         $this->school = School::create([
             'id' => 'test-school', 'name' => 'Test School', 'censusNo' => '09999', 'eduDivision' => 'Wilgamuwa',
@@ -72,7 +74,7 @@ class BuildingFormTest extends TestCase
         $this->assertDatabaseHas('buildings', [
             'schoolId' => $this->school->id, 'buildingName' => "Principal's Hall",
             'buildingType' => 'Learning / ඉගෙනුම්',
-            'floors' => 1, 'status' => 'Good / Usable', 'constructionYear' => null,
+            'floors' => 1, 'status' => 'Good / Usable (හොඳයි / භාවිතයට සුදුසුයි)', 'constructionYear' => null,
         ]);
         $this->assertDatabaseCount('auditlog', 1);
     }

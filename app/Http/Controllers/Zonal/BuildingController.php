@@ -124,7 +124,7 @@ class BuildingController extends Controller
             'floors' => 'nullable|integer|min:1|max:20',
             'constructionYear' => 'nullable|integer|min:1800|max:2050',
             'lastRepairYear' => 'nullable|integer|min:1800|max:2050',
-            'status' => 'nullable|string|max:100',
+            'status' => 'nullable|string|max:191',
             'notes' => 'nullable|string',
         ]);
 
@@ -135,7 +135,7 @@ class BuildingController extends Controller
             $validated['buildingType'] = 'Learning / ඉගෙනුම්';
         }
         if (empty($validated['status'])) {
-            $validated['status'] = 'Good / Usable';
+            $validated['status'] = 'Good / Usable (හොඳයි / භාවිතයට සුදුසුයි)';
         }
 
         // Auto-calculate Area & Size if length and width are specified
@@ -177,7 +177,7 @@ class BuildingController extends Controller
             'floors' => 'nullable|integer|min:1|max:20',
             'constructionYear' => 'nullable|integer|min:1800|max:2050',
             'lastRepairYear' => 'nullable|integer|min:1800|max:2050',
-            'status' => 'nullable|string|max:100',
+            'status' => 'nullable|string|max:191',
             'notes' => 'nullable|string',
         ]);
 
@@ -345,7 +345,7 @@ class BuildingController extends Controller
                     $b->lastRepairYear ?? 'N/A',
                     $age,
                     $yearsSince,
-                    $b->status ?? 'Good / Usable',
+                    $b->bilingual_status ?? $b->status ?? 'Good / Usable (හොඳයි)',
                     $b->notes ?? '',
                 ]);
             }

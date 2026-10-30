@@ -10,8 +10,8 @@
         "floors": 1,
         "constructionYear": 1930,
         "lastRepairYear": 2012,
-        "status": "වහලය අලුත්වැඩියා කල යුතුයි",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "වහලය අලුත්වැඩියා කල යුතුයි"
     },
     {
         "censusNo": "04152",
@@ -24,8 +24,8 @@
         "floors": 1,
         "constructionYear": 1925,
         "lastRepairYear": 2000,
-        "status": "වහලය ඉතා අබලන්",
-        "notes": null
+        "status": "Dilapidated \/ Dangerous (ඉතා අබලන් \/ අවදානම්)",
+        "notes": "වහලය ඉතා අබලන්"
     },
     {
         "censusNo": "04152",
@@ -38,7 +38,7 @@
         "floors": 1,
         "constructionYear": 1935,
         "lastRepairYear": 2015,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -52,7 +52,7 @@
         "floors": 1,
         "constructionYear": 1953,
         "lastRepairYear": 2013,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -66,8 +66,8 @@
         "floors": 1,
         "constructionYear": 1963,
         "lastRepairYear": null,
-        "status": "කපරාරුව පළුදු වී ඇත.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "කපරාරුව පළුදු වී ඇත."
     },
     {
         "censusNo": "04152",
@@ -80,8 +80,8 @@
         "floors": 1,
         "constructionYear": 1977,
         "lastRepairYear": 2008,
-        "status": "විදුලිය නොමැත.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "විදුලිය නොමැත."
     },
     {
         "censusNo": "04152",
@@ -94,7 +94,7 @@
         "floors": 1,
         "constructionYear": 1999,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -108,7 +108,7 @@
         "floors": 1,
         "constructionYear": 2012,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -122,7 +122,7 @@
         "floors": 1,
         "constructionYear": 1966,
         "lastRepairYear": null,
-        "status": "සාමාන්‍ය මට්ටමක ඇත.",
+        "status": "Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)",
         "notes": null
     },
     {
@@ -136,7 +136,7 @@
         "floors": 1,
         "constructionYear": 1959,
         "lastRepairYear": 2023,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -150,7 +150,7 @@
         "floors": 1,
         "constructionYear": 1970,
         "lastRepairYear": 2024,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -164,7 +164,7 @@
         "floors": 1,
         "constructionYear": 1980,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -178,7 +178,7 @@
         "floors": 1,
         "constructionYear": 2009,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -192,7 +192,7 @@
         "floors": 1,
         "constructionYear": 1977,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -206,7 +206,7 @@
         "floors": 1,
         "constructionYear": 1982,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -220,7 +220,7 @@
         "floors": 1,
         "constructionYear": 1976,
         "lastRepairYear": 2024,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -234,7 +234,7 @@
         "floors": 1,
         "constructionYear": 2010,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -248,7 +248,7 @@
         "floors": 1,
         "constructionYear": 2009,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -262,8 +262,8 @@
         "floors": 1,
         "constructionYear": 1976,
         "lastRepairYear": null,
-        "status": "අලුත්වැඩියා අවශ්‍යයයි",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "අලුත්වැඩියා අවශ්‍යයයි"
     },
     {
         "censusNo": "04118",
@@ -276,7 +276,7 @@
         "floors": 1,
         "constructionYear": 1968,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -290,7 +290,7 @@
         "floors": 2,
         "constructionYear": 2019,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -304,7 +304,7 @@
         "floors": 1,
         "constructionYear": 2021,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -318,7 +318,7 @@
         "floors": 1,
         "constructionYear": 2019,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -332,7 +332,7 @@
         "floors": 1,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -346,7 +346,7 @@
         "floors": 1,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -360,7 +360,7 @@
         "floors": 1,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -374,7 +374,7 @@
         "floors": 2,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -388,7 +388,7 @@
         "floors": 2,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -402,7 +402,7 @@
         "floors": 2,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -416,7 +416,7 @@
         "floors": 2,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -430,7 +430,7 @@
         "floors": 2,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -444,7 +444,7 @@
         "floors": 2,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -458,7 +458,7 @@
         "floors": 2,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -472,7 +472,7 @@
         "floors": 1,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -486,7 +486,7 @@
         "floors": 1,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -500,7 +500,7 @@
         "floors": 1,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -514,7 +514,7 @@
         "floors": 1,
         "constructionYear": 2018,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -528,7 +528,7 @@
         "floors": 1,
         "constructionYear": 2018,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -542,7 +542,7 @@
         "floors": 2,
         "constructionYear": 2018,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -556,7 +556,7 @@
         "floors": 2,
         "constructionYear": 2018,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -570,7 +570,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -584,7 +584,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "භාවිතා කල හැක",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -598,7 +598,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "භාවිතා කල හැක",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -612,7 +612,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": 2022,
-        "status": "භාවිතා කල හැක",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -626,7 +626,7 @@
         "floors": 2,
         "constructionYear": 2003,
         "lastRepairYear": 2024,
-        "status": "භාවිතා කල හැක",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -640,7 +640,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": 2017,
-        "status": "භාවිතා කරනු ලැබේ.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -654,7 +654,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": 2022,
-        "status": "භාවිතා කරනු ලැබේ.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -668,8 +668,8 @@
         "floors": 1,
         "constructionYear": 1933,
         "lastRepairYear": 2018,
-        "status": "වහලය සුළු අලුත්වැඩියා කල යුතු අතර තීන්ත ආලේප කර",
-        "notes": null
+        "status": "Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "වහලය සුළු අලුත්වැඩියා කල යුතු අතර තීන්ත ආලේප කර"
     },
     {
         "censusNo": "04125",
@@ -682,7 +682,7 @@
         "floors": 1,
         "constructionYear": 1982,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -696,8 +696,8 @@
         "floors": 1,
         "constructionYear": 1975,
         "lastRepairYear": null,
-        "status": "වහල අලුත්වැඩියා කර තීන්ත ආලේප කල යුතුය",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "වහල අලුත්වැඩියා කර තීන්ත ආලේප කල යුතුය"
     },
     {
         "censusNo": "04125",
@@ -710,8 +710,8 @@
         "floors": 1,
         "constructionYear": 1997,
         "lastRepairYear": null,
-        "status": "බිම .සිවිලිම .වහල අලුත්වැඩියා කල යුතුය",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "බිම .සිවිලිම .වහල අලුත්වැඩියා කල යුතුය"
     },
     {
         "censusNo": "04125",
@@ -724,8 +724,8 @@
         "floors": 1,
         "constructionYear": 2024,
         "lastRepairYear": null,
-        "status": "සුහුරු පංති කාමර වැඩ අවසන් කර ඇත",
-        "notes": null
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
+        "notes": "සුහුරු පංති කාමර වැඩ අවසන් කර ඇත"
     },
     {
         "censusNo": "04330",
@@ -738,7 +738,7 @@
         "floors": 2,
         "constructionYear": 1993,
         "lastRepairYear": 2021,
-        "status": "හොද මට්ටමේ ඇත.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -752,7 +752,7 @@
         "floors": 2,
         "constructionYear": 2018,
         "lastRepairYear": null,
-        "status": "හොද මට්ටමේ ඇත.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -766,7 +766,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -780,7 +780,7 @@
         "floors": 1,
         "constructionYear": 1986,
         "lastRepairYear": 2017,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -794,7 +794,7 @@
         "floors": 1,
         "constructionYear": 2021,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -808,7 +808,7 @@
         "floors": 1,
         "constructionYear": 2021,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -822,7 +822,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": 2017,
-        "status": "සාමාන්‍යයයි",
+        "status": "Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)",
         "notes": null
     },
     {
@@ -836,7 +836,7 @@
         "floors": 1,
         "constructionYear": 2016,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -850,7 +850,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "අබලන් තත්ත්වයේ පවතී.",
+        "status": "Dilapidated \/ Dangerous (ඉතා අබලන් \/ අවදානම්)",
         "notes": null
     },
     {
@@ -864,7 +864,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": 2018,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -878,7 +878,7 @@
         "floors": 1,
         "constructionYear": 2018,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -892,7 +892,7 @@
         "floors": 1,
         "constructionYear": 2018,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -906,7 +906,7 @@
         "floors": 1,
         "constructionYear": 2009,
         "lastRepairYear": null,
-        "status": "අබලන් තත්ත්වයේ පවතී",
+        "status": "Dilapidated \/ Dangerous (ඉතා අබලන් \/ අවදානම්)",
         "notes": null
     },
     {
@@ -920,8 +920,8 @@
         "floors": 1,
         "constructionYear": 1970,
         "lastRepairYear": 2017,
-        "status": "ගොඩනැගිල්ලේ වට පිල අබලන් වී ඇත.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "ගොඩනැගිල්ලේ වට පිල අබලන් වී ඇත."
     },
     {
         "censusNo": "04139",
@@ -934,8 +934,8 @@
         "floors": 1,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "කාර්යාලයේ සිවිලිම වේයන් විසින් විනාශ කර ඇත.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "කාර්යාලයේ සිවිලිම වේයන් විසින් විනාශ කර ඇත."
     },
     {
         "censusNo": "04139",
@@ -948,7 +948,7 @@
         "floors": 1,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොද තත්ත්වයේ පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -962,8 +962,8 @@
         "floors": 1,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "1-5 ශ්‍රේණි සදහා නොබෙදූ ‌පංති කාමර ලෙස භාවිතා කරයි.ශාලාව අලුත්වැඩියා කල යුතු තත්ත්වයේ පවතී.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "1-5 ශ්‍රේණි සදහා නොබෙදූ ‌පංති කාමර ලෙස භාවිතා කරයි.ශාලාව අලුත්වැඩියා කල යුතු තත්ත්වයේ පවතී."
     },
     {
         "censusNo": "04315",
@@ -976,7 +976,7 @@
         "floors": 1,
         "constructionYear": 2006,
         "lastRepairYear": 2006,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -990,7 +990,7 @@
         "floors": 1,
         "constructionYear": 2006,
         "lastRepairYear": 2010,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1004,8 +1004,8 @@
         "floors": 1,
         "constructionYear": 2015,
         "lastRepairYear": null,
-        "status": "තීන්ත ආලේප කල යුතුව අැත.",
-        "notes": null
+        "status": "Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "තීන්ත ආලේප කල යුතුව අැත."
     },
     {
         "censusNo": "04348",
@@ -1018,8 +1018,8 @@
         "floors": 1,
         "constructionYear": 2015,
         "lastRepairYear": null,
-        "status": "තීන්ත ආලේප කල යුතුව අැත.",
-        "notes": null
+        "status": "Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "තීන්ත ආලේප කල යුතුව අැත."
     },
     {
         "censusNo": "04348",
@@ -1032,8 +1032,8 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "තීන්ත ආලේප කල යුතුව අැත.",
-        "notes": null
+        "status": "Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "තීන්ත ආලේප කල යුතුව අැත."
     },
     {
         "censusNo": "04348",
@@ -1046,8 +1046,8 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "තීන්ත ආලේප කල යුතුව අැත.",
-        "notes": null
+        "status": "Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "තීන්ත ආලේප කල යුතුව අැත."
     },
     {
         "censusNo": "04348",
@@ -1060,8 +1060,8 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "තීන්ත ආලේප කල යුතුව අැත.",
-        "notes": null
+        "status": "Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "තීන්ත ආලේප කල යුතුව අැත."
     },
     {
         "censusNo": "04350",
@@ -1074,7 +1074,7 @@
         "floors": 1,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1088,7 +1088,7 @@
         "floors": 1,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1102,7 +1102,7 @@
         "floors": 1,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1116,8 +1116,8 @@
         "floors": 1,
         "constructionYear": 1971,
         "lastRepairYear": 2022,
-        "status": "දොර .ජනෙල් .බිම අලුත් වැඩියාව",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "දොර .ජනෙල් .බිම අලුත් වැඩියාව"
     },
     {
         "censusNo": "04119",
@@ -1130,8 +1130,8 @@
         "floors": 2,
         "constructionYear": 1992,
         "lastRepairYear": 2024,
-        "status": "බිම් මහලෙහි දොර.ජනේල අලුත්වැඩියාව",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "බිම් මහලෙහි දොර.ජනේල අලුත්වැඩියාව"
     },
     {
         "censusNo": "04119",
@@ -1144,8 +1144,8 @@
         "floors": 1,
         "constructionYear": 1969,
         "lastRepairYear": null,
-        "status": "වහලය හා බිම අලුත්වැඩියාව",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "වහලය හා බිම අලුත්වැඩියාව"
     },
     {
         "censusNo": "04119",
@@ -1158,8 +1158,8 @@
         "floors": 1,
         "constructionYear": 1971,
         "lastRepairYear": null,
-        "status": "වහලය හා බිම අලුත්වැඩියාව",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "වහලය හා බිම අලුත්වැඩියාව"
     },
     {
         "censusNo": "04119",
@@ -1172,8 +1172,8 @@
         "floors": 1,
         "constructionYear": 1969,
         "lastRepairYear": null,
-        "status": "වහලය හා බිම අලුත්වැඩියාව",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "වහලය හා බිම අලුත්වැඩියාව"
     },
     {
         "censusNo": "04119",
@@ -1186,8 +1186,8 @@
         "floors": 1,
         "constructionYear": 1971,
         "lastRepairYear": null,
-        "status": "වහලය හා බිම අලුත්වැඩියාව",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "වහලය හා බිම අලුත්වැඩියාව"
     },
     {
         "censusNo": "04119",
@@ -1200,8 +1200,8 @@
         "floors": 1,
         "constructionYear": 1971,
         "lastRepairYear": null,
-        "status": "වහලය හා බිම අලුත්වැඩියාව",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "වහලය හා බිම අලුත්වැඩියාව"
     },
     {
         "censusNo": "04119",
@@ -1214,8 +1214,8 @@
         "floors": 2,
         "constructionYear": 1994,
         "lastRepairYear": null,
-        "status": "දොර .ජනෙල් .බිම අලුත් වැඩියාව",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "දොර .ජනෙල් .බිම අලුත් වැඩියාව"
     },
     {
         "censusNo": "04119",
@@ -1228,8 +1228,8 @@
         "floors": 1,
         "constructionYear": 1995,
         "lastRepairYear": null,
-        "status": "දොර .ජනෙල් . අලුත් වැඩියාව",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "දොර .ජනෙල් . අලුත් වැඩියාව"
     },
     {
         "censusNo": "04119",
@@ -1242,8 +1242,8 @@
         "floors": 3,
         "constructionYear": 2013,
         "lastRepairYear": null,
-        "status": "දොර .ජනෙල් . අලුත් වැඩියාව",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "දොර .ජනෙල් . අලුත් වැඩියාව"
     },
     {
         "censusNo": "04119",
@@ -1256,8 +1256,8 @@
         "floors": 1,
         "constructionYear": 2014,
         "lastRepairYear": null,
-        "status": "දොර .ජනෙල් . අලුත් වැඩියාව",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "දොර .ජනෙල් . අලුත් වැඩියාව"
     },
     {
         "censusNo": "04119",
@@ -1270,8 +1270,8 @@
         "floors": 3,
         "constructionYear": 2013,
         "lastRepairYear": null,
-        "status": "ජනේල අලුත්වැඩියාව",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "ජනේල අලුත්වැඩියාව"
     },
     {
         "censusNo": "04119",
@@ -1284,8 +1284,8 @@
         "floors": 2,
         "constructionYear": 2016,
         "lastRepairYear": null,
-        "status": "තීන්ත ආලේපනය",
-        "notes": null
+        "status": "Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "තීන්ත ආලේපනය"
     },
     {
         "censusNo": "04119",
@@ -1298,8 +1298,8 @@
         "floors": 1,
         "constructionYear": 1998,
         "lastRepairYear": null,
-        "status": "දොර .ජනෙල් .බිම අලුත් වැඩියාව",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "දොර .ජනෙල් .බිම අලුත් වැඩියාව"
     },
     {
         "censusNo": "04123",
@@ -1312,7 +1312,7 @@
         "floors": 2,
         "constructionYear": 1999,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1326,7 +1326,7 @@
         "floors": 1,
         "constructionYear": 1983,
         "lastRepairYear": 2024,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1340,7 +1340,7 @@
         "floors": 1,
         "constructionYear": 1965,
         "lastRepairYear": 2021,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1354,7 +1354,7 @@
         "floors": 1,
         "constructionYear": 1970,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1368,7 +1368,7 @@
         "floors": 1,
         "constructionYear": 2000,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1382,7 +1382,7 @@
         "floors": 1,
         "constructionYear": 2024,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1396,7 +1396,7 @@
         "floors": 2,
         "constructionYear": 2018,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1410,7 +1410,7 @@
         "floors": 1,
         "constructionYear": 2020,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1424,7 +1424,7 @@
         "floors": 1,
         "constructionYear": 2015,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1438,8 +1438,8 @@
         "floors": 1,
         "constructionYear": 1985,
         "lastRepairYear": null,
-        "status": "වහලය .බිම.බිත්ති.දොර ජනෙල් සියල්ලම අලුත් වැඩියා කල යුතුයි",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "වහලය .බිම.බිත්ති.දොර ජනෙල් සියල්ලම අලුත් වැඩියා කල යුතුයි"
     },
     {
         "censusNo": "04123",
@@ -1452,7 +1452,7 @@
         "floors": 2,
         "constructionYear": 2016,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1466,8 +1466,8 @@
         "floors": 1,
         "constructionYear": 1980,
         "lastRepairYear": null,
-        "status": "භාවිතා කරයි.වහලය අලුත්වැඩියා කල යුතුව ඇත",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "භාවිතා කරයි.වහලය අලුත්වැඩියා කල යුතුව ඇත"
     },
     {
         "censusNo": "04121",
@@ -1480,7 +1480,7 @@
         "floors": 1,
         "constructionYear": 1978,
         "lastRepairYear": 2000,
-        "status": "භාවිතා කරයි.හොද තත්ත්වයේ ඇත.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1494,7 +1494,7 @@
         "floors": 3,
         "constructionYear": 2018,
         "lastRepairYear": null,
-        "status": "භාවිතා කරයි.හොද තත්ත්වයේ ඇත.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1508,8 +1508,8 @@
         "floors": 1,
         "constructionYear": 2000,
         "lastRepairYear": null,
-        "status": "භාවිතා කරයි.පොළව අලුත්වැඩියා කල යුතුයි.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "භාවිතා කරයි.පොළව අලුත්වැඩියා කල යුතුයි."
     },
     {
         "censusNo": "04121",
@@ -1522,8 +1522,8 @@
         "floors": 1,
         "constructionYear": 2005,
         "lastRepairYear": null,
-        "status": "භාවිතා කරයි.වහලය හා පොළව අලුත්වැඩියා කල යුතුය.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "භාවිතා කරයි.වහලය හා පොළව අලුත්වැඩියා කල යුතුය."
     },
     {
         "censusNo": "04121",
@@ -1536,7 +1536,7 @@
         "floors": 2,
         "constructionYear": 2012,
         "lastRepairYear": null,
-        "status": "භාවිතා කරයි.හොද තත්ත්වයේ පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1550,8 +1550,8 @@
         "floors": 1,
         "constructionYear": 2008,
         "lastRepairYear": null,
-        "status": "භාවිතා කරයි.වහලය අලුත්වැඩියා කල යුතුව ඇත",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "භාවිතා කරයි.වහලය අලුත්වැඩියා කල යුතුව ඇත"
     },
     {
         "censusNo": "04121",
@@ -1564,8 +1564,8 @@
         "floors": 1,
         "constructionYear": 2005,
         "lastRepairYear": null,
-        "status": "භාවිතා කරයි.වහලය අලුත්වැඩියා කල යුතුව ඇත",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "භාවිතා කරයි.වහලය අලුත්වැඩියා කල යුතුව ඇත"
     },
     {
         "censusNo": "04121",
@@ -1578,8 +1578,8 @@
         "floors": 1,
         "constructionYear": 2000,
         "lastRepairYear": null,
-        "status": "භාවිතා කරයි.වහලය අලුත්වැඩියා කල යුතුව ඇත",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "භාවිතා කරයි.වහලය අලුත්වැඩියා කල යුතුව ඇත"
     },
     {
         "censusNo": "04121",
@@ -1592,7 +1592,7 @@
         "floors": 2,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1606,7 +1606,7 @@
         "floors": 2,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "භාවිතයට ගනී",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1620,7 +1620,7 @@
         "floors": 2,
         "constructionYear": 2010,
         "lastRepairYear": null,
-        "status": "භාවිතයට ගනී",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1634,8 +1634,8 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "පංති කාමර සදහා",
-        "notes": null
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
+        "notes": "පංති කාමර සදහා"
     },
     {
         "censusNo": "04122",
@@ -1648,8 +1648,8 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "පංති කාමර සදහා",
-        "notes": null
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
+        "notes": "පංති කාමර සදහා"
     },
     {
         "censusNo": "04122",
@@ -1662,8 +1662,8 @@
         "floors": 1,
         "constructionYear": 1980,
         "lastRepairYear": 2024,
-        "status": "රැස්වීම් ශෘලාව",
-        "notes": null
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
+        "notes": "රැස්වීම් ශෘලාව"
     },
     {
         "censusNo": "04122",
@@ -1676,8 +1676,8 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "ආපන ශාලාව \/පංති කාමර සදහා",
-        "notes": null
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
+        "notes": "ආපන ශාලාව \/පංති කාමර සදහා"
     },
     {
         "censusNo": "04122",
@@ -1690,8 +1690,8 @@
         "floors": 1,
         "constructionYear": 1985,
         "lastRepairYear": null,
-        "status": "චිත්‍ර විෂය හා රංග කලා වීෂය සදහා",
-        "notes": null
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
+        "notes": "චිත්‍ර විෂය හා රංග කලා වීෂය සදහා"
     },
     {
         "censusNo": "04122",
@@ -1704,8 +1704,8 @@
         "floors": 1,
         "constructionYear": 2006,
         "lastRepairYear": null,
-        "status": "ගෟහ විද්‍යා ඒ්කකය ලෙස යොදා ගනී.(අලුත්වැඩියා කලයුතුව ඇත)",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "ගෟහ විද්‍යා ඒ්කකය ලෙස යොදා ගනී.(අලුත්වැඩියා කලයුතුව ඇත)"
     },
     {
         "censusNo": "04122",
@@ -1718,8 +1718,8 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "පංති කාමර සදහා යොදා ගනී",
-        "notes": null
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
+        "notes": "පංති කාමර සදහා යොදා ගනී"
     },
     {
         "censusNo": "04122",
@@ -1732,8 +1732,8 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "නර්තන අංශය සදහා යොදා ගනී.",
-        "notes": null
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
+        "notes": "නර්තන අංශය සදහා යොදා ගනී."
     },
     {
         "censusNo": "04144",
@@ -1746,7 +1746,7 @@
         "floors": 1,
         "constructionYear": 1986,
         "lastRepairYear": 2021,
-        "status": "අලුත්වැඩියා කළ යුතුයි",
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
         "notes": null
     },
     {
@@ -1760,7 +1760,7 @@
         "floors": 1,
         "constructionYear": 1975,
         "lastRepairYear": 2023,
-        "status": "අලුත්වැඩියා කළ යුතුයි",
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
         "notes": null
     },
     {
@@ -1774,7 +1774,7 @@
         "floors": 1,
         "constructionYear": 1993,
         "lastRepairYear": 2018,
-        "status": "අලුත්වැඩියා කළ යුතුයි",
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
         "notes": null
     },
     {
@@ -1788,8 +1788,8 @@
         "floors": 2,
         "constructionYear": 1993,
         "lastRepairYear": 2024,
-        "status": "අලුත්වැඩියා කරමින් පවතී.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "අලුත්වැඩියා කරමින් පවතී."
     },
     {
         "censusNo": "04144",
@@ -1802,7 +1802,7 @@
         "floors": 1,
         "constructionYear": 2020,
         "lastRepairYear": null,
-        "status": "අලුත්වැඩියා කළ යුතුයි",
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
         "notes": null
     },
     {
@@ -1816,8 +1816,8 @@
         "floors": 1,
         "constructionYear": 1972,
         "lastRepairYear": 2024,
-        "status": "යහපත් (උළු වහලය)",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "යහපත් (උළු වහලය)"
     },
     {
         "censusNo": "04124",
@@ -1830,8 +1830,8 @@
         "floors": 1,
         "constructionYear": 1980,
         "lastRepairYear": 2022,
-        "status": "කොටසක් ප්‍රතිසංස්කරණය කළ යුතුයි",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "කොටසක් ප්‍රතිසංස්කරණය කළ යුතුයි"
     },
     {
         "censusNo": "04124",
@@ -1844,8 +1844,8 @@
         "floors": 1,
         "constructionYear": 1992,
         "lastRepairYear": null,
-        "status": "ප්‍රතිසංස්කරණ මට්ටමේ ඇත.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "ප්‍රතිසංස්කරණ මට්ටමේ ඇත."
     },
     {
         "censusNo": "04124",
@@ -1858,8 +1858,8 @@
         "floors": 1,
         "constructionYear": 1990,
         "lastRepairYear": null,
-        "status": "ප්‍රතිසංස්කරණ මට්ටමේ ඇත.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "ප්‍රතිසංස්කරණ මට්ටමේ ඇත."
     },
     {
         "censusNo": "04124",
@@ -1872,8 +1872,8 @@
         "floors": 1,
         "constructionYear": 1990,
         "lastRepairYear": null,
-        "status": "ප්‍රතිසංස්කරණ මට්ටමේ ඇත.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "ප්‍රතිසංස්කරණ මට්ටමේ ඇත."
     },
     {
         "censusNo": "04124",
@@ -1886,8 +1886,8 @@
         "floors": 1,
         "constructionYear": 1990,
         "lastRepairYear": null,
-        "status": "සුළු අලුත්වැඩියා අවශ්‍ය වේ.",
-        "notes": null
+        "status": "Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "සුළු අලුත්වැඩියා අවශ්‍ය වේ."
     },
     {
         "censusNo": "04124",
@@ -1900,8 +1900,8 @@
         "floors": 1,
         "constructionYear": 2000,
         "lastRepairYear": 1019,
-        "status": "වහලය අලුත්වැඩියා කල යුතුයි",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "වහලය අලුත්වැඩියා කල යුතුයි"
     },
     {
         "censusNo": "04124",
@@ -1914,8 +1914,8 @@
         "floors": 1,
         "constructionYear": 1972,
         "lastRepairYear": 2021,
-        "status": "සුළු අලුත්වැඩියා තත්ත්වය",
-        "notes": null
+        "status": "Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "සුළු අලුත්වැඩියා තත්ත්වය"
     },
     {
         "censusNo": "04124",
@@ -1928,8 +1928,8 @@
         "floors": 1,
         "constructionYear": 1980,
         "lastRepairYear": 2020,
-        "status": "සුළු අලුත්වැඩියා තත්ත්වය",
-        "notes": null
+        "status": "Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "සුළු අලුත්වැඩියා තත්ත්වය"
     },
     {
         "censusNo": "04319",
@@ -1942,7 +1942,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1956,7 +1956,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": 2017,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1970,7 +1970,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1984,7 +1984,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -1998,7 +1998,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2012,7 +2012,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2026,7 +2026,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2040,7 +2040,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2054,7 +2054,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2068,7 +2068,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": 2020,
-        "status": "භාවිතයට සුදුසු තත්ත්වයේ පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2082,8 +2082,8 @@
         "floors": 1,
         "constructionYear": 1994,
         "lastRepairYear": null,
-        "status": "අලුත්වැඩියා කිරීමට ඇත.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "අලුත්වැඩියා කිරීමට ඇත."
     },
     {
         "censusNo": "04126",
@@ -2096,7 +2096,7 @@
         "floors": 1,
         "constructionYear": 2013,
         "lastRepairYear": null,
-        "status": "භාවිතයට සුදුසු තත්ත්වයේ පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2110,7 +2110,7 @@
         "floors": 1,
         "constructionYear": 2013,
         "lastRepairYear": null,
-        "status": "භාවිතයට සුදුසු තත්ත්වයේ පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2124,8 +2124,8 @@
         "floors": 1,
         "constructionYear": 2006,
         "lastRepairYear": null,
-        "status": "අලුත්වැඩියා කිරීමට ඇත.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "අලුත්වැඩියා කිරීමට ඇත."
     },
     {
         "censusNo": "04126",
@@ -2138,7 +2138,7 @@
         "floors": 1,
         "constructionYear": 1985,
         "lastRepairYear": 2022,
-        "status": "භාවිතයට සුදුසු තත්ත්වයේ පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2152,7 +2152,7 @@
         "floors": 1,
         "constructionYear": 2024,
         "lastRepairYear": null,
-        "status": "භාවිතයට සුදුසු තත්ත්වයේ පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2166,8 +2166,8 @@
         "floors": 1,
         "constructionYear": 1985,
         "lastRepairYear": null,
-        "status": "අලුත්වැඩියා කල යුතු තත්ත්වයේ පවතී.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "අලුත්වැඩියා කල යුතු තත්ත්වයේ පවතී."
     },
     {
         "censusNo": "04149",
@@ -2180,7 +2180,7 @@
         "floors": 1,
         "constructionYear": 2000,
         "lastRepairYear": 2021,
-        "status": "භාවිතයේ පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2194,7 +2194,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "අලුත්වැඩියා කළ යුතුයි",
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
         "notes": null
     },
     {
@@ -2208,7 +2208,7 @@
         "floors": 1,
         "constructionYear": 1996,
         "lastRepairYear": null,
-        "status": "අලුත්වැඩියා කළ යුතුයි",
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
         "notes": null
     },
     {
@@ -2222,7 +2222,7 @@
         "floors": 1,
         "constructionYear": 2010,
         "lastRepairYear": null,
-        "status": "අලුත්වැඩියා කළ යුතුයි",
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
         "notes": null
     },
     {
@@ -2236,8 +2236,8 @@
         "floors": 1,
         "constructionYear": 1997,
         "lastRepairYear": 2019,
-        "status": "අයහපත්",
-        "notes": null
+        "status": "Dilapidated \/ Dangerous (ඉතා අබලන් \/ අවදානම්)",
+        "notes": "අයහපත්"
     },
     {
         "censusNo": "04322",
@@ -2250,7 +2250,7 @@
         "floors": 1,
         "constructionYear": 2025,
         "lastRepairYear": null,
-        "status": "භාවිතයට සුදුසු තත්ත්වයේ පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2264,7 +2264,7 @@
         "floors": 1,
         "constructionYear": 2024,
         "lastRepairYear": null,
-        "status": "යහපත්",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2278,8 +2278,8 @@
         "floors": 1,
         "constructionYear": 1999,
         "lastRepairYear": null,
-        "status": "සුළු අලුත්වැඩියා කටයුතු සිදු කල යුතුය.",
-        "notes": null
+        "status": "Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "සුළු අලුත්වැඩියා කටයුතු සිදු කල යුතුය."
     },
     {
         "censusNo": "04342",
@@ -2292,7 +2292,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": 2022,
-        "status": "හොද තත්ත්වයක පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2306,7 +2306,7 @@
         "floors": 1,
         "constructionYear": 1980,
         "lastRepairYear": null,
-        "status": "හොද තත්ත්වයක පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2320,8 +2320,8 @@
         "floors": 1,
         "constructionYear": 1983,
         "lastRepairYear": null,
-        "status": "වහල පිළිසකර කිරීමට අවශ්‍යයි.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "වහල පිළිසකර කිරීමට අවශ්‍යයි."
     },
     {
         "censusNo": "04342",
@@ -2334,7 +2334,7 @@
         "floors": 1,
         "constructionYear": 2012,
         "lastRepairYear": null,
-        "status": "හොද තත්ත්වයක පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2348,7 +2348,7 @@
         "floors": 2,
         "constructionYear": 2016,
         "lastRepairYear": 2023,
-        "status": "හොද තත්ත්වයක පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2362,7 +2362,7 @@
         "floors": 1,
         "constructionYear": 2021,
         "lastRepairYear": null,
-        "status": "හොද තත්ත්වයක පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2376,7 +2376,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "හොද තත්ත්වයක පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2390,7 +2390,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "හොද තත්ත්වයක පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2404,8 +2404,8 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "හොද තත්ත්වයක පවතී.පේමන්ට් එක කැඩී ඇත",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "හොද තත්ත්වයක පවතී.පේමන්ට් එක කැඩී ඇත"
     },
     {
         "censusNo": "04343",
@@ -2418,7 +2418,7 @@
         "floors": 2,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "හොද තත්ත්වයක පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2432,8 +2432,8 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "අලුත්වැඩියා වෙමින් පවතී.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "අලුත්වැඩියා වෙමින් පවතී."
     },
     {
         "censusNo": "04343",
@@ -2446,7 +2446,7 @@
         "floors": 1,
         "constructionYear": 2021,
         "lastRepairYear": null,
-        "status": "හොද තත්ත්වයක පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2460,7 +2460,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2474,8 +2474,8 @@
         "floors": 1,
         "constructionYear": 1976,
         "lastRepairYear": 2017,
-        "status": "අලුත්වැඩියා කල යුතු මට්ටමේ පවතී.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "අලුත්වැඩියා කල යුතු මට්ටමේ පවතී."
     },
     {
         "censusNo": "04131",
@@ -2488,7 +2488,7 @@
         "floors": 1,
         "constructionYear": 1988,
         "lastRepairYear": 2016,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2502,7 +2502,7 @@
         "floors": 1,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2516,7 +2516,7 @@
         "floors": 1,
         "constructionYear": 1974,
         "lastRepairYear": 2016,
-        "status": "භාවිතයට ගනී",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2530,7 +2530,7 @@
         "floors": 1,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "භාවිතයට ගනී",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2544,7 +2544,7 @@
         "floors": 1,
         "constructionYear": 2001,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2558,7 +2558,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2572,7 +2572,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2586,7 +2586,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": 2021,
-        "status": "හොද තත්ත්වයේ පවතී.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2600,8 +2600,8 @@
         "floors": 1,
         "constructionYear": 1998,
         "lastRepairYear": null,
-        "status": "පංති කාමර ලෙස භාවිතා කිරීම.",
-        "notes": null
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
+        "notes": "පංති කාමර ලෙස භාවිතා කිරීම."
     },
     {
         "censusNo": "04323",
@@ -2614,8 +2614,8 @@
         "floors": 1,
         "constructionYear": 2002,
         "lastRepairYear": 2019,
-        "status": "පරිහරණයට නොගනී.",
-        "notes": null
+        "status": "Condemned \/ Unusable (භාවිතයෙන් ඉවත් කළ යුතු)",
+        "notes": "පරිහරණයට නොගනී."
     },
     {
         "censusNo": "04323",
@@ -2628,8 +2628,8 @@
         "floors": 1,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "ජල පිරිපහදු කිරීමේ ඒ්කකය",
-        "notes": null
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
+        "notes": "ජල පිරිපහදු කිරීමේ ඒ්කකය"
     },
     {
         "censusNo": "04138",
@@ -2642,7 +2642,7 @@
         "floors": 1,
         "constructionYear": 2013,
         "lastRepairYear": null,
-        "status": "අලුත්වැඩියා කළ යුතුයි",
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
         "notes": null
     },
     {
@@ -2656,7 +2656,7 @@
         "floors": 2,
         "constructionYear": 2017,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2670,7 +2670,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2684,8 +2684,8 @@
         "floors": 2,
         "constructionYear": 2007,
         "lastRepairYear": null,
-        "status": "අලුත්වැඩියා කල යුතුය.(විදුලි පද්ධතිය\/දොර\/ජනෙල්)",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "අලුත්වැඩියා කල යුතුය.(විදුලි පද්ධතිය\/දොර\/ජනෙල්)"
     },
     {
         "censusNo": "04329",
@@ -2698,7 +2698,7 @@
         "floors": 2,
         "constructionYear": 2013,
         "lastRepairYear": 2023,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2712,8 +2712,8 @@
         "floors": 1,
         "constructionYear": 2014,
         "lastRepairYear": null,
-        "status": "අලුත්වැඩියා කල යුතුය.(විදුලි පද්ධතිය\/දොර\/ජනෙල්)",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "අලුත්වැඩියා කල යුතුය.(විදුලි පද්ධතිය\/දොර\/ජනෙල්)"
     },
     {
         "censusNo": "04329",
@@ -2726,7 +2726,7 @@
         "floors": 1,
         "constructionYear": 2021,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2740,7 +2740,7 @@
         "floors": 1,
         "constructionYear": 2025,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2754,8 +2754,8 @@
         "floors": 1,
         "constructionYear": 1967,
         "lastRepairYear": 2022,
-        "status": "කොටසක් අලුත්වැඩියා කල යුතුය.(දොර \/ජනෙල්\/ගෙබිම\/කාණු පද්ධති)",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "කොටසක් අලුත්වැඩියා කල යුතුය.(දොර \/ජනෙල්\/ගෙබිම\/කාණු පද්ධති)"
     },
     {
         "censusNo": "04321",
@@ -2768,7 +2768,7 @@
         "floors": 1,
         "constructionYear": 1996,
         "lastRepairYear": 2017,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2782,7 +2782,7 @@
         "floors": 1,
         "constructionYear": 1996,
         "lastRepairYear": 2017,
-        "status": "අලුත්වැඩියා කල යුතුව ඇත.",
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
         "notes": null
     },
     {
@@ -2796,7 +2796,7 @@
         "floors": 1,
         "constructionYear": 2001,
         "lastRepairYear": 2017,
-        "status": "අලුත්වැඩියා කල යුතුව ඇත.",
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
         "notes": null
     },
     {
@@ -2810,7 +2810,7 @@
         "floors": 1,
         "constructionYear": 1987,
         "lastRepairYear": null,
-        "status": "අලුත්වැඩියා කල යුතුව ඇත.",
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
         "notes": null
     },
     {
@@ -2824,8 +2824,8 @@
         "floors": 1,
         "constructionYear": 1995,
         "lastRepairYear": null,
-        "status": "පැති බැම්ම .(පේමන්ට්)සැකසීම.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "පැති බැම්ම .(පේමන්ට්)සැකසීම."
     },
     {
         "censusNo": "04318",
@@ -2838,7 +2838,7 @@
         "floors": 1,
         "constructionYear": 2025,
         "lastRepairYear": null,
-        "status": "Good \/ Usable",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2852,8 +2852,8 @@
         "floors": 1,
         "constructionYear": 2024,
         "lastRepairYear": null,
-        "status": "වයරින් කිරීම.",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "වයරින් කිරීම."
     },
     {
         "censusNo": "04146",
@@ -2866,7 +2866,7 @@
         "floors": 1,
         "constructionYear": 1980,
         "lastRepairYear": 2024,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2880,7 +2880,7 @@
         "floors": 1,
         "constructionYear": 2001,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2894,7 +2894,7 @@
         "floors": 1,
         "constructionYear": 2019,
         "lastRepairYear": null,
-        "status": "හොදයි",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2908,7 +2908,7 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": 2019,
-        "status": "හොද තත්ත්වයේ පවතී",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2922,7 +2922,7 @@
         "floors": 1,
         "constructionYear": 1968,
         "lastRepairYear": 2020,
-        "status": "භාවිතයට ගත හැකි.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2936,7 +2936,7 @@
         "floors": 1,
         "constructionYear": 2000,
         "lastRepairYear": null,
-        "status": "භාවිතයට ගත හැකි.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2950,8 +2950,8 @@
         "floors": 1,
         "constructionYear": null,
         "lastRepairYear": null,
-        "status": "භාවිතා කරයි පේමන්ට් ැක ැබලන් වී ඇත",
-        "notes": null
+        "status": "Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)",
+        "notes": "භාවිතා කරයි පේමන්ට් ැක ැබලන් වී ඇත"
     },
     {
         "censusNo": "04345",
@@ -2964,7 +2964,7 @@
         "floors": 2,
         "constructionYear": 2024,
         "lastRepairYear": 2021,
-        "status": "භාවිතා කරයි.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2978,7 +2978,7 @@
         "floors": 1,
         "constructionYear": 2021,
         "lastRepairYear": null,
-        "status": "භාවිතා කරයි.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -2992,7 +2992,7 @@
         "floors": 1,
         "constructionYear": 1957,
         "lastRepairYear": 2020,
-        "status": "භාවිතා කරයි.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -3006,7 +3006,7 @@
         "floors": 1,
         "constructionYear": 1983,
         "lastRepairYear": 2024,
-        "status": "භාවිතා කරයි.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -3020,7 +3020,7 @@
         "floors": 1,
         "constructionYear": 2000,
         "lastRepairYear": 2022,
-        "status": "භාවිතා කරයි.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -3034,7 +3034,7 @@
         "floors": 2,
         "constructionYear": 2012,
         "lastRepairYear": null,
-        "status": "භාවිතා කරයි.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -3048,7 +3048,7 @@
         "floors": 2,
         "constructionYear": 2012,
         "lastRepairYear": null,
-        "status": "භාවිතා කරයි.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -3062,7 +3062,7 @@
         "floors": 2,
         "constructionYear": 2020,
         "lastRepairYear": 2026,
-        "status": "භාවිතා කරයි.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -3076,7 +3076,7 @@
         "floors": 2,
         "constructionYear": 2005,
         "lastRepairYear": null,
-        "status": "භාවිතා කරයි.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -3090,7 +3090,7 @@
         "floors": 1,
         "constructionYear": 2000,
         "lastRepairYear": 2022,
-        "status": "භාවිතා කරයි.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -3104,7 +3104,7 @@
         "floors": 1,
         "constructionYear": 1960,
         "lastRepairYear": 2023,
-        "status": "භාවිතා කරයි.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -3118,7 +3118,7 @@
         "floors": 1,
         "constructionYear": 2000,
         "lastRepairYear": 2021,
-        "status": "භාවිතා කරයි.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -3132,7 +3132,7 @@
         "floors": 2,
         "constructionYear": 2008,
         "lastRepairYear": null,
-        "status": "භාවිතා කරයි.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -3146,7 +3146,7 @@
         "floors": 1,
         "constructionYear": 2000,
         "lastRepairYear": null,
-        "status": "භාවිතා කරයි.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     },
     {
@@ -3160,7 +3160,7 @@
         "floors": 1,
         "constructionYear": 1995,
         "lastRepairYear": 2021,
-        "status": "භාවිතා කරයි.",
+        "status": "Good \/ Usable (හොඳයි \/ භාවිතයට සුදුසුයි)",
         "notes": null
     }
 ]
