@@ -22,7 +22,7 @@ class BuildingController extends Controller
 
         $tenYearsAgo = (int)date('Y') - 10;
         $renovationCount = $buildings->filter(function ($b) use ($tenYearsAgo) {
-            return !$b->lastRepairYear || $b->lastRepairYear <= $tenYearsAgo;
+            return !empty($b->lastRepairYear) && $b->lastRepairYear <= $tenYearsAgo;
         })->count();
 
         $multiFloorCount = $buildings->where('floors', '>', 1)->count();

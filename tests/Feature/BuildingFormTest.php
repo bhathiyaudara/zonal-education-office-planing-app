@@ -152,4 +152,50 @@ class BuildingFormTest extends TestCase
             ->assertSee('<dialog ', false)
             ->assertSee('aria-labelledby="building-dialog-title"', false);
     }
+
+    #[DataProvider('areas')]
+    public function test_buildings_without_last_renovation_year_are_not_counted_under_needs_renovation(string $area, string $role): void
+    {
+        $this->signIn($role);
+
+        $currentYear = (int)date('Y');
+
+        // Building without lastRepairYear listed
+        $noRepairBuilding = Building::create([
+            'schoolId' => $this->school->id,
+            'buildingName' => 'No Repair Year Hall',
+            'lastRepairYear' => null,
+        ]);
+        $this->assertFalse($noRepairBuilding->needs_renovation);
+
+        // Building repaired recently (2 years ago)
+        $recentRepairBuilding = Building::create([
+            'schoolId' => $this->school->id,
+            'buildingName' => 'Recent Repair Hall',
+            'lastRepairYear' => $currentYear - 2,
+        ]);
+        $this->assertFalse($recentRepairBuilding->needs_renovation);
+
+        // Building repaired 12 years ago (>= 10 years ago)
+        $oldRepairBuilding = Building::create([
+            'schoolId' => $this->school->id,
+            'buildingName' => 'Old Repair Hall',
+            'lastRepairYear' => $currentYear - 12,
+        ]);
+        $this->assertTrue($oldRepairBuilding->needs_renovation);
+
+        // View check: only 1 building needs renovation, not 2 or 3
+        $response = $this->get(route("$area.buildings"));
+        $response->assertOk();
+        $response->assertViewHas('renovationCount', 1);
+
+        // When filtering by needs_renovation=1 (Zonal), only Old Repair Hall should be shown
+        if ($area === 'zonal') {
+            $filterResponse = $this->get(route('zonal.buildings', ['needs_renovation' => 1]));
+            $filterResponse->assertOk();
+            $filterResponse->assertSee('Old Repair Hall');
+            $filterResponse->assertDontSee('No Repair Year Hall');
+            $filterResponse->assertDontSee('Recent Repair Hall');
+        }
+    }
 }

@@ -173,7 +173,7 @@
         @php
             $age = $b->constructionYear ? (date('Y') - $b->constructionYear) : null;
             $yearsSinceRepair = $b->lastRepairYear ? (date('Y') - $b->lastRepairYear) : null;
-            $needsRenovation = !$b->lastRepairYear || $yearsSinceRepair >= 10;
+            $needsRenovation = $b->lastRepairYear && $yearsSinceRepair >= 10;
             
             // Category badges
             $typeClass = 'bg-blue-50 text-blue-700 border-blue-200';
@@ -251,7 +251,7 @@
                         <span class="text-[10px] text-emerald-600 font-bold ml-1">({{ $yearsSinceRepair }} yrs ago)</span>
                         @endif
                     @else
-                        <span class="text-amber-700 text-xs font-bold">No repair record</span>
+                        <span class="text-slate-400 text-xs font-semibold">Not Recorded</span>
                     @endif
                 </div>
                 @if($b->notes && !str_starts_with($b->notes, 'Imported') && !str_starts_with($b->notes, 'Wilgamuwa'))
@@ -303,7 +303,7 @@
                     @php
                         $age = $b->constructionYear ? (date('Y') - $b->constructionYear) : null;
                         $yearsSinceRepair = $b->lastRepairYear ? (date('Y') - $b->lastRepairYear) : null;
-                        $needsRenovation = !$b->lastRepairYear || $yearsSinceRepair >= 10;
+                        $needsRenovation = $b->lastRepairYear && $yearsSinceRepair >= 10;
 
                         // Category badges
                         $typeClass = 'bg-blue-50 text-blue-700 border-blue-200';
@@ -389,8 +389,8 @@
                                 <span class="text-[10px] text-emerald-600 font-bold">{{ $yearsSinceRepair }} yrs ago</span>
                                 @endif
                             @else
-                                <span class="inline-flex items-center text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">
-                                    No repair record
+                                <span class="inline-flex items-center text-[10px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
+                                    Not Recorded
                                 </span>
                             @endif
                         </td>

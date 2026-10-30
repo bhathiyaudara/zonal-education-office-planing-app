@@ -59,7 +59,7 @@ class Building extends Model
     public function getNeedsRenovationAttribute(): bool
     {
         if (!$this->lastRepairYear) {
-            return true;
+            return false;
         }
         return ((int)date('Y') - $this->lastRepairYear) >= 10;
     }

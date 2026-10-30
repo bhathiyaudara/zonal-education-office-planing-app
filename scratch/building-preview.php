@@ -27,9 +27,9 @@ $adminCount = \App\Models\Building::where('buildingType', 'like', '%Administrati
 $quartersCount = \App\Models\Building::where('buildingType', 'like', '%Quarters%')->orWhere('buildingType', 'like', '%නිවාස%')->count();
 
 $tenYearsAgo = (int)date('Y') - 10;
-$renovationCount = \App\Models\Building::where(function ($q) use ($tenYearsAgo) {
-    $q->whereNull('lastRepairYear')->orWhere('lastRepairYear', '<=', $tenYearsAgo);
-})->count();
+$renovationCount = \App\Models\Building::whereNotNull('lastRepairYear')
+    ->where('lastRepairYear', '<=', $tenYearsAgo)
+    ->count();
 $multiFloorCount = \App\Models\Building::where('floors', '>', 1)->count();
 
 $totalBoysToilets = \App\Models\SchoolSanitation::sum('boysToilets');

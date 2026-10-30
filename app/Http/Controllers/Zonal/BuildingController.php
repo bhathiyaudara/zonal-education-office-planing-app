@@ -15,7 +15,7 @@ class BuildingController extends Controller
     {
         $schoolId = $request->get('school_id');
         $buildingType = $request->get('building_type');
-        $renovationOnly = $request->boolean('renovation_needed');
+        $renovationOnly = $request->boolean('renovation_needed') || $request->boolean('needs_renovation');
         $search = trim($request->get('search', ''));
 
         $query = Building::with('school')->orderBy('schoolId')->orderBy('buildingName');
@@ -30,10 +30,8 @@ class BuildingController extends Controller
 
         if ($renovationOnly) {
             $tenYearsAgo = (int)date('Y') - 10;
-            $query->where(function ($q) use ($tenYearsAgo) {
-                $q->whereNull('lastRepairYear')
-                  ->orWhere('lastRepairYear', '<=', $tenYearsAgo);
-            });
+            $query->whereNotNull('lastRepairYear')
+                  ->where('lastRepairYear', '<=', $tenYearsAgo);
         }
 
         if ($search !== '') {
@@ -67,10 +65,9 @@ class BuildingController extends Controller
         })->count();
 
         $tenYearsAgo = (int)date('Y') - 10;
-        $renovationCount = Building::where(function ($q) use ($tenYearsAgo) {
-            $q->whereNull('lastRepairYear')
-              ->orWhere('lastRepairYear', '<=', $tenYearsAgo);
-        })->count();
+        $renovationCount = Building::whereNotNull('lastRepairYear')
+            ->where('lastRepairYear', '<=', $tenYearsAgo)
+            ->count();
         $multiFloorCount = Building::where('floors', '>', 1)->count();
 
         $totalBoysToilets = SchoolSanitation::sum('boysToilets');
@@ -270,7 +267,7 @@ class BuildingController extends Controller
 
     public function export(Request $request)
     {
-        $renovationOnly = $request->boolean('renovation_needed');
+        $renovationOnly = $request->boolean('renovation_needed') || $request->boolean('needs_renovation');
         $schoolId = $request->get('school_id');
         $buildingType = $request->get('building_type');
 
@@ -286,10 +283,8 @@ class BuildingController extends Controller
 
         if ($renovationOnly) {
             $tenYearsAgo = (int)date('Y') - 10;
-            $query->where(function ($q) use ($tenYearsAgo) {
-                $q->whereNull('lastRepairYear')
-                  ->orWhere('lastRepairYear', '<=', $tenYearsAgo);
-            });
+            $query->whereNotNull('lastRepairYear')
+                  ->where('lastRepairYear', '<=', $tenYearsAgo);
         }
 
         $buildings = $query->get();
