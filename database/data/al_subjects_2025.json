@@ -1,0 +1,7902 @@
+[
+  {
+    "subject": "භෞතික විද්‍යාව",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 7,
+          "female": 8,
+          "total": 15
+        },
+        "grade_13": {
+          "male": 5,
+          "female": 6,
+          "total": 11
+        },
+        "all": {
+          "male": 12,
+          "female": 14,
+          "total": 26
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 7,
+        "female": 8,
+        "total": 15
+      },
+      "grade_13": {
+        "male": 5,
+        "female": 6,
+        "total": 11
+      },
+      "all": {
+        "male": 12,
+        "female": 14,
+        "total": 26
+      }
+    }
+  },
+  {
+    "subject": "රසායන විද්‍යාව",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 6,
+          "female": 10,
+          "total": 16
+        },
+        "grade_13": {
+          "male": 4,
+          "female": 7,
+          "total": 11
+        },
+        "all": {
+          "male": 10,
+          "female": 17,
+          "total": 27
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 6,
+        "female": 10,
+        "total": 16
+      },
+      "grade_13": {
+        "male": 4,
+        "female": 7,
+        "total": 11
+      },
+      "all": {
+        "male": 10,
+        "female": 17,
+        "total": 27
+      }
+    }
+  },
+  {
+    "subject": "ගණිතය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "කෘෂි විද්‍යාව",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 6,
+          "female": 7,
+          "total": 13
+        },
+        "grade_13": {
+          "male": 6,
+          "female": 6,
+          "total": 12
+        },
+        "all": {
+          "male": 12,
+          "female": 13,
+          "total": 25
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 6,
+        "female": 7,
+        "total": 13
+      },
+      "grade_13": {
+        "male": 6,
+        "female": 6,
+        "total": 12
+      },
+      "all": {
+        "male": 12,
+        "female": 13,
+        "total": 25
+      }
+    }
+  },
+  {
+    "subject": "ජීව විද්‍යාව",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 4,
+          "female": 11,
+          "total": 15
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 4,
+          "female": 11,
+          "total": 15
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 4,
+        "female": 11,
+        "total": 15
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 4,
+        "female": 11,
+        "total": 15
+      }
+    }
+  },
+  {
+    "subject": "සංයුක්ත ගණිතය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 6,
+          "female": 0,
+          "total": 6
+        },
+        "grade_13": {
+          "male": 1,
+          "female": 0,
+          "total": 1
+        },
+        "all": {
+          "male": 7,
+          "female": 0,
+          "total": 7
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 6,
+        "female": 0,
+        "total": 6
+      },
+      "grade_13": {
+        "male": 1,
+        "female": 0,
+        "total": 1
+      },
+      "all": {
+        "male": 7,
+        "female": 0,
+        "total": 7
+      }
+    }
+  },
+  {
+    "subject": "උසස් ගණිතය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "තාක්ෂණය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 1,
+          "female": 0,
+          "total": 1
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 1,
+          "female": 0,
+          "total": 1
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 1,
+        "female": 0,
+        "total": 1
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 1,
+        "female": 0,
+        "total": 1
+      }
+    }
+  },
+  {
+    "subject": "යාන්ත්‍රික තාක්ෂණය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "තොරතුරු තාක්ෂණය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 29,
+          "female": 11,
+          "total": 40
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 29,
+          "female": 11,
+          "total": 40
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 3,
+          "female": 4,
+          "total": 7
+        },
+        "grade_13": {
+          "male": 1,
+          "female": 2,
+          "total": 3
+        },
+        "all": {
+          "male": 4,
+          "female": 6,
+          "total": 10
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 1,
+          "total": 1
+        },
+        "all": {
+          "male": 0,
+          "female": 1,
+          "total": 1
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 37,
+          "female": 10,
+          "total": 47
+        },
+        "grade_13": {
+          "male": 41,
+          "female": 17,
+          "total": 58
+        },
+        "all": {
+          "male": 78,
+          "female": 27,
+          "total": 105
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 1,
+          "female": 1,
+          "total": 2
+        },
+        "grade_13": {
+          "male": 3,
+          "female": 2,
+          "total": 5
+        },
+        "all": {
+          "male": 4,
+          "female": 3,
+          "total": 7
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 70,
+        "female": 26,
+        "total": 96
+      },
+      "grade_13": {
+        "male": 45,
+        "female": 22,
+        "total": 67
+      },
+      "all": {
+        "male": 115,
+        "female": 48,
+        "total": 163
+      }
+    }
+  },
+  {
+    "subject": "ආහාර තාක්ෂණය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "කෘෂි තාක්ෂණය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 5,
+          "female": 11,
+          "total": 16
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 5,
+          "female": 11,
+          "total": 16
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 5,
+        "female": 11,
+        "total": 16
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 5,
+        "female": 11,
+        "total": 16
+      }
+    }
+  },
+  {
+    "subject": "ජීව සම්පත් තාක්ෂණය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "ආර්ථික විද්‍යාව",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 25,
+          "female": 21,
+          "total": 46
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 25,
+          "female": 21,
+          "total": 46
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 6,
+          "female": 13,
+          "total": 19
+        },
+        "grade_13": {
+          "male": 8,
+          "female": 11,
+          "total": 19
+        },
+        "all": {
+          "male": 14,
+          "female": 24,
+          "total": 38
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 1,
+          "total": 1
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 1,
+          "total": 1
+        },
+        "all": {
+          "male": 0,
+          "female": 2,
+          "total": 2
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 5,
+          "female": 6,
+          "total": 11
+        },
+        "grade_13": {
+          "male": 11,
+          "female": 22,
+          "total": 33
+        },
+        "all": {
+          "male": 16,
+          "female": 28,
+          "total": 44
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 12,
+          "female": 10,
+          "total": 22
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 12,
+          "female": 10,
+          "total": 22
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 48,
+        "female": 51,
+        "total": 99
+      },
+      "grade_13": {
+        "male": 19,
+        "female": 34,
+        "total": 53
+      },
+      "all": {
+        "male": 67,
+        "female": 85,
+        "total": 152
+      }
+    }
+  },
+  {
+    "subject": "භූගෝල විද්‍යාව",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 18,
+          "female": 20,
+          "total": 38
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 18,
+          "female": 20,
+          "total": 38
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 3,
+          "female": 4,
+          "total": 7
+        },
+        "grade_13": {
+          "male": 2,
+          "female": 6,
+          "total": 8
+        },
+        "all": {
+          "male": 5,
+          "female": 10,
+          "total": 15
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 6,
+          "female": 10,
+          "total": 16
+        },
+        "grade_13": {
+          "male": 6,
+          "female": 7,
+          "total": 13
+        },
+        "all": {
+          "male": 12,
+          "female": 17,
+          "total": 29
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 1,
+          "total": 1
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 1,
+          "total": 1
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 4,
+          "female": 26,
+          "total": 30
+        },
+        "grade_13": {
+          "male": 3,
+          "female": 8,
+          "total": 11
+        },
+        "all": {
+          "male": 7,
+          "female": 34,
+          "total": 41
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 6,
+          "female": 16,
+          "total": 22
+        },
+        "grade_13": {
+          "male": 12,
+          "female": 20,
+          "total": 32
+        },
+        "all": {
+          "male": 18,
+          "female": 36,
+          "total": 54
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 4,
+          "female": 10,
+          "total": 14
+        },
+        "grade_13": {
+          "male": 8,
+          "female": 6,
+          "total": 14
+        },
+        "all": {
+          "male": 12,
+          "female": 16,
+          "total": 28
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 8,
+          "female": 12,
+          "total": 20
+        },
+        "grade_13": {
+          "male": 3,
+          "female": 1,
+          "total": 4
+        },
+        "all": {
+          "male": 11,
+          "female": 13,
+          "total": 24
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 49,
+        "female": 99,
+        "total": 148
+      },
+      "grade_13": {
+        "male": 34,
+        "female": 48,
+        "total": 82
+      },
+      "all": {
+        "male": 83,
+        "female": 147,
+        "total": 230
+      }
+    }
+  },
+  {
+    "subject": "දේශපාලන විද්‍යාව",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 9,
+          "female": 11,
+          "total": 20
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 9,
+          "female": 11,
+          "total": 20
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 2,
+          "female": 6,
+          "total": 8
+        },
+        "all": {
+          "male": 2,
+          "female": 6,
+          "total": 8
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 4,
+          "female": 0,
+          "total": 4
+        },
+        "all": {
+          "male": 4,
+          "female": 0,
+          "total": 4
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 15,
+          "female": 22,
+          "total": 37
+        },
+        "grade_13": {
+          "male": 19,
+          "female": 22,
+          "total": 41
+        },
+        "all": {
+          "male": 34,
+          "female": 44,
+          "total": 78
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 2,
+          "female": 19,
+          "total": 21
+        },
+        "grade_13": {
+          "male": 7,
+          "female": 22,
+          "total": 29
+        },
+        "all": {
+          "male": 9,
+          "female": 41,
+          "total": 50
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 20,
+          "female": 31,
+          "total": 51
+        },
+        "grade_13": {
+          "male": 20,
+          "female": 40,
+          "total": 60
+        },
+        "all": {
+          "male": 40,
+          "female": 71,
+          "total": 111
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 5,
+          "total": 5
+        },
+        "all": {
+          "male": 0,
+          "female": 5,
+          "total": 5
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 46,
+        "female": 83,
+        "total": 129
+      },
+      "grade_13": {
+        "male": 52,
+        "female": 95,
+        "total": 147
+      },
+      "all": {
+        "male": 98,
+        "female": 178,
+        "total": 276
+      }
+    }
+  },
+  {
+    "subject": "තර්ක විද්‍යාව හා විද්‍යාත්මක ක්‍රමය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "ඉතිහාසය (ඉන්දියානු)",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 4,
+          "female": 0,
+          "total": 4
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 4,
+          "female": 0,
+          "total": 4
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 2,
+          "female": 10,
+          "total": 12
+        },
+        "grade_13": {
+          "male": 3,
+          "female": 4,
+          "total": 7
+        },
+        "all": {
+          "male": 5,
+          "female": 14,
+          "total": 19
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 6,
+        "female": 10,
+        "total": 16
+      },
+      "grade_13": {
+        "male": 3,
+        "female": 4,
+        "total": 7
+      },
+      "all": {
+        "male": 9,
+        "female": 14,
+        "total": 23
+      }
+    }
+  },
+  {
+    "subject": "ඉතිහාසය (යුරෝපීය)",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 1,
+          "total": 1
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 1,
+          "total": 1
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 1,
+        "total": 1
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 1,
+        "total": 1
+      }
+    }
+  },
+  {
+    "subject": "ගෘහ ආර්ථික විද්‍යාව",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 5,
+          "female": 17,
+          "total": 22
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 5,
+          "female": 17,
+          "total": 22
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 3,
+          "female": 18,
+          "total": 21
+        },
+        "grade_13": {
+          "male": 3,
+          "female": 14,
+          "total": 17
+        },
+        "all": {
+          "male": 6,
+          "female": 32,
+          "total": 38
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 2,
+          "female": 6,
+          "total": 8
+        },
+        "grade_13": {
+          "male": 1,
+          "female": 6,
+          "total": 7
+        },
+        "all": {
+          "male": 3,
+          "female": 12,
+          "total": 15
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 10,
+        "female": 41,
+        "total": 51
+      },
+      "grade_13": {
+        "male": 4,
+        "female": 20,
+        "total": 24
+      },
+      "all": {
+        "male": 14,
+        "female": 61,
+        "total": 75
+      }
+    }
+  },
+  {
+    "subject": "ව්‍යාපාර අධ්‍යයනය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 21,
+          "female": 7,
+          "total": 28
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 21,
+          "female": 7,
+          "total": 28
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 8,
+          "female": 14,
+          "total": 22
+        },
+        "grade_13": {
+          "male": 7,
+          "female": 13,
+          "total": 20
+        },
+        "all": {
+          "male": 15,
+          "female": 27,
+          "total": 42
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 5,
+          "female": 6,
+          "total": 11
+        },
+        "grade_13": {
+          "male": 11,
+          "female": 22,
+          "total": 33
+        },
+        "all": {
+          "male": 16,
+          "female": 28,
+          "total": 44
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 2,
+          "female": 2,
+          "total": 4
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 2,
+          "female": 2,
+          "total": 4
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 36,
+        "female": 29,
+        "total": 65
+      },
+      "grade_13": {
+        "male": 18,
+        "female": 35,
+        "total": 53
+      },
+      "all": {
+        "male": 54,
+        "female": 64,
+        "total": 118
+      }
+    }
+  },
+  {
+    "subject": "ගණකාධිකරණය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 8,
+          "female": 14,
+          "total": 22
+        },
+        "grade_13": {
+          "male": 7,
+          "female": 13,
+          "total": 20
+        },
+        "all": {
+          "male": 15,
+          "female": 27,
+          "total": 42
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 5,
+          "female": 6,
+          "total": 11
+        },
+        "grade_13": {
+          "male": 11,
+          "female": 22,
+          "total": 33
+        },
+        "all": {
+          "male": 16,
+          "female": 28,
+          "total": 44
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 2,
+          "female": 2,
+          "total": 4
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 2,
+          "female": 2,
+          "total": 4
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 15,
+        "female": 22,
+        "total": 37
+      },
+      "grade_13": {
+        "male": 18,
+        "female": 35,
+        "total": 53
+      },
+      "all": {
+        "male": 33,
+        "female": 57,
+        "total": 90
+      }
+    }
+  },
+  {
+    "subject": "ව්‍යාපාර සංඛ්‍යානය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "බුද්ධාගම",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 4,
+          "total": 4
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 4,
+          "total": 4
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 2,
+          "female": 14,
+          "total": 16
+        },
+        "grade_13": {
+          "male": 5,
+          "female": 9,
+          "total": 14
+        },
+        "all": {
+          "male": 7,
+          "female": 23,
+          "total": 30
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 2,
+        "female": 18,
+        "total": 20
+      },
+      "grade_13": {
+        "male": 5,
+        "female": 9,
+        "total": 14
+      },
+      "all": {
+        "male": 7,
+        "female": 27,
+        "total": 34
+      }
+    }
+  },
+  {
+    "subject": "හින්දු ආගම",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "ක්‍රිස්තියානි ආගම",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "ඉස්ලාම් ආගම",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "බෞද්ධ ශිෂ්ටාචාරය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 2,
+          "female": 13,
+          "total": 15
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 2,
+          "female": 13,
+          "total": 15
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 2,
+          "total": 2
+        },
+        "grade_13": {
+          "male": 1,
+          "female": 2,
+          "total": 3
+        },
+        "all": {
+          "male": 1,
+          "female": 4,
+          "total": 5
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 3,
+          "female": 7,
+          "total": 10
+        },
+        "grade_13": {
+          "male": 8,
+          "female": 8,
+          "total": 16
+        },
+        "all": {
+          "male": 11,
+          "female": 15,
+          "total": 26
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 2,
+          "female": 1,
+          "total": 3
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 1,
+          "total": 1
+        },
+        "all": {
+          "male": 2,
+          "female": 2,
+          "total": 4
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 7,
+        "female": 23,
+        "total": 30
+      },
+      "grade_13": {
+        "male": 9,
+        "female": 11,
+        "total": 20
+      },
+      "all": {
+        "male": 16,
+        "female": 34,
+        "total": 50
+      }
+    }
+  },
+  {
+    "subject": "හින්දු ශිෂ්ටාචාරය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "ඉස්ලාම් ශිෂ්ටාචාරය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "ග්‍රීක සහ රෝම ශිෂ්ටාචාරය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "චිත්‍ර",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 1,
+          "total": 1
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 1,
+          "total": 1
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 1,
+          "total": 1
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 1,
+          "total": 1
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 15,
+          "female": 2,
+          "total": 17
+        },
+        "grade_13": {
+          "male": 3,
+          "female": 1,
+          "total": 4
+        },
+        "all": {
+          "male": 18,
+          "female": 3,
+          "total": 21
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 15,
+        "female": 4,
+        "total": 19
+      },
+      "grade_13": {
+        "male": 3,
+        "female": 1,
+        "total": 4
+      },
+      "all": {
+        "male": 18,
+        "female": 5,
+        "total": 23
+      }
+    }
+  },
+  {
+    "subject": "නැටුම් (සිංහල)",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 4,
+          "female": 6,
+          "total": 10
+        },
+        "grade_13": {
+          "male": 2,
+          "female": 5,
+          "total": 7
+        },
+        "all": {
+          "male": 6,
+          "female": 11,
+          "total": 17
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 1,
+          "female": 2,
+          "total": 3
+        },
+        "all": {
+          "male": 1,
+          "female": 2,
+          "total": 3
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 4,
+        "female": 6,
+        "total": 10
+      },
+      "grade_13": {
+        "male": 3,
+        "female": 7,
+        "total": 10
+      },
+      "all": {
+        "male": 7,
+        "female": 13,
+        "total": 20
+      }
+    }
+  },
+  {
+    "subject": "නැටුම් (භරත)",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "සංගීතය (පෙරදිග)",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 1,
+          "female": 0,
+          "total": 1
+        },
+        "grade_13": {
+          "male": 3,
+          "female": 0,
+          "total": 3
+        },
+        "all": {
+          "male": 4,
+          "female": 0,
+          "total": 4
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 1,
+          "female": 0,
+          "total": 1
+        },
+        "all": {
+          "male": 1,
+          "female": 0,
+          "total": 1
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 2,
+          "total": 2
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 2,
+          "total": 2
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 1,
+        "female": 2,
+        "total": 3
+      },
+      "grade_13": {
+        "male": 4,
+        "female": 0,
+        "total": 4
+      },
+      "all": {
+        "male": 5,
+        "female": 2,
+        "total": 7
+      }
+    }
+  },
+  {
+    "subject": "සංගීතය (කර්ණාටක)",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "සංගීතය (බටහිර)",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "නාට්‍ය හා රංග කලාව (සිංහල)",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 6,
+          "total": 6
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 1,
+          "total": 1
+        },
+        "all": {
+          "male": 0,
+          "female": 7,
+          "total": 7
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 2,
+          "female": 1,
+          "total": 3
+        },
+        "grade_13": {
+          "male": 1,
+          "female": 3,
+          "total": 4
+        },
+        "all": {
+          "male": 3,
+          "female": 4,
+          "total": 7
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 11,
+          "female": 5,
+          "total": 16
+        },
+        "grade_13": {
+          "male": 2,
+          "female": 6,
+          "total": 8
+        },
+        "all": {
+          "male": 13,
+          "female": 11,
+          "total": 24
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 3,
+          "female": 1,
+          "total": 4
+        },
+        "grade_13": {
+          "male": 2,
+          "female": 6,
+          "total": 8
+        },
+        "all": {
+          "male": 5,
+          "female": 7,
+          "total": 12
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 1,
+          "female": 1,
+          "total": 2
+        },
+        "grade_13": {
+          "male": 2,
+          "female": 1,
+          "total": 3
+        },
+        "all": {
+          "male": 3,
+          "female": 2,
+          "total": 5
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 2,
+          "female": 0,
+          "total": 2
+        },
+        "all": {
+          "male": 2,
+          "female": 0,
+          "total": 2
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 17,
+        "female": 14,
+        "total": 31
+      },
+      "grade_13": {
+        "male": 9,
+        "female": 17,
+        "total": 26
+      },
+      "all": {
+        "male": 26,
+        "female": 31,
+        "total": 57
+      }
+    }
+  },
+  {
+    "subject": "නාට්‍ය හා රංග කලාව (දෙමළ)",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "නාට්‍ය හා රංග කලාව (ඉංග්‍රීසි)",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "සිංහල",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 11,
+          "female": 52,
+          "total": 63
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 11,
+          "female": 52,
+          "total": 63
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 3,
+          "female": 4,
+          "total": 7
+        },
+        "grade_13": {
+          "male": 1,
+          "female": 4,
+          "total": 5
+        },
+        "all": {
+          "male": 4,
+          "female": 8,
+          "total": 12
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 6,
+          "female": 10,
+          "total": 16
+        },
+        "grade_13": {
+          "male": 6,
+          "female": 7,
+          "total": 13
+        },
+        "all": {
+          "male": 12,
+          "female": 17,
+          "total": 29
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 4,
+          "female": 2,
+          "total": 6
+        },
+        "grade_13": {
+          "male": 3,
+          "female": 3,
+          "total": 6
+        },
+        "all": {
+          "male": 7,
+          "female": 5,
+          "total": 12
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 11,
+          "female": 45,
+          "total": 56
+        },
+        "grade_13": {
+          "male": 27,
+          "female": 40,
+          "total": 67
+        },
+        "all": {
+          "male": 38,
+          "female": 85,
+          "total": 123
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 9,
+          "female": 30,
+          "total": 39
+        },
+        "grade_13": {
+          "male": 15,
+          "female": 32,
+          "total": 47
+        },
+        "all": {
+          "male": 24,
+          "female": 62,
+          "total": 86
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 20,
+          "female": 34,
+          "total": 54
+        },
+        "grade_13": {
+          "male": 26,
+          "female": 42,
+          "total": 68
+        },
+        "all": {
+          "male": 46,
+          "female": 76,
+          "total": 122
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 13,
+          "female": 21,
+          "total": 34
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 3,
+          "total": 3
+        },
+        "all": {
+          "male": 13,
+          "female": 24,
+          "total": 37
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 77,
+        "female": 198,
+        "total": 275
+      },
+      "grade_13": {
+        "male": 78,
+        "female": 131,
+        "total": 209
+      },
+      "all": {
+        "male": 155,
+        "female": 329,
+        "total": 484
+      }
+    }
+  },
+  {
+    "subject": "දෙමළ",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "ඉංග්‍රීසි",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 6,
+          "female": 10,
+          "total": 16
+        },
+        "grade_13": {
+          "male": 6,
+          "female": 7,
+          "total": 13
+        },
+        "all": {
+          "male": 12,
+          "female": 17,
+          "total": 29
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 9,
+          "female": 30,
+          "total": 39
+        },
+        "grade_13": {
+          "male": 15,
+          "female": 32,
+          "total": 47
+        },
+        "all": {
+          "male": 24,
+          "female": 62,
+          "total": 86
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 15,
+        "female": 40,
+        "total": 55
+      },
+      "grade_13": {
+        "male": 21,
+        "female": 39,
+        "total": 60
+      },
+      "all": {
+        "male": 36,
+        "female": 79,
+        "total": 115
+      }
+    }
+  },
+  {
+    "subject": "පාලි",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "සංස්කෘත",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_13": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "තාක්ෂණය සදහා විද්‍යාව",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 32,
+          "female": 21,
+          "total": 53
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 32,
+          "female": 21,
+          "total": 53
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 40,
+          "female": 13,
+          "total": 53
+        },
+        "grade_13": {
+          "male": 37,
+          "female": 10,
+          "total": 47
+        },
+        "all": {
+          "male": 77,
+          "female": 23,
+          "total": 100
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 72,
+        "female": 34,
+        "total": 106
+      },
+      "grade_13": {
+        "male": 37,
+        "female": 10,
+        "total": 47
+      },
+      "all": {
+        "male": 109,
+        "female": 44,
+        "total": 153
+      }
+    }
+  },
+  {
+    "subject": "ජෛව පද්ධති තාක්ෂණය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 6,
+          "female": 13,
+          "total": 19
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 6,
+          "female": 13,
+          "total": 19
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 4,
+          "female": 6,
+          "total": 10
+        },
+        "grade_13": {
+          "male": 6,
+          "female": 7,
+          "total": 13
+        },
+        "all": {
+          "male": 10,
+          "female": 13,
+          "total": 23
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 10,
+        "female": 19,
+        "total": 29
+      },
+      "grade_13": {
+        "male": 6,
+        "female": 7,
+        "total": 13
+      },
+      "all": {
+        "male": 16,
+        "female": 26,
+        "total": 42
+      }
+    }
+  },
+  {
+    "subject": "ඉංජිනේරු තාක්ෂණවේදය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 26,
+          "female": 8,
+          "total": 34
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 26,
+          "female": 8,
+          "total": 34
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 34,
+          "female": 7,
+          "total": 41
+        },
+        "grade_13": {
+          "male": 29,
+          "female": 7,
+          "total": 36
+        },
+        "all": {
+          "male": 63,
+          "female": 14,
+          "total": 77
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 60,
+        "female": 15,
+        "total": 75
+      },
+      "grade_13": {
+        "male": 29,
+        "female": 7,
+        "total": 36
+      },
+      "all": {
+        "male": 89,
+        "female": 22,
+        "total": 111
+      }
+    }
+  },
+  {
+    "subject": "සන්නිවේදන හා මාධ්‍ය අධ්‍යයනය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 12,
+          "female": 27,
+          "total": 39
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 12,
+          "female": 27,
+          "total": 39
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 3,
+          "female": 6,
+          "total": 9
+        },
+        "all": {
+          "male": 3,
+          "female": 6,
+          "total": 9
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 2,
+          "female": 4,
+          "total": 6
+        },
+        "all": {
+          "male": 2,
+          "female": 4,
+          "total": 6
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 16,
+          "female": 21,
+          "total": 37
+        },
+        "grade_13": {
+          "male": 24,
+          "female": 30,
+          "total": 54
+        },
+        "all": {
+          "male": 40,
+          "female": 51,
+          "total": 91
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 28,
+        "female": 48,
+        "total": 76
+      },
+      "grade_13": {
+        "male": 29,
+        "female": 40,
+        "total": 69
+      },
+      "all": {
+        "male": 57,
+        "female": 88,
+        "total": 145
+      }
+    }
+  },
+  {
+    "subject": "Total",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 201,
+          "female": 233,
+          "total": 434
+        },
+        "grade_13": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 201,
+          "female": 233,
+          "total": 434
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 9,
+          "female": 12,
+          "total": 21
+        },
+        "grade_13": {
+          "male": 6,
+          "female": 18,
+          "total": 24
+        },
+        "all": {
+          "male": 15,
+          "female": 30,
+          "total": 45
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 24,
+          "female": 37,
+          "total": 61
+        },
+        "grade_13": {
+          "male": 24,
+          "female": 28,
+          "total": 52
+        },
+        "all": {
+          "male": 48,
+          "female": 65,
+          "total": 113
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 6,
+          "female": 8,
+          "total": 14
+        },
+        "grade_13": {
+          "male": 11,
+          "female": 11,
+          "total": 22
+        },
+        "all": {
+          "male": 17,
+          "female": 19,
+          "total": 36
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_12": {
+          "male": 230,
+          "female": 259,
+          "total": 489
+        },
+        "grade_13": {
+          "male": 232,
+          "female": 224,
+          "total": 456
+        },
+        "all": {
+          "male": 462,
+          "female": 483,
+          "total": 945
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 33,
+          "female": 123,
+          "total": 156
+        },
+        "grade_13": {
+          "male": 59,
+          "female": 126,
+          "total": 185
+        },
+        "all": {
+          "male": 92,
+          "female": 249,
+          "total": 341
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 66,
+          "female": 108,
+          "total": 174
+        },
+        "grade_13": {
+          "male": 102,
+          "female": 173,
+          "total": 275
+        },
+        "all": {
+          "male": 168,
+          "female": 281,
+          "total": 449
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_12": {
+          "male": 54,
+          "female": 50,
+          "total": 104
+        },
+        "grade_13": {
+          "male": 8,
+          "female": 11,
+          "total": 19
+        },
+        "all": {
+          "male": 62,
+          "female": 61,
+          "total": 123
+        }
+      }
+    },
+    "total": {
+      "grade_12": {
+        "male": 623,
+        "female": 830,
+        "total": 1453
+      },
+      "grade_13": {
+        "male": 442,
+        "female": 591,
+        "total": 1033
+      },
+      "all": {
+        "male": 1065,
+        "female": 1421,
+        "total": 2486
+      }
+    }
+  }
+]

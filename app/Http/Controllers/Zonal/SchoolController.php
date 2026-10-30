@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\School;
 use App\Models\StudentCount;
 use App\Services\ExportService;
+use App\Services\StudentCensusService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -28,7 +29,7 @@ class SchoolController extends Controller
     {
         $school = School::with([
             'teachers' => fn($q) => $q->orderBy('fullName'),
-            'studentCounts' => fn($q) => $q->where('academicYear', date('Y'))->orderBy('grade'),
+            'studentCounts' => fn($q) => $q->whereIn('academicYear', [request('year', '2025'), date('Y'), '2025', '2026'])->orderBy('grade'),
             'buildings' => fn($q) => $q->orderBy('buildingName'),
             'sanitation',
         ])->findOrFail($id);
@@ -161,51 +162,87 @@ class SchoolController extends Controller
         return back()->with('success', 'Student counts updated successfully.');
     }
 
-    public function studentOverview()
+    public function studentOverview(Request $request)
     {
-        $currentYear = date('Y');
-        $academicYear = $currentYear . '/' . ($currentYear + 1);
+        $academicYear = $request->get('academic_year', '2025');
 
-        $schools = School::with(['studentCounts' => fn($q) => $q->where('academicYear', $academicYear)])
+        // Retrieve Zonal High-level KPIs & Subject data from StudentCensusService
+        $kpis = StudentCensusService::getZonalKPIs();
+        $schoolsCensus = StudentCensusService::getSchoolsCensus();
+        $olSubjects = StudentCensusService::getOlSubjects();
+        $alSubjects = StudentCensusService::getAlSubjects();
+        $alStreams = StudentCensusService::getAlStreams();
+        $pirivenas = StudentCensusService::getPirivenaCensus();
+
+        $censusByNo = collect($schoolsCensus)->keyBy('census_no');
+
+        // Query active schools from database
+        $schools = School::with([
+                'studentCounts' => fn($q) => $q->whereIn('academicYear', [$academicYear, '2025', '2026']),
+            ])
             ->where('isActive', true)
             ->orderBy('name')
             ->get();
 
         // Compute per-school aggregates
-        $schoolsData = $schools->map(function ($school) {
-            $totalMale = $school->studentCounts->sum('maleCount');
-            $totalFemale = $school->studentCounts->sum('femaleCount');
-            $totalClasses = $school->studentCounts->sum('classCount');
+        $schoolsData = $schools->map(function ($school) use ($censusByNo, $academicYear) {
+            $cData = $censusByNo->get($school->censusNo);
+            $sc = $school->studentCounts->where('academicYear', $academicYear);
+            if ($sc->isEmpty()) {
+                $sc = $school->studentCounts->where('academicYear', '2025');
+            }
+
+            $totalMale = $sc->sum('maleCount');
+            $totalFemale = $sc->sum('femaleCount');
+            $totalClasses = $sc->sum('classCount');
+
+            if ($totalMale + $totalFemale == 0 && $cData) {
+                $totalMale = $cData['grand_total']['male'] ?? 0;
+                $totalFemale = $cData['grand_total']['female'] ?? 0;
+                $totalClasses = $cData['total_classes'] ?? 0;
+            }
+
             return [
                 'id' => $school->id,
                 'name' => $school->name,
+                'name_si' => $school->nameSinhala ?: ($cData['name_si'] ?? ''),
                 'censusNo' => $school->censusNo ?? '',
                 'schoolType' => $school->schoolType ?? 'N/A',
-                'eduDivision' => $school->eduDivision ?? 'N/A',
+                'eduDivision' => $school->eduDivision ?? ($cData['division'] ?? 'N/A'),
                 'difficultyCategory' => $school->difficultyCategory ?? null,
                 'dsDivision' => $school->dsDivision ?? null,
                 'gnDivision' => $school->gnDivision ?? null,
                 'landArea' => $school->landArea ?? null,
+                'category' => $cData['grand_total']['category'] ?? '',
+                'notes' => $cData['grand_total']['notes'] ?? '',
                 'totalStudents' => $totalMale + $totalFemale,
                 'totalMale' => $totalMale,
                 'totalFemale' => $totalFemale,
                 'totalClasses' => $totalClasses,
+                'primary_total' => $cData['primary_total']['total'] ?? 0,
+                'primary_classes' => $cData['primary_total']['classes'] ?? 0,
+                'secondary_total' => $cData['secondary_total']['total'] ?? 0,
+                'secondary_classes' => $cData['secondary_total']['classes'] ?? 0,
+                'collegiate_total' => $cData['collegiate_total']['total'] ?? 0,
+                'collegiate_classes' => $cData['collegiate_total']['classes'] ?? 0,
+                'special_ed' => $cData['special_ed']['total'] ?? 0,
+                'grades' => $cData['grades'] ?? [],
             ];
         });
 
-        // Zone-level aggregates
-        $totalStudents = $schoolsData->sum('totalStudents');
-        $totalMale = $schoolsData->sum('totalMale');
-        $totalFemale = $schoolsData->sum('totalFemale');
-        $totalSchools = $schoolsData->count();
+        // Zone-level aggregates (Fallback to KPIs if DB counts not yet fully hydrated)
+        $totalStudents = $schoolsData->sum('totalStudents') ?: $kpis['totalStudents'];
+        $totalMale = $schoolsData->sum('totalMale') ?: $kpis['totalMale'];
+        $totalFemale = $schoolsData->sum('totalFemale') ?: $kpis['totalFemale'];
+        $totalSchools = $schoolsData->count() ?: $kpis['totalSchools'];
 
-        // Per-division stats
-        $wilgamuwaStudents = $schoolsData->where('eduDivision', 'Wilgamuwa')->sum('totalStudents');
-        $laggalaStudents = $schoolsData->where('eduDivision', 'Laggala')->sum('totalStudents');
+        $wilgamuwaStudents = $schoolsData->where('eduDivision', 'Wilgamuwa')->sum('totalStudents') ?: $kpis['wilgamuwaStudents'];
+        $laggalaStudents = $schoolsData->where('eduDivision', 'Laggala')->sum('totalStudents') ?: $kpis['laggalaStudents'];
 
         return view('dashboard.zonal.schools.student-overview', compact(
             'schoolsData', 'academicYear', 'totalStudents', 'totalMale',
-            'totalFemale', 'totalSchools', 'wilgamuwaStudents', 'laggalaStudents'
+            'totalFemale', 'totalSchools', 'wilgamuwaStudents', 'laggalaStudents',
+            'kpis', 'olSubjects', 'alSubjects', 'alStreams', 'pirivenas'
         ));
     }
 
@@ -271,11 +308,31 @@ class SchoolController extends Controller
      */
     public function exportStudentOverview(Request $request)
     {
+        $exportType = $request->get('type', 'grades');
+
+        if ($exportType === 'ol_subjects') {
+            $olData = StudentCensusService::getOlSubjects();
+            return ExportService::exportOlSubjectsMatrix($olData);
+        }
+
+        if ($exportType === 'al_subjects') {
+            $alData = StudentCensusService::getAlSubjects();
+            return ExportService::exportAlSubjectsMatrix($alData);
+        }
+
+        if ($exportType === 'al_streams') {
+            $streamData = StudentCensusService::getAlStreams();
+            return ExportService::exportAlStreamsMatrix($streamData);
+        }
+
         $currentYear = date('Y');
-        $academicYear = $currentYear . '/' . ($currentYear + 1);
+        $fallbackYear = $currentYear . '/' . ($currentYear + 1);
+        $academicYear = $request->get('academic_year') ?: (
+            StudentCount::where('academicYear', '2025')->exists() ? '2025' : $fallbackYear
+        );
 
         $query = School::with([
-                'studentCounts' => fn($q) => $q->where('academicYear', $academicYear),
+                'studentCounts' => fn($q) => $q->whereIn('academicYear', [$academicYear, $fallbackYear, '2025', '2026']),
                 'sanitation',
                 'buildings'
             ])

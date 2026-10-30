@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 class SubjectStatistic extends Model
 {
-    protected $table = 'subjectstatistic';
+    protected $table = 'subject_statistic';
     protected $keyType = 'string';
     public $incrementing = false;
 
@@ -15,13 +15,15 @@ class SubjectStatistic extends Model
     const UPDATED_AT = 'updatedAt';
 
     protected $fillable = [
-        'id', 'schoolId', 'subject', 'grade', 'gender',
-        'medium', 'studentCount', 'academicYear',
+        'id', 'schoolId', 'schoolCensusNo', 'schoolName', 'level',
+        'subject', 'grade', 'maleCount', 'femaleCount', 'totalCount',
+        'academicYear',
     ];
 
     protected $casts = [
-        'grade' => 'integer',
-        'studentCount' => 'integer',
+        'maleCount' => 'integer',
+        'femaleCount' => 'integer',
+        'totalCount' => 'integer',
     ];
 
     public function school()

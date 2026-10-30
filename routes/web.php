@@ -22,11 +22,11 @@ Route::get('/maintenance/run-migration', function (\Illuminate\Http\Request $req
     if ($request->get('key') !== 'ZemsMigrate2026') {
         abort(403, 'Unauthorized maintenance key.');
     }
-    $path = $request->get('file') ? ('database/migrations/' . $request->get('file')) : 'database/migrations/2026_10_29_000001_sync_existing_principals_to_schools.php';
-    \Illuminate\Support\Facades\Artisan::call('migrate', [
-        '--path' => $path,
-        '--force' => true,
-    ]);
+    $params = ['--force' => true];
+    if ($file = $request->get('file')) {
+        $params['--path'] = 'database/migrations/' . $file;
+    }
+    \Illuminate\Support\Facades\Artisan::call('migrate', $params);
     return response()->json([
         'status' => 'success',
         'output' => \Illuminate\Support\Facades\Artisan::output(),

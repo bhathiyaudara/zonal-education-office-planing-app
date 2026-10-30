@@ -655,4 +655,182 @@ class ExportService
             return $row;
         });
     }
+
+    /**
+     * Export OL Subjects matrix to CSV.
+     */
+    public static function exportOlSubjectsMatrix(array $olData, ?string $filename = null): StreamedResponse
+    {
+        $filename = $filename ?: 'Wilgamuwa_OL_Subjects_Matrix_2025_' . date('Y_m_d_His') . '.csv';
+
+        // Extract school names from first row with schools
+        $schoolNames = [];
+        foreach ($olData as $r) {
+            if (!empty($r['schools'])) {
+                $schoolNames = array_keys($r['schools']);
+                break;
+            }
+        }
+
+        $headers = [
+            'Subject (Sinhala)',
+            'Subject (English)',
+            'Total Gr 10 Male',
+            'Total Gr 10 Female',
+            'Total Gr 10 Total',
+            'Total Gr 11 Male',
+            'Total Gr 11 Female',
+            'Total Gr 11 Total',
+            'Zonal Total Students',
+        ];
+
+        foreach ($schoolNames as $sn) {
+            $short = str_replace(['CP/WIL/', 'MAHA VIDYALAYA', 'KANISHTA VIDYALAYA', 'CENTRAL COLLEGE', 'KANISTA VIDIYALAYA', 'KANISTHTA SCHOOL', 'JUNIOR SCHOOL', 'K.V.'], '', $sn);
+            $headers[] = trim($short) . ' (Gr 10)';
+            $headers[] = trim($short) . ' (Gr 11)';
+            $headers[] = trim($short) . ' (Total)';
+        }
+
+        return self::streamCsv($filename, $headers, $olData, function ($item) use ($schoolNames) {
+            $tot = $item['total'] ?? [];
+            $row = [
+                $item['subject'] ?? '',
+                $item['subject_en'] ?? ($item['subject'] ?? ''),
+                (string)($tot['grade_10']['male'] ?? 0),
+                (string)($tot['grade_10']['female'] ?? 0),
+                (string)($tot['grade_10']['total'] ?? 0),
+                (string)($tot['grade_11']['male'] ?? 0),
+                (string)($tot['grade_11']['female'] ?? 0),
+                (string)($tot['grade_11']['total'] ?? 0),
+                (string)($tot['all']['total'] ?? 0),
+            ];
+
+            foreach ($schoolNames as $sn) {
+                $sData = $item['schools'][$sn] ?? [];
+                $row[] = (string)($sData['grade_10']['total'] ?? 0);
+                $row[] = (string)($sData['grade_11']['total'] ?? 0);
+                $row[] = (string)($sData['all']['total'] ?? 0);
+            }
+
+            return $row;
+        });
+    }
+
+    /**
+     * Export AL Subjects matrix to CSV.
+     */
+    public static function exportAlSubjectsMatrix(array $alData, ?string $filename = null): StreamedResponse
+    {
+        $filename = $filename ?: 'Wilgamuwa_AL_Subjects_Matrix_2025_' . date('Y_m_d_His') . '.csv';
+
+        $schoolNames = [];
+        foreach ($alData as $r) {
+            if (!empty($r['schools'])) {
+                $schoolNames = array_keys($r['schools']);
+                break;
+            }
+        }
+
+        $headers = [
+            'Subject (Sinhala)',
+            'Subject (English)',
+            'Total Gr 12 Male',
+            'Total Gr 12 Female',
+            'Total Gr 12 Total',
+            'Total Gr 13 Male',
+            'Total Gr 13 Female',
+            'Total Gr 13 Total',
+            'Zonal Total Students',
+        ];
+
+        foreach ($schoolNames as $sn) {
+            $short = str_replace(['CP/WIL/', 'MAHA VIDYALAYA', 'CENTRAL COLLEGE'], '', $sn);
+            $headers[] = trim($short) . ' (Gr 12)';
+            $headers[] = trim($short) . ' (Gr 13)';
+            $headers[] = trim($short) . ' (Total)';
+        }
+
+        return self::streamCsv($filename, $headers, $alData, function ($item) use ($schoolNames) {
+            $tot = $item['total'] ?? [];
+            $row = [
+                $item['subject'] ?? '',
+                $item['subject_en'] ?? ($item['subject'] ?? ''),
+                (string)($tot['grade_12']['male'] ?? 0),
+                (string)($tot['grade_12']['female'] ?? 0),
+                (string)($tot['grade_12']['total'] ?? 0),
+                (string)($tot['grade_13']['male'] ?? 0),
+                (string)($tot['grade_13']['female'] ?? 0),
+                (string)($tot['grade_13']['total'] ?? 0),
+                (string)($tot['all']['total'] ?? 0),
+            ];
+
+            foreach ($schoolNames as $sn) {
+                $sData = $item['schools'][$sn] ?? [];
+                $row[] = (string)($sData['grade_12']['total'] ?? 0);
+                $row[] = (string)($sData['grade_13']['total'] ?? 0);
+                $row[] = (string)($sData['all']['total'] ?? 0);
+            }
+
+            return $row;
+        });
+    }
+
+    /**
+     * Export AL Streams matrix to CSV.
+     */
+    public static function exportAlStreamsMatrix(array $streamData, ?string $filename = null): StreamedResponse
+    {
+        $filename = $filename ?: 'Wilgamuwa_AL_Streams_Matrix_2025_' . date('Y_m_d_His') . '.csv';
+
+        $schoolNames = [];
+        foreach ($streamData as $r) {
+            if (!empty($r['schools'])) {
+                $schoolNames = array_keys($r['schools']);
+                break;
+            }
+        }
+
+        $headers = [
+            'Stream (Sinhala)',
+            'Stream (English)',
+            'Total Gr 12 Male',
+            'Total Gr 12 Female',
+            'Total Gr 12 Total',
+            'Total Gr 13 Male',
+            'Total Gr 13 Female',
+            'Total Gr 13 Total',
+            'Zonal Total Students',
+        ];
+
+        foreach ($schoolNames as $sn) {
+            $short = str_replace(['CP/WIL/', 'MAHA VIDYALAYA', 'CENTRAL COLLEGE'], '', $sn);
+            $headers[] = trim($short) . ' (Gr 12)';
+            $headers[] = trim($short) . ' (Gr 13)';
+            $headers[] = trim($short) . ' (Total)';
+        }
+
+        return self::streamCsv($filename, $headers, $streamData, function ($item) use ($schoolNames) {
+            $tot = $item['total'] ?? [];
+            $row = [
+                $item['stream'] ?? '',
+                $item['stream_en'] ?? ($item['stream'] ?? ''),
+                (string)($tot['grade_12']['male'] ?? 0),
+                (string)($tot['grade_12']['female'] ?? 0),
+                (string)($tot['grade_12']['total'] ?? 0),
+                (string)($tot['grade_13']['male'] ?? 0),
+                (string)($tot['grade_13']['female'] ?? 0),
+                (string)($tot['grade_13']['total'] ?? 0),
+                (string)($tot['all']['total'] ?? 0),
+            ];
+
+            foreach ($schoolNames as $sn) {
+                $sData = $item['schools'][$sn] ?? [];
+                $row[] = (string)($sData['grade_12']['total'] ?? 0);
+                $row[] = (string)($sData['grade_13']['total'] ?? 0);
+                $row[] = (string)($sData['all']['total'] ?? 0);
+            }
+
+            return $row;
+        });
+    }
 }

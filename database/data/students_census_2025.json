@@ -1,0 +1,5420 @@
+[
+  {
+    "no": 1,
+    "census_no": "04143",
+    "division": "Laggala",
+    "name_si": "මප/විල්/හත්තොට අමුණ ම.වි",
+    "name_en": "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA",
+    "grades": {
+      "Grade 1": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 2": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 3": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 4": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 5": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 6": {
+        "classes": 2,
+        "male": 22,
+        "female": 22,
+        "total": 44
+      },
+      "Grade 7": {
+        "classes": 2,
+        "male": 21,
+        "female": 27,
+        "total": 48
+      },
+      "Grade 8": {
+        "classes": 2,
+        "male": 22,
+        "female": 28,
+        "total": 50
+      },
+      "Grade 9": {
+        "classes": 2,
+        "male": 33,
+        "female": 23,
+        "total": 56
+      },
+      "Grade 10": {
+        "classes": 2,
+        "male": 29,
+        "female": 26,
+        "total": 55
+      },
+      "Grade 11": {
+        "classes": 3,
+        "male": 47,
+        "female": 51,
+        "total": 98
+      },
+      "Grade 12": {
+        "classes": 2,
+        "male": 24,
+        "female": 19,
+        "total": 43
+      },
+      "Grade 13": {
+        "classes": 2,
+        "male": 22,
+        "female": 17,
+        "total": 39
+      },
+      "Special Education": {
+        "male": 3,
+        "female": 4,
+        "total": 7,
+        "classes": 1
+      }
+    },
+    "primary_total": {
+      "male": 0,
+      "female": 0,
+      "classes": 0,
+      "total": 0
+    },
+    "secondary_total": {
+      "male": 174,
+      "female": 177,
+      "total": 351,
+      "classes": 13
+    },
+    "collegiate_total": {
+      "male": 46,
+      "female": 36,
+      "total": 82,
+      "classes": 4
+    },
+    "special_ed": {
+      "male": 3,
+      "female": 4,
+      "total": 7,
+      "classes": 1
+    },
+    "grand_total": {
+      "male": 220,
+      "female": 213,
+      "total": 433,
+      "teachers": 32,
+      "category": "6_13",
+      "notes": ""
+    },
+    "total_classes": 18
+  },
+  {
+    "no": 2,
+    "census_no": "04152",
+    "division": "Laggala",
+    "name_si": "මප/විල්/මහලකොටුව ම.වි",
+    "name_en": "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 5,
+        "female": 3,
+        "total": 8
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 2,
+        "female": 3,
+        "total": 5
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 3,
+        "female": 1,
+        "total": 4
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 7,
+        "female": 4,
+        "total": 11
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 2,
+        "female": 2,
+        "total": 4
+      },
+      "Grade 6": {
+        "classes": 1,
+        "male": 5,
+        "female": 4,
+        "total": 9
+      },
+      "Grade 7": {
+        "classes": 1,
+        "male": 9,
+        "female": 3,
+        "total": 12
+      },
+      "Grade 8": {
+        "classes": 1,
+        "male": 4,
+        "female": 3,
+        "total": 7
+      },
+      "Grade 9": {
+        "classes": 1,
+        "male": 5,
+        "female": 7,
+        "total": 12
+      },
+      "Grade 10": {
+        "classes": 1,
+        "male": 2,
+        "female": 6,
+        "total": 8
+      },
+      "Grade 11": {
+        "classes": 1,
+        "male": 6,
+        "female": 1,
+        "total": 7
+      },
+      "Grade 12": {
+        "classes": 1,
+        "male": 1,
+        "female": 4,
+        "total": 5
+      },
+      "Grade 13": {
+        "classes": 1,
+        "male": 2,
+        "female": 6,
+        "total": 8
+      }
+    },
+    "primary_total": {
+      "male": 19,
+      "female": 13,
+      "classes": 5,
+      "total": 32
+    },
+    "secondary_total": {
+      "male": 31,
+      "female": 24,
+      "total": 55,
+      "classes": 6
+    },
+    "collegiate_total": {
+      "male": 3,
+      "female": 10,
+      "total": 13,
+      "classes": 2
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 53,
+      "female": 47,
+      "total": 100,
+      "teachers": 21,
+      "category": "1_13",
+      "notes": ""
+    },
+    "total_classes": 13
+  },
+  {
+    "no": 3,
+    "census_no": "04118",
+    "division": "Laggala",
+    "name_si": "මප/විල්/මිණිපුර විජය ම.වි",
+    "name_en": "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 11,
+        "female": 20,
+        "total": 31
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 19,
+        "female": 11,
+        "total": 30
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 20,
+        "female": 10,
+        "total": 30
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 12,
+        "female": 10,
+        "total": 22
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 13,
+        "female": 9,
+        "total": 22
+      },
+      "Grade 6": {
+        "classes": 1,
+        "male": 24,
+        "female": 19,
+        "total": 43
+      },
+      "Grade 7": {
+        "classes": 1,
+        "male": 14,
+        "female": 19,
+        "total": 33
+      },
+      "Grade 8": {
+        "classes": 1,
+        "male": 19,
+        "female": 15,
+        "total": 34
+      },
+      "Grade 9": {
+        "classes": 1,
+        "male": 13,
+        "female": 10,
+        "total": 23
+      },
+      "Grade 10": {
+        "classes": 1,
+        "male": 13,
+        "female": 13,
+        "total": 26
+      },
+      "Grade 11": {
+        "classes": 1,
+        "male": 12,
+        "female": 17,
+        "total": 29
+      },
+      "Grade 12": {
+        "classes": 1,
+        "male": 2,
+        "female": 13,
+        "total": 15
+      },
+      "Grade 13": {
+        "classes": 1,
+        "male": 9,
+        "female": 7,
+        "total": 16
+      }
+    },
+    "primary_total": {
+      "male": 75,
+      "female": 60,
+      "classes": 5,
+      "total": 135
+    },
+    "secondary_total": {
+      "male": 95,
+      "female": 93,
+      "total": 188,
+      "classes": 6
+    },
+    "collegiate_total": {
+      "male": 11,
+      "female": 20,
+      "total": 31,
+      "classes": 2
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 181,
+      "female": 173,
+      "total": 354,
+      "teachers": 29,
+      "category": "1_13",
+      "notes": ""
+    },
+    "total_classes": 13
+  },
+  {
+    "no": 4,
+    "census_no": "04120",
+    "division": "Laggala",
+    "name_si": "මප/විල්/පල්ලේගම ම.වි",
+    "name_en": "CP/WIL/PALLEGAMA CENTRAL COLLEGE",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 15,
+        "female": 17,
+        "total": 32
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 7,
+        "female": 9,
+        "total": 16
+      },
+      "Grade 3": {
+        "classes": 2,
+        "male": 19,
+        "female": 15,
+        "total": 34
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 24,
+        "female": 20,
+        "total": 44
+      },
+      "Grade 5": {
+        "classes": 2,
+        "male": 18,
+        "female": 14,
+        "total": 32
+      },
+      "Grade 6": {
+        "classes": 2,
+        "male": 39,
+        "female": 36,
+        "total": 75
+      },
+      "Grade 7": {
+        "classes": 2,
+        "male": 15,
+        "female": 23,
+        "total": 38
+      },
+      "Grade 8": {
+        "classes": 2,
+        "male": 33,
+        "female": 29,
+        "total": 62
+      },
+      "Grade 9": {
+        "classes": 2,
+        "male": 30,
+        "female": 28,
+        "total": 58
+      },
+      "Grade 10": {
+        "classes": 1,
+        "male": 28,
+        "female": 30,
+        "total": 58
+      },
+      "Grade 11": {
+        "classes": 1,
+        "male": 23,
+        "female": 18,
+        "total": 41
+      },
+      "Grade 12": {
+        "classes": 1,
+        "male": 5,
+        "female": 17,
+        "total": 22
+      },
+      "Grade 13": {
+        "classes": 1,
+        "male": 4,
+        "female": 2,
+        "total": 6
+      }
+    },
+    "primary_total": {
+      "male": 83,
+      "female": 75,
+      "classes": 7,
+      "total": 158
+    },
+    "secondary_total": {
+      "male": 168,
+      "female": 164,
+      "total": 332,
+      "classes": 10
+    },
+    "collegiate_total": {
+      "male": 9,
+      "female": 19,
+      "total": 28,
+      "classes": 2
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 260,
+      "female": 258,
+      "total": 518,
+      "teachers": 35,
+      "category": "1_13",
+      "notes": ""
+    },
+    "total_classes": 19
+  },
+  {
+    "no": 5,
+    "census_no": "04349",
+    "division": "Laggala",
+    "name_si": "මප/විල්/මා ඔය ක.වි",
+    "name_en": "CP/WIL/MA OYA KANISTHTA SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 15,
+        "female": 11,
+        "total": 26
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 11,
+        "female": 18,
+        "total": 29
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 15,
+        "female": 12,
+        "total": 27
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 14,
+        "female": 19,
+        "total": 33
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 20,
+        "female": 12,
+        "total": 32
+      },
+      "Grade 6": {
+        "classes": 1,
+        "male": 11,
+        "female": 18,
+        "total": 29
+      },
+      "Grade 7": {
+        "classes": 1,
+        "male": 20,
+        "female": 15,
+        "total": 35
+      },
+      "Grade 8": {
+        "classes": 1,
+        "male": 24,
+        "female": 12,
+        "total": 36
+      },
+      "Grade 9": {
+        "classes": 1,
+        "male": 20,
+        "female": 15,
+        "total": 35
+      },
+      "Grade 10": {
+        "classes": 1,
+        "male": 7,
+        "female": 10,
+        "total": 17
+      },
+      "Grade 11": {
+        "classes": 1,
+        "male": 10,
+        "female": 10,
+        "total": 20
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 75,
+      "female": 72,
+      "classes": 5,
+      "total": 147
+    },
+    "secondary_total": {
+      "male": 92,
+      "female": 80,
+      "total": 172,
+      "classes": 6
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 167,
+      "female": 152,
+      "total": 319,
+      "teachers": 13,
+      "category": "1_11",
+      "notes": ""
+    },
+    "total_classes": 11
+  },
+  {
+    "no": 6,
+    "census_no": "04129",
+    "division": "Laggala",
+    "name_si": "මප/විල්/අග්‍රබෝධි ක.වි",
+    "name_en": "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 5,
+        "female": 4,
+        "total": 9
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 13,
+        "female": 8,
+        "total": 21
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 6,
+        "female": 8,
+        "total": 14
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 15,
+        "female": 6,
+        "total": 21
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 8,
+        "female": 8,
+        "total": 16
+      },
+      "Grade 6": {
+        "classes": 1,
+        "male": 7,
+        "female": 10,
+        "total": 17
+      },
+      "Grade 7": {
+        "classes": 1,
+        "male": 7,
+        "female": 10,
+        "total": 17
+      },
+      "Grade 8": {
+        "classes": 1,
+        "male": 4,
+        "female": 9,
+        "total": 13
+      },
+      "Grade 9": {
+        "classes": 1,
+        "male": 8,
+        "female": 10,
+        "total": 18
+      },
+      "Grade 10": {
+        "classes": 1,
+        "male": 12,
+        "female": 7,
+        "total": 19
+      },
+      "Grade 11": {
+        "classes": 1,
+        "male": 16,
+        "female": 7,
+        "total": 23
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 47,
+      "female": 34,
+      "classes": 5,
+      "total": 81
+    },
+    "secondary_total": {
+      "male": 54,
+      "female": 53,
+      "total": 107,
+      "classes": 6
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 101,
+      "female": 87,
+      "total": 188,
+      "teachers": 23,
+      "category": "1_11",
+      "notes": ""
+    },
+    "total_classes": 11
+  },
+  {
+    "no": 7,
+    "census_no": "04153",
+    "division": "Laggala",
+    "name_si": "මප/විල්/පුවක්පිටිය දම්මන්තැන්න ක.වි",
+    "name_en": "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 0,
+        "female": 2,
+        "total": 2
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 2,
+        "female": 0,
+        "total": 2
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 1,
+        "female": 2,
+        "total": 3
+      },
+      "Grade 6": {
+        "classes": 1,
+        "male": 1,
+        "female": 0,
+        "total": 1
+      },
+      "Grade 7": {
+        "classes": 1,
+        "male": 1,
+        "female": 1,
+        "total": 2
+      },
+      "Grade 8": {
+        "classes": 1,
+        "male": 3,
+        "female": 3,
+        "total": 6
+      },
+      "Grade 9": {
+        "classes": 1,
+        "male": 1,
+        "female": 0,
+        "total": 1
+      },
+      "Grade 10": {
+        "classes": 1,
+        "male": 1,
+        "female": 2,
+        "total": 3
+      },
+      "Grade 11": {
+        "classes": 1,
+        "male": 0,
+        "female": 2,
+        "total": 2
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 3,
+      "female": 4,
+      "classes": 5,
+      "total": 7
+    },
+    "secondary_total": {
+      "male": 7,
+      "female": 8,
+      "total": 15,
+      "classes": 6
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 10,
+      "female": 12,
+      "total": 22,
+      "teachers": 13,
+      "category": "1_11",
+      "notes": ""
+    },
+    "total_classes": 11
+  },
+  {
+    "no": 8,
+    "census_no": "04125",
+    "division": "Laggala",
+    "name_si": "මප/විල්/රණමුරේ ක.වි",
+    "name_en": "CP/WIL/RANAMURE KANISHTA VIDYALAYA",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 2,
+        "female": 3,
+        "total": 5
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 3,
+        "female": 3,
+        "total": 6
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 5,
+        "female": 4,
+        "total": 9
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 5,
+        "female": 5,
+        "total": 10
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 6,
+        "female": 9,
+        "total": 15
+      },
+      "Grade 6": {
+        "classes": 1,
+        "male": 13,
+        "female": 11,
+        "total": 24
+      },
+      "Grade 7": {
+        "classes": 1,
+        "male": 9,
+        "female": 13,
+        "total": 22
+      },
+      "Grade 8": {
+        "classes": 1,
+        "male": 9,
+        "female": 5,
+        "total": 14
+      },
+      "Grade 9": {
+        "classes": 1,
+        "male": 8,
+        "female": 6,
+        "total": 14
+      },
+      "Grade 10": {
+        "classes": 1,
+        "male": 4,
+        "female": 8,
+        "total": 12
+      },
+      "Grade 11": {
+        "classes": 1,
+        "male": 9,
+        "female": 6,
+        "total": 15
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 21,
+      "female": 24,
+      "classes": 5,
+      "total": 45
+    },
+    "secondary_total": {
+      "male": 52,
+      "female": 49,
+      "total": 101,
+      "classes": 6
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 73,
+      "female": 73,
+      "total": 146,
+      "teachers": 16,
+      "category": "1_11",
+      "notes": ""
+    },
+    "total_classes": 11
+  },
+  {
+    "no": 9,
+    "census_no": "04330",
+    "division": "Laggala",
+    "name_si": "මප/විල්/හත්තොට අමුණ විද්‍යාර්ථ ආදර්ශ ප්‍රා.වි",
+    "name_en": "CP/WIL/VIDYARTHA MODEL PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 2,
+        "male": 38,
+        "female": 20,
+        "total": 58
+      },
+      "Grade 2": {
+        "classes": 2,
+        "male": 32,
+        "female": 25,
+        "total": 57
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 21,
+        "female": 20,
+        "total": 41
+      },
+      "Grade 4": {
+        "classes": 2,
+        "male": 27,
+        "female": 37,
+        "total": 64
+      },
+      "Grade 5": {
+        "classes": 2,
+        "male": 23,
+        "female": 24,
+        "total": 47
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 141,
+      "female": 126,
+      "classes": 9,
+      "total": 267
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 141,
+      "female": 126,
+      "total": 267,
+      "teachers": 6,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 9
+  },
+  {
+    "no": 10,
+    "census_no": "04148",
+    "division": "Laggala",
+    "name_si": "මප/විල්/හිඹිලියාකඩ ප්‍රා.වි",
+    "name_en": "CP/WIL/HIMBILIYAKADA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 0,
+        "female": 2,
+        "total": 2
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 1,
+        "female": 2,
+        "total": 3
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 2,
+        "female": 4,
+        "total": 6
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 4,
+        "female": 9,
+        "total": 13
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 4,
+        "female": 1,
+        "total": 5
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 11,
+      "female": 18,
+      "classes": 5,
+      "total": 29
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 11,
+      "female": 18,
+      "total": 29,
+      "teachers": 7,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 12,
+    "census_no": "04130",
+    "division": "Laggala",
+    "name_si": "මප/විල්/කිවුලේවාඩිය ප්‍රා.වි",
+    "name_en": "CP/WIL/KIULEWADIYA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 4,
+        "female": 0,
+        "total": 4
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 1,
+        "female": 2,
+        "total": 3
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 4,
+        "female": 3,
+        "total": 7
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 6,
+        "female": 2,
+        "total": 8
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 7,
+        "female": 3,
+        "total": 10
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 22,
+      "female": 10,
+      "classes": 5,
+      "total": 32
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 22,
+      "female": 10,
+      "total": 32,
+      "teachers": 5,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 13,
+    "census_no": "04141",
+    "division": "Laggala",
+    "name_si": "මප/විල්/ලේල්ඔය ප්‍රා.වි",
+    "name_en": "CP/WIL/LELOYA PRIMARY VIDYALAYA",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 1,
+        "female": 1,
+        "total": 2
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 4,
+        "female": 3,
+        "total": 7
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 1,
+        "female": 5,
+        "total": 6
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 4,
+        "female": 3,
+        "total": 7
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 1,
+        "female": 7,
+        "total": 8
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 11,
+      "female": 19,
+      "classes": 5,
+      "total": 30
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 11,
+      "female": 19,
+      "total": 30,
+      "teachers": 6,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 14,
+    "census_no": "04134",
+    "division": "Laggala",
+    "name_si": "මප/විල්/නාරංගමුව ප්‍රා.වි",
+    "name_en": "CP/WIL/NARANGAMUWA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 9,
+        "female": 2,
+        "total": 11
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 3,
+        "female": 5,
+        "total": 8
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 3,
+        "female": 2,
+        "total": 5
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 4,
+        "female": 2,
+        "total": 6
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 4,
+        "female": 9,
+        "total": 13
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 23,
+      "female": 20,
+      "classes": 5,
+      "total": 43
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 23,
+      "female": 20,
+      "total": 43,
+      "teachers": 5,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 15,
+    "census_no": "04139",
+    "division": "Laggala",
+    "name_si": "මප/විල්/රඹුක්ඔළුව ප්‍රා.වි",
+    "name_en": "CP/WIL/RAMBUKOLUWA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 7,
+        "female": 7,
+        "total": 14
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 12,
+        "female": 8,
+        "total": 20
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 7,
+        "female": 6,
+        "total": 13
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 13,
+        "female": 12,
+        "total": 25
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 4,
+        "female": 6,
+        "total": 10
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 43,
+      "female": 39,
+      "classes": 5,
+      "total": 82
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 43,
+      "female": 39,
+      "total": 82,
+      "teachers": 5,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 16,
+    "census_no": "04315",
+    "division": "Laggala",
+    "name_si": "මප/විල්/සුළුගුණේ ප්‍රා.වි",
+    "name_en": "CP/WIL/SULUGUNE PRIMARY VIDYALAYA",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 5,
+        "female": 3,
+        "total": 8
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 2,
+        "female": 2,
+        "total": 4
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 2,
+        "female": 1,
+        "total": 3
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 2,
+        "female": 0,
+        "total": 2
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 3,
+        "female": 2,
+        "total": 5
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 14,
+      "female": 8,
+      "classes": 5,
+      "total": 22
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 14,
+      "female": 8,
+      "total": 22,
+      "teachers": 3,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 17,
+    "census_no": "04348",
+    "division": "Laggala",
+    "name_si": "මප/විල්/නව ගුරුවෙල ප්‍රා.වි",
+    "name_en": "CP/WIL/NAWA GURUWELA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 1,
+        "female": 1,
+        "total": 2
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 3,
+        "female": 4,
+        "total": 7
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 7,
+        "female": 11,
+        "total": 18
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 6,
+        "female": 4,
+        "total": 10
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 1,
+        "female": 6,
+        "total": 7
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 18,
+      "female": 26,
+      "classes": 5,
+      "total": 44
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 18,
+      "female": 26,
+      "total": 44,
+      "teachers": 7,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 18,
+    "census_no": "04350",
+    "division": "Laggala",
+    "name_si": "මප/විල්/සීවලි ආදර්ශ ප්‍රා.වි",
+    "name_en": "CP/WIL/SIWALI MODLE PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 5,
+        "female": 2,
+        "total": 7
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 3,
+        "female": 2,
+        "total": 5
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 3,
+        "female": 5,
+        "total": 8
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 1,
+        "female": 7,
+        "total": 8
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 5,
+        "female": 5,
+        "total": 10
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 17,
+      "female": 21,
+      "classes": 5,
+      "total": 38
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 17,
+      "female": 21,
+      "total": 38,
+      "teachers": 4,
+      "category": "1_4",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 19,
+    "census_no": "04119",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/නාමිණිඔය ම.වි",
+    "name_en": "CP/WIL/NAMINIOYA CENTRAL COLLEGE",
+    "grades": {
+      "Grade 1": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 2": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 3": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 4": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 5": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 6": {
+        "classes": 5,
+        "male": 114,
+        "female": 97,
+        "total": 211
+      },
+      "Grade 7": {
+        "classes": 5,
+        "male": 82,
+        "female": 84,
+        "total": 166
+      },
+      "Grade 8": {
+        "classes": 5,
+        "male": 86,
+        "female": 102,
+        "total": 188
+      },
+      "Grade 9": {
+        "classes": 5,
+        "male": 95,
+        "female": 103,
+        "total": 198
+      },
+      "Grade 10": {
+        "classes": 5,
+        "male": 89,
+        "female": 98,
+        "total": 187
+      },
+      "Grade 11": {
+        "classes": 5,
+        "male": 82,
+        "female": 94,
+        "total": 180
+      },
+      "Grade 12": {
+        "classes": 5,
+        "male": 65,
+        "female": 105,
+        "total": 170
+      },
+      "Grade 13": {
+        "classes": 5,
+        "male": 79,
+        "female": 89,
+        "total": 168
+      }
+    },
+    "primary_total": {
+      "male": 0,
+      "female": 0,
+      "classes": 0,
+      "total": 0
+    },
+    "secondary_total": {
+      "male": 548,
+      "female": 578,
+      "total": 1130,
+      "classes": 30
+    },
+    "collegiate_total": {
+      "male": 144,
+      "female": 194,
+      "total": 338,
+      "classes": 10
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 692,
+      "female": 772,
+      "total": 1464,
+      "teachers": 65,
+      "category": "6_13",
+      "notes": "AL Tech, maths"
+    },
+    "total_classes": 40
+  },
+  {
+    "no": 20,
+    "census_no": "04123",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/නුගගොල්ල ම.වි",
+    "name_en": "CP/WIL/NUGAGOLLA MAHA VIDYALAYA",
+    "grades": {
+      "Grade 1": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 2": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 3": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 4": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 5": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 6": {
+        "classes": 3,
+        "male": 67,
+        "female": 67,
+        "total": 134
+      },
+      "Grade 7": {
+        "classes": 3,
+        "male": 60,
+        "female": 69,
+        "total": 129
+      },
+      "Grade 8": {
+        "classes": 3,
+        "male": 47,
+        "female": 78,
+        "total": 125
+      },
+      "Grade 9": {
+        "classes": 3,
+        "male": 44,
+        "female": 71,
+        "total": 115
+      },
+      "Grade 10": {
+        "classes": 3,
+        "male": 61,
+        "female": 64,
+        "total": 125
+      },
+      "Grade 11": {
+        "classes": 3,
+        "male": 38,
+        "female": 58,
+        "total": 98
+      },
+      "Grade 12": {
+        "classes": 1,
+        "male": 21,
+        "female": 46,
+        "total": 67
+      },
+      "Grade 13": {
+        "classes": 1,
+        "male": 9,
+        "female": 31,
+        "total": 40
+      }
+    },
+    "primary_total": {
+      "male": 0,
+      "female": 0,
+      "classes": 0,
+      "total": 0
+    },
+    "secondary_total": {
+      "male": 317,
+      "female": 407,
+      "total": 726,
+      "classes": 18
+    },
+    "collegiate_total": {
+      "male": 30,
+      "female": 77,
+      "total": 107,
+      "classes": 2
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 347,
+      "female": 484,
+      "total": 831,
+      "teachers": 37,
+      "category": "6_13",
+      "notes": ""
+    },
+    "total_classes": 20
+  },
+  {
+    "no": 21,
+    "census_no": "04121",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/මාරක ම.වි",
+    "name_en": "CP/WIL/MARAKA MAHA VIDYALAYA",
+    "grades": {
+      "Grade 1": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 2": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 3": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 4": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 5": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 6": {
+        "classes": 4,
+        "male": 59,
+        "female": 60,
+        "total": 119
+      },
+      "Grade 7": {
+        "classes": 4,
+        "male": 60,
+        "female": 65,
+        "total": 125
+      },
+      "Grade 8": {
+        "classes": 4,
+        "male": 57,
+        "female": 72,
+        "total": 129
+      },
+      "Grade 9": {
+        "classes": 4,
+        "male": 73,
+        "female": 71,
+        "total": 144
+      },
+      "Grade 10": {
+        "classes": 3,
+        "male": 55,
+        "female": 65,
+        "total": 120
+      },
+      "Grade 11": {
+        "classes": 3,
+        "male": 45,
+        "female": 64,
+        "total": 115
+      },
+      "Grade 12": {
+        "classes": 3,
+        "male": 35,
+        "female": 57,
+        "total": 92
+      },
+      "Grade 13": {
+        "classes": 3,
+        "male": 22,
+        "female": 33,
+        "total": 55
+      }
+    },
+    "primary_total": {
+      "male": 0,
+      "female": 0,
+      "classes": 0,
+      "total": 0
+    },
+    "secondary_total": {
+      "male": 349,
+      "female": 397,
+      "total": 752,
+      "classes": 22
+    },
+    "collegiate_total": {
+      "male": 57,
+      "female": 90,
+      "total": 147,
+      "classes": 6
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 406,
+      "female": 487,
+      "total": 893,
+      "teachers": 44,
+      "category": "6_13",
+      "notes": ""
+    },
+    "total_classes": 28
+  },
+  {
+    "no": 22,
+    "census_no": "04122",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/හඳුන්ගමුව ම.වි",
+    "name_en": "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA",
+    "grades": {
+      "Grade 1": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 2": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 3": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 4": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 5": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 6": {
+        "classes": 1,
+        "male": 16,
+        "female": 16,
+        "total": 32
+      },
+      "Grade 7": {
+        "classes": 2,
+        "male": 28,
+        "female": 33,
+        "total": 61
+      },
+      "Grade 8": {
+        "classes": 2,
+        "male": 22,
+        "female": 33,
+        "total": 55
+      },
+      "Grade 9": {
+        "classes": 2,
+        "male": 36,
+        "female": 41,
+        "total": 77
+      },
+      "Grade 10": {
+        "classes": 2,
+        "male": 23,
+        "female": 46,
+        "total": 69
+      },
+      "Grade 11": {
+        "classes": 2,
+        "male": 32,
+        "female": 33,
+        "total": 65
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 1,
+        "male": 4,
+        "female": 9,
+        "total": 13
+      }
+    },
+    "primary_total": {
+      "male": 0,
+      "female": 0,
+      "classes": 0,
+      "total": 0
+    },
+    "secondary_total": {
+      "male": 157,
+      "female": 202,
+      "total": 359,
+      "classes": 11
+    },
+    "collegiate_total": {
+      "male": 4,
+      "female": 9,
+      "total": 13,
+      "classes": 1
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 161,
+      "female": 211,
+      "total": 372,
+      "teachers": 30,
+      "category": "6_13",
+      "notes": "AL grade 12"
+    },
+    "total_classes": 12
+  },
+  {
+    "no": 23,
+    "census_no": "04135",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/බෝගහවැව ක.වි",
+    "name_en": "CP/WIL/BOGAHAWEWA KANISTHTA VIDIYALAYA",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 9,
+        "female": 11,
+        "total": 20
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 9,
+        "female": 9,
+        "total": 18
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 7,
+        "female": 5,
+        "total": 12
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 8,
+        "female": 6,
+        "total": 14
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 8,
+        "female": 9,
+        "total": 17
+      },
+      "Grade 6": {
+        "classes": 1,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 1,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 1,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 1,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 41,
+      "female": 40,
+      "classes": 5,
+      "total": 81
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 4
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 41,
+      "female": 40,
+      "total": 81,
+      "teachers": 10,
+      "category": "1_9",
+      "notes": ""
+    },
+    "total_classes": 9
+  },
+  {
+    "no": 24,
+    "census_no": "04144",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/කැකලතැන්න ක.වි",
+    "name_en": "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 10,
+        "female": 6,
+        "total": 16
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 9,
+        "female": 6,
+        "total": 15
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 10,
+        "female": 17,
+        "total": 27
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 11,
+        "female": 11,
+        "total": 22
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 9,
+        "female": 7,
+        "total": 16
+      },
+      "Grade 6": {
+        "classes": 1,
+        "male": 9,
+        "female": 13,
+        "total": 22
+      },
+      "Grade 7": {
+        "classes": 1,
+        "male": 7,
+        "female": 8,
+        "total": 15
+      },
+      "Grade 8": {
+        "classes": 1,
+        "male": 7,
+        "female": 18,
+        "total": 25
+      },
+      "Grade 9": {
+        "classes": 1,
+        "male": 10,
+        "female": 9,
+        "total": 19
+      },
+      "Grade 10": {
+        "classes": 1,
+        "male": 5,
+        "female": 9,
+        "total": 14
+      },
+      "Grade 11": {
+        "classes": 1,
+        "male": 9,
+        "female": 13,
+        "total": 22
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 49,
+      "female": 47,
+      "classes": 5,
+      "total": 96
+    },
+    "secondary_total": {
+      "male": 47,
+      "female": 70,
+      "total": 117,
+      "classes": 6
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 96,
+      "female": 117,
+      "total": 213,
+      "teachers": 17,
+      "category": "1_11",
+      "notes": ""
+    },
+    "total_classes": 11
+  },
+  {
+    "no": 25,
+    "census_no": "04124",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/මැදකන්ද ක.වි",
+    "name_en": "CP/WIL/MEDAKANDA K.V.",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 15,
+        "female": 11,
+        "total": 26
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 18,
+        "female": 14,
+        "total": 32
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 10,
+        "female": 12,
+        "total": 22
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 13,
+        "female": 12,
+        "total": 25
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 15,
+        "female": 15,
+        "total": 30
+      },
+      "Grade 6": {
+        "classes": 1,
+        "male": 11,
+        "female": 6,
+        "total": 17
+      },
+      "Grade 7": {
+        "classes": 1,
+        "male": 9,
+        "female": 7,
+        "total": 16
+      },
+      "Grade 8": {
+        "classes": 1,
+        "male": 11,
+        "female": 14,
+        "total": 25
+      },
+      "Grade 9": {
+        "classes": 1,
+        "male": 10,
+        "female": 6,
+        "total": 16
+      },
+      "Grade 10": {
+        "classes": 1,
+        "male": 10,
+        "female": 3,
+        "total": 13
+      },
+      "Grade 11": {
+        "classes": 1,
+        "male": 7,
+        "female": 9,
+        "total": 16
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 71,
+      "female": 64,
+      "classes": 5,
+      "total": 135
+    },
+    "secondary_total": {
+      "male": 58,
+      "female": 45,
+      "total": 103,
+      "classes": 6
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 129,
+      "female": 109,
+      "total": 238,
+      "teachers": 16,
+      "category": "1_11",
+      "notes": ""
+    },
+    "total_classes": 11
+  },
+  {
+    "no": 26,
+    "census_no": "04319",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/වෙහෙරගලයාය ක.වි",
+    "name_en": "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 8,
+        "female": 7,
+        "total": 15
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 10,
+        "female": 5,
+        "total": 15
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 9,
+        "female": 10,
+        "total": 19
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 10,
+        "female": 6,
+        "total": 16
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 7,
+        "female": 10,
+        "total": 17
+      },
+      "Grade 6": {
+        "classes": 1,
+        "male": 13,
+        "female": 12,
+        "total": 25
+      },
+      "Grade 7": {
+        "classes": 1,
+        "male": 7,
+        "female": 8,
+        "total": 15
+      },
+      "Grade 8": {
+        "classes": 1,
+        "male": 14,
+        "female": 16,
+        "total": 30
+      },
+      "Grade 9": {
+        "classes": 1,
+        "male": 4,
+        "female": 11,
+        "total": 15
+      },
+      "Grade 10": {
+        "classes": 1,
+        "male": 14,
+        "female": 8,
+        "total": 22
+      },
+      "Grade 11": {
+        "classes": 1,
+        "male": 14,
+        "female": 8,
+        "total": 22
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 44,
+      "female": 38,
+      "classes": 5,
+      "total": 82
+    },
+    "secondary_total": {
+      "male": 66,
+      "female": 63,
+      "total": 129,
+      "classes": 6
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 110,
+      "female": 101,
+      "total": 211,
+      "teachers": 18,
+      "category": "1_11",
+      "notes": ""
+    },
+    "total_classes": 11
+  },
+  {
+    "no": 27,
+    "census_no": "04126",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/සෝනුත්තර ක.වි",
+    "name_en": "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 10,
+        "female": 11,
+        "total": 21
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 19,
+        "female": 14,
+        "total": 33
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 8,
+        "female": 6,
+        "total": 14
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 15,
+        "female": 12,
+        "total": 27
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 10,
+        "female": 4,
+        "total": 14
+      },
+      "Grade 6": {
+        "classes": 1,
+        "male": 10,
+        "female": 9,
+        "total": 19
+      },
+      "Grade 7": {
+        "classes": 1,
+        "male": 11,
+        "female": 11,
+        "total": 22
+      },
+      "Grade 8": {
+        "classes": 1,
+        "male": 11,
+        "female": 12,
+        "total": 23
+      },
+      "Grade 9": {
+        "classes": 1,
+        "male": 11,
+        "female": 12,
+        "total": 23
+      },
+      "Grade 10": {
+        "classes": 1,
+        "male": 13,
+        "female": 10,
+        "total": 23
+      },
+      "Grade 11": {
+        "classes": 1,
+        "male": 10,
+        "female": 11,
+        "total": 21
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 62,
+      "female": 47,
+      "classes": 5,
+      "total": 109
+    },
+    "secondary_total": {
+      "male": 66,
+      "female": 65,
+      "total": 131,
+      "classes": 6
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 128,
+      "female": 112,
+      "total": 240,
+      "teachers": 18,
+      "category": "1_11",
+      "notes": ""
+    },
+    "total_classes": 11
+  },
+  {
+    "no": 28,
+    "census_no": "04149",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/ගුරුවෙලයාය ක.වි",
+    "name_en": "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 8,
+        "female": 3,
+        "total": 11
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 6,
+        "female": 7,
+        "total": 13
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 3,
+        "female": 6,
+        "total": 9
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 6,
+        "female": 4,
+        "total": 10
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 6,
+        "female": 5,
+        "total": 11
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 29,
+      "female": 25,
+      "classes": 5,
+      "total": 54
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 29,
+      "female": 25,
+      "total": 54,
+      "teachers": 5,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 29,
+    "census_no": "04145",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/නුවරයාය ප්‍රා.වි",
+    "name_en": "CP/WIL/NUWARAYAYA PRYMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 5,
+        "female": 2,
+        "total": 7
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 3,
+        "female": 11,
+        "total": 14
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 5,
+        "female": 8,
+        "total": 13
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 6,
+        "female": 6,
+        "total": 12
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 6,
+        "female": 6,
+        "total": 12
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 25,
+      "female": 33,
+      "classes": 5,
+      "total": 58
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 25,
+      "female": 33,
+      "total": 58,
+      "teachers": 7,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 30,
+    "census_no": "04322",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/ධර්මපාල ප්‍රා.වි",
+    "name_en": "CP/WIL/DHARMAPALA PRYMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 0,
+        "female": 2,
+        "total": 2
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 4,
+        "female": 3,
+        "total": 7
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 3,
+        "female": 5,
+        "total": 8
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 4,
+        "female": 3,
+        "total": 7
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 6,
+        "female": 8,
+        "total": 14
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 17,
+      "female": 21,
+      "classes": 5,
+      "total": 38
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 17,
+      "female": 21,
+      "total": 38,
+      "teachers": 6,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 31,
+    "census_no": "04325",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/එගොඩදේවගිරිය ප්‍රා.වි",
+    "name_en": "CP/WIL/EGODA DEWAGIRIYA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 3,
+        "female": 2,
+        "total": 5
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 2,
+        "female": 1,
+        "total": 3
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 6,
+        "female": 2,
+        "total": 8
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 2,
+        "female": 6,
+        "total": 8
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 3,
+        "female": 3,
+        "total": 6
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 16,
+      "female": 14,
+      "classes": 5,
+      "total": 30
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 16,
+      "female": 14,
+      "total": 30,
+      "teachers": 2,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 32,
+    "census_no": "04342",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/ධර්මප්‍රධීප ප්‍රා.වි",
+    "name_en": "CP/WIL/NUGAGOLLA DHARMAPRADEEPA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 2,
+        "male": 33,
+        "female": 34,
+        "total": 67
+      },
+      "Grade 2": {
+        "classes": 2,
+        "male": 36,
+        "female": 38,
+        "total": 74
+      },
+      "Grade 3": {
+        "classes": 2,
+        "male": 38,
+        "female": 37,
+        "total": 75
+      },
+      "Grade 4": {
+        "classes": 2,
+        "male": 30,
+        "female": 45,
+        "total": 75
+      },
+      "Grade 5": {
+        "classes": 2,
+        "male": 41,
+        "female": 31,
+        "total": 72
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Special Education": {
+        "male": 4,
+        "female": 1,
+        "total": 5,
+        "classes": 1
+      }
+    },
+    "primary_total": {
+      "male": 178,
+      "female": 185,
+      "classes": 10,
+      "total": 363
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 4,
+      "female": 1,
+      "total": 5,
+      "classes": 1
+    },
+    "grand_total": {
+      "male": 182,
+      "female": 186,
+      "total": 368,
+      "teachers": 12,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 11
+  },
+  {
+    "no": 33,
+    "census_no": "04343",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/දුටුගැමුණු ප්‍රා.වි",
+    "name_en": "CP/WIL/DUTUGEMUNU PRYMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 2,
+        "male": 38,
+        "female": 26,
+        "total": 64
+      },
+      "Grade 2": {
+        "classes": 2,
+        "male": 45,
+        "female": 30,
+        "total": 75
+      },
+      "Grade 3": {
+        "classes": 2,
+        "male": 40,
+        "female": 35,
+        "total": 75
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 29,
+        "female": 40,
+        "total": 69
+      },
+      "Grade 5": {
+        "classes": 2,
+        "male": 20,
+        "female": 24,
+        "total": 44
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Special Education": {
+        "male": 6,
+        "female": 2,
+        "total": 8,
+        "classes": 1
+      }
+    },
+    "primary_total": {
+      "male": 172,
+      "female": 155,
+      "classes": 9,
+      "total": 327
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 6,
+      "female": 2,
+      "total": 8,
+      "classes": 1
+    },
+    "grand_total": {
+      "male": 178,
+      "female": 157,
+      "total": 335,
+      "teachers": 12,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 10
+  },
+  {
+    "no": 34,
+    "census_no": "04128",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/ඉමාඩුවයාය ප්‍රා.වි",
+    "name_en": "CP/WIL/IMADUWAYAYA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 0,
+      "female": 0,
+      "classes": 5,
+      "total": 0
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "teachers": 6,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 35,
+    "census_no": "04131",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/කුඹුකන්දන ප්‍රා.වි",
+    "name_en": "CP/WIL/KUBUKANDANA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 3,
+        "female": 6,
+        "total": 9
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 7,
+        "female": 8,
+        "total": 15
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 5,
+        "female": 9,
+        "total": 14
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 9,
+        "female": 5,
+        "total": 14
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 7,
+        "female": 11,
+        "total": 18
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 31,
+      "female": 39,
+      "classes": 5,
+      "total": 70
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 31,
+      "female": 39,
+      "total": 70,
+      "teachers": 5,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 36,
+    "census_no": "04140",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/ලේඩියන්ගල ප්‍රා.වි",
+    "name_en": "CP/WIL/LEDIYANGALA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 8,
+        "female": 7,
+        "total": 15
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 7,
+        "female": 7,
+        "total": 14
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 2,
+        "female": 5,
+        "total": 7
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 3,
+        "female": 11,
+        "total": 14
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 7,
+        "female": 4,
+        "total": 11
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 27,
+      "female": 34,
+      "classes": 5,
+      "total": 61
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 27,
+      "female": 34,
+      "total": 61,
+      "teachers": 5,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 37,
+    "census_no": "04137",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/මහවතැන්න ප්‍රා.වි",
+    "name_en": "CP/WIL/MAHAWATHANNA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 5,
+        "female": 6,
+        "total": 11
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 6,
+        "female": 5,
+        "total": 11
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 9,
+        "female": 12,
+        "total": 21
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 14,
+        "female": 9,
+        "total": 23
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 8,
+        "female": 4,
+        "total": 12
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 42,
+      "female": 36,
+      "classes": 5,
+      "total": 78
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 42,
+      "female": 36,
+      "total": 78,
+      "teachers": 6,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 38,
+    "census_no": "04323",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/මල්ගම්මන ප්‍රා.වි",
+    "name_en": "CP/WIL/MALGAMANA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 4,
+        "female": 7,
+        "total": 11
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 6,
+        "female": 5,
+        "total": 11
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 5,
+        "female": 6,
+        "total": 11
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 5,
+        "female": 2,
+        "total": 7
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 2,
+        "female": 3,
+        "total": 5
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 22,
+      "female": 23,
+      "classes": 5,
+      "total": 45
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 22,
+      "female": 23,
+      "total": 45,
+      "teachers": 5,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 39,
+    "census_no": "04138",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/මොරගහ උල්පත ප්‍රා.වි",
+    "name_en": "CP/WIL/MORAGAHAULPATHA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 7,
+        "female": 5,
+        "total": 12
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 6,
+        "female": 10,
+        "total": 16
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 11,
+        "female": 6,
+        "total": 17
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 9,
+        "female": 3,
+        "total": 12
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 12,
+        "female": 5,
+        "total": 17
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 45,
+      "female": 29,
+      "classes": 5,
+      "total": 74
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 45,
+      "female": 29,
+      "total": 74,
+      "teachers": 6,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 40,
+    "census_no": "04329",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/නාමිණිඔය මොන්ටිගොපල්ලව ප්‍රා.වි",
+    "name_en": "CP/WIL/NAMINIOYA MONTIGOPALLAWA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 3,
+        "male": 65,
+        "female": 44,
+        "total": 109
+      },
+      "Grade 2": {
+        "classes": 3,
+        "male": 61,
+        "female": 56,
+        "total": 117
+      },
+      "Grade 3": {
+        "classes": 3,
+        "male": 63,
+        "female": 56,
+        "total": 119
+      },
+      "Grade 4": {
+        "classes": 3,
+        "male": 59,
+        "female": 57,
+        "total": 116
+      },
+      "Grade 5": {
+        "classes": 3,
+        "male": 56,
+        "female": 49,
+        "total": 105
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 304,
+      "female": 262,
+      "classes": 15,
+      "total": 566
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 304,
+      "female": 262,
+      "total": 566,
+      "teachers": 18,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 15
+  },
+  {
+    "no": 41,
+    "census_no": "04321",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/පලුපිටිය ප්‍රා.වි",
+    "name_en": "CP/WIL/PALUPITIYA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 3,
+        "female": 6,
+        "total": 9
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 5,
+        "female": 10,
+        "total": 15
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 4,
+        "female": 3,
+        "total": 7
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 4,
+        "female": 7,
+        "total": 11
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 3,
+        "female": 4,
+        "total": 7
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 19,
+      "female": 30,
+      "classes": 5,
+      "total": 49
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 19,
+      "female": 30,
+      "total": 49,
+      "teachers": 4,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 42,
+    "census_no": "04318",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/පරාක්‍රම ප්‍රා.වි",
+    "name_en": "CP/WIL/PARAKRAMA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 17,
+        "female": 15,
+        "total": 32
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 15,
+        "female": 20,
+        "total": 35
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 13,
+        "female": 9,
+        "total": 22
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 10,
+        "female": 6,
+        "total": 16
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 13,
+        "female": 10,
+        "total": 23
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 68,
+      "female": 60,
+      "classes": 5,
+      "total": 128
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 68,
+      "female": 60,
+      "total": 128,
+      "teachers": 6,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 43,
+    "census_no": "04146",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/පුස්සැල්ලයාය ප්‍රා.වි",
+    "name_en": "CP/WIL/PUSSELLAYAYA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 3,
+        "female": 4,
+        "total": 7
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 3,
+        "female": 4,
+        "total": 7
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 4,
+        "female": 6,
+        "total": 10
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 9,
+        "female": 4,
+        "total": 13
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 4,
+        "female": 3,
+        "total": 7
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 23,
+      "female": 21,
+      "classes": 5,
+      "total": 44
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 23,
+      "female": 21,
+      "total": 44,
+      "teachers": 5,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 44,
+    "census_no": "04147",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/රදුන්නවැව ප්‍රා.වි",
+    "name_en": "CP/WIL/RADUNNAWEWA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 2,
+        "female": 4,
+        "total": 6
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 6,
+        "female": 7,
+        "total": 13
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 12,
+        "female": 8,
+        "total": 20
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 8,
+        "female": 4,
+        "total": 12
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 4,
+        "female": 6,
+        "total": 10
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 32,
+      "female": 29,
+      "classes": 5,
+      "total": 61
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 32,
+      "female": 29,
+      "total": 61,
+      "teachers": 6,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 45,
+    "census_no": "04142",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/විල්ගමුව ප්‍රා.වි",
+    "name_en": "CP/WIL/WILGAMUWA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 1,
+        "male": 5,
+        "female": 8,
+        "total": 13
+      },
+      "Grade 2": {
+        "classes": 1,
+        "male": 4,
+        "female": 2,
+        "total": 6
+      },
+      "Grade 3": {
+        "classes": 1,
+        "male": 7,
+        "female": 1,
+        "total": 8
+      },
+      "Grade 4": {
+        "classes": 1,
+        "male": 7,
+        "female": 7,
+        "total": 14
+      },
+      "Grade 5": {
+        "classes": 1,
+        "male": 11,
+        "female": 13,
+        "total": 24
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 34,
+      "female": 31,
+      "classes": 5,
+      "total": 65
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 34,
+      "female": 31,
+      "total": 65,
+      "teachers": 5,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 5
+  },
+  {
+    "no": 47,
+    "census_no": "04345",
+    "division": "Wilgamuwa",
+    "name_si": "මප/විල්/හඳුන්ගමුව ප්‍රා.වි",
+    "name_en": "CP/WIL/HANDUNGAMUWA PRIMARY SCHOOL",
+    "grades": {
+      "Grade 1": {
+        "classes": 2,
+        "male": 25,
+        "female": 39,
+        "total": 64
+      },
+      "Grade 2": {
+        "classes": 2,
+        "male": 50,
+        "female": 33,
+        "total": 83
+      },
+      "Grade 3": {
+        "classes": 2,
+        "male": 34,
+        "female": 34,
+        "total": 68
+      },
+      "Grade 4": {
+        "classes": 2,
+        "male": 31,
+        "female": 31,
+        "total": 62
+      },
+      "Grade 5": {
+        "classes": 2,
+        "male": 35,
+        "female": 35,
+        "total": 70
+      },
+      "Grade 6": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 7": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 8": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 9": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 10": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 11": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 12": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "Grade 13": {
+        "classes": 0,
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    },
+    "primary_total": {
+      "male": 175,
+      "female": 172,
+      "classes": 10,
+      "total": 347
+    },
+    "secondary_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "collegiate_total": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "special_ed": {
+      "male": 0,
+      "female": 0,
+      "total": 0,
+      "classes": 0
+    },
+    "grand_total": {
+      "male": 175,
+      "female": 172,
+      "total": 347,
+      "teachers": 12,
+      "category": "1_5",
+      "notes": ""
+    },
+    "total_classes": 10
+  }
+]

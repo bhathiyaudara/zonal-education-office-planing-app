@@ -1,0 +1,5600 @@
+[
+  {
+    "subject": "භූගෝල විද්‍යාව",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 8,
+          "female": 7,
+          "total": 15
+        },
+        "grade_11": {
+          "male": 19,
+          "female": 13,
+          "total": 32
+        },
+        "all": {
+          "male": 27,
+          "female": 20,
+          "total": 47
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 6,
+          "female": 1,
+          "total": 7
+        },
+        "grade_11": {
+          "male": 8,
+          "female": 6,
+          "total": 14
+        },
+        "all": {
+          "male": 14,
+          "female": 7,
+          "total": 21
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 12,
+          "female": 6,
+          "total": 18
+        },
+        "grade_11": {
+          "male": 6,
+          "female": 7,
+          "total": 13
+        },
+        "all": {
+          "male": 18,
+          "female": 13,
+          "total": 31
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 2,
+          "female": 5,
+          "total": 7
+        },
+        "grade_11": {
+          "male": 4,
+          "female": 7,
+          "total": 11
+        },
+        "all": {
+          "male": 6,
+          "female": 12,
+          "total": 18
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 3,
+          "female": 8,
+          "total": 11
+        },
+        "grade_11": {
+          "male": 4,
+          "female": 9,
+          "total": 13
+        },
+        "all": {
+          "male": 7,
+          "female": 17,
+          "total": 24
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 8,
+          "female": 8,
+          "total": 16
+        },
+        "grade_11": {
+          "male": 6,
+          "female": 10,
+          "total": 16
+        },
+        "all": {
+          "male": 14,
+          "female": 18,
+          "total": 32
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 2,
+          "total": 2
+        },
+        "grade_11": {
+          "male": 1,
+          "female": 2,
+          "total": 3
+        },
+        "all": {
+          "male": 1,
+          "female": 4,
+          "total": 5
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 9,
+          "female": 6,
+          "total": 15
+        },
+        "grade_11": {
+          "male": 12,
+          "female": 10,
+          "total": 22
+        },
+        "all": {
+          "male": 21,
+          "female": 16,
+          "total": 37
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 11,
+          "female": 27,
+          "total": 38
+        },
+        "grade_11": {
+          "male": 14,
+          "female": 11,
+          "total": 25
+        },
+        "all": {
+          "male": 25,
+          "female": 38,
+          "total": 63
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 10,
+          "female": 14,
+          "total": 24
+        },
+        "grade_11": {
+          "male": 29,
+          "female": 44,
+          "total": 73
+        },
+        "all": {
+          "male": 39,
+          "female": 58,
+          "total": 97
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 3,
+          "female": 5,
+          "total": 8
+        },
+        "grade_11": {
+          "male": 6,
+          "female": 9,
+          "total": 15
+        },
+        "all": {
+          "male": 9,
+          "female": 14,
+          "total": 23
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 15,
+          "female": 10,
+          "total": 25
+        },
+        "grade_11": {
+          "male": 20,
+          "female": 18,
+          "total": 38
+        },
+        "all": {
+          "male": 35,
+          "female": 28,
+          "total": 63
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 9,
+          "female": 13,
+          "total": 22
+        },
+        "grade_11": {
+          "male": 7,
+          "female": 12,
+          "total": 19
+        },
+        "all": {
+          "male": 16,
+          "female": 25,
+          "total": 41
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 7,
+          "female": 9,
+          "total": 16
+        },
+        "grade_11": {
+          "male": 9,
+          "female": 4,
+          "total": 13
+        },
+        "all": {
+          "male": 16,
+          "female": 13,
+          "total": 29
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 13,
+          "female": 9,
+          "total": 22
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 13,
+          "female": 9,
+          "total": 22
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 116,
+        "female": 130,
+        "total": 246
+      },
+      "grade_11": {
+        "male": 145,
+        "female": 162,
+        "total": 307
+      },
+      "all": {
+        "male": 261,
+        "female": 292,
+        "total": 553
+      }
+    }
+  },
+  {
+    "subject": "පුරවැසි අධ්‍යාපනය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 8,
+          "female": 6,
+          "total": 14
+        },
+        "grade_11": {
+          "male": 6,
+          "female": 4,
+          "total": 10
+        },
+        "all": {
+          "male": 14,
+          "female": 10,
+          "total": 24
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 9,
+          "total": 9
+        },
+        "grade_11": {
+          "male": 11,
+          "female": 6,
+          "total": 17
+        },
+        "all": {
+          "male": 11,
+          "female": 15,
+          "total": 26
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 18,
+          "female": 11,
+          "total": 29
+        },
+        "grade_11": {
+          "male": 13,
+          "female": 10,
+          "total": 23
+        },
+        "all": {
+          "male": 31,
+          "female": 21,
+          "total": 52
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 3,
+          "female": 0,
+          "total": 3
+        },
+        "grade_11": {
+          "male": 5,
+          "female": 8,
+          "total": 13
+        },
+        "all": {
+          "male": 8,
+          "female": 8,
+          "total": 16
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 8,
+          "female": 0,
+          "total": 8
+        },
+        "grade_11": {
+          "male": 9,
+          "female": 10,
+          "total": 19
+        },
+        "all": {
+          "male": 17,
+          "female": 10,
+          "total": 27
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 63,
+          "female": 61,
+          "total": 124
+        },
+        "grade_11": {
+          "male": 62,
+          "female": 67,
+          "total": 129
+        },
+        "all": {
+          "male": 125,
+          "female": 128,
+          "total": 253
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 28,
+          "female": 42,
+          "total": 70
+        },
+        "grade_11": {
+          "male": 11,
+          "female": 30,
+          "total": 41
+        },
+        "all": {
+          "male": 39,
+          "female": 72,
+          "total": 111
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 34,
+          "female": 65,
+          "total": 99
+        },
+        "grade_11": {
+          "male": 27,
+          "female": 54,
+          "total": 81
+        },
+        "all": {
+          "male": 61,
+          "female": 119,
+          "total": 180
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 8,
+          "female": 29,
+          "total": 37
+        },
+        "grade_11": {
+          "male": 9,
+          "female": 11,
+          "total": 20
+        },
+        "all": {
+          "male": 17,
+          "female": 40,
+          "total": 57
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 7,
+          "female": 13,
+          "total": 20
+        },
+        "all": {
+          "male": 7,
+          "female": 13,
+          "total": 20
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 10,
+          "female": 10,
+          "total": 20
+        },
+        "grade_11": {
+          "male": 5,
+          "female": 11,
+          "total": 16
+        },
+        "all": {
+          "male": 15,
+          "female": 21,
+          "total": 36
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 180,
+        "female": 233,
+        "total": 413
+      },
+      "grade_11": {
+        "male": 165,
+        "female": 224,
+        "total": 389
+      },
+      "all": {
+        "male": 345,
+        "female": 457,
+        "total": 802
+      }
+    }
+  },
+  {
+    "subject": "ව්‍යාපර අධ්‍යයනය හා ගිණුම්කරණ අධ්‍යයනය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 1,
+          "female": 2,
+          "total": 3
+        },
+        "all": {
+          "male": 1,
+          "female": 2,
+          "total": 3
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 2,
+          "female": 2,
+          "total": 4
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 1,
+          "total": 1
+        },
+        "all": {
+          "male": 2,
+          "female": 3,
+          "total": 5
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 5,
+          "female": 2,
+          "total": 7
+        },
+        "grade_11": {
+          "male": 5,
+          "female": 3,
+          "total": 8
+        },
+        "all": {
+          "male": 10,
+          "female": 5,
+          "total": 15
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 4,
+          "female": 3,
+          "total": 7
+        },
+        "grade_11": {
+          "male": 2,
+          "female": 1,
+          "total": 3
+        },
+        "all": {
+          "male": 6,
+          "female": 4,
+          "total": 10
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 3,
+          "female": 2,
+          "total": 5
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 2,
+          "total": 2
+        },
+        "all": {
+          "male": 3,
+          "female": 4,
+          "total": 7
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 3,
+          "total": 3
+        },
+        "grade_11": {
+          "male": 2,
+          "female": 1,
+          "total": 3
+        },
+        "all": {
+          "male": 2,
+          "female": 4,
+          "total": 6
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 3,
+          "female": 7,
+          "total": 10
+        },
+        "grade_11": {
+          "male": 7,
+          "female": 10,
+          "total": 17
+        },
+        "all": {
+          "male": 10,
+          "female": 17,
+          "total": 27
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 2,
+          "total": 2
+        },
+        "grade_11": {
+          "male": 1,
+          "female": 2,
+          "total": 3
+        },
+        "all": {
+          "male": 1,
+          "female": 4,
+          "total": 5
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 17,
+        "female": 21,
+        "total": 38
+      },
+      "grade_11": {
+        "male": 18,
+        "female": 22,
+        "total": 40
+      },
+      "all": {
+        "male": 35,
+        "female": 43,
+        "total": 78
+      }
+    }
+  },
+  {
+    "subject": "ව්‍යවසායකත්ව අධ්‍යයනය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_11": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "දෙවන භාෂාව (දෙමළ)",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 8,
+          "female": 18,
+          "total": 26
+        },
+        "grade_11": {
+          "male": 4,
+          "female": 12,
+          "total": 16
+        },
+        "all": {
+          "male": 12,
+          "female": 30,
+          "total": 42
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 8,
+        "female": 18,
+        "total": 26
+      },
+      "grade_11": {
+        "male": 4,
+        "female": 12,
+        "total": 16
+      },
+      "all": {
+        "male": 12,
+        "female": 30,
+        "total": 42
+      }
+    }
+  },
+  {
+    "subject": "පෙරදිග සංගීතය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 3,
+          "total": 3
+        },
+        "grade_11": {
+          "male": 9,
+          "female": 2,
+          "total": 11
+        },
+        "all": {
+          "male": 9,
+          "female": 5,
+          "total": 14
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 4,
+          "female": 0,
+          "total": 4
+        },
+        "all": {
+          "male": 4,
+          "female": 0,
+          "total": 4
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 7,
+          "female": 1,
+          "total": 8
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 6,
+          "total": 6
+        },
+        "all": {
+          "male": 7,
+          "female": 7,
+          "total": 14
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 3,
+          "female": 0,
+          "total": 3
+        },
+        "grade_11": {
+          "male": 7,
+          "female": 2,
+          "total": 9
+        },
+        "all": {
+          "male": 10,
+          "female": 2,
+          "total": 12
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 3,
+          "female": 2,
+          "total": 5
+        },
+        "grade_11": {
+          "male": 7,
+          "female": 4,
+          "total": 11
+        },
+        "all": {
+          "male": 10,
+          "female": 6,
+          "total": 16
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 10,
+          "female": 0,
+          "total": 10
+        },
+        "grade_11": {
+          "male": 9,
+          "female": 6,
+          "total": 15
+        },
+        "all": {
+          "male": 19,
+          "female": 6,
+          "total": 25
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 15,
+          "female": 1,
+          "total": 16
+        },
+        "grade_11": {
+          "male": 18,
+          "female": 5,
+          "total": 23
+        },
+        "all": {
+          "male": 33,
+          "female": 6,
+          "total": 39
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 11,
+          "female": 2,
+          "total": 13
+        },
+        "grade_11": {
+          "male": 8,
+          "female": 8,
+          "total": 16
+        },
+        "all": {
+          "male": 19,
+          "female": 10,
+          "total": 29
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 1,
+          "female": 3,
+          "total": 4
+        },
+        "grade_11": {
+          "male": 3,
+          "female": 5,
+          "total": 8
+        },
+        "all": {
+          "male": 4,
+          "female": 8,
+          "total": 12
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 8,
+          "female": 0,
+          "total": 8
+        },
+        "grade_11": {
+          "male": 7,
+          "female": 0,
+          "total": 7
+        },
+        "all": {
+          "male": 15,
+          "female": 0,
+          "total": 15
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 3,
+          "female": 3,
+          "total": 6
+        },
+        "grade_11": {
+          "male": 4,
+          "female": 4,
+          "total": 8
+        },
+        "all": {
+          "male": 7,
+          "female": 7,
+          "total": 14
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 61,
+        "female": 15,
+        "total": 76
+      },
+      "grade_11": {
+        "male": 76,
+        "female": 42,
+        "total": 118
+      },
+      "all": {
+        "male": 137,
+        "female": 57,
+        "total": 194
+      }
+    }
+  },
+  {
+    "subject": "චිත්‍ර",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 9,
+          "total": 9
+        },
+        "grade_11": {
+          "male": 13,
+          "female": 7,
+          "total": 20
+        },
+        "all": {
+          "male": 13,
+          "female": 16,
+          "total": 29
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 6,
+          "female": 1,
+          "total": 7
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 6,
+          "female": 1,
+          "total": 7
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 3,
+          "female": 5,
+          "total": 8
+        },
+        "grade_11": {
+          "male": 4,
+          "female": 0,
+          "total": 4
+        },
+        "all": {
+          "male": 7,
+          "female": 5,
+          "total": 12
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 7,
+          "female": 5,
+          "total": 12
+        },
+        "grade_11": {
+          "male": 3,
+          "female": 7,
+          "total": 10
+        },
+        "all": {
+          "male": 10,
+          "female": 12,
+          "total": 22
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 6,
+          "female": 2,
+          "total": 8
+        },
+        "grade_11": {
+          "male": 5,
+          "female": 8,
+          "total": 13
+        },
+        "all": {
+          "male": 11,
+          "female": 10,
+          "total": 21
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 2,
+          "total": 2
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 2,
+          "total": 2
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 18,
+          "female": 21,
+          "total": 39
+        },
+        "grade_11": {
+          "male": 16,
+          "female": 19,
+          "total": 35
+        },
+        "all": {
+          "male": 34,
+          "female": 40,
+          "total": 74
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 9,
+          "female": 4,
+          "total": 13
+        },
+        "grade_11": {
+          "male": 14,
+          "female": 1,
+          "total": 15
+        },
+        "all": {
+          "male": 23,
+          "female": 5,
+          "total": 28
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 10,
+          "female": 21,
+          "total": 31
+        },
+        "grade_11": {
+          "male": 10,
+          "female": 14,
+          "total": 24
+        },
+        "all": {
+          "male": 20,
+          "female": 35,
+          "total": 55
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 14,
+          "female": 17,
+          "total": 31
+        },
+        "grade_11": {
+          "male": 28,
+          "female": 17,
+          "total": 45
+        },
+        "all": {
+          "male": 42,
+          "female": 34,
+          "total": 76
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 7,
+          "female": 3,
+          "total": 10
+        },
+        "grade_11": {
+          "male": 9,
+          "female": 2,
+          "total": 11
+        },
+        "all": {
+          "male": 16,
+          "female": 5,
+          "total": 21
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 4,
+          "female": 4,
+          "total": 8
+        },
+        "grade_11": {
+          "male": 1,
+          "female": 4,
+          "total": 5
+        },
+        "all": {
+          "male": 5,
+          "female": 8,
+          "total": 13
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 84,
+        "female": 94,
+        "total": 178
+      },
+      "grade_11": {
+        "male": 103,
+        "female": 79,
+        "total": 182
+      },
+      "all": {
+        "male": 187,
+        "female": 173,
+        "total": 360
+      }
+    }
+  },
+  {
+    "subject": "නර්තනය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 13,
+          "total": 13
+        },
+        "grade_11": {
+          "male": 1,
+          "female": 13,
+          "total": 14
+        },
+        "all": {
+          "male": 1,
+          "female": 26,
+          "total": 27
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 4,
+          "female": 6,
+          "total": 10
+        },
+        "all": {
+          "male": 4,
+          "female": 6,
+          "total": 10
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 4,
+          "total": 4
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 8,
+          "total": 8
+        },
+        "all": {
+          "male": 0,
+          "female": 12,
+          "total": 12
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 0,
+          "female": 6,
+          "total": 6
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 5,
+          "total": 5
+        },
+        "all": {
+          "male": 0,
+          "female": 11,
+          "total": 11
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 4,
+          "total": 4
+        },
+        "grade_11": {
+          "male": 1,
+          "female": 7,
+          "total": 8
+        },
+        "all": {
+          "male": 1,
+          "female": 11,
+          "total": 12
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 6,
+          "total": 6
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 7,
+          "total": 7
+        },
+        "all": {
+          "male": 0,
+          "female": 13,
+          "total": 13
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 9,
+          "female": 6,
+          "total": 15
+        },
+        "grade_11": {
+          "male": 12,
+          "female": 10,
+          "total": 22
+        },
+        "all": {
+          "male": 21,
+          "female": 16,
+          "total": 37
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 0,
+          "female": 10,
+          "total": 10
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 17,
+          "total": 17
+        },
+        "all": {
+          "male": 0,
+          "female": 27,
+          "total": 27
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 2,
+          "female": 19,
+          "total": 21
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 7,
+          "total": 7
+        },
+        "all": {
+          "male": 2,
+          "female": 26,
+          "total": 28
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 10,
+          "female": 27,
+          "total": 37
+        },
+        "grade_11": {
+          "male": 10,
+          "female": 22,
+          "total": 32
+        },
+        "all": {
+          "male": 20,
+          "female": 49,
+          "total": 69
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 6,
+          "female": 15,
+          "total": 21
+        },
+        "grade_11": {
+          "male": 2,
+          "female": 13,
+          "total": 15
+        },
+        "all": {
+          "male": 8,
+          "female": 28,
+          "total": 36
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 9,
+          "female": 13,
+          "total": 22
+        },
+        "grade_11": {
+          "male": 7,
+          "female": 12,
+          "total": 19
+        },
+        "all": {
+          "male": 16,
+          "female": 25,
+          "total": 41
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 0,
+          "female": 6,
+          "total": 6
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 2,
+          "total": 2
+        },
+        "all": {
+          "male": 0,
+          "female": 8,
+          "total": 8
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 14,
+          "total": 14
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 13,
+          "total": 13
+        },
+        "all": {
+          "male": 0,
+          "female": 27,
+          "total": 27
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 3,
+          "female": 3,
+          "total": 6
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 3,
+          "total": 3
+        },
+        "all": {
+          "male": 3,
+          "female": 6,
+          "total": 9
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 39,
+        "female": 146,
+        "total": 185
+      },
+      "grade_11": {
+        "male": 37,
+        "female": 145,
+        "total": 182
+      },
+      "all": {
+        "male": 76,
+        "female": 291,
+        "total": 367
+      }
+    }
+  },
+  {
+    "subject": "නාට්‍ය හා රංග කලාව",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 4,
+          "female": 7,
+          "total": 11
+        },
+        "grade_11": {
+          "male": 7,
+          "female": 6,
+          "total": 13
+        },
+        "all": {
+          "male": 11,
+          "female": 13,
+          "total": 24
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 20,
+          "female": 13,
+          "total": 33
+        },
+        "grade_11": {
+          "male": 15,
+          "female": 13,
+          "total": 28
+        },
+        "all": {
+          "male": 35,
+          "female": 26,
+          "total": 61
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 23,
+          "female": 15,
+          "total": 38
+        },
+        "grade_11": {
+          "male": 32,
+          "female": 13,
+          "total": 45
+        },
+        "all": {
+          "male": 55,
+          "female": 28,
+          "total": 83
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 12,
+          "female": 18,
+          "total": 30
+        },
+        "grade_11": {
+          "male": 20,
+          "female": 12,
+          "total": 32
+        },
+        "all": {
+          "male": 32,
+          "female": 30,
+          "total": 62
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 13,
+          "female": 18,
+          "total": 31
+        },
+        "grade_11": {
+          "male": 12,
+          "female": 13,
+          "total": 25
+        },
+        "all": {
+          "male": 25,
+          "female": 31,
+          "total": 56
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 3,
+          "female": 7,
+          "total": 10
+        },
+        "grade_11": {
+          "male": 1,
+          "female": 4,
+          "total": 5
+        },
+        "all": {
+          "male": 4,
+          "female": 11,
+          "total": 15
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 75,
+        "female": 78,
+        "total": 153
+      },
+      "grade_11": {
+        "male": 87,
+        "female": 61,
+        "total": 148
+      },
+      "all": {
+        "male": 162,
+        "female": 139,
+        "total": 301
+      }
+    }
+  },
+  {
+    "subject": "තොරතුරු තාක්ෂණය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 3,
+          "female": 0,
+          "total": 3
+        },
+        "all": {
+          "male": 3,
+          "female": 0,
+          "total": 3
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 4,
+          "female": 0,
+          "total": 4
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 4,
+          "female": 0,
+          "total": 4
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 4,
+          "total": 4
+        },
+        "grade_11": {
+          "male": 3,
+          "female": 0,
+          "total": 3
+        },
+        "all": {
+          "male": 3,
+          "female": 4,
+          "total": 7
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 5,
+          "female": 0,
+          "total": 5
+        },
+        "grade_11": {
+          "male": 7,
+          "female": 1,
+          "total": 8
+        },
+        "all": {
+          "male": 12,
+          "female": 1,
+          "total": 13
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 9,
+          "female": 10,
+          "total": 19
+        },
+        "grade_11": {
+          "male": 10,
+          "female": 6,
+          "total": 16
+        },
+        "all": {
+          "male": 19,
+          "female": 16,
+          "total": 35
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 5,
+          "female": 7,
+          "total": 12
+        },
+        "grade_11": {
+          "male": 2,
+          "female": 6,
+          "total": 8
+        },
+        "all": {
+          "male": 7,
+          "female": 13,
+          "total": 20
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 1,
+          "female": 3,
+          "total": 4
+        },
+        "grade_11": {
+          "male": 2,
+          "female": 0,
+          "total": 2
+        },
+        "all": {
+          "male": 3,
+          "female": 3,
+          "total": 6
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 1,
+          "total": 1
+        },
+        "grade_11": {
+          "male": 6,
+          "female": 2,
+          "total": 8
+        },
+        "all": {
+          "male": 6,
+          "female": 3,
+          "total": 9
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 1,
+          "female": 3,
+          "total": 4
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 1,
+          "female": 3,
+          "total": 4
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 25,
+        "female": 28,
+        "total": 53
+      },
+      "grade_11": {
+        "male": 33,
+        "female": 15,
+        "total": 48
+      },
+      "all": {
+        "male": 58,
+        "female": 43,
+        "total": 101
+      }
+    }
+  },
+  {
+    "subject": "කෘෂි හා ආහාර තාක්ෂණය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 4,
+          "female": 0,
+          "total": 4
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 4,
+          "total": 4
+        },
+        "all": {
+          "male": 4,
+          "female": 4,
+          "total": 8
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 5,
+          "female": 0,
+          "total": 5
+        },
+        "grade_11": {
+          "male": 10,
+          "female": 9,
+          "total": 19
+        },
+        "all": {
+          "male": 15,
+          "female": 9,
+          "total": 24
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 7,
+          "female": 3,
+          "total": 10
+        },
+        "grade_11": {
+          "male": 9,
+          "female": 8,
+          "total": 17
+        },
+        "all": {
+          "male": 16,
+          "female": 11,
+          "total": 27
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 6,
+          "female": 6,
+          "total": 12
+        },
+        "grade_11": {
+          "male": 6,
+          "female": 5,
+          "total": 11
+        },
+        "all": {
+          "male": 12,
+          "female": 11,
+          "total": 23
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 4,
+          "female": 7,
+          "total": 11
+        },
+        "grade_11": {
+          "male": 4,
+          "female": 2,
+          "total": 6
+        },
+        "all": {
+          "male": 8,
+          "female": 9,
+          "total": 17
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 5,
+          "female": 0,
+          "total": 5
+        },
+        "grade_11": {
+          "male": 7,
+          "female": 4,
+          "total": 11
+        },
+        "all": {
+          "male": 12,
+          "female": 4,
+          "total": 16
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 6,
+          "female": 7,
+          "total": 13
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 4,
+          "total": 4
+        },
+        "all": {
+          "male": 6,
+          "female": 11,
+          "total": 17
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 37,
+        "female": 23,
+        "total": 60
+      },
+      "grade_11": {
+        "male": 36,
+        "female": 36,
+        "total": 72
+      },
+      "all": {
+        "male": 73,
+        "female": 59,
+        "total": 132
+      }
+    }
+  },
+  {
+    "subject": "ගෘහ ආර්ථික විද්‍යාව",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 4,
+          "female": 17,
+          "total": 21
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 14,
+          "total": 14
+        },
+        "all": {
+          "male": 4,
+          "female": 31,
+          "total": 35
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 13,
+          "total": 13
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 10,
+          "total": 10
+        },
+        "all": {
+          "male": 0,
+          "female": 23,
+          "total": 23
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 1,
+          "female": 3,
+          "total": 4
+        },
+        "grade_11": {
+          "male": 2,
+          "female": 6,
+          "total": 8
+        },
+        "all": {
+          "male": 3,
+          "female": 9,
+          "total": 12
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 6,
+          "total": 6
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 17,
+          "total": 17
+        },
+        "all": {
+          "male": 0,
+          "female": 23,
+          "total": 23
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 1,
+          "female": 0,
+          "total": 1
+        },
+        "all": {
+          "male": 1,
+          "female": 0,
+          "total": 1
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 5,
+        "female": 39,
+        "total": 44
+      },
+      "grade_11": {
+        "male": 3,
+        "female": 47,
+        "total": 50
+      },
+      "all": {
+        "male": 8,
+        "female": 86,
+        "total": 94
+      }
+    }
+  },
+  {
+    "subject": "ප්‍රා.තා.කු",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "grade_11": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      },
+      "all": {
+        "male": 0,
+        "female": 0,
+        "total": 0
+      }
+    }
+  },
+  {
+    "subject": "සෞඛ්‍ය හා ශාරීරික අධ්‍යාපනය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 18,
+          "female": 20,
+          "total": 38
+        },
+        "grade_11": {
+          "male": 19,
+          "female": 15,
+          "total": 34
+        },
+        "all": {
+          "male": 37,
+          "female": 35,
+          "total": 72
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 2,
+          "female": 1,
+          "total": 3
+        },
+        "grade_11": {
+          "male": 8,
+          "female": 6,
+          "total": 14
+        },
+        "all": {
+          "male": 10,
+          "female": 7,
+          "total": 17
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 14,
+          "female": 13,
+          "total": 27
+        },
+        "grade_11": {
+          "male": 14,
+          "female": 14,
+          "total": 28
+        },
+        "all": {
+          "male": 28,
+          "female": 27,
+          "total": 55
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 12,
+          "female": 7,
+          "total": 19
+        },
+        "grade_11": {
+          "male": 11,
+          "female": 16,
+          "total": 27
+        },
+        "all": {
+          "male": 23,
+          "female": 23,
+          "total": 46
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 10,
+          "female": 11,
+          "total": 21
+        },
+        "grade_11": {
+          "male": 11,
+          "female": 18,
+          "total": 29
+        },
+        "all": {
+          "male": 21,
+          "female": 29,
+          "total": 50
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 16,
+          "female": 8,
+          "total": 24
+        },
+        "grade_11": {
+          "male": 14,
+          "female": 21,
+          "total": 35
+        },
+        "all": {
+          "male": 30,
+          "female": 29,
+          "total": 59
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 2,
+          "total": 2
+        },
+        "grade_11": {
+          "male": 1,
+          "female": 2,
+          "total": 3
+        },
+        "all": {
+          "male": 1,
+          "female": 4,
+          "total": 5
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 9,
+          "female": 6,
+          "total": 15
+        },
+        "grade_11": {
+          "male": 12,
+          "female": 10,
+          "total": 22
+        },
+        "all": {
+          "male": 21,
+          "female": 16,
+          "total": 37
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 64,
+          "female": 50,
+          "total": 114
+        },
+        "grade_11": {
+          "male": 51,
+          "female": 58,
+          "total": 109
+        },
+        "all": {
+          "male": 115,
+          "female": 108,
+          "total": 223
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 20,
+          "female": 34,
+          "total": 54
+        },
+        "grade_11": {
+          "male": 24,
+          "female": 29,
+          "total": 53
+        },
+        "all": {
+          "male": 44,
+          "female": 63,
+          "total": 107
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 31,
+          "female": 64,
+          "total": 95
+        },
+        "grade_11": {
+          "male": 40,
+          "female": 49,
+          "total": 89
+        },
+        "all": {
+          "male": 71,
+          "female": 113,
+          "total": 184
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 13,
+          "female": 25,
+          "total": 38
+        },
+        "grade_11": {
+          "male": 21,
+          "female": 12,
+          "total": 33
+        },
+        "all": {
+          "male": 34,
+          "female": 37,
+          "total": 71
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 2,
+          "female": 10,
+          "total": 12
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 8,
+          "total": 8
+        },
+        "all": {
+          "male": 2,
+          "female": 18,
+          "total": 20
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 7,
+          "female": 9,
+          "total": 16
+        },
+        "grade_11": {
+          "male": 8,
+          "female": 4,
+          "total": 12
+        },
+        "all": {
+          "male": 15,
+          "female": 13,
+          "total": 28
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 4,
+          "female": 3,
+          "total": 7
+        },
+        "grade_11": {
+          "male": 5,
+          "female": 7,
+          "total": 12
+        },
+        "all": {
+          "male": 9,
+          "female": 10,
+          "total": 19
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 222,
+        "female": 263,
+        "total": 485
+      },
+      "grade_11": {
+        "male": 239,
+        "female": 269,
+        "total": 508
+      },
+      "all": {
+        "male": 461,
+        "female": 532,
+        "total": 993
+      }
+    }
+  },
+  {
+    "subject": "නිර්මාණකරණය සහ ඉදිකිරිමී තාක්ෂණය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 6,
+          "female": 4,
+          "total": 10
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 6,
+          "female": 4,
+          "total": 10
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 5,
+          "female": 0,
+          "total": 5
+        },
+        "grade_11": {
+          "male": 9,
+          "female": 0,
+          "total": 9
+        },
+        "all": {
+          "male": 14,
+          "female": 0,
+          "total": 14
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 6,
+          "female": 2,
+          "total": 8
+        },
+        "grade_11": {
+          "male": 7,
+          "female": 0,
+          "total": 7
+        },
+        "all": {
+          "male": 13,
+          "female": 2,
+          "total": 15
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 17,
+        "female": 6,
+        "total": 23
+      },
+      "grade_11": {
+        "male": 16,
+        "female": 0,
+        "total": 16
+      },
+      "all": {
+        "male": 33,
+        "female": 6,
+        "total": 39
+      }
+    }
+  },
+  {
+    "subject": "සිංහල රසාස්වාදය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 31,
+          "female": 53,
+          "total": 84
+        },
+        "grade_11": {
+          "male": 16,
+          "female": 31,
+          "total": 47
+        },
+        "all": {
+          "male": 47,
+          "female": 84,
+          "total": 131
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 4,
+          "female": 16,
+          "total": 20
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 25,
+          "total": 25
+        },
+        "all": {
+          "male": 4,
+          "female": 41,
+          "total": 45
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 35,
+        "female": 69,
+        "total": 104
+      },
+      "grade_11": {
+        "male": 16,
+        "female": 56,
+        "total": 72
+      },
+      "all": {
+        "male": 51,
+        "female": 125,
+        "total": 176
+      }
+    }
+  },
+  {
+    "subject": "සන්නිවේදන හා මාධ්‍ය අධ්‍යයනය",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 1,
+          "female": 3,
+          "total": 4
+        },
+        "all": {
+          "male": 1,
+          "female": 3,
+          "total": 4
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 0,
+          "female": 8,
+          "total": 8
+        },
+        "grade_11": {
+          "male": 5,
+          "female": 3,
+          "total": 8
+        },
+        "all": {
+          "male": 5,
+          "female": 11,
+          "total": 16
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 1,
+          "female": 13,
+          "total": 14
+        },
+        "grade_11": {
+          "male": 2,
+          "female": 6,
+          "total": 8
+        },
+        "all": {
+          "male": 3,
+          "female": 19,
+          "total": 22
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 1,
+          "female": 1,
+          "total": 2
+        },
+        "grade_11": {
+          "male": 1,
+          "female": 3,
+          "total": 4
+        },
+        "all": {
+          "male": 2,
+          "female": 4,
+          "total": 6
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 2,
+        "female": 22,
+        "total": 24
+      },
+      "grade_11": {
+        "male": 9,
+        "female": 15,
+        "total": 24
+      },
+      "all": {
+        "male": 11,
+        "female": 37,
+        "total": 48
+      }
+    }
+  },
+  {
+    "subject": "Total",
+    "schools": {
+      "CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 38,
+          "female": 58,
+          "total": 96
+        },
+        "grade_11": {
+          "male": 72,
+          "female": 63,
+          "total": 135
+        },
+        "all": {
+          "male": 110,
+          "female": 121,
+          "total": 231
+        }
+      },
+      "CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 18,
+          "female": 3,
+          "total": 21
+        },
+        "grade_11": {
+          "male": 24,
+          "female": 18,
+          "total": 42
+        },
+        "all": {
+          "male": 42,
+          "female": 21,
+          "total": 63
+        }
+      },
+      "CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 42,
+          "female": 51,
+          "total": 93
+        },
+        "grade_11": {
+          "male": 45,
+          "female": 48,
+          "total": 93
+        },
+        "all": {
+          "male": 87,
+          "female": 99,
+          "total": 186
+        }
+      },
+      "CP/WIL/PALLEGAMA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 71,
+          "female": 56,
+          "total": 127
+        },
+        "grade_11": {
+          "male": 67,
+          "female": 60,
+          "total": 127
+        },
+        "all": {
+          "male": 138,
+          "female": 116,
+          "total": 254
+        }
+      },
+      "CP/WIL/MA OYA KANISTHTA SCHOOL": {
+        "grade_10": {
+          "male": 30,
+          "female": 33,
+          "total": 63
+        },
+        "grade_11": {
+          "male": 33,
+          "female": 54,
+          "total": 87
+        },
+        "all": {
+          "male": 63,
+          "female": 87,
+          "total": 150
+        }
+      },
+      "CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 48,
+          "female": 24,
+          "total": 72
+        },
+        "grade_11": {
+          "male": 43,
+          "female": 62,
+          "total": 105
+        },
+        "all": {
+          "male": 91,
+          "female": 86,
+          "total": 177
+        }
+      },
+      "CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 0,
+          "female": 6,
+          "total": 6
+        },
+        "grade_11": {
+          "male": 2,
+          "female": 4,
+          "total": 6
+        },
+        "all": {
+          "male": 2,
+          "female": 10,
+          "total": 12
+        }
+      },
+      "CP/WIL/RANAMURE KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 27,
+          "female": 18,
+          "total": 45
+        },
+        "grade_11": {
+          "male": 36,
+          "female": 30,
+          "total": 66
+        },
+        "all": {
+          "male": 63,
+          "female": 48,
+          "total": 111
+        }
+      },
+      "CP/WIL/NAMINIOYA CENTRAL COLLEGE": {
+        "grade_10": {
+          "male": 260,
+          "female": 298,
+          "total": 558
+        },
+        "grade_11": {
+          "male": 244,
+          "female": 270,
+          "total": 514
+        },
+        "all": {
+          "male": 504,
+          "female": 568,
+          "total": 1072
+        }
+      },
+      "CP/WIL/NUGAGOLLA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 114,
+          "female": 177,
+          "total": 291
+        },
+        "grade_11": {
+          "male": 126,
+          "female": 181,
+          "total": 307
+        },
+        "all": {
+          "male": 240,
+          "female": 358,
+          "total": 598
+        }
+      },
+      "CP/WIL/MARAKA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 114,
+          "female": 223,
+          "total": 337
+        },
+        "grade_11": {
+          "male": 126,
+          "female": 190,
+          "total": 316
+        },
+        "all": {
+          "male": 240,
+          "female": 413,
+          "total": 653
+        }
+      },
+      "CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA": {
+        "grade_10": {
+          "male": 63,
+          "female": 119,
+          "total": 182
+        },
+        "grade_11": {
+          "male": 92,
+          "female": 98,
+          "total": 190
+        },
+        "all": {
+          "male": 155,
+          "female": 217,
+          "total": 372
+        }
+      },
+      "CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA": {
+        "grade_10": {
+          "male": 26,
+          "female": 39,
+          "total": 65
+        },
+        "grade_11": {
+          "male": 21,
+          "female": 36,
+          "total": 57
+        },
+        "all": {
+          "male": 47,
+          "female": 75,
+          "total": 122
+        }
+      },
+      "CP/WIL/MEDAKANDA K.V.": {
+        "grade_10": {
+          "male": 21,
+          "female": 27,
+          "total": 48
+        },
+        "grade_11": {
+          "male": 27,
+          "female": 12,
+          "total": 39
+        },
+        "all": {
+          "male": 48,
+          "female": 39,
+          "total": 87
+        }
+      },
+      "CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 21,
+          "female": 23,
+          "total": 44
+        },
+        "grade_11": {
+          "male": 14,
+          "female": 26,
+          "total": 40
+        },
+        "all": {
+          "male": 35,
+          "female": 49,
+          "total": 84
+        }
+      },
+      "CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA": {
+        "grade_10": {
+          "male": 30,
+          "female": 30,
+          "total": 60
+        },
+        "grade_11": {
+          "male": 15,
+          "female": 33,
+          "total": 48
+        },
+        "all": {
+          "male": 45,
+          "female": 63,
+          "total": 108
+        }
+      },
+      "CP/WIL/GURUWELAYAYA JUNIOR SCHOOL": {
+        "grade_10": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "grade_11": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        },
+        "all": {
+          "male": 0,
+          "female": 0,
+          "total": 0
+        }
+      }
+    },
+    "total": {
+      "grade_10": {
+        "male": 923,
+        "female": 1185,
+        "total": 2108
+      },
+      "grade_11": {
+        "male": 987,
+        "female": 1185,
+        "total": 2172
+      },
+      "all": {
+        "male": 1910,
+        "female": 2370,
+        "total": 4280
+      }
+    }
+  }
+]
