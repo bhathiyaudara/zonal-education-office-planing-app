@@ -281,9 +281,6 @@
                             <option value="">Select DS Division</option>
                             <option value="Wilgamuwa">Wilgamuwa (විල්ගමුව)</option>
                             <option value="Laggala-Pallegama">Laggala-Pallegama (ලග්ගල පල්ලේගම)</option>
-                            <option value="Naula">Naula (නාවුල)</option>
-                            <option value="Rattota">Rattota (රත්තොට)</option>
-                            <option value="Ambanganga Korale">Ambanganga Korale (අඹන්ගඟ කෝරළේ)</option>
                         </select>
                     </div>
                     <div>
@@ -540,9 +537,6 @@
                             <option value="">Select DS Division</option>
                             <option value="Wilgamuwa">Wilgamuwa (විල්ගමුව)</option>
                             <option value="Laggala-Pallegama">Laggala-Pallegama (ලග්ගල පල්ලේගම)</option>
-                            <option value="Naula">Naula (නාවුල)</option>
-                            <option value="Rattota">Rattota (රත්තොට)</option>
-                            <option value="Ambanganga Korale">Ambanganga Korale (අඹන්ගඟ කෝරළේ)</option>
                         </select>
                     </div>
                     <div>

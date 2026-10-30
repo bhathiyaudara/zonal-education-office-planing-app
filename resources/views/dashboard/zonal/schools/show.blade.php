@@ -553,9 +553,6 @@
                         <option value="">Select DS Division</option>
                         <option value="Wilgamuwa" {{ old('dsDivision', $school->dsDivision) == 'Wilgamuwa' ? 'selected' : '' }}>Wilgamuwa (විල්ගමුව)</option>
                         <option value="Laggala-Pallegama" {{ old('dsDivision', $school->dsDivision) == 'Laggala-Pallegama' ? 'selected' : '' }}>Laggala-Pallegama (ලග්ගල පල්ලේගම)</option>
-                        <option value="Naula" {{ old('dsDivision', $school->dsDivision) == 'Naula' ? 'selected' : '' }}>Naula (නාවුල)</option>
-                        <option value="Rattota" {{ old('dsDivision', $school->dsDivision) == 'Rattota' ? 'selected' : '' }}>Rattota (රත්තොට)</option>
-                        <option value="Ambanganga Korale" {{ old('dsDivision', $school->dsDivision) == 'Ambanganga Korale' ? 'selected' : '' }}>Ambanganga Korale (අඹන්ගඟ කෝරළේ)</option>
                     </select>
                 </div>
                 <div>
