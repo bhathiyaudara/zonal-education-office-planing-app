@@ -344,9 +344,6 @@
                                             {{ $b->buildingType ?: 'Learning / ඉගෙනුම්' }}
                                         </span>
                                     </div>
-                                    @if($b->notes && !str_starts_with($b->notes, 'Imported') && !str_starts_with($b->notes, 'Wilgamuwa'))
-                                    <div class="text-[11px] text-slate-400 font-medium truncate max-w-xs mt-0.5">{{ $b->notes }}</div>
-                                    @endif
                                 </div>
                             </div>
                         </td>
