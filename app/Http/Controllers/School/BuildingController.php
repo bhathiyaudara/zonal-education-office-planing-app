@@ -25,7 +25,10 @@ class BuildingController extends Controller
             return !$b->lastRepairYear || $b->lastRepairYear <= $tenYearsAgo;
         })->count();
 
-        return view('dashboard.school.buildings.index', compact('school', 'buildings', 'sanitation', 'renovationCount'));
+        $multiFloorCount = $buildings->where('floors', '>', 1)->count();
+        $totalSqft = $buildings->sum('areaSqft');
+
+        return view('dashboard.school.buildings.index', compact('school', 'buildings', 'sanitation', 'renovationCount', 'multiFloorCount', 'totalSqft'));
     }
 
     public function store(Request $request)
@@ -35,7 +38,11 @@ class BuildingController extends Controller
 
         $validated = $request->validateWithBag('building', [
             'buildingName' => 'required|string|max:191',
+            'buildingType' => 'nullable|string|max:100',
             'size' => 'nullable|string|max:100',
+            'lengthFeet' => 'nullable|numeric|min:0|max:99999.99',
+            'widthFeet' => 'nullable|numeric|min:0|max:99999.99',
+            'areaSqft' => 'nullable|numeric|min:0|max:9999999.99',
             'floors' => 'nullable|integer|min:1|max:20',
             'constructionYear' => 'nullable|integer|min:1800|max:2050',
             'lastRepairYear' => 'nullable|integer|min:1800|max:2050',
@@ -47,8 +54,21 @@ class BuildingController extends Controller
         if (empty($validated['floors'])) {
             $validated['floors'] = 1;
         }
+        if (empty($validated['buildingType'])) {
+            $validated['buildingType'] = 'Learning / ඉගෙනුම්';
+        }
         if (empty($validated['status'])) {
             $validated['status'] = 'Good / Usable';
+        }
+
+        // Auto-calculate Area & Size if length and width are specified
+        if (!empty($validated['lengthFeet']) && !empty($validated['widthFeet'])) {
+            if (empty($validated['areaSqft'])) {
+                $validated['areaSqft'] = round((float)$validated['lengthFeet'] * (float)$validated['widthFeet'] * max(1, (int)$validated['floors']), 2);
+            }
+            if (empty($validated['size'])) {
+                $validated['size'] = "{$validated['lengthFeet']}' x {$validated['widthFeet']}'" . ($validated['areaSqft'] ? " ({$validated['areaSqft']} sqft)" : "");
+            }
         }
 
         $building = Building::create($validated);
@@ -72,7 +92,11 @@ class BuildingController extends Controller
 
         $validated = $request->validateWithBag('building', [
             'buildingName' => 'required|string|max:191',
+            'buildingType' => 'nullable|string|max:100',
             'size' => 'nullable|string|max:100',
+            'lengthFeet' => 'nullable|numeric|min:0|max:99999.99',
+            'widthFeet' => 'nullable|numeric|min:0|max:99999.99',
+            'areaSqft' => 'nullable|numeric|min:0|max:9999999.99',
             'floors' => 'nullable|integer|min:1|max:20',
             'constructionYear' => 'nullable|integer|min:1800|max:2050',
             'lastRepairYear' => 'nullable|integer|min:1800|max:2050',
@@ -82,6 +106,19 @@ class BuildingController extends Controller
 
         if (empty($validated['floors'])) {
             $validated['floors'] = 1;
+        }
+        if (empty($validated['buildingType'])) {
+            $validated['buildingType'] = 'Learning / ඉගෙනුම්';
+        }
+
+        // Auto-calculate Area & Size if length and width are specified
+        if (!empty($validated['lengthFeet']) && !empty($validated['widthFeet'])) {
+            if (empty($validated['areaSqft'])) {
+                $validated['areaSqft'] = round((float)$validated['lengthFeet'] * (float)$validated['widthFeet'] * max(1, (int)$validated['floors']), 2);
+            }
+            if (empty($validated['size'])) {
+                $validated['size'] = "{$validated['lengthFeet']}' x {$validated['widthFeet']}'" . ($validated['areaSqft'] ? " ({$validated['areaSqft']} sqft)" : "");
+            }
         }
 
         $building->update($validated);
@@ -126,11 +163,17 @@ class BuildingController extends Controller
             'boysToilets' => 'nullable|integer|min:0',
             'girlsToilets' => 'nullable|integer|min:0',
             'teacherToilets' => 'nullable|integer|min:0',
+            'reqBoysToilets' => 'nullable|integer|min:0',
+            'reqGirlsToilets' => 'nullable|integer|min:0',
+            'reqTeacherToilets' => 'nullable|integer|min:0',
         ]);
 
         SchoolSanitation::updateOrInsert(
             ['schoolId' => $school->id],
             [
+                'reqBoysToilets' => (int)($validated['reqBoysToilets'] ?? 0),
+                'reqGirlsToilets' => (int)($validated['reqGirlsToilets'] ?? 0),
+                'reqTeacherToilets' => (int)($validated['reqTeacherToilets'] ?? 0),
                 'boysToilets' => (int)($validated['boysToilets'] ?? 0),
                 'girlsToilets' => (int)($validated['girlsToilets'] ?? 0),
                 'teacherToilets' => (int)($validated['teacherToilets'] ?? 0),

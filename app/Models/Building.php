@@ -14,7 +14,11 @@ class Building extends Model
     protected $fillable = [
         'schoolId',
         'buildingName',
+        'buildingType',
         'size',
+        'lengthFeet',
+        'widthFeet',
+        'areaSqft',
         'floors',
         'constructionYear',
         'lastRepairYear',
@@ -23,6 +27,9 @@ class Building extends Model
     ];
 
     protected $casts = [
+        'lengthFeet' => 'float',
+        'widthFeet' => 'float',
+        'areaSqft' => 'float',
         'floors' => 'integer',
         'constructionYear' => 'integer',
         'lastRepairYear' => 'integer',

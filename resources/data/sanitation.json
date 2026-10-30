@@ -1,0 +1,407 @@
+[
+    {
+        "censusNo": "04118",
+        "reqBoys": 4,
+        "reqGirls": 4,
+        "reqTeachers": 1,
+        "availBoys": 5,
+        "availGirls": 7,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04119",
+        "reqBoys": 13,
+        "reqGirls": 16,
+        "reqTeachers": 2,
+        "availBoys": 8,
+        "availGirls": 10,
+        "availTeachers": 4
+    },
+    {
+        "censusNo": "04120",
+        "reqBoys": 6,
+        "reqGirls": 6,
+        "reqTeachers": 1,
+        "availBoys": 10,
+        "availGirls": 10,
+        "availTeachers": 1
+    },
+    {
+        "censusNo": "04121",
+        "reqBoys": 9,
+        "reqGirls": 10,
+        "reqTeachers": 1,
+        "availBoys": 6,
+        "availGirls": 8,
+        "availTeachers": 3
+    },
+    {
+        "censusNo": "04122",
+        "reqBoys": 4,
+        "reqGirls": 5,
+        "reqTeachers": 1,
+        "availBoys": 5,
+        "availGirls": 5,
+        "availTeachers": 3
+    },
+    {
+        "censusNo": "04123",
+        "reqBoys": 7,
+        "reqGirls": 10,
+        "reqTeachers": 1,
+        "availBoys": 8,
+        "availGirls": 11,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04124",
+        "reqBoys": 3,
+        "reqGirls": 3,
+        "reqTeachers": 1,
+        "availBoys": 3,
+        "availGirls": 4,
+        "availTeachers": 1
+    },
+    {
+        "censusNo": "04125",
+        "reqBoys": 2,
+        "reqGirls": 2,
+        "reqTeachers": 1,
+        "availBoys": 3,
+        "availGirls": 3,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04126",
+        "reqBoys": 3,
+        "reqGirls": 3,
+        "reqTeachers": 1,
+        "availBoys": 4,
+        "availGirls": 4,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04128",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 1,
+        "availGirls": 1,
+        "availTeachers": 1
+    },
+    {
+        "censusNo": "04129",
+        "reqBoys": 3,
+        "reqGirls": 2,
+        "reqTeachers": 1,
+        "availBoys": 6,
+        "availGirls": 6,
+        "availTeachers": 3
+    },
+    {
+        "censusNo": "04130",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 1,
+        "availGirls": 1,
+        "availTeachers": 0
+    },
+    {
+        "censusNo": "04131",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 1,
+        "availGirls": 2,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04134",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 1,
+        "availGirls": 1,
+        "availTeachers": 1
+    },
+    {
+        "censusNo": "04135",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 1,
+        "availGirls": 5,
+        "availTeachers": 1
+    },
+    {
+        "censusNo": "04137",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 1,
+        "availGirls": 2,
+        "availTeachers": 1
+    },
+    {
+        "censusNo": "04138",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 1,
+        "availGirls": 1,
+        "availTeachers": 0
+    },
+    {
+        "censusNo": "04139",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 2,
+        "availGirls": 2,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04140",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 1,
+        "availGirls": 1,
+        "availTeachers": 1
+    },
+    {
+        "censusNo": "04141",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 4,
+        "availGirls": 4,
+        "availTeachers": 4
+    },
+    {
+        "censusNo": "04142",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 3,
+        "availGirls": 3,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04143",
+        "reqBoys": 4,
+        "reqGirls": 4,
+        "reqTeachers": 1,
+        "availBoys": 5,
+        "availGirls": 5,
+        "availTeachers": 5
+    },
+    {
+        "censusNo": "04144",
+        "reqBoys": 2,
+        "reqGirls": 3,
+        "reqTeachers": 1,
+        "availBoys": 4,
+        "availGirls": 4,
+        "availTeachers": 0
+    },
+    {
+        "censusNo": "04145",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 2,
+        "availGirls": 5,
+        "availTeachers": 0
+    },
+    {
+        "censusNo": "04146",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 2,
+        "availGirls": 1,
+        "availTeachers": 1
+    },
+    {
+        "censusNo": "04147",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 1,
+        "availGirls": 1,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04148",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 1,
+        "availGirls": 1,
+        "availTeachers": 0
+    },
+    {
+        "censusNo": "04149",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 2,
+        "availGirls": 2,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04152",
+        "reqBoys": 2,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 2,
+        "availGirls": 1,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04153",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 2,
+        "availGirls": 3,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04315",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 1,
+        "availGirls": 1,
+        "availTeachers": 1
+    },
+    {
+        "censusNo": "04318",
+        "reqBoys": 2,
+        "reqGirls": 2,
+        "reqTeachers": 1,
+        "availBoys": 1,
+        "availGirls": 2,
+        "availTeachers": 1
+    },
+    {
+        "censusNo": "04319",
+        "reqBoys": 3,
+        "reqGirls": 3,
+        "reqTeachers": 1,
+        "availBoys": 4,
+        "availGirls": 4,
+        "availTeachers": 1
+    },
+    {
+        "censusNo": "04321",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 2,
+        "availGirls": 2,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04322",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 2,
+        "availGirls": 3,
+        "availTeachers": 1
+    },
+    {
+        "censusNo": "04323",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 2,
+        "availGirls": 2,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04325",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 2,
+        "availGirls": 2,
+        "availTeachers": 1
+    },
+    {
+        "censusNo": "04329",
+        "reqBoys": 7,
+        "reqGirls": 6,
+        "reqTeachers": 1,
+        "availBoys": 3,
+        "availGirls": 3,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04330",
+        "reqBoys": 3,
+        "reqGirls": 3,
+        "reqTeachers": 1,
+        "availBoys": 2,
+        "availGirls": 6,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04342",
+        "reqBoys": 4,
+        "reqGirls": 4,
+        "reqTeachers": 1,
+        "availBoys": 4,
+        "availGirls": 4,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04343",
+        "reqBoys": 4,
+        "reqGirls": 4,
+        "reqTeachers": 1,
+        "availBoys": 4,
+        "availGirls": 4,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04345",
+        "reqBoys": 4,
+        "reqGirls": 4,
+        "reqTeachers": 1,
+        "availBoys": 4,
+        "availGirls": 4,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04348",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 2,
+        "availGirls": 2,
+        "availTeachers": 3
+    },
+    {
+        "censusNo": "04349",
+        "reqBoys": 4,
+        "reqGirls": 4,
+        "reqTeachers": 1,
+        "availBoys": 8,
+        "availGirls": 8,
+        "availTeachers": 2
+    },
+    {
+        "censusNo": "04350",
+        "reqBoys": 1,
+        "reqGirls": 1,
+        "reqTeachers": 1,
+        "availBoys": 3,
+        "availGirls": 4,
+        "availTeachers": 2
+    }
+]

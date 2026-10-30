@@ -40,9 +40,10 @@ class BuildingFormTest extends TestCase
             $table->timestamp('createdAt')->nullable();
         });
         (require database_path('migrations/2026_10_30_000000_create_buildings_and_facilities_tables.php'))->up();
+        (require database_path('migrations/2026_10_30_000001_add_details_and_import_all_buildings.php'))->up();
 
         $this->school = School::create([
-            'id' => 'test-school', 'name' => 'Test School', 'eduDivision' => 'Wilgamuwa',
+            'id' => 'test-school', 'name' => 'Test School', 'censusNo' => '09999', 'eduDivision' => 'Wilgamuwa',
         ]);
     }
 
@@ -70,9 +71,34 @@ class BuildingFormTest extends TestCase
 
         $this->assertDatabaseHas('buildings', [
             'schoolId' => $this->school->id, 'buildingName' => "Principal's Hall",
+            'buildingType' => 'Learning / ඉගෙනුම්',
             'floors' => 1, 'status' => 'Good / Usable', 'constructionYear' => null,
         ]);
         $this->assertDatabaseCount('auditlog', 1);
+    }
+
+    #[DataProvider('areas')]
+    public function test_building_created_with_dimensions_calculates_area_and_size(string $area, string $role): void
+    {
+        $this->signIn($role);
+        $this->from(route("$area.buildings"))->post(route("$area.buildings.store"), [
+            'schoolId' => $this->school->id,
+            'buildingName' => 'Science Block A',
+            'buildingType' => 'Learning / ඉගෙනුම්',
+            'lengthFeet' => 80,
+            'widthFeet' => 20,
+            'floors' => 2,
+        ])->assertRedirect(route("$area.buildings"))->assertSessionHasNoErrors();
+
+        $this->assertDatabaseHas('buildings', [
+            'schoolId' => $this->school->id,
+            'buildingName' => 'Science Block A',
+            'buildingType' => 'Learning / ඉගෙනුම්',
+            'lengthFeet' => 80,
+            'widthFeet' => 20,
+            'areaSqft' => 3200, // 80 * 20 * 2 floors = 3200
+            'floors' => 2,
+        ]);
     }
 
     #[DataProvider('areas')]

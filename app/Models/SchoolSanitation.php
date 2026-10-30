@@ -13,12 +13,18 @@ class SchoolSanitation extends Model
 
     protected $fillable = [
         'schoolId',
+        'reqBoysToilets',
+        'reqGirlsToilets',
+        'reqTeacherToilets',
         'boysToilets',
         'girlsToilets',
         'teacherToilets',
     ];
 
     protected $casts = [
+        'reqBoysToilets' => 'integer',
+        'reqGirlsToilets' => 'integer',
+        'reqTeacherToilets' => 'integer',
         'boysToilets' => 'integer',
         'girlsToilets' => 'integer',
         'teacherToilets' => 'integer',
@@ -32,5 +38,10 @@ class SchoolSanitation extends Model
     public function getTotalToiletsAttribute(): int
     {
         return (int)$this->boysToilets + (int)$this->girlsToilets + (int)$this->teacherToilets;
+    }
+
+    public function getTotalRequiredToiletsAttribute(): int
+    {
+        return (int)$this->reqBoysToilets + (int)$this->reqGirlsToilets + (int)$this->reqTeacherToilets;
     }
 }
