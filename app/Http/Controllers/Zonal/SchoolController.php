@@ -19,7 +19,7 @@ class SchoolController extends Controller
 
         $totalSchools = $schools->count();
 
-        $teachers = \App\Models\Teacher::select('id', 'nic', 'nameWithInitials', 'phone')->get();
+        $teachers = \App\Models\Teacher::select('id', 'nic', 'fullName', 'phone')->get();
 
         return view('dashboard.zonal.schools.index', compact('schools', 'totalSchools', 'teachers'));
     }

@@ -46,16 +46,15 @@ class SchoolExtendedFieldsTest extends TestCase
         Schema::create('teacher', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('schoolId')->nullable();
-            $table->string('nameWithInitials')->nullable();
             $table->string('fullName')->nullable();
             $table->string('nic')->nullable();
             $table->string('gender')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
-            $table->string('currentPosition')->nullable();
-            $table->string('serviceGrade')->nullable();
-            $table->string('appointmentSubject')->nullable();
-            $table->date('joinedCurrentSchoolDate')->nullable();
+            $table->string('position')->nullable();
+            $table->string('class_grade')->nullable();
+            $table->string('appt_code')->nullable();
+            $table->date('schappoint')->nullable();
             $table->boolean('isActive')->default(true);
             $table->timestamp('createdAt')->nullable();
             $table->timestamp('updatedAt')->nullable();
@@ -250,5 +249,21 @@ class SchoolExtendedFieldsTest extends TestCase
         $response->assertSee('Geographic & Land Area', false);
         $response->assertSee('https://www.google.com/maps?q=', false);
         $response->assertSee('View on Google Maps');
+    }
+
+    public function test_zonal_schools_index_page_loads_cleanly(): void
+    {
+        $this->signInZonalAdmin();
+
+        \App\Models\Teacher::create([
+            'id' => 't-demo-1',
+            'fullName' => 'Kamal Perera',
+            'nic' => '198512345678',
+            'phone' => '0771234567',
+        ]);
+
+        $response = $this->get(route('zonal.schools'));
+        $response->assertOk();
+        $response->assertSee('Kamal Perera');
     }
 }

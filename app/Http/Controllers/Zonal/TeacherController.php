@@ -106,13 +106,11 @@ class TeacherController extends Controller
 
         // Compile comprehensive list of all subjects from TeacherOptions and teacher records
         $subjectOptions = TeacherOptions::codes() ?: [];
-        $dbAppt = $teachers->pluck('appointmentSubject')->filter()->all();
         $dbApptCode = $teachers->pluck('appt_code')->filter()->all();
         $dbT1 = $teachers->pluck('t1_code')->filter()->all();
 
         $allSubjectsList = array_values(array_filter(array_unique(array_merge(
             $subjectOptions,
-            $dbAppt,
             $dbApptCode,
             $dbT1
         )), function ($s) {

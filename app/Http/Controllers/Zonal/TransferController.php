@@ -42,7 +42,7 @@ class TransferController extends Controller
         if ($request->status === 'APPROVED' && $transfer->toSchoolId) {
             Teacher::where('id', $transfer->teacherId)->update([
                 'schoolId' => $transfer->toSchoolId,
-                'joinedCurrentSchoolDate' => now(),
+                'schappoint' => now(),
             ]);
         }
 
