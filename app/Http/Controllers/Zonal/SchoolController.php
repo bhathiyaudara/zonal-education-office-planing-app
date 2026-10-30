@@ -29,6 +29,8 @@ class SchoolController extends Controller
             'teachers' => fn($q) => $q->orderBy('nameWithInitials'),
             'teachers.subjects.subject',
             'studentCounts' => fn($q) => $q->where('academicYear', date('Y'))->orderBy('grade'),
+            'buildings' => fn($q) => $q->orderBy('buildingName'),
+            'sanitation',
         ])->findOrFail($id);
 
         return view('dashboard.zonal.schools.show', compact('school'));

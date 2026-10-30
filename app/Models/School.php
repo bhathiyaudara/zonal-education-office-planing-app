@@ -58,6 +58,16 @@ class School extends Model
         return $this->hasMany(TransferRequest::class, 'toSchoolId');
     }
 
+    public function buildings()
+    {
+        return $this->hasMany(Building::class, 'schoolId');
+    }
+
+    public function sanitation()
+    {
+        return $this->hasOne(SchoolSanitation::class, 'schoolId');
+    }
+
     protected static function boot()
     {
         parent::boot();

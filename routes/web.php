@@ -78,6 +78,14 @@ Route::middleware('auth')->group(function () {
         // Audit
         Route::get('/audit', [Zonal\AuditController::class, 'index'])->name('zonal.audit');
 
+        // Buildings & Physical Data
+        Route::get('/buildings', [Zonal\BuildingController::class, 'index'])->name('zonal.buildings');
+        Route::post('/buildings', [Zonal\BuildingController::class, 'store'])->name('zonal.buildings.store');
+        Route::get('/buildings/export', [Zonal\BuildingController::class, 'export'])->name('zonal.buildings.export');
+        Route::put('/buildings/{id}', [Zonal\BuildingController::class, 'update'])->name('zonal.buildings.update');
+        Route::delete('/buildings/{id}', [Zonal\BuildingController::class, 'destroy'])->name('zonal.buildings.destroy');
+        Route::put('/schools/{schoolId}/sanitation', [Zonal\BuildingController::class, 'updateSanitation'])->name('zonal.schools.sanitation.update');
+
         // Edit Requests
         Route::get('/edit-requests', function () {
             return view('dashboard.zonal.edit-requests.index');
@@ -107,6 +115,13 @@ Route::middleware('auth')->group(function () {
         // Students & Classes
         Route::get('/students', [\App\Http\Controllers\School\StudentController::class, 'index'])->name('school.students');
         Route::put('/students/update', [\App\Http\Controllers\School\StudentController::class, 'updateCounts'])->name('school.students.update');
+
+        // Buildings & Facilities
+        Route::get('/buildings', [\App\Http\Controllers\School\BuildingController::class, 'index'])->name('school.buildings');
+        Route::post('/buildings', [\App\Http\Controllers\School\BuildingController::class, 'store'])->name('school.buildings.store');
+        Route::put('/buildings/{id}', [\App\Http\Controllers\School\BuildingController::class, 'update'])->name('school.buildings.update');
+        Route::delete('/buildings/{id}', [\App\Http\Controllers\School\BuildingController::class, 'destroy'])->name('school.buildings.destroy');
+        Route::put('/sanitation', [\App\Http\Controllers\School\BuildingController::class, 'updateSanitation'])->name('school.sanitation.update');
     });
 
     // Teacher routes

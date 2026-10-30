@@ -322,6 +322,70 @@
             </table>
         </div>
     </div>
+
+    {{-- Physical Infrastructure & Buildings Section --}}
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="px-6 py-4 border-b border-slate-100 bg-slate-50 flex justify-between items-center flex-wrap gap-2">
+            <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                </svg>
+                <h3 class="text-sm font-bold text-slate-900">Physical Infrastructure & Buildings ({{ $school->buildings->count() }})</h3>
+                @if($school->sanitation)
+                <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100">
+                    Toilets: {{ $school->sanitation->boysToilets }} Boys / {{ $school->sanitation->girlsToilets }} Girls / {{ $school->sanitation->teacherToilets }} Staff
+                </span>
+                @endif
+            </div>
+            <a href="{{ route('zonal.buildings', ['school_id' => $school->id]) }}" class="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1 bg-blue-50 px-3 py-1.5 rounded-lg border border-blue-100 transition">
+                <span>Manage in Building Studio &rarr;</span>
+            </a>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-slate-200">
+                <thead class="bg-slate-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-[10px] font-black text-slate-500 uppercase tracking-wider">Building Name</th>
+                        <th class="px-6 py-3 text-left text-[10px] font-black text-slate-500 uppercase tracking-wider">Size</th>
+                        <th class="px-6 py-3 text-left text-[10px] font-black text-slate-500 uppercase tracking-wider">Floors</th>
+                        <th class="px-6 py-3 text-left text-[10px] font-black text-slate-500 uppercase tracking-wider">Built</th>
+                        <th class="px-6 py-3 text-left text-[10px] font-black text-slate-500 uppercase tracking-wider">Last Repair</th>
+                        <th class="px-6 py-3 text-left text-[10px] font-black text-slate-500 uppercase tracking-wider">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-slate-100">
+                    @forelse($school->buildings as $b)
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-6 py-3.5 text-xs font-bold text-slate-900">{{ $b->buildingName }}</td>
+                        <td class="px-6 py-3.5 text-xs font-mono font-semibold text-slate-600">{{ $b->size ?: 'N/A' }}</td>
+                        <td class="px-6 py-3.5 text-xs font-bold text-slate-700">{{ $b->floors }} {{ $b->floors > 1 ? 'Floors' : 'Floor' }}</td>
+                        <td class="px-6 py-3.5 text-xs text-slate-700">{{ $b->constructionYear ?: 'N/A' }}</td>
+                        <td class="px-6 py-3.5 text-xs text-slate-700">
+                            @if($b->lastRepairYear)
+                                {{ $b->lastRepairYear }}
+                                @if($b->needsRenovation)
+                                <span class="text-[9px] font-black text-amber-700 bg-amber-100 px-1.5 py-0.5 rounded ml-1">&ge;10 yrs</span>
+                                @endif
+                            @else
+                                <span class="text-amber-600 italic">No record</span>
+                            @endif
+                        </td>
+                        <td class="px-6 py-3.5 text-xs font-bold">
+                            <span class="px-2 py-0.5 rounded-full text-[10px] bg-slate-100 text-slate-700">{{ $b->status ?: 'Good' }}</span>
+                        </td>
+                    </tr>
+                    @empty
+                    <tr>
+                        <td colspan="6" class="px-6 py-8 text-center text-xs text-slate-400">
+                            No building records added for this school yet.
+                            <a href="{{ route('zonal.buildings', ['school_id' => $school->id]) }}" class="text-blue-600 font-bold ml-1 hover:underline">+ Add Building</a>
+                        </td>
+                    </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 {{-- Edit School Modal (Same as Index Page) --}}

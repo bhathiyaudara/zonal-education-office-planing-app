@@ -24,7 +24,7 @@
 
                 {{-- Manage Schools (NavGroup) --}}
                 @php
-                    $schoolMenuActive = request()->routeIs('zonal.schools') || request()->routeIs('zonal.schools.*');
+                    $schoolMenuActive = request()->routeIs('zonal.schools') || request()->routeIs('zonal.schools.*') || request()->routeIs('zonal.buildings') || request()->routeIs('zonal.buildings.*');
                 @endphp
                 <div x-data="{ expanded: {{ $schoolMenuActive ? 'true' : 'false' }} }" class="space-y-1">
                     <button @click="expanded = !expanded"
@@ -63,6 +63,13 @@
                                       ? 'bg-white/15 text-white font-semibold'
                                       : 'text-slate-300 hover:bg-white/10 hover:text-white' }}">
                             Student Overview
+                        </a>
+                        <a href="{{ route('zonal.buildings') }}"
+                           class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-200
+                                  {{ request()->routeIs('zonal.buildings*')
+                                      ? 'bg-white/15 text-white font-semibold'
+                                      : 'text-slate-300 hover:bg-white/10 hover:text-white' }}">
+                            Buildings & Facilities
                         </a>
                         <a href="{{ route('zonal.schools.remove') }}"
                            class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-200
@@ -150,6 +157,7 @@
                 @include('layouts.partials.nav-item', ['route' => 'dashboard', 'label' => 'Overview', 'icon' => 'layout-dashboard'])
                 @include('layouts.partials.nav-item', ['route' => 'school.teachers', 'label' => 'Teachers', 'icon' => 'users'])
                 @include('layouts.partials.nav-item', ['route' => 'school.students', 'label' => 'Manage Students', 'icon' => 'graduation-cap'])
+                @include('layouts.partials.nav-item', ['route' => 'school.buildings', 'label' => 'Buildings & Facilities', 'icon' => 'building'])
             </div>
         @endif
 
