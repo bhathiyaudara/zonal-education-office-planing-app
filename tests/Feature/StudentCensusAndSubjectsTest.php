@@ -64,6 +64,18 @@ class StudentCensusAndSubjectsTest extends TestCase
             $table->timestamp('updatedAt')->nullable();
         });
 
+        Schema::create('teacher', function (Blueprint $table) {
+            $table->string('id')->primary();
+            $table->string('schoolId')->nullable();
+            $table->string('fullName');
+            $table->string('gender')->nullable();
+            $table->string('nic')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('appointmentType')->nullable();
+            $table->timestamp('createdAt')->nullable();
+            $table->timestamp('updatedAt')->nullable();
+        });
+
         Schema::create('user', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('name');
@@ -180,5 +192,25 @@ class StudentCensusAndSubjectsTest extends TestCase
         $migration->down();
         $this->assertFalse(Schema::hasTable('subject_statistic'));
         $this->assertFalse(Schema::hasTable('pirivena'));
+    }
+
+    public function test_individual_school_page_renders_with_subject_tabs(): void
+    {
+        $this->actingAs($this->zonalAdmin);
+
+        $school = School::create([
+            'id' => 'sch-hattota',
+            'name' => 'CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA',
+            'censusNo' => '04143',
+            'eduDivision' => 'Wilgamuwa',
+        ]);
+
+        $response = $this->get(route('zonal.schools.show', $school->id));
+        $response->assertOk();
+        $response->assertSee('Student & Subject Analytics', false);
+        $response->assertSee('O/L Subjects (Grades 10 & 11)', false);
+        $response->assertSee('A/L Subjects & Streams (Grades 12 & 13)', false);
+        $response->assertSee('Geography');
+        $response->assertSee('Commerce (වාණිජ)');
     }
 }

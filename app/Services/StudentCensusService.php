@@ -225,4 +225,103 @@ class StudentCensusService
             'grandZonalTotal' => $totalStudents + $pirivenaTotal,
         ];
     }
+
+    /**
+     * Map censusNo to school key in OL / AL matrices.
+     */
+    protected static array $censusToKey = [
+        '04143' => 'CP/WIL/HATTOTA AMUNA MAHA VIDYALAYA',
+        '04152' => 'CP/WIL/MAHALAKOTUWA SRI SUMANA MAHA VIDYALAYA',
+        '04118' => 'CP/WIL/MINIPURA VIJAYA MAHA VIDYALAYA',
+        '04120' => 'CP/WIL/PALLEGAMA CENTRAL COLLEGE',
+        '04349' => 'CP/WIL/MA OYA KANISTHTA SCHOOL',
+        '04129' => 'CP/WIL/SRI AGRABODHI KANISHTA VIDYALAYA',
+        '04153' => 'CP/WIL/PUWAKPITIYA DAMMANTHANNA KANISHTA VIDYALAYA',
+        '04125' => 'CP/WIL/RANAMURE KANISHTA VIDYALAYA',
+        '04119' => 'CP/WIL/NAMINIOYA CENTRAL COLLEGE',
+        '04123' => 'CP/WIL/NUGAGOLLA MAHA VIDYALAYA',
+        '04121' => 'CP/WIL/MARAKA MAHA VIDYALAYA',
+        '04122' => 'CP/WIL/HANDUNGAMUWA MAHA VIDYALAYA',
+        '04144' => 'CP/WIL/KEKALATHANNA KANISHTA VIDYALAYA',
+        '04124' => 'CP/WIL/MEDAKANDA K.V.',
+        '04319' => 'CP/WIL/WEHERAGALAYAYA KANISTA VIDIYALAYA',
+        '04126' => 'CP/WIL/SONUTHTHARA KANISTA VIDIYALAYA',
+        '04149' => 'CP/WIL/GURUWELAYAYA JUNIOR SCHOOL',
+    ];
+
+    /**
+     * Get subject breakdown for an individual school by its census number or name.
+     */
+    public static function getSchoolSubjects(?string $censusNo, ?string $schoolName = null): array
+    {
+        $schKey = self::$censusToKey[$censusNo] ?? null;
+
+        if (!$schKey && $schoolName) {
+            foreach (self::$censusToKey as $cNo => $k) {
+                if (stripos($k, $schoolName) !== false || stripos($schoolName, str_replace('CP/WIL/', '', $k)) !== false) {
+                    $schKey = $k;
+                    break;
+                }
+            }
+        }
+
+        $olList = [];
+        $alList = [];
+        $streamList = [];
+
+        if ($schKey) {
+            $allOl = self::getOlSubjects();
+            foreach ($allOl as $r) {
+                if ($r['subject'] === 'Total') continue;
+                $sData = $r['schools'][$schKey] ?? null;
+                if ($sData && ($sData['all']['total'] ?? 0) > 0) {
+                    $olList[] = [
+                        'subject' => $r['subject'],
+                        'subject_en' => $r['subject_en'] ?? $r['subject'],
+                        'grade_10' => $sData['grade_10'] ?? ['male' => 0, 'female' => 0, 'total' => 0],
+                        'grade_11' => $sData['grade_11'] ?? ['male' => 0, 'female' => 0, 'total' => 0],
+                        'all' => $sData['all'] ?? ['male' => 0, 'female' => 0, 'total' => 0],
+                    ];
+                }
+            }
+
+            $allAl = self::getAlSubjects();
+            foreach ($allAl as $r) {
+                if ($r['subject'] === 'Total') continue;
+                $sData = $r['schools'][$schKey] ?? null;
+                if ($sData && ($sData['all']['total'] ?? 0) > 0) {
+                    $alList[] = [
+                        'subject' => $r['subject'],
+                        'subject_en' => $r['subject_en'] ?? $r['subject'],
+                        'grade_12' => $sData['grade_12'] ?? ['male' => 0, 'female' => 0, 'total' => 0],
+                        'grade_13' => $sData['grade_13'] ?? ['male' => 0, 'female' => 0, 'total' => 0],
+                        'all' => $sData['all'] ?? ['male' => 0, 'female' => 0, 'total' => 0],
+                    ];
+                }
+            }
+
+            $allStreams = self::getAlStreams();
+            foreach ($allStreams as $r) {
+                if ($r['stream'] === 'Total') continue;
+                $sData = $r['schools'][$schKey] ?? null;
+                if ($sData && ($sData['all']['total'] ?? 0) > 0) {
+                    $streamList[] = [
+                        'stream' => $r['stream'],
+                        'stream_en' => $r['stream_en'] ?? $r['stream'],
+                        'grade_12' => $sData['grade_12'] ?? ['male' => 0, 'female' => 0, 'total' => 0],
+                        'grade_13' => $sData['grade_13'] ?? ['male' => 0, 'female' => 0, 'total' => 0],
+                        'all' => $sData['all'] ?? ['male' => 0, 'female' => 0, 'total' => 0],
+                    ];
+                }
+            }
+        }
+
+        return [
+            'has_ol' => !empty($olList),
+            'has_al' => !empty($alList) || !empty($streamList),
+            'ol_subjects' => $olList,
+            'al_subjects' => $alList,
+            'al_streams' => $streamList,
+        ];
+    }
 }

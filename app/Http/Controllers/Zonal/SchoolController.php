@@ -34,7 +34,9 @@ class SchoolController extends Controller
             'sanitation',
         ])->findOrFail($id);
 
-        return view('dashboard.zonal.schools.show', compact('school'));
+        $schoolSubjects = StudentCensusService::getSchoolSubjects($school->censusNo, $school->name);
+
+        return view('dashboard.zonal.schools.show', compact('school', 'schoolSubjects'));
     }
 
     public function store(Request $request)

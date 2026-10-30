@@ -62,7 +62,7 @@
                                   {{ request()->routeIs('zonal.schools.students')
                                       ? 'bg-white/15 text-white font-semibold'
                                       : 'text-slate-300 hover:bg-white/10 hover:text-white' }}">
-                            Student Overview
+                            Student & Subject Analytics
                         </a>
                         <a href="{{ route('zonal.buildings') }}"
                            class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-200

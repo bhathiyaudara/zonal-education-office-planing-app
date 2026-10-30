@@ -13,9 +13,9 @@
         </a>
 
         <div class="flex items-center gap-3">
-            <a href="#" onclick="alert('Coming soon!')" class="group flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl hover:from-purple-500 hover:to-indigo-500 text-sm font-semibold transition-all duration-200 shadow-lg shadow-purple-500/25 hover:shadow-xl hover:shadow-purple-500/30 hover:-translate-y-0.5">
-                <svg class="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                Subject Statistics
+            <a href="{{ route('zonal.schools.students') }}" class="group flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl hover:from-purple-500 hover:to-indigo-500 text-sm font-semibold transition-all duration-200 shadow-lg shadow-purple-500/25 hover:shadow-xl hover:shadow-purple-500/30 hover:-translate-y-0.5">
+                <svg class="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                Subject Statistics (Zone-Wide)
             </a>
             <button onclick="document.getElementById('editSchoolModal').classList.remove('hidden')" class="group flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-500 hover:to-blue-600 text-sm font-semibold transition-all duration-200 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-0.5">
                 <svg class="w-4 h-4 group-hover:rotate-12 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
@@ -208,118 +208,359 @@
         </div>
     </div>
 
-    {{-- Student Overview Section --}}
-    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-        <div class="px-6 py-4 border-b border-slate-100 bg-slate-50 flex justify-between items-center">
-            <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
-                <svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                Student Overview ({{ date('Y') }})
-            </h3>
-            <div class="flex gap-2">
-                <template x-if="!isEditingStudents">
-                    <button @click="isEditingStudents = true" class="text-sm font-medium text-blue-600 hover:text-blue-700 flex items-center gap-1">
-                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-                        Edit Counts
-                    </button>
-                </template>
-                <template x-if="isEditingStudents">
-                    <div class="flex gap-2">
-                        <button @click="isEditingStudents = false; resetData()" class="text-sm font-medium text-slate-500 hover:text-slate-700">Cancel</button>
-                        <button @click="saveStudentCounts" class="text-sm font-medium text-emerald-600 hover:text-emerald-700 flex items-center gap-1">
-                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 1m0 0l-3-1m3 1v-7.5"/></svg>
-                            Save
+    {{-- Student & Subject Overview Section --}}
+    <div id="student-overview-card" class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        {{-- Card Header with Title, Mode Controls & Zone Link --}}
+        <div class="px-6 py-4 border-b border-slate-100 bg-slate-50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                </div>
+                <div>
+                    <h3 class="text-sm md:text-base font-bold text-slate-900 flex items-center gap-2">
+                        Student & Subject Analytics ({{ date('Y') }})
+                    </h3>
+                    <p class="text-xs text-slate-500">Grade breakdown (1–13), G.C.E. O/L optional basket subjects, and A/L collegiate streams</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 flex-wrap">
+                {{-- Edit Counts (only active on grades tab) --}}
+                <div x-show="studentTab === 'grades'">
+                    <template x-if="!isEditingStudents">
+                        <button @click="isEditingStudents = true" class="text-xs md:text-sm font-medium text-blue-600 hover:text-blue-700 flex items-center gap-1 px-3 py-1.5 rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors">
+                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                            Edit Counts
                         </button>
-                    </div>
-                </template>
+                    </template>
+                    <template x-if="isEditingStudents">
+                        <div class="flex gap-2">
+                            <button @click="isEditingStudents = false; resetData()" class="text-xs md:text-sm font-medium text-slate-500 hover:text-slate-700 px-3 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50">Cancel</button>
+                            <button @click="saveStudentCounts" class="text-xs md:text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 px-3 py-1.5 rounded-lg flex items-center gap-1 shadow-sm">
+                                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 1m0 0l-3-1m3 1v-7.5"/></svg>
+                                Save
+                            </button>
+                        </div>
+                    </template>
+                </div>
+
+                {{-- Direct Link to Zone-Wide Analytics Matrix --}}
+                <a href="{{ route('zonal.schools.students') }}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 transition-colors shadow-sm" title="View complete 45-school matrix, O/L 17-school matrix & Pirivena stats">
+                    <span>Zone Matrix & Pirivenas</span>
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
             </div>
         </div>
 
-        {{-- Grade Table --}}
-        <div class="overflow-x-auto">
-            <table class="zems-table min-w-full divide-y divide-slate-200">
-                <thead class="bg-slate-50">
-                    <tr class="zems-table-header-row">
-                        <th class="px-6 py-3 text-left text-[10px] font-black text-slate-500 uppercase tracking-wider">Grade</th>
-                        <th class="px-6 py-3 text-left text-[10px] font-black text-slate-500 uppercase tracking-wider">Classes & Counts</th>
-                        <th class="px-6 py-3 text-center text-[10px] font-black text-blue-500 uppercase tracking-wider w-24">Total Male</th>
-                        <th class="px-6 py-3 text-center text-[10px] font-black text-pink-500 uppercase tracking-wider w-24">Total Female</th>
-                        <th class="px-6 py-3 text-center text-[10px] font-black text-slate-500 uppercase tracking-wider w-24">Total</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-slate-100">
-                    <template x-for="(grade, index) in grades" :key="grade">
-                        <tr :class="index % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'">
-                            <td class="px-6 py-4 font-bold text-slate-900 w-28 align-top">
-                                <span x-text="grade"></span>
-                            </td>
-                            <td class="px-6 py-4 align-top">
-                                <template x-if="!isEditingStudents">
-                                    <div class="flex flex-wrap gap-2">
-                                        <template x-for="cls in getStudentData(grade).breakdown">
-                                            <div class="px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs shadow-sm flex items-center gap-3">
-                                                <span class="font-black text-slate-700 font-mono" x-text="cls.name || 'Unnamed'"></span>
-                                                <div class="flex items-center gap-2 text-[11px] font-bold">
-                                                    <span class="text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded">M: <span x-text="cls.maleCount"></span></span>
-                                                    <span class="text-pink-600 bg-pink-50 px-1.5 py-0.5 rounded">F: <span x-text="cls.femaleCount"></span></span>
+        {{-- Sub-tab navigation bar --}}
+        <div class="flex border-b border-slate-200 bg-white px-6 gap-2 overflow-x-auto">
+            <button type="button" @click="studentTab = 'grades'" 
+                    class="py-3 px-4 text-xs md:text-sm font-bold border-b-2 transition-all flex items-center gap-2 whitespace-nowrap"
+                    :class="studentTab === 'grades' ? 'border-emerald-600 text-emerald-700 bg-emerald-50/40 rounded-t-lg' : 'border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300'">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Grade Breakdown (1–13)</span>
+            </button>
+
+            <button type="button" @click="studentTab = 'ol'" 
+                    class="py-3 px-4 text-xs md:text-sm font-bold border-b-2 transition-all flex items-center gap-2 whitespace-nowrap"
+                    :class="studentTab === 'ol' ? 'border-blue-600 text-blue-700 bg-blue-50/40 rounded-t-lg' : 'border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300'">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                <span>O/L Subjects (Grades 10 & 11)</span>
+                @if(!empty($schoolSubjects['ol_subjects']))
+                    <span class="ml-1.5 px-2 py-0.5 text-[11px] font-black rounded-full bg-blue-100 text-blue-800">{{ count($schoolSubjects['ol_subjects']) }}</span>
+                @endif
+            </button>
+
+            <button type="button" @click="studentTab = 'al'" 
+                    class="py-3 px-4 text-xs md:text-sm font-bold border-b-2 transition-all flex items-center gap-2 whitespace-nowrap"
+                    :class="studentTab === 'al' ? 'border-purple-600 text-purple-700 bg-purple-50/40 rounded-t-lg' : 'border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300'">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                <span>A/L Subjects & Streams (Grades 12 & 13)</span>
+                @if(!empty($schoolSubjects['al_subjects']) || !empty($schoolSubjects['al_streams']))
+                    <span class="ml-1.5 px-2 py-0.5 text-[11px] font-black rounded-full bg-purple-100 text-purple-800">
+                        {{ count($schoolSubjects['al_streams']) }} Streams · {{ count($schoolSubjects['al_subjects']) }} Subjects
+                    </span>
+                @endif
+            </button>
+        </div>
+
+        {{-- TAB 1: Grade Breakdown (1–13) --}}
+        <div x-show="studentTab === 'grades'">
+            <div class="overflow-x-auto">
+                <table class="zems-table min-w-full divide-y divide-slate-200">
+                    <thead class="bg-slate-50">
+                        <tr class="zems-table-header-row">
+                            <th class="px-6 py-3 text-left text-[10px] font-black text-slate-500 uppercase tracking-wider">Grade</th>
+                            <th class="px-6 py-3 text-left text-[10px] font-black text-slate-500 uppercase tracking-wider">Classes & Counts</th>
+                            <th class="px-6 py-3 text-center text-[10px] font-black text-blue-500 uppercase tracking-wider w-24">Total Male</th>
+                            <th class="px-6 py-3 text-center text-[10px] font-black text-pink-500 uppercase tracking-wider w-24">Total Female</th>
+                            <th class="px-6 py-3 text-center text-[10px] font-black text-slate-500 uppercase tracking-wider w-24">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-slate-100">
+                        <template x-for="(grade, index) in grades" :key="grade">
+                            <tr :class="index % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'">
+                                <td class="px-6 py-4 font-bold text-slate-900 w-28 align-top">
+                                    <span x-text="grade"></span>
+                                </td>
+                                <td class="px-6 py-4 align-top">
+                                    <template x-if="!isEditingStudents">
+                                        <div class="flex flex-wrap gap-2">
+                                            <template x-for="cls in getStudentData(grade).breakdown">
+                                                <div class="px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs shadow-sm flex items-center gap-3">
+                                                    <span class="font-black text-slate-700 font-mono" x-text="cls.name || 'Unnamed'"></span>
+                                                    <div class="flex items-center gap-2 text-[11px] font-bold">
+                                                        <span class="text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded">M: <span x-text="cls.maleCount"></span></span>
+                                                        <span class="text-pink-600 bg-pink-50 px-1.5 py-0.5 rounded">F: <span x-text="cls.femaleCount"></span></span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </template>
-                                        <template x-if="getStudentData(grade).breakdown.length === 0">
-                                            <span class="text-slate-400 text-xs italic py-1.5">No classes added</span>
-                                        </template>
-                                    </div>
-                                </template>
-                                <template x-if="isEditingStudents">
-                                    <div class="space-y-2">
-                                        <template x-for="(cls, cIndex) in getStudentData(grade).breakdown" :key="cIndex">
-                                            <div class="flex items-center gap-2 group">
-                                                <div class="relative w-32">
-                                                    <span class="absolute left-2.5 top-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider pointer-events-none">Class</span>
-                                                    <input type="text" x-model="cls.name" @input="calculateTotal(grade)" class="w-full border border-slate-300 rounded-lg py-1.5 pl-12 pr-2 text-xs shadow-sm bg-white font-bold text-slate-700 focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="e.g. A, Bio">
+                                            </template>
+                                            <template x-if="getStudentData(grade).breakdown.length === 0">
+                                                <span class="text-slate-400 text-xs italic py-1.5">No classes added</span>
+                                            </template>
+                                        </div>
+                                    </template>
+                                    <template x-if="isEditingStudents">
+                                        <div class="space-y-2">
+                                            <template x-for="(cls, cIndex) in getStudentData(grade).breakdown" :key="cIndex">
+                                                <div class="flex items-center gap-2 group">
+                                                    <div class="relative w-32">
+                                                        <span class="absolute left-2.5 top-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider pointer-events-none">Class</span>
+                                                        <input type="text" x-model="cls.name" @input="calculateTotal(grade)" class="w-full border border-slate-300 rounded-lg py-1.5 pl-12 pr-2 text-xs shadow-sm bg-white font-bold text-slate-700 focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="e.g. A, Bio">
+                                                    </div>
+                                                    <div class="relative w-24">
+                                                        <span class="absolute left-2.5 top-2 text-[10px] font-bold text-blue-400 uppercase tracking-wider pointer-events-none">Male</span>
+                                                        <input type="number" min="0" x-model.number="cls.maleCount" @input="calculateTotal(grade)" class="w-full border border-blue-100 rounded-lg py-1.5 pl-12 pr-2 text-xs text-center shadow-sm bg-blue-50/50 text-blue-700 font-bold focus:ring-2 focus:ring-blue-500 focus:outline-none placeholder:text-blue-300" placeholder="0">
+                                                    </div>
+                                                    <div class="relative w-24">
+                                                        <span class="absolute left-2.5 top-2 text-[10px] font-bold text-pink-400 uppercase tracking-wider pointer-events-none">Female</span>
+                                                        <input type="number" min="0" x-model.number="cls.femaleCount" @input="calculateTotal(grade)" class="w-full border border-pink-100 rounded-lg py-1.5 pl-14 pr-2 text-xs text-center shadow-sm bg-pink-50/50 text-pink-700 font-bold focus:ring-2 focus:ring-pink-500 focus:outline-none placeholder:text-pink-300" placeholder="0">
+                                                    </div>
+                                                    <button @click="removeClass(grade, cIndex)" type="button" class="text-slate-300 hover:text-red-500 hover:bg-red-50 p-1.5 rounded-lg transition-colors ml-1" title="Remove Class">
+                                                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                                                    </button>
                                                 </div>
-                                                <div class="relative w-24">
-                                                    <span class="absolute left-2.5 top-2 text-[10px] font-bold text-blue-400 uppercase tracking-wider pointer-events-none">Male</span>
-                                                    <input type="number" min="0" x-model.number="cls.maleCount" @input="calculateTotal(grade)" class="w-full border border-blue-100 rounded-lg py-1.5 pl-12 pr-2 text-xs text-center shadow-sm bg-blue-50/50 text-blue-700 font-bold focus:ring-2 focus:ring-blue-500 focus:outline-none placeholder:text-blue-300" placeholder="0">
-                                                </div>
-                                                <div class="relative w-24">
-                                                    <span class="absolute left-2.5 top-2 text-[10px] font-bold text-pink-400 uppercase tracking-wider pointer-events-none">Female</span>
-                                                    <input type="number" min="0" x-model.number="cls.femaleCount" @input="calculateTotal(grade)" class="w-full border border-pink-100 rounded-lg py-1.5 pl-14 pr-2 text-xs text-center shadow-sm bg-pink-50/50 text-pink-700 font-bold focus:ring-2 focus:ring-pink-500 focus:outline-none placeholder:text-pink-300" placeholder="0">
-                                                </div>
-                                                <button @click="removeClass(grade, cIndex)" type="button" class="text-slate-300 hover:text-red-500 hover:bg-red-50 p-1.5 rounded-lg transition-colors ml-1" title="Remove Class">
-                                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
-                                                </button>
-                                            </div>
-                                        </template>
-                                        <button @click="addClass(grade)" type="button" class="text-xs font-bold text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-colors border border-dashed border-indigo-200 mt-2">
-                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-                                            Add Class to <span x-text="grade"></span>
-                                        </button>
-                                    </div>
-                                </template>
-                            </td>
-                            <td class="px-6 py-4 text-center align-middle">
-                                <span class="text-sm font-black text-blue-600" x-text="getStudentData(grade).maleCount || 0"></span>
-                            </td>
-                            <td class="px-6 py-4 text-center align-middle">
-                                <span class="text-sm font-black text-pink-600" x-text="getStudentData(grade).femaleCount || 0"></span>
-                            </td>
-                            <td class="px-6 py-4 text-center align-middle">
-                                <span class="px-3 py-1 bg-emerald-50 border border-emerald-100 text-emerald-700 font-black rounded-xl text-sm shadow-sm" x-text="(parseInt(getStudentData(grade).maleCount) || 0) + (parseInt(getStudentData(grade).femaleCount) || 0)"></span>
+                                            </template>
+                                            <button @click="addClass(grade)" type="button" class="text-xs font-bold text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-colors border border-dashed border-indigo-200 mt-2">
+                                                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                                                Add Class to <span x-text="grade"></span>
+                                            </button>
+                                        </div>
+                                    </template>
+                                </td>
+                                <td class="px-6 py-4 text-center align-middle">
+                                    <span class="text-sm font-black text-blue-600" x-text="getStudentData(grade).maleCount || 0"></span>
+                                </td>
+                                <td class="px-6 py-4 text-center align-middle">
+                                    <span class="text-sm font-black text-pink-600" x-text="getStudentData(grade).femaleCount || 0"></span>
+                                </td>
+                                <td class="px-6 py-4 text-center align-middle">
+                                    <span class="px-3 py-1 bg-emerald-50 border border-emerald-100 text-emerald-700 font-black rounded-xl text-sm shadow-sm" x-text="(parseInt(getStudentData(grade).maleCount) || 0) + (parseInt(getStudentData(grade).femaleCount) || 0)"></span>
+                                </td>
+                            </tr>
+                        </template>
+
+                        {{-- Totals Row --}}
+                        <tr class="bg-gradient-to-r from-slate-50 to-white">
+                            <td colspan="2" class="px-6 py-4 text-right text-xs tracking-widest uppercase font-black text-slate-500">SCHOOL TOTALS</td>
+                            <td class="px-6 py-4 text-center text-lg font-black text-blue-600" x-text="grades.reduce((sum, g) => sum + (getStudentData(g).maleCount || 0), 0)"></td>
+                            <td class="px-6 py-4 text-center text-lg font-black text-pink-600" x-text="grades.reduce((sum, g) => sum + (getStudentData(g).femaleCount || 0), 0)"></td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="px-4 py-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-md font-black rounded-xl text-lg" x-text="grades.reduce((sum, g) => sum + (getStudentData(g).maleCount || 0) + (getStudentData(g).femaleCount || 0), 0)"></span>
                             </td>
                         </tr>
-                    </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-                    {{-- Totals Row --}}
-                    <tr class="bg-gradient-to-r from-slate-50 to-white">
-                        <td colspan="2" class="px-6 py-4 text-right text-xs tracking-widest uppercase font-black text-slate-500">SCHOOL TOTALS</td>
-                        <td class="px-6 py-4 text-center text-lg font-black text-blue-600" x-text="grades.reduce((sum, g) => sum + (getStudentData(g).maleCount || 0), 0)"></td>
-                        <td class="px-6 py-4 text-center text-lg font-black text-pink-600" x-text="grades.reduce((sum, g) => sum + (getStudentData(g).femaleCount || 0), 0)"></td>
-                        <td class="px-6 py-4 text-center">
-                            <span class="px-4 py-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-md font-black rounded-xl text-lg" x-text="grades.reduce((sum, g) => sum + (getStudentData(g).maleCount || 0) + (getStudentData(g).femaleCount || 0), 0)"></span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        {{-- TAB 2: O/L Subjects (Grades 10 & 11) --}}
+        <div x-show="studentTab === 'ol'" style="display: none;">
+            @if(!empty($schoolSubjects['ol_subjects']))
+                @php
+                    $olGr10Total = array_sum(array_map(fn($s) => $s['grade_10']['total'], $schoolSubjects['ol_subjects']));
+                    $olGr11Total = array_sum(array_map(fn($s) => $s['grade_11']['total'], $schoolSubjects['ol_subjects']));
+                    $olGrand = array_sum(array_map(fn($s) => $s['all']['total'], $schoolSubjects['ol_subjects']));
+                @endphp
+                <div class="p-6 bg-slate-50 border-b border-slate-100">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Taught O/L Subjects</span>
+                            <p class="text-2xl font-black text-slate-800 mt-1">{{ count($schoolSubjects['ol_subjects']) }}</p>
+                            <span class="text-[11px] text-slate-400">Optional basket subjects offered</span>
+                        </div>
+                        <div class="bg-white rounded-xl p-4 border border-blue-200/70 shadow-sm">
+                            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Grade 10 Enrolments</span>
+                            <p class="text-2xl font-black text-blue-700 mt-1">{{ number_format($olGr10Total) }}</p>
+                            <span class="text-[11px] text-slate-400">Total student registrations</span>
+                        </div>
+                        <div class="bg-white rounded-xl p-4 border border-indigo-200/70 shadow-sm">
+                            <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Grade 11 Enrolments</span>
+                            <p class="text-2xl font-black text-indigo-700 mt-1">{{ number_format($olGr11Total) }}</p>
+                            <span class="text-[11px] text-slate-400">Total student registrations</span>
+                        </div>
+                        <div class="bg-white rounded-xl p-4 border border-emerald-200/70 shadow-sm">
+                            <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Total Subject Enrolments</span>
+                            <p class="text-2xl font-black text-emerald-700 mt-1">{{ number_format($olGrand) }}</p>
+                            <span class="text-[11px] text-slate-400">Cumulative basket subject seats</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="zems-table min-w-full divide-y divide-slate-200">
+                        <thead class="bg-slate-50">
+                            <tr class="zems-table-header-row">
+                                <th class="px-6 py-3 text-left text-[10px] font-black text-slate-500 uppercase tracking-wider">#</th>
+                                <th class="px-6 py-3 text-left text-[10px] font-black text-slate-500 uppercase tracking-wider">Subject Name (විෂය)</th>
+                                <th class="px-4 py-3 text-center text-[10px] font-black text-blue-600 uppercase tracking-wider" colspan="3">Grade 10</th>
+                                <th class="px-4 py-3 text-center text-[10px] font-black text-indigo-600 uppercase tracking-wider" colspan="3">Grade 11</th>
+                                <th class="px-4 py-3 text-center text-[10px] font-black text-emerald-600 uppercase tracking-wider" colspan="3">Total Enrolled</th>
+                            </tr>
+                            <tr class="bg-slate-100/60 text-[10px] font-bold text-slate-500 border-t border-slate-200">
+                                <th colspan="2"></th>
+                                <th class="px-2 py-1 text-center text-blue-600">Male</th>
+                                <th class="px-2 py-1 text-center text-pink-600">Female</th>
+                                <th class="px-2 py-1 text-center font-black text-slate-700">Total</th>
+                                <th class="px-2 py-1 text-center text-blue-600">Male</th>
+                                <th class="px-2 py-1 text-center text-pink-600">Female</th>
+                                <th class="px-2 py-1 text-center font-black text-slate-700">Total</th>
+                                <th class="px-2 py-1 text-center text-blue-600">Male</th>
+                                <th class="px-2 py-1 text-center text-pink-600">Female</th>
+                                <th class="px-2 py-1 text-center font-black text-emerald-700">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-slate-100">
+                            @foreach($schoolSubjects['ol_subjects'] as $idx => $s)
+                                <tr class="{{ $idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/50' }} hover:bg-blue-50/30 transition-colors">
+                                    <td class="px-6 py-3 text-xs font-bold text-slate-400">{{ $idx + 1 }}</td>
+                                    <td class="px-6 py-3">
+                                        <div class="font-bold text-slate-900 text-sm">{{ $s['subject_en'] }}</div>
+                                        <div class="text-xs text-slate-500 font-medium">{{ $s['subject'] }}</div>
+                                    </td>
+                                    <td class="px-2 py-3 text-center text-xs font-semibold text-blue-600">{{ $s['grade_10']['male'] }}</td>
+                                    <td class="px-2 py-3 text-center text-xs font-semibold text-pink-600">{{ $s['grade_10']['female'] }}</td>
+                                    <td class="px-2 py-3 text-center text-xs font-black text-slate-800 bg-blue-50/40">{{ $s['grade_10']['total'] }}</td>
+                                    <td class="px-2 py-3 text-center text-xs font-semibold text-blue-600">{{ $s['grade_11']['male'] }}</td>
+                                    <td class="px-2 py-3 text-center text-xs font-semibold text-pink-600">{{ $s['grade_11']['female'] }}</td>
+                                    <td class="px-2 py-3 text-center text-xs font-black text-slate-800 bg-indigo-50/40">{{ $s['grade_11']['total'] }}</td>
+                                    <td class="px-2 py-3 text-center text-xs font-semibold text-blue-600">{{ $s['all']['male'] }}</td>
+                                    <td class="px-2 py-3 text-center text-xs font-semibold text-pink-600">{{ $s['all']['female'] }}</td>
+                                    <td class="px-2 py-3 text-center">
+                                        <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 font-black rounded-lg text-xs border border-emerald-200">
+                                            {{ $s['all']['total'] }}
+                                        </span>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            @else
+                <div class="p-12 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-slate-100 rounded-full flex items-center justify-center text-slate-400">
+                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    </div>
+                    <h4 class="text-base font-bold text-slate-700">No O/L Optional Subjects Recorded</h4>
+                    <p class="text-sm text-slate-500 max-w-md mx-auto mt-1">This school is categorized as a primary or junior school without Grades 10–11 basket subject offerings in the census.</p>
+                </div>
+            @endif
+        </div>
+
+        {{-- TAB 3: A/L Subjects & Streams (Grades 12 & 13) --}}
+        <div x-show="studentTab === 'al'" style="display: none;">
+            @if(!empty($schoolSubjects['al_streams']) || !empty($schoolSubjects['al_subjects']))
+                {{-- Stream Distribution Cards --}}
+                @if(!empty($schoolSubjects['al_streams']))
+                    <div class="p-6 bg-slate-50 border-b border-slate-100">
+                        <h4 class="text-xs font-black text-slate-500 uppercase tracking-wider mb-3">Collegiate Academic Streams (ධාරා)</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+                            @foreach($schoolSubjects['al_streams'] as $st)
+                                <div class="bg-white rounded-xl p-4 border border-purple-200 shadow-sm hover:shadow-md transition-shadow">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-xs font-bold text-purple-700 uppercase tracking-wider">{{ $st['stream_en'] }}</span>
+                                        <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-purple-100 text-purple-800">{{ $st['all']['total'] }} Students</span>
+                                    </div>
+                                    <p class="text-sm font-semibold text-slate-800 mt-1">{{ $st['stream'] }}</p>
+                                    <div class="mt-3 pt-3 border-t border-slate-100 grid grid-cols-2 gap-2 text-xs">
+                                        <div class="bg-slate-50 rounded-lg p-2 text-center">
+                                            <span class="text-[10px] text-slate-400 block font-bold">Grade 12</span>
+                                            <span class="font-bold text-slate-700">{{ $st['grade_12']['total'] }}</span>
+                                            <span class="text-[10px] text-slate-400 block">({{ $st['grade_12']['male'] }}M / {{ $st['grade_12']['female'] }}F)</span>
+                                        </div>
+                                        <div class="bg-slate-50 rounded-lg p-2 text-center">
+                                            <span class="text-[10px] text-slate-400 block font-bold">Grade 13</span>
+                                            <span class="font-bold text-slate-700">{{ $st['grade_13']['total'] }}</span>
+                                            <span class="text-[10px] text-slate-400 block">({{ $st['grade_13']['male'] }}M / {{ $st['grade_13']['female'] }}F)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                @endif
+
+                {{-- Collegiate Subjects Table --}}
+                @if(!empty($schoolSubjects['al_subjects']))
+                    <div class="overflow-x-auto">
+                        <table class="zems-table min-w-full divide-y divide-slate-200">
+                            <thead class="bg-slate-50">
+                                <tr class="zems-table-header-row">
+                                    <th class="px-6 py-3 text-left text-[10px] font-black text-slate-500 uppercase tracking-wider">#</th>
+                                    <th class="px-6 py-3 text-left text-[10px] font-black text-slate-500 uppercase tracking-wider">A/L Subject Name (විෂය)</th>
+                                    <th class="px-4 py-3 text-center text-[10px] font-black text-blue-600 uppercase tracking-wider" colspan="3">Grade 12</th>
+                                    <th class="px-4 py-3 text-center text-[10px] font-black text-indigo-600 uppercase tracking-wider" colspan="3">Grade 13</th>
+                                    <th class="px-4 py-3 text-center text-[10px] font-black text-purple-600 uppercase tracking-wider" colspan="3">Total Enrolled</th>
+                                </tr>
+                                <tr class="bg-slate-100/60 text-[10px] font-bold text-slate-500 border-t border-slate-200">
+                                    <th colspan="2"></th>
+                                    <th class="px-2 py-1 text-center text-blue-600">Male</th>
+                                    <th class="px-2 py-1 text-center text-pink-600">Female</th>
+                                    <th class="px-2 py-1 text-center font-black text-slate-700">Total</th>
+                                    <th class="px-2 py-1 text-center text-blue-600">Male</th>
+                                    <th class="px-2 py-1 text-center text-pink-600">Female</th>
+                                    <th class="px-2 py-1 text-center font-black text-slate-700">Total</th>
+                                    <th class="px-2 py-1 text-center text-blue-600">Male</th>
+                                    <th class="px-2 py-1 text-center text-pink-600">Female</th>
+                                    <th class="px-2 py-1 text-center font-black text-purple-700">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-slate-100">
+                                @foreach($schoolSubjects['al_subjects'] as $idx => $s)
+                                    <tr class="{{ $idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/50' }} hover:bg-purple-50/30 transition-colors">
+                                        <td class="px-6 py-3 text-xs font-bold text-slate-400">{{ $idx + 1 }}</td>
+                                        <td class="px-6 py-3">
+                                            <div class="font-bold text-slate-900 text-sm">{{ $s['subject_en'] }}</div>
+                                            <div class="text-xs text-slate-500 font-medium">{{ $s['subject'] }}</div>
+                                        </td>
+                                        <td class="px-2 py-3 text-center text-xs font-semibold text-blue-600">{{ $s['grade_12']['male'] }}</td>
+                                        <td class="px-2 py-3 text-center text-xs font-semibold text-pink-600">{{ $s['grade_12']['female'] }}</td>
+                                        <td class="px-2 py-3 text-center text-xs font-black text-slate-800 bg-blue-50/40">{{ $s['grade_12']['total'] }}</td>
+                                        <td class="px-2 py-3 text-center text-xs font-semibold text-blue-600">{{ $s['grade_13']['male'] }}</td>
+                                        <td class="px-2 py-3 text-center text-xs font-semibold text-pink-600">{{ $s['grade_13']['female'] }}</td>
+                                        <td class="px-2 py-3 text-center text-xs font-black text-slate-800 bg-indigo-50/40">{{ $s['grade_13']['total'] }}</td>
+                                        <td class="px-2 py-3 text-center text-xs font-semibold text-blue-600">{{ $s['all']['male'] }}</td>
+                                        <td class="px-2 py-3 text-center text-xs font-semibold text-pink-600">{{ $s['all']['female'] }}</td>
+                                        <td class="px-2 py-3 text-center">
+                                            <span class="px-2.5 py-1 bg-purple-50 text-purple-700 font-black rounded-lg text-xs border border-purple-200">
+                                                {{ $s['all']['total'] }}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                @endif
+            @else
+                <div class="p-12 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-slate-100 rounded-full flex items-center justify-center text-slate-400">
+                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                    </div>
+                    <h4 class="text-base font-bold text-slate-700">No G.C.E. A/L Streams Offered</h4>
+                    <p class="text-sm text-slate-500 max-w-md mx-auto mt-1">This school does not offer collegiate classes (Grades 12 & 13 1AB / 1C streams).</p>
+                </div>
+            @endif
         </div>
     </div>
 
@@ -735,6 +976,7 @@
 
     function schoolProfile() {
         return {
+            studentTab: 'grades',
             isEditingStudents: false,
             // Grades strictly 1 to 13 as requested by user
             grades: [
