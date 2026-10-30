@@ -28,7 +28,7 @@ class DashboardController extends Controller
     {
         $teacherCount = Teacher::count();
         $schoolCount = School::count();
-        $subjectCount = Subject::count();
+        $subjectCount = count(\App\Services\TeacherOptions::codes() ?: []);
 
         $year = date('Y');
         $studentAgg = StudentCount::where('academicYear', $year)
@@ -44,7 +44,7 @@ class DashboardController extends Controller
     private function schoolDashboard()
     {
         $user = Auth::user();
-        $school = School::with(['teachers.subjects.subject', 'studentCounts' => function ($q) {
+        $school = School::with(['teachers', 'studentCounts' => function ($q) {
             $q->where('academicYear', date('Y'))->orderByRaw("CAST(SUBSTRING(grade, 7) AS UNSIGNED) ASC");
         }])->find($user->schoolId);
 
@@ -58,7 +58,7 @@ class DashboardController extends Controller
     private function teacherDashboard()
     {
         $user = Auth::user();
-        $teacher = Teacher::with(['school', 'spouseSchool', 'subjects.subject'])
+        $teacher = Teacher::with(['school'])
             ->where('userId', $user->id)
             ->first();
 

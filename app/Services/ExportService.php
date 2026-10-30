@@ -60,12 +60,9 @@ class ExportService
             'Teacher Census No',
             'Salutation / Title',
             'Full Name',
-            'Name with Initials',
             'NIC Number',
             'Paysheet Number',
             'Personal File Number',
-            'System File Number',
-            'Salary Number',
             'Date of Birth',
             'Age (Years)',
             'Gender',
@@ -87,13 +84,6 @@ class ExportService
             'Professional Qualification',
             'Professional Qualification (Other)',
             'All Professional Qualifications',
-            'Undergraduate Degrees',
-            'Undergraduate Degrees (Other)',
-            'Postgraduate Diplomas',
-            'Postgraduate Diplomas (Other)',
-            'Postgraduate Degrees',
-            'Postgraduate Degrees (Other)',
-            'Additional Teaching Qualifications',
             'Service Sector',
             'First Appointment Date',
             'First Appointment Class / Grade',
@@ -105,10 +95,7 @@ class ExportService
             'Appointment Section',
             'Appointment Category',
             'Appointment Subject Code',
-            'Appointment Subject Name',
             'Appointment Medium',
-            'Nature of Appointment',
-            'Training Status',
             'Main Duty',
             'Main Duty (Other)',
             'Second Duty',
@@ -136,19 +123,9 @@ class ExportService
             'Attached Institution Name',
             'Attached Days Per Week',
             'Current Position / Designation',
-            'Service Grade',
-            'Service Grade Appointed Date',
             'Salary Paying Authority',
             'Service Based',
             'Salary Source / Budget Head',
-            'Salary Paying School',
-            'Spouse is Teacher in Wilgamuwa',
-            'Spouse Name with Initials',
-            'Spouse NIC',
-            'Spouse School Name',
-            'Past Service Details',
-            'Is Locked By Zonal Admin',
-            'Is Locked By School Admin',
             'Record Created At',
             'Record Last Updated At'
         ];
@@ -187,7 +164,6 @@ class ExportService
 
         return self::streamCsv($filename, $headers, $teachers, function (Teacher $t) use ($formatArray, $formatDate) {
             $school = $t->school;
-            $spouseSchool = $t->spouseSchool;
 
             // Age and Retirement calculations
             $dob = null;
@@ -206,7 +182,7 @@ class ExportService
             }
 
             // Years at school calculation
-            $schoolApptDate = $t->schappoint ?? $t->joinedCurrentSchoolDate;
+            $schoolApptDate = $t->schappoint;
             $yearsAtSchool = '';
             if ($schoolApptDate) {
                 try {
@@ -232,12 +208,9 @@ class ExportService
                 $t->census_no ?? '',
                 $t->title ?? '',
                 $t->fullName ?? '',
-                $t->nameWithInitials ?? '',
                 $t->nic ?? '',
                 $t->paysheet ?? '',
                 $t->personal_file_no ?? '',
-                $t->fileNumber ?? '',
-                $t->salaryNumber ?? '',
                 $formatDate($t->dateOfBirth),
                 $age,
                 $t->gender ?? '',
@@ -259,13 +232,6 @@ class ExportService
                 $t->profqua ?? '',
                 $t->profqua_other ?? '',
                 $t->profall ?? '',
-                $formatArray($t->undergraduateDegrees),
-                $t->undergraduateDegreesOther ?? '',
-                $formatArray($t->postgraduateDiplomas),
-                $t->postgraduateDiplomasOther ?? '',
-                $formatArray($t->postgraduateDegrees),
-                $t->postgraduateDegreesOther ?? '',
-                $formatArray($t->additionalTeachingQualifications),
                 $t->service ?? '',
                 $formatDate($t->firstappoint),
                 $t->class_grade ?? '',
@@ -277,10 +243,7 @@ class ExportService
                 $t->appt_section ?? '',
                 $t->appt_category ?? '',
                 $t->appt_code ?? '',
-                $t->appointmentSubject ?? '',
-                $t->appt_medium ?: $t->appointmentMedium ?: '',
-                $t->appointmentType ?: $t->natureOfAppointment ?: '',
-                $t->trainingStatus ?? '',
+                $t->appt_medium ?? '',
                 $t->mainduty ?? '',
                 $t->mainduty_other ?? '',
                 $t->secondduty ?? '',
@@ -307,20 +270,10 @@ class ExportService
                 $t->otherschool_census ?? '',
                 $attachedInstName,
                 $t->otherschool_days ?? '',
-                $t->position ?: $t->currentPosition ?: '',
-                $t->serviceGrade ?? '',
-                $formatDate($t->serviceGradeAppointedDate),
+                $t->position ?? '',
                 $t->salaryby ?? '',
                 $t->servicebased ?? '',
                 $t->salarysource ?? '',
-                $t->salaryPayingSchool ?? '',
-                $t->spouseIsTeacherInWilgamuwa ? 'Yes' : 'No',
-                $t->spouseNameWithInitials ?? '',
-                $t->spouseNic ?? '',
-                $spouseSchool->name ?? '',
-                $formatArray($t->pastServiceDetails),
-                $t->isLockedByZonal ? 'Yes' : 'No',
-                $t->isLockedBySchool ? 'Yes' : 'No',
                 $formatDate($t->createdAt),
                 $formatDate($t->updatedAt)
             ];

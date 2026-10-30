@@ -29,7 +29,7 @@
         },
         selectTeacher(teacher) {
             this.selectedTeacherId = teacher.id;
-            this.selectedTeacherName = teacher.nameWithInitials;
+            this.selectedTeacherName = teacher.fullName || teacher.nameWithInitials;
             this.selectedSchoolName = teacher.school ? teacher.school.name : 'Unassigned';
             this.query = teacher.nic;
             this.isOpen = false;
@@ -121,7 +121,7 @@
                             <button type="button" 
                                 @click="selectTeacher(teacher)"
                                 class="w-full text-left px-4 py-3 hover:bg-slate-50 border-b border-slate-100 last:border-0 transition-colors focus:bg-slate-50">
-                                <div class="font-medium text-slate-900" x-text="teacher.nameWithInitials"></div>
+                                <div class="font-medium text-slate-900" x-text="teacher.fullName || teacher.nameWithInitials"></div>
                                 <div class="text-xs text-slate-500 mt-0.5 flex gap-2">
                                     <span x-text="'NIC: ' + teacher.nic"></span>
                                     <span>•</span>

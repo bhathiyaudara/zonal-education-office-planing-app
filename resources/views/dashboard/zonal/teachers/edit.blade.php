@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Edit Teacher - ' . $teacher->nameWithInitials)
+@section('title', 'Edit Teacher - ' . ($teacher->fullName ?: $teacher->nameWithInitials))
 
 @section('content')
 <div class="space-y-6 animate-fade-in max-w-5xl mx-auto">
@@ -17,7 +17,7 @@
                 </div>
                 <div>
                     <h1 class="zems-header-title">Edit Teacher Profile</h1>
-                    <p class="zems-header-subtitle">{{ $teacher->fullName ?: $teacher->nameWithInitials }} (NIC: {{ $teacher->nic }})</p>
+                    <p class="zems-header-subtitle">{{ $teacher->fullName }} (NIC: {{ $teacher->nic }})</p>
                 </div>
             </div>
             <div class="flex items-center gap-2">

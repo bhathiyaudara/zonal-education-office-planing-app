@@ -27,8 +27,7 @@ class SchoolController extends Controller
     public function show(string $id)
     {
         $school = School::with([
-            'teachers' => fn($q) => $q->orderBy('nameWithInitials'),
-            'teachers.subjects.subject',
+            'teachers' => fn($q) => $q->orderBy('fullName'),
             'studentCounts' => fn($q) => $q->where('academicYear', date('Y'))->orderBy('grade'),
             'buildings' => fn($q) => $q->orderBy('buildingName'),
             'sanitation',

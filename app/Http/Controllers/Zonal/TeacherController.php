@@ -18,8 +18,8 @@ class TeacherController extends Controller
 {
     public function index(Request $request)
     {
-        $teachers = Teacher::with(['school', 'subjects.subject'])
-            ->orderBy('nameWithInitials')
+        $teachers = Teacher::with(['school'])
+            ->orderBy('fullName')
             ->get();
 
         $schools = School::where('isActive', true)->orderBy('name')->get(['id', 'name', 'censusNo', 'eduDivision']);
@@ -182,7 +182,7 @@ class TeacherController extends Controller
         // Create User account
         $userEmail = $request->input('email') ?: ($nic . '@wilgamuwa.com');
         $user = User::create([
-            'name' => $nameWithInitials,
+            'name' => $fullName ?: $nameWithInitials,
             'email' => $userEmail,
             'password' => Hash::make('password123'),
             'role' => $targetRole,
@@ -200,7 +200,6 @@ class TeacherController extends Controller
             'paysheet' => $request->input('paysheet'),
             'title' => $request->input('title'),
             'personal_file_no' => $request->input('personal_file_no'),
-            'nameWithInitials' => $nameWithInitials,
             'fullName' => $fullName,
             'dateOfBirth' => $request->input('date_of_birth'),
             'gender' => $request->input('gender'),
@@ -259,15 +258,6 @@ class TeacherController extends Controller
             'salaryby' => $request->input('salaryby'),
             'servicebased' => $request->input('servicebased'),
             'salarysource' => $request->input('salarysource'),
-            'appointmentDate' => $request->input('firstappoint'),
-            'appointmentType' => $request->input('service'),
-            'appointmentMedium' => $request->input('appt_medium'),
-            'serviceGrade' => $request->input('class') ?: $request->input('class_grade'),
-            'serviceGradeAppointedDate' => $request->input('clsappoint'),
-            'currentPosition' => $request->input('position'),
-            'joinedCurrentSchoolDate' => $request->input('schappoint'),
-            'fileNumber' => $request->input('personal_file_no'),
-            'salaryNumber' => $request->input('paysheet'),
             'form_data' => $allInputs,
             'createdByUserId' => auth()->id(),
             'updatedByUserId' => auth()->id(),
@@ -309,7 +299,7 @@ class TeacherController extends Controller
 
     public function show(string $id)
     {
-        $teacher = Teacher::with(['school', 'otherSchool', 'spouseSchool', 'subjects.subject', 'user'])
+        $teacher = Teacher::with(['school', 'otherSchool', 'user'])
             ->findOrFail($id);
         $schools = School::where('isActive', true)->orderBy('name')->get();
         $options = TeacherOptions::all();
@@ -319,7 +309,7 @@ class TeacherController extends Controller
 
     public function edit(string $id)
     {
-        $teacher = Teacher::with(['school', 'otherSchool', 'spouseSchool', 'subjects.subject', 'user'])
+        $teacher = Teacher::with(['school', 'otherSchool', 'user'])
             ->findOrFail($id);
         $schools = School::where('isActive', true)->orderBy('name')->get();
         $options = TeacherOptions::all();
@@ -373,7 +363,6 @@ class TeacherController extends Controller
             'paysheet' => $request->input('paysheet'),
             'title' => $request->input('title'),
             'personal_file_no' => $request->input('personal_file_no'),
-            'nameWithInitials' => $nameWithInitials,
             'fullName' => $fullName,
             'dateOfBirth' => $request->input('date_of_birth') ?: $teacher->dateOfBirth,
             'gender' => $request->input('gender'),
@@ -432,15 +421,6 @@ class TeacherController extends Controller
             'salaryby' => $request->input('salaryby'),
             'servicebased' => $request->input('servicebased'),
             'salarysource' => $request->input('salarysource'),
-            'appointmentDate' => $request->input('firstappoint') ?: $teacher->appointmentDate,
-            'appointmentType' => $request->input('service') ?: $teacher->appointmentType,
-            'appointmentMedium' => $request->input('appt_medium') ?: $teacher->appointmentMedium,
-            'serviceGrade' => ($request->input('class') ?: $request->input('class_grade')) ?: $teacher->serviceGrade,
-            'serviceGradeAppointedDate' => $request->input('clsappoint') ?: $teacher->serviceGradeAppointedDate,
-            'currentPosition' => $request->input('position') ?: $teacher->currentPosition,
-            'joinedCurrentSchoolDate' => $request->input('schappoint') ?: $teacher->joinedCurrentSchoolDate,
-            'fileNumber' => $request->input('personal_file_no') ?: $teacher->fileNumber,
-            'salaryNumber' => $request->input('paysheet') ?: $teacher->salaryNumber,
             'form_data' => array_merge((array)$teacher->form_data, $allInputs),
             'updatedByUserId' => auth()->id(),
         ];
@@ -453,7 +433,7 @@ class TeacherController extends Controller
         if ($teacher->userId) {
             $user = User::find($teacher->userId);
             if ($user) {
-                $user->name = $teacher->nameWithInitials;
+                $user->name = $teacher->fullName ?: $teacher->nameWithInitials;
                 if (!empty($updateData['email'])) {
                     $user->email = $updateData['email'];
                 }
@@ -558,7 +538,6 @@ class TeacherController extends Controller
         }
 
         $teachers = Teacher::with('school')->where('nic', 'like', "%{$query}%")
-            ->orWhere('nameWithInitials', 'like', "%{$query}%")
             ->orWhere('fullName', 'like', "%{$query}%")
             ->limit(8)
             ->get();
@@ -571,7 +550,7 @@ class TeacherController extends Controller
      */
     public function export(Request $request)
     {
-        $query = Teacher::with(['school', 'spouseSchool', 'subjects.subject'])
+        $query = Teacher::with(['school'])
             ->leftJoin('school', 'teacher.schoolId', '=', 'school.id')
             ->select('teacher.*');
 
@@ -601,32 +580,21 @@ class TeacherController extends Controller
                     $query->where(function ($q) {
                         $q->where('teacher.position', 'like', '1 - Principal%')
                           ->orWhere('teacher.position', 'like', '2 - Acting Principal%')
-                          ->orWhere('teacher.currentPosition', 'like', '1 - Principal%')
-                          ->orWhere('teacher.currentPosition', 'like', '2 - Acting Principal%')
                           ->orWhere('teacher.service', 'like', '%Principal%');
                     });
                 } else {
-                    $query->where(function ($q) use ($pos) {
-                        $q->where('teacher.position', 'like', "%{$pos}%")
-                          ->orWhere('teacher.currentPosition', 'like', "%{$pos}%");
-                    });
+                    $query->where('teacher.position', 'like', "%{$pos}%");
                 }
             }
 
             // 4. Service
             if ($svc = $request->get('service')) {
-                $query->where(function ($q) use ($svc) {
-                    $q->where('teacher.service', 'like', "%{$svc}%")
-                      ->orWhere('teacher.appointmentType', 'like', "%{$svc}%");
-                });
+                $query->where('teacher.service', 'like', "%{$svc}%");
             }
 
             // 5. Grade / Class
             if ($grd = $request->get('grade')) {
-                $query->where(function ($q) use ($grd) {
-                    $q->where('teacher.serviceGrade', 'like', "%{$grd}%")
-                      ->orWhere('teacher.class_grade', 'like', "%{$grd}%");
-                });
+                $query->where('teacher.class_grade', 'like', "%{$grd}%");
             }
 
             // 6. Retirement Timeline
@@ -652,10 +620,7 @@ class TeacherController extends Controller
 
             // 7. Appointment Subject
             if ($apptSubj = $request->get('appt_subject') ?: $request->get('appointment_subject')) {
-                $query->where(function ($q) use ($apptSubj) {
-                    $q->where('teacher.appt_code', 'like', "%{$apptSubj}%")
-                      ->orWhere('teacher.appointmentSubject', 'like', "%{$apptSubj}%");
-                });
+                $query->where('teacher.appt_code', 'like', "%{$apptSubj}%");
             }
 
             // 8. Teaching Subject
@@ -667,21 +632,9 @@ class TeacherController extends Controller
             if ($schoolSvc = $request->get('school_service')) {
                 $cutoff = now()->subYears(8)->format('Y-m-d');
                 if ($schoolSvc === '8_plus' || $schoolSvc === 'ge8') {
-                    $query->where(function ($q) use ($cutoff) {
-                        $q->where(function ($sub) use ($cutoff) {
-                            $sub->whereNotNull('teacher.schappoint')->where('teacher.schappoint', '<=', $cutoff);
-                        })->orWhere(function ($sub) use ($cutoff) {
-                            $sub->whereNull('teacher.schappoint')->whereNotNull('teacher.joinedCurrentSchoolDate')->where('teacher.joinedCurrentSchoolDate', '<=', $cutoff);
-                        });
-                    });
+                    $query->whereNotNull('teacher.schappoint')->where('teacher.schappoint', '<=', $cutoff);
                 } elseif ($schoolSvc === 'under_8' || $schoolSvc === 'lt8') {
-                    $query->where(function ($q) use ($cutoff) {
-                        $q->where(function ($sub) use ($cutoff) {
-                            $sub->whereNotNull('teacher.schappoint')->where('teacher.schappoint', '>', $cutoff);
-                        })->orWhere(function ($sub) use ($cutoff) {
-                            $sub->whereNull('teacher.schappoint')->whereNotNull('teacher.joinedCurrentSchoolDate')->where('teacher.joinedCurrentSchoolDate', '>', $cutoff);
-                        });
-                    });
+                    $query->whereNotNull('teacher.schappoint')->where('teacher.schappoint', '>', $cutoff);
                 }
             }
 
@@ -692,10 +645,7 @@ class TeacherController extends Controller
 
             // 11. Medium
             if ($med = $request->get('medium')) {
-                $query->where(function ($q) use ($med) {
-                    $q->where('teacher.appt_medium', 'like', "%{$med}%")
-                      ->orWhere('teacher.appointmentMedium', 'like', "%{$med}%");
-                });
+                $query->where('teacher.appt_medium', 'like', "%{$med}%");
             }
 
             // 12. Attachment
@@ -733,12 +683,10 @@ class TeacherController extends Controller
             if ($search = trim($request->get('search', ''))) {
                 $query->where(function ($q) use ($search) {
                     $q->where('teacher.fullName', 'like', "%{$search}%")
-                      ->orWhere('teacher.nameWithInitials', 'like', "%{$search}%")
                       ->orWhere('teacher.nic', 'like', "%{$search}%")
                       ->orWhere('teacher.phone', 'like', "%{$search}%")
                       ->orWhere('teacher.whatsapp', 'like', "%{$search}%")
                       ->orWhere('teacher.personal_file_no', 'like', "%{$search}%")
-                      ->orWhere('teacher.fileNumber', 'like', "%{$search}%")
                       ->orWhere('teacher.paysheet', 'like', "%{$search}%")
                       ->orWhere('teacher.email', 'like', "%{$search}%")
                       ->orWhere('school.name', 'like', "%{$search}%")
@@ -747,7 +695,7 @@ class TeacherController extends Controller
             }
         }
 
-        $teachers = $query->orderBy('school.name')->orderBy('teacher.nameWithInitials')->get();
+        $teachers = $query->orderBy('school.name')->orderBy('teacher.fullName')->get();
 
         $filename = 'Wilgamuwa_Teachers_Export_' . date('Y_m_d_His') . '.csv';
         return ExportService::exportTeachers($teachers, $filename);

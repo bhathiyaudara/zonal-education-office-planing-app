@@ -142,9 +142,9 @@
                 <tbody>
                     @forelse($school->teachers as $teacher)
                     <tr class="zems-table-row">
-                        <td class="zems-table-td font-bold text-slate-900">{{ $teacher->nameWithInitials }}</td>
+                        <td class="zems-table-td font-bold text-slate-900">{{ $teacher->fullName ?: $teacher->nameWithInitials }}</td>
                         <td class="zems-table-td font-semibold text-slate-600">{{ $teacher->nic }}</td>
-                        <td class="zems-table-td text-slate-600">{{ $teacher->appointmentSubject ?: '-' }}</td>
+                        <td class="zems-table-td text-slate-600">{{ $teacher->appt_code ?: '-' }}</td>
                         <td class="zems-table-td text-slate-600">{{ $teacher->phone ?: '-' }}</td>
                     </tr>
                     @empty

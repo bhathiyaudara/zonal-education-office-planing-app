@@ -65,21 +65,6 @@ class TeacherFilterTest extends TestCase
             $table->timestamp('updatedAt')->nullable();
         });
 
-        Schema::create('subject', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->string('name');
-            $table->string('code')->nullable();
-            $table->timestamp('createdAt')->nullable();
-            $table->timestamp('updatedAt')->nullable();
-        });
-
-        Schema::create('teachersubject', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->string('teacherId');
-            $table->string('subjectId');
-            $table->timestamp('createdAt')->nullable();
-            $table->timestamp('updatedAt')->nullable();
-        });
 
         $this->school = School::create([
             'id' => 'sch-wilgamuwa',
@@ -155,7 +140,7 @@ class TeacherFilterTest extends TestCase
         $response->assertSee('id="chip-service_8_plus"', false);
 
         // 6. Verify row attributes for T1 (10 years) and T2 (3 years)
-        $response->assertSee('data-appointment-subject="231 - english 231 - english"', false);
+        $response->assertSee('data-appointment-subject="231 - english"', false);
         $response->assertSee('data-teaching-subject="232 - maths"', false);
         $response->assertSee('data-years-at-school="10"', false);
         $response->assertSee('data-years-at-school="3"', false);

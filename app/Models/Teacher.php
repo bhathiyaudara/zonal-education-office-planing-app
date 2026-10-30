@@ -16,7 +16,7 @@ class Teacher extends Model
 
     protected $fillable = [
         'id', 'userId', 'schoolId', 'census_no', 'nic', 'paysheet', 'title',
-        'personal_file_no', 'nameWithInitials', 'fullName',
+        'personal_file_no', 'fullName',
         'dateOfBirth', 'gender', 'ethnicity', 'ethnicity_other', 'religion',
         'religion_other', 'address', 'phone', 'whatsapp', 'email',
         'maritalStatus', 'marital_other', 'eduqua', 'subject_stream',
@@ -30,15 +30,7 @@ class Teacher extends Model
         'able1_code', 'able1_medium', 'able2_section', 'able2_category',
         'able2_code', 'able2_medium', 'otherschool', 'otherschool_census',
         'otherschool_days', 'position', 'salaryby', 'servicebased',
-        'salarysource', 'spouseIsTeacherInWilgamuwa', 'spouseNameWithInitials',
-        'spouseNic', 'spouseSchoolId', 'appointmentDate', 'appointmentType',
-        'appointmentMedium', 'serviceGrade', 'serviceGradeAppointedDate',
-        'currentPosition', 'joinedCurrentSchoolDate', 'isLockedByZonal',
-        'isLockedBySchool', 'fileNumber', 'salaryNumber', 'appointmentSubject',
-        'trainingStatus', 'natureOfAppointment', 'salaryPayingSchool',
-        'undergraduateDegrees', 'undergraduateDegreesOther', 'postgraduateDiplomas',
-        'postgraduateDiplomasOther', 'postgraduateDegrees', 'postgraduateDegreesOther',
-        'additionalTeachingQualifications', 'pastServiceDetails', 'appointmentLetterUrl',
+        'salarysource',
         'form_data', 'createdByUserId', 'updatedByUserId',
     ];
 
@@ -47,17 +39,6 @@ class Teacher extends Model
         'firstappoint' => 'datetime',
         'clsappoint' => 'datetime',
         'schappoint' => 'datetime',
-        'appointmentDate' => 'datetime',
-        'serviceGradeAppointedDate' => 'datetime',
-        'joinedCurrentSchoolDate' => 'datetime',
-        'spouseIsTeacherInWilgamuwa' => 'boolean',
-        'isLockedByZonal' => 'boolean',
-        'isLockedBySchool' => 'boolean',
-        'undergraduateDegrees' => 'array',
-        'postgraduateDiplomas' => 'array',
-        'postgraduateDegrees' => 'array',
-        'additionalTeachingQualifications' => 'array',
-        'pastServiceDetails' => 'array',
         'form_data' => 'array',
     ];
 
@@ -87,11 +68,6 @@ class Teacher extends Model
         return $value;
     }
 
-    public function spouseSchool()
-    {
-        return $this->belongsTo(School::class, 'spouseSchoolId');
-    }
-
     public function user()
     {
         return $this->belongsTo(User::class, 'userId');
@@ -107,24 +83,137 @@ class Teacher extends Model
         return $this->belongsTo(User::class, 'updatedByUserId');
     }
 
-    public function subjects()
+    // Compatibility accessors for legacy code / views
+    public function getNameWithInitialsAttribute(): ?string
     {
-        return $this->hasMany(TeacherSubject::class, 'teacherId');
+        return $this->fullName;
     }
 
-    public function subjectNames()
+    public function setNameWithInitialsAttribute($val): void
     {
-        return $this->hasManyThrough(Subject::class, TeacherSubject::class, 'teacherId', 'id', 'id', 'subjectId');
+        if (!empty($val) && empty($this->fullName)) {
+            $this->attributes['fullName'] = $val;
+        }
     }
 
-    public function editRequests()
+    public function getCurrentPositionAttribute(): ?string
     {
-        return $this->hasMany(ProfileEditRequest::class, 'teacherId');
+        return $this->position;
     }
 
-    public function salaryRequests()
+    public function setCurrentPositionAttribute($val): void
     {
-        return $this->hasMany(SalaryRequest::class, 'teacherId');
+        if (!empty($val) && empty($this->position)) {
+            $this->attributes['position'] = $val;
+        }
+    }
+
+    public function getAppointmentDateAttribute()
+    {
+        return $this->firstappoint;
+    }
+
+    public function setAppointmentDateAttribute($val): void
+    {
+        if (!empty($val) && empty($this->firstappoint)) {
+            $this->attributes['firstappoint'] = $val;
+        }
+    }
+
+    public function getServiceGradeAttribute(): ?string
+    {
+        return $this->class_grade;
+    }
+
+    public function setServiceGradeAttribute($val): void
+    {
+        if (!empty($val) && empty($this->class_grade)) {
+            $this->attributes['class_grade'] = $val;
+        }
+    }
+
+    public function getServiceGradeAppointedDateAttribute()
+    {
+        return $this->clsappoint;
+    }
+
+    public function setServiceGradeAppointedDateAttribute($val): void
+    {
+        if (!empty($val) && empty($this->clsappoint)) {
+            $this->attributes['clsappoint'] = $val;
+        }
+    }
+
+    public function getJoinedCurrentSchoolDateAttribute()
+    {
+        return $this->schappoint;
+    }
+
+    public function setJoinedCurrentSchoolDateAttribute($val): void
+    {
+        if (!empty($val) && empty($this->schappoint)) {
+            $this->attributes['schappoint'] = $val;
+        }
+    }
+
+    public function getFileNumberAttribute(): ?string
+    {
+        return $this->personal_file_no;
+    }
+
+    public function setFileNumberAttribute($val): void
+    {
+        if (!empty($val) && empty($this->personal_file_no)) {
+            $this->attributes['personal_file_no'] = $val;
+        }
+    }
+
+    public function getSalaryNumberAttribute(): ?string
+    {
+        return $this->paysheet;
+    }
+
+    public function setSalaryNumberAttribute($val): void
+    {
+        if (!empty($val) && empty($this->paysheet)) {
+            $this->attributes['paysheet'] = $val;
+        }
+    }
+
+    public function getAppointmentMediumAttribute(): ?string
+    {
+        return $this->appt_medium;
+    }
+
+    public function setAppointmentMediumAttribute($val): void
+    {
+        if (!empty($val) && empty($this->appt_medium)) {
+            $this->attributes['appt_medium'] = $val;
+        }
+    }
+
+    public function getAppointmentTypeAttribute(): ?string
+    {
+        return $this->service;
+    }
+
+    public function setAppointmentTypeAttribute($val): void
+    {
+        if (!empty($val) && empty($this->service)) {
+            $this->attributes['service'] = $val;
+        }
+    }
+
+    public function getAppointmentSubjectAttribute(): ?string
+    {
+        return $this->appt_code;
+    }
+
+    public function setAppointmentSubjectAttribute($val): void
+    {
+        if (!empty($val) && empty($this->appt_code)) {
+            $this->attributes['appt_code'] = $val;
+        }
     }
 
     /**
@@ -198,7 +287,7 @@ class Teacher extends Model
 
                 if ($school) {
                     $school->update([
-                        'principalName' => $teacher->nameWithInitials ?: $teacher->fullName,
+                        'principalName' => $teacher->fullName ?: $teacher->nameWithInitials,
                         'principalNic' => $teacher->nic,
                         'principalMobile' => $teacher->phone ?: ($teacher->whatsapp ?: $school->principalMobile),
                     ]);

@@ -46,11 +46,11 @@
     <div class="zems-header">
         <div class="flex items-center gap-6 flex-wrap">
             <div class="w-20 h-20 rounded-2xl bg-white/15 backdrop-blur-sm flex items-center justify-center text-white text-2xl font-black border border-white/20 shadow-lg shrink-0">
-                {{ strtoupper(substr($teacher->nameWithInitials ?: $teacher->fullName, 0, 2)) }}
+                {{ strtoupper(substr($teacher->fullName ?: 'T', 0, 2)) }}
             </div>
             <div>
-                <h1 class="zems-header-title">{{ $teacher->fullName ?: $teacher->nameWithInitials }}</h1>
-                <p class="zems-header-subtitle">{{ $teacher->nameWithInitials }}</p>
+                <h1 class="zems-header-title">{{ $teacher->fullName }}</h1>
+                <p class="zems-header-subtitle">{{ $teacher->fullName }}</p>
                 <div class="flex flex-wrap gap-2.5 mt-3">
                     <span class="zems-badge-secondary bg-white/20 text-white border-white/30 backdrop-blur-sm font-mono">{{ $teacher->nic }}</span>
                     @if($teacher->school)
@@ -94,7 +94,7 @@
                 <h3 class="text-base font-bold text-slate-800">Position & Salary</h3>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6 text-sm">
-                <div><span class="text-slate-400 block text-xs font-semibold">07. Position held in this school</span><span class="font-bold text-slate-800">{{ $teacher->position ?: ($teacher->currentPosition ?: '-') }}</span></div>
+                <div><span class="text-slate-400 block text-xs font-semibold">07. Position held in this school</span><span class="font-bold text-slate-800">{{ $teacher->position ?: '-' }}</span></div>
                 <div><span class="text-slate-400 block text-xs font-semibold">08. Salary paid by</span><span class="font-bold text-slate-800">{{ $teacher->salaryby ?: '-' }}</span></div>
                 <div class="sm:col-span-2"><span class="text-slate-400 block text-xs font-semibold">09. Service base of this school</span><span class="font-medium text-slate-800">{{ $teacher->servicebased ?: '-' }}</span></div>
                 <div class="sm:col-span-2"><span class="text-slate-400 block text-xs font-semibold">10. Source of salary paid</span><span class="font-medium text-slate-800">{{ $teacher->salarysource ?: '-' }}</span></div>
@@ -242,7 +242,7 @@
         paysheet: @json($teacher->paysheet),
         personal_file_no: @json($teacher->personal_file_no),
         title: @json($teacher->title),
-        full_name: @json($teacher->fullName ?: $teacher->nameWithInitials),
+        full_name: @json($teacher->fullName),
         date_of_birth: @json($teacher->dateOfBirth?->format('Y-m-d')),
         mobile: @json($teacher->phone),
         phone: @json($teacher->phone),

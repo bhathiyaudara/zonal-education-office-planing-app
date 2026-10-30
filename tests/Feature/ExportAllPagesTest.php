@@ -54,24 +54,6 @@ class ExportAllPagesTest extends TestCase
             $table->timestamp('updatedAt')->nullable();
         });
 
-        Schema::create('subject', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->string('name');
-            $table->string('code')->nullable();
-            $table->string('category')->nullable();
-            $table->string('medium')->nullable();
-            $table->timestamp('createdAt')->nullable();
-            $table->timestamp('updatedAt')->nullable();
-        });
-
-        Schema::create('teachersubject', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->string('teacherId');
-            $table->string('subjectId');
-            $table->boolean('isMain')->default(false);
-            $table->timestamp('createdAt')->nullable();
-            $table->timestamp('updatedAt')->nullable();
-        });
 
         Schema::create('teacher', function (Blueprint $table) {
             $table->string('id')->primary();
@@ -295,7 +277,7 @@ class ExportAllPagesTest extends TestCase
             'nic' => '199012345678',
             'gender' => 'Male',
             'appointmentSubject' => 'Mathematics',
-            'appt_code' => '013',
+            'appt_code' => '013 - Mathematics',
             't1_code' => '013 - Mathematics',
             'position' => 'Teacher',
             'dateOfBirth' => '1990-03-20',
@@ -310,7 +292,7 @@ class ExportAllPagesTest extends TestCase
         $content = $response->streamedContent();
         $this->assertStringContainsString('Teacher Record ID', $content);
         $this->assertStringContainsString('School Census No', $content);
-        $this->assertStringContainsString('Appointment Subject Name', $content);
+        $this->assertStringContainsString('Appointment Subject Code', $content);
         $this->assertStringContainsString('Teaching Subject 1 Code & Subject', $content);
         $this->assertStringContainsString('Years at Current School', $content);
         $this->assertStringContainsString('Retirement Date (Age 60)', $content);

@@ -114,7 +114,6 @@ class TeacherFormController extends Controller
             'paysheet' => $request->input('paysheet'),
             'title' => $request->input('title'),
             'personal_file_no' => $request->input('personal_file_no'),
-            'nameWithInitials' => $request->input('nameWithInitials') ?: $fullName,
             'fullName' => $fullName,
             'dateOfBirth' => $request->input('date_of_birth'),
             'gender' => $request->input('gender'),
@@ -173,15 +172,6 @@ class TeacherFormController extends Controller
             'salaryby' => $request->input('salaryby'),
             'servicebased' => $request->input('servicebased'),
             'salarysource' => $request->input('salarysource'),
-            'appointmentDate' => $request->input('firstappoint'),
-            'appointmentType' => $request->input('service'),
-            'appointmentMedium' => $request->input('appt_medium'),
-            'serviceGrade' => $request->input('class') ?: $request->input('class_grade'),
-            'serviceGradeAppointedDate' => $request->input('clsappoint'),
-            'currentPosition' => $request->input('position'),
-            'joinedCurrentSchoolDate' => $request->input('schappoint'),
-            'fileNumber' => $request->input('personal_file_no'),
-            'salaryNumber' => $request->input('paysheet'),
             'form_data' => $allInputs,
             'updatedByUserId' => auth()->id() ?? null,
         ];
@@ -230,7 +220,7 @@ class TeacherFormController extends Controller
             Teacher::syncPrincipalToSchool(
                 $school,
                 $request->input('position'),
-                $request->input('nameWithInitials') ?: $fullName,
+                $fullName,
                 $nic,
                 $request->input('mobile') ?: $request->input('phone')
             );

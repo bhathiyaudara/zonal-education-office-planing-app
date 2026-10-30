@@ -47,20 +47,7 @@ class School extends Model
         return $this->hasMany(StudentCount::class, 'schoolId');
     }
 
-    public function subjectStatistics()
-    {
-        return $this->hasMany(SubjectStatistic::class, 'schoolId');
-    }
 
-    public function transfersFrom()
-    {
-        return $this->hasMany(TransferRequest::class, 'fromSchoolId');
-    }
-
-    public function transfersTo()
-    {
-        return $this->hasMany(TransferRequest::class, 'toSchoolId');
-    }
 
     public function buildings()
     {

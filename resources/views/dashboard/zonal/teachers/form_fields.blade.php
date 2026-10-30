@@ -15,11 +15,11 @@
             return $t->form_data[$key];
         }
         // Aliases
-        if ($key === 'full_name') return $t->fullName ?: $t->nameWithInitials;
+        if ($key === 'full_name') return $t->fullName;
         if ($key === 'date_of_birth' && $t->dateOfBirth) return $t->dateOfBirth->format('Y-m-d');
         if ($key === 'mobile') return $t->phone;
         if ($key === 'marital') return $t->maritalStatus;
-        if ($key === 'class') return $t->class_grade ?: $t->serviceGrade;
+        if ($key === 'class') return $t->class_grade;
         if ($key === 'subject') return $t->subject_stream;
         if ($key === 'field') return $t->field_study;
         if ($key === 'field_other') return $t->field_study_other;

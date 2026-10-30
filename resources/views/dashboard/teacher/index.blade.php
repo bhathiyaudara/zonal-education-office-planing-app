@@ -18,18 +18,18 @@
     <div class="zems-card-base p-6">
         <div class="flex items-start gap-6 flex-wrap">
             <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                {{ strtoupper(substr($teacher->nameWithInitials ?? 'T', 0, 2)) }}
+                {{ strtoupper(substr($teacher->fullName ?? 'T', 0, 2)) }}
             </div>
             <div class="flex-1">
                 <h2 class="text-xl font-bold text-slate-900">{{ $teacher->fullName }}</h2>
-                <p class="text-slate-500">{{ $teacher->nameWithInitials }}</p>
+                <p class="text-slate-500">{{ $teacher->fullName }}</p>
                 <div class="flex flex-wrap gap-2 mt-3">
                     <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-700">{{ $teacher->nic }}</span>
                     @if($teacher->school)
                     <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700">{{ $teacher->school->name }}</span>
                     @endif
-                    @if($teacher->appointmentSubject)
-                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-violet-100 text-violet-700">{{ $teacher->appointmentSubject }}</span>
+                    @if($teacher->appt_code)
+                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-violet-100 text-violet-700">{{ $teacher->appt_code }}</span>
                     @endif
                 </div>
             </div>
@@ -81,7 +81,7 @@
                     'Appointment Type' => $teacher->appointmentType ?: '-',
                     'Appointment Date' => $teacher->appointmentDate ? $teacher->appointmentDate->format('Y-m-d') : '-',
                     'Joined School' => $teacher->joinedCurrentSchoolDate ? $teacher->joinedCurrentSchoolDate->format('Y-m-d') : '-',
-                    'Training Status' => $teacher->trainingStatus ?: '-',
+                    
                 ] as $label => $value)
                 <div class="flex justify-between py-2 border-b border-slate-50">
                     <span class="font-semibold text-slate-500">{{ $label }}</span>

@@ -22,18 +22,16 @@ class TeacherController extends Controller
         $school = School::find(auth()->user()->schoolId);
         if (!$school) abort(404, 'No school assigned.');
 
-        $query = Teacher::with(['subjects.subject'])
-            ->where('schoolId', $school->id);
+        $query = Teacher::where('schoolId', $school->id);
 
         if ($search = $request->input('search')) {
             $query->where(function ($q) use ($search) {
-                $q->where('nameWithInitials', 'like', "%{$search}%")
-                  ->orWhere('fullName', 'like', "%{$search}%")
+                $q->where('fullName', 'like', "%{$search}%")
                   ->orWhere('nic', 'like', "%{$search}%");
             });
         }
 
-        $teachers = $query->orderBy('nameWithInitials')->paginate(20);
+        $teachers = $query->orderBy('fullName')->paginate(20);
         return view('dashboard.school.teachers.index', compact('school', 'teachers'));
     }
 
@@ -42,7 +40,7 @@ class TeacherController extends Controller
         $school = School::find(auth()->user()->schoolId);
         $schools = School::where('isActive', true)->orderBy('name')->get();
         $options = TeacherOptions::all();
-        $subjects = Subject::orderBy('name')->get();
+        $subjects = TeacherOptions::codes() ?: [];
         return view('dashboard.school.teachers.create', compact('school', 'schools', 'options', 'subjects'));
     }
 
@@ -83,7 +81,7 @@ class TeacherController extends Controller
 
         $userEmail = $request->input('email') ?: ($nic . '@wilgamuwa.com');
         $user = User::create([
-            'name' => $nameWithInitials,
+            'name' => $fullName ?: $nameWithInitials,
             'email' => $userEmail,
             'password' => Hash::make('password123'),
             'role' => $targetRole,
@@ -100,7 +98,6 @@ class TeacherController extends Controller
             'paysheet' => $request->input('paysheet'),
             'title' => $request->input('title'),
             'personal_file_no' => $request->input('personal_file_no'),
-            'nameWithInitials' => $nameWithInitials,
             'fullName' => $fullName,
             'dateOfBirth' => $request->input('date_of_birth'),
             'gender' => $request->input('gender'),
@@ -159,15 +156,6 @@ class TeacherController extends Controller
             'salaryby' => $request->input('salaryby'),
             'servicebased' => $request->input('servicebased'),
             'salarysource' => $request->input('salarysource'),
-            'appointmentDate' => $request->input('firstappoint'),
-            'appointmentType' => $request->input('service'),
-            'appointmentMedium' => $request->input('appt_medium'),
-            'serviceGrade' => $request->input('class') ?: $request->input('class_grade'),
-            'serviceGradeAppointedDate' => $request->input('clsappoint'),
-            'currentPosition' => $request->input('position'),
-            'joinedCurrentSchoolDate' => $request->input('schappoint'),
-            'fileNumber' => $request->input('personal_file_no'),
-            'salaryNumber' => $request->input('paysheet'),
             'form_data' => $allInputs,
             'createdByUserId' => auth()->id(),
             'updatedByUserId' => auth()->id(),
@@ -212,7 +200,7 @@ class TeacherController extends Controller
         $school = School::find(auth()->user()->schoolId);
         if (!$school) abort(404, 'No school assigned.');
 
-        $query = Teacher::with(['school', 'spouseSchool', 'subjects.subject'])
+        $query = Teacher::with(['school'])
             ->where('teacher.schoolId', $school->id);
 
         if ($request->filled('ids')) {
@@ -223,17 +211,15 @@ class TeacherController extends Controller
             }
         } elseif ($search = trim($request->input('search', ''))) {
             $query->where(function ($q) use ($search) {
-                $q->where('nameWithInitials', 'like', "%{$search}%")
-                  ->orWhere('fullName', 'like', "%{$search}%")
+                $q->where('fullName', 'like', "%{$search}%")
                   ->orWhere('nic', 'like', "%{$search}%")
                   ->orWhere('phone', 'like', "%{$search}%")
-                  ->orWhere('fileNumber', 'like', "%{$search}%")
                   ->orWhere('personal_file_no', 'like', "%{$search}%")
                   ->orWhere('paysheet', 'like', "%{$search}%");
             });
         }
 
-        $teachers = $query->orderBy('nameWithInitials')->get();
+        $teachers = $query->orderBy('fullName')->get();
         $safeName = preg_replace('/[^A-Za-z0-9_-]/', '_', $school->name ?: 'School');
         $filename = 'Teachers_' . $safeName . '_' . date('Y_m_d_His') . '.csv';
 

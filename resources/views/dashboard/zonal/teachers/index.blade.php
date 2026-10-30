@@ -437,7 +437,7 @@
 
                         // Next increment calculation
                         $nextIncrement = null;
-                        $incrBase = $teacher->serviceGradeAppointedDate ?? $teacher->appointmentDate;
+                        $incrBase = $teacher->clsappoint ?? $teacher->firstappoint;
                         if ($incrBase) {
                             $nextIncrement = $incrBase->copy()->setYear(now()->year);
                             if ($nextIncrement->lt(now())) {
@@ -446,33 +446,33 @@
                         }
 
                         // Years at current school calculation
-                        $schoolAppointDate = $teacher->schappoint ?? $teacher->joinedCurrentSchoolDate;
+                        $schoolAppointDate = $teacher->schappoint;
                         $yearsAtSchool = null;
                         if ($schoolAppointDate) {
                             $sDate = ($schoolAppointDate instanceof \Carbon\Carbon) ? $schoolAppointDate : \Carbon\Carbon::parse($schoolAppointDate);
                             $yearsAtSchool = (float) number_format($sDate->diffInYears(now()), 1, '.', '');
                         }
 
-                        $positionTitle = $teacher->position ?: ($teacher->currentPosition ?: 'Teacher');
+                        $positionTitle = $teacher->position ?: 'Teacher';
                         $isPrincipal = \App\Models\Teacher::isPrincipalPosition($positionTitle);
 
-                        $apptSubjectVal = trim(($teacher->appt_code ?: '') . ' ' . ($teacher->appointmentSubject ?: ''));
+                        $apptSubjectVal = trim($teacher->appt_code ?: '');
                         $t1SubjectVal = trim($teacher->t1_code ?: '');
                     @endphp
                     <tr class="teacher-row zems-table-row"
                         data-id="{{ $teacher->id }}"
-                        data-name="{{ strtolower(($teacher->nameWithInitials ?? '') . ' ' . ($teacher->fullName ?? '')) }}"
+                        data-name="{{ strtolower($teacher->fullName ?? '') }}"
                         data-nic="{{ strtolower($teacher->nic ?? '') }}"
                         data-contact="{{ strtolower(($teacher->phone ?? '') . ' ' . ($teacher->mobile ?? '')) }}"
-                        data-file="{{ strtolower(($teacher->fileNumber ?? '') . ' ' . ($teacher->paysheet ?? '') . ' ' . ($teacher->personal_file_no ?? '')) }}"
+                        data-file="{{ strtolower(($teacher->paysheet ?? '') . ' ' . ($teacher->personal_file_no ?? '')) }}"
                         data-school="{{ $teacher->schoolId }}"
                         data-school-name="{{ strtolower($teacher->school->name ?? '') }}"
                         data-division="{{ strtolower($teacher->school->eduDivision ?? '') }}"
                         data-gender="{{ strtolower($teacher->gender ?? '') }}"
                         data-position="{{ strtolower($positionTitle) }}"
-                        data-service="{{ strtolower($teacher->service ?: ($teacher->appointmentType ?: '')) }}"
-                        data-grade="{{ strtolower($teacher->serviceGrade ?: ($teacher->class_grade ?? ($teacher->class ?? '')) ) }}"
-                        data-medium="{{ strtolower($teacher->appointmentMedium ?: ($teacher->appt_medium ?? '')) }}"
+                        data-service="{{ strtolower($teacher->service ?? '') }}"
+                        data-grade="{{ strtolower($teacher->class_grade ?? ($teacher->class ?? '')) }}"
+                        data-medium="{{ strtolower($teacher->appt_medium ?? '') }}"
                         data-appointment-subject="{{ strtolower($apptSubjectVal) }}"
                         data-teaching-subject="{{ strtolower($t1SubjectVal) }}"
                         data-years-at-school="{{ $yearsAtSchool !== null ? $yearsAtSchool : -1 }}"
@@ -486,7 +486,7 @@
                                     {{ strtoupper(substr($teacher->fullName ?? 'T', 0, 1)) }}
                                 </div>
                                 <div>
-                                    <div class="font-bold text-slate-900 leading-tight">{{ $teacher->nameWithInitials }}</div>
+                                    <div class="font-bold text-slate-900 leading-tight">{{ $teacher->fullName }}</div>
                                     <div class="text-[10px] text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1 mt-0.5">
                                         <svg class="w-3 h-3 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                                         {{ $teacher->phone ?? 'N/A' }}
@@ -561,7 +561,7 @@
                                 <a href="{{ route('zonal.teachers.edit', $teacher->id) }}" class="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-colors" title="Edit Teacher">
                                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                                 </a>
-                                <button @click="open('{{ route('zonal.teachers.destroy', $teacher->id) }}', '{{ addslashes($teacher->nameWithInitials) }}')"
+                                <button @click="open('{{ route('zonal.teachers.destroy', $teacher->id) }}', '{{ addslashes($teacher->fullName ?: $teacher->nameWithInitials) }}')"
                                         class="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-xl transition-colors"
                                         title="Delete Record">
                                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>

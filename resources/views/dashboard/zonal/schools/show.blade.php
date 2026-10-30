@@ -353,28 +353,28 @@
                         <td class="px-6 py-4">
                             <div class="flex items-center gap-3">
                                 <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold {{ $teacher->gender === 'Male' ? 'bg-blue-100 text-blue-600' : 'bg-pink-100 text-pink-600' }}">
-                                    {{ substr($teacher->nameWithInitials, 0, 1) }}
+                                    {{ substr($teacher->fullName ?: $teacher->nameWithInitials, 0, 1) }}
                                 </div>
-                                <p class="text-sm font-bold text-slate-900">{{ $teacher->nameWithInitials }}</p>
+                                <p class="text-sm font-bold text-slate-900">{{ $teacher->fullName ?: $teacher->nameWithInitials }}</p>
                             </div>
                         </td>
                         <td class="px-6 py-4 text-sm text-slate-600 font-mono">{{ $teacher->nic }}</td>
                         <td class="px-6 py-4 text-sm text-slate-600">{{ $teacher->phone ?: '-' }}</td>
                         <td class="px-6 py-4">
                             <span class="px-2 py-1 bg-indigo-50 text-indigo-700 text-xs font-bold rounded border border-indigo-100">
-                                {{ $teacher->currentPosition ?: 'Teacher' }}
+                                {{ $teacher->position ?: ($teacher->currentPosition ?: 'Teacher') }}
                             </span>
                         </td>
                         <td class="px-6 py-4">
                             <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded">
-                                {{ $teacher->serviceGrade ?: 'N/A' }}
+                                {{ $teacher->class_grade ?: ($teacher->serviceGrade ?: 'N/A') }}
                             </span>
                         </td>
                         <td class="px-6 py-4 text-sm text-slate-600 font-medium">
-                            {{ $teacher->appointmentSubject ?: 'N/A' }}
+                            {{ $teacher->appt_code ?: ($teacher->appointmentSubject ?: 'N/A') }}
                         </td>
                         <td class="px-6 py-4 text-sm text-slate-500">
-                            {{ $teacher->joinedCurrentSchoolDate ? \Carbon\Carbon::parse($teacher->joinedCurrentSchoolDate)->format('d/m/Y') : '-' }}
+                            {{ ($teacher->schappoint ?? $teacher->joinedCurrentSchoolDate) ? \Carbon\Carbon::parse($teacher->schappoint ?? $teacher->joinedCurrentSchoolDate)->format('d/m/Y') : '-' }}
                         </td>
                     </tr>
                     @empty

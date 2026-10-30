@@ -727,9 +727,9 @@
             if (matches.length > 0) {
                 suggestions.innerHTML = matches.map(t => `
                     <div class="px-3 py-2 hover:bg-slate-50 cursor-pointer border-b border-slate-50 last:border-0" 
-                         onclick="fillPrincipal('${prefix}', '${t.nic}', '${(t.nameWithInitials || '').replace(/'/g, "\\'")}', '${t.phone || ''}')">
+                         onclick="fillPrincipal('${prefix}', '${t.nic}', '${(t.fullName || t.nameWithInitials || '').replace(/'/g, "\\'")}', '${t.phone || ''}')">
                         <div class="font-bold text-slate-800 text-sm">${t.nic}</div>
-                        <div class="text-xs text-slate-500">${t.nameWithInitials}</div>
+                        <div class="text-xs text-slate-500">${t.fullName || t.nameWithInitials || ''}</div>
                     </div>
                 `).join('');
                 suggestions.classList.remove('hidden');
