@@ -162,6 +162,9 @@
             <button type="button" onclick="setQuickFilter('primary')" id="chip-primary" class="quick-chip px-3 py-1.5 rounded-xl font-bold transition border border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100 shrink-0">
                 Primary Ed ({{ $primaryCount }})
             </button>
+            <button type="button" onclick="setQuickFilter('service_8_plus')" id="chip-service_8_plus" class="quick-chip px-3 py-1.5 rounded-xl font-bold transition border border-teal-200 bg-teal-50 text-teal-700 hover:bg-teal-100 shrink-0" title="Click to filter teachers working at current school for 8 years or more">
+                🏫 &ge; 8 Yrs at School ({{ $eightYearsAtSchoolCount ?? 0 }})
+            </button>
         </div>
 
         {{-- Search Input & Filter Toggle Bar --}}
@@ -201,7 +204,7 @@
                         </div>
                         <div>
                             <span class="text-xs font-black uppercase tracking-wider text-slate-800">Advanced Filter Studio</span>
-                            <span class="ml-2 text-[10px] font-bold text-slate-500 bg-white border border-slate-200 px-2 py-0.5 rounded-full">10 Dimensions</span>
+                            <span class="ml-2 text-[10px] font-bold text-slate-500 bg-white border border-slate-200 px-2 py-0.5 rounded-full">12 Dimensions</span>
                         </div>
                     </div>
                     <div class="flex items-center gap-2">
@@ -309,23 +312,35 @@
                     </select>
                 </div>
 
-                {{-- 7. Teaching / Appointment Subject --}}
+                {{-- 7. Appointment Subject --}}
                 <div>
-                    <label class="zems-input-label">Teaching Subject / Specialization</label>
-                    <select id="filterSubject" class="zems-input">
-                        <option value="">All Subjects</option>
-                        <option value="primary">Primary Education (General / Other)</option>
-                        <option value="maths">Mathematics</option>
-                        <option value="science">Science</option>
-                        <option value="english">English Language</option>
-                        <option value="sinhala">Sinhala Language & Literature</option>
-                        <option value="ict">Information Technology (ICT)</option>
-                        <option value="buddhism">Buddhism / Religious Studies</option>
-                        <option value="history">History</option>
-                        <option value="geography">Geography</option>
-                        <option value="civics">Civic Education</option>
-                        <option value="health">Health & Physical Education</option>
-                        <option value="commerce">Business & Accounting Studies / Commerce</option>
+                    <label class="zems-input-label">Appointment Subject / පත්වීම් විෂය</label>
+                    <select id="filterAppointmentSubject" class="zems-input cursor-pointer font-medium">
+                        <option value="">All Appointment Subjects ({{ count($allSubjectsList ?? []) }})</option>
+                        @foreach(($allSubjectsList ?? []) as $subj)
+                        <option value="{{ $subj }}">{{ $subj }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                {{-- 8. First Most Teaching Subject --}}
+                <div>
+                    <label class="zems-input-label">First Most Teaching Subject / ප්‍රධාන ඉගැන්වීම් විෂය</label>
+                    <select id="filterFirstMostTeachingSubject" class="zems-input cursor-pointer font-medium">
+                        <option value="">All Teaching Subjects ({{ count($allSubjectsList ?? []) }})</option>
+                        @foreach(($allSubjectsList ?? []) as $subj)
+                        <option value="{{ $subj }}">{{ $subj }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                {{-- 9. Service at Current School (>= 8 Years) --}}
+                <div>
+                    <label class="zems-input-label">Service at Current School / වත්මන් පාසලේ කාලය</label>
+                    <select id="filterCurrentSchoolService" class="zems-input cursor-pointer font-semibold text-teal-800">
+                        <option value="">All Service Periods</option>
+                        <option value="8_plus">🏫 8 Years or More (&ge; 8 Years) / වසර 8 හෝ ඊට වැඩි</option>
+                        <option value="under_8">Less than 8 Years (&lt; 8 Years) / වසර 8ට අඩු</option>
                     </select>
                 </div>
 
@@ -367,7 +382,7 @@
             <div class="pt-3 border-t border-slate-200/70 flex items-center justify-between flex-wrap gap-2">
                 <span class="text-xs text-slate-500 font-semibold flex items-center gap-1.5">
                     <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    10 interactive filters ready &bull; instant results
+                    12 interactive filters ready &bull; instant results
                 </span>
                 <button type="button" onclick="resetFilters()" class="text-xs font-bold text-rose-600 hover:text-rose-700 flex items-center gap-1.5 bg-white hover:bg-rose-50 border border-slate-200 px-3.5 py-1.5 rounded-xl transition shadow-sm">
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
@@ -430,8 +445,19 @@
                             }
                         }
 
+                        // Years at current school calculation
+                        $schoolAppointDate = $teacher->schappoint ?? $teacher->joinedCurrentSchoolDate;
+                        $yearsAtSchool = null;
+                        if ($schoolAppointDate) {
+                            $sDate = ($schoolAppointDate instanceof \Carbon\Carbon) ? $schoolAppointDate : \Carbon\Carbon::parse($schoolAppointDate);
+                            $yearsAtSchool = (float) number_format($sDate->diffInYears(now()), 1, '.', '');
+                        }
+
                         $positionTitle = $teacher->position ?: ($teacher->currentPosition ?: 'Teacher');
                         $isPrincipal = \App\Models\Teacher::isPrincipalPosition($positionTitle);
+
+                        $apptSubjectVal = trim(($teacher->appt_code ?: '') . ' ' . ($teacher->appointmentSubject ?: ''));
+                        $t1SubjectVal = trim($teacher->t1_code ?: '');
                     @endphp
                     <tr class="teacher-row zems-table-row"
                         data-name="{{ strtolower(($teacher->nameWithInitials ?? '') . ' ' . ($teacher->fullName ?? '')) }}"
@@ -446,7 +472,9 @@
                         data-service="{{ strtolower($teacher->service ?: ($teacher->appointmentType ?: '')) }}"
                         data-grade="{{ strtolower($teacher->serviceGrade ?: ($teacher->class_grade ?? ($teacher->class ?? '')) ) }}"
                         data-medium="{{ strtolower($teacher->appointmentMedium ?: ($teacher->appt_medium ?? '')) }}"
-                        data-subject="{{ strtolower(($teacher->appointmentSubject ?? '') . ' ' . ($teacher->appt_code ?? '') . ' ' . ($teacher->t1_code ?? '')) }}"
+                        data-appointment-subject="{{ strtolower($apptSubjectVal) }}"
+                        data-teaching-subject="{{ strtolower($t1SubjectVal) }}"
+                        data-years-at-school="{{ $yearsAtSchool !== null ? $yearsAtSchool : -1 }}"
                         data-years-left="{{ $yearsLeft !== null ? $yearsLeft : 999 }}"
                         data-attached="{{ strtolower($teacher->otherschool ?? 'no') }}"
                         data-attached-census="{{ strtolower($teacher->otherschool_census ?? '') }}">
@@ -478,6 +506,13 @@
                                 <svg class="w-3.5 h-3.5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                                 <span class="truncate max-w-[120px]">{{ $teacher->school->name ?? 'Unknown' }}</span>
                             </div>
+                            @if($yearsAtSchool !== null && $yearsAtSchool >= 8)
+                            <div class="mt-1">
+                                <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[9px] font-black bg-teal-50 text-teal-700 border border-teal-200" title="Working at current school for {{ (int)$yearsAtSchool }} years">
+                                    &ge;8 yrs at school ({{ (int)$yearsAtSchool }}y)
+                                </span>
+                            </div>
+                            @endif
                         </td>
 
                         {{-- Position --}}
@@ -584,7 +619,9 @@ document.addEventListener('DOMContentLoaded', function() {
         service: document.getElementById('filterService'),
         grade: document.getElementById('filterGrade'),
         retirement: document.getElementById('filterRetirement'),
-        subject: document.getElementById('filterSubject'),
+        appointmentSubject: document.getElementById('filterAppointmentSubject'),
+        firstMostTeachingSubject: document.getElementById('filterFirstMostTeachingSubject'),
+        currentSchoolService: document.getElementById('filterCurrentSchoolService'),
         gender: document.getElementById('filterGender'),
         medium: document.getElementById('filterMedium'),
         attachment: document.getElementById('filterAttachment'),
@@ -628,7 +665,9 @@ document.addEventListener('DOMContentLoaded', function() {
     s.service.addEventListener('change', filterTeachers);
     s.grade.addEventListener('change', filterTeachers);
     s.retirement.addEventListener('change', filterTeachers);
-    s.subject.addEventListener('change', filterTeachers);
+    s.appointmentSubject.addEventListener('change', filterTeachers);
+    s.firstMostTeachingSubject.addEventListener('change', filterTeachers);
+    s.currentSchoolService.addEventListener('change', filterTeachers);
     s.gender.addEventListener('change', filterTeachers);
     s.medium.addEventListener('change', filterTeachers);
     s.attachment.addEventListener('change', filterTeachers);
@@ -647,7 +686,9 @@ function filterTeachers() {
     const service = s.service.value;
     const grade = s.grade.value;
     const retirement = s.retirement.value;
-    const subject = s.subject.value;
+    const apptSubject = (s.appointmentSubject.value || '').toLowerCase().trim();
+    const teachingSubject = (s.firstMostTeachingSubject.value || '').toLowerCase().trim();
+    const schoolService = s.currentSchoolService.value;
     const gender = s.gender.value;
     const medium = s.medium.value;
     const attachment = s.attachment.value;
@@ -685,10 +726,20 @@ function filterTeachers() {
         const retMap = { '1': 'Retiring ≤ 1 Yr', '3': 'Retiring ≤ 3 Yrs', '5': 'Retiring ≤ 5 Yrs', 'over_5': '> 5 Yrs Left' };
         activePills.push({ label: retMap[retirement] || 'Retirement', clear: () => { s.retirement.value = ''; filterTeachers(); } });
     }
-    if (subject) {
+    if (apptSubject) {
         activeFilterCount++;
-        const subjText = s.subject.options[s.subject.selectedIndex]?.text || 'Subject';
-        activePills.push({ label: 'Subject: ' + subjText.split('(')[0].trim(), clear: () => { s.subject.value = ''; filterTeachers(); } });
+        const apptText = s.appointmentSubject.options[s.appointmentSubject.selectedIndex]?.text || 'Appt Subject';
+        activePills.push({ label: 'Appt: ' + apptText.slice(0, 24), clear: () => { s.appointmentSubject.value = ''; filterTeachers(); } });
+    }
+    if (teachingSubject) {
+        activeFilterCount++;
+        const teachText = s.firstMostTeachingSubject.options[s.firstMostTeachingSubject.selectedIndex]?.text || 'Teaching Subject';
+        activePills.push({ label: 'Teaching: ' + teachText.slice(0, 24), clear: () => { s.firstMostTeachingSubject.value = ''; filterTeachers(); } });
+    }
+    if (schoolService) {
+        activeFilterCount++;
+        const srvText = schoolService === '8_plus' ? '≥ 8 Yrs at School' : '< 8 Yrs at School';
+        activePills.push({ label: srvText, clear: () => { s.currentSchoolService.value = ''; filterTeachers(); } });
     }
     if (gender) {
         activeFilterCount++;
@@ -717,7 +768,9 @@ function filterTeachers() {
         const rowService = row.getAttribute('data-service') || '';
         const rowGrade = row.getAttribute('data-grade') || '';
         const rowMedium = row.getAttribute('data-medium') || '';
-        const rowSubject = row.getAttribute('data-subject') || '';
+        const rowApptSubject = row.getAttribute('data-appointment-subject') || '';
+        const rowTeachingSubject = row.getAttribute('data-teaching-subject') || '';
+        const rowYearsAtSchool = parseFloat(row.getAttribute('data-years-at-school')) || -1;
         const rowYearsLeft = parseFloat(row.getAttribute('data-years-left')) || 999;
         const rowAttached = row.getAttribute('data-attached') || '';
         const rowAttachedCensus = row.getAttribute('data-attached-census') || '';
@@ -793,24 +846,41 @@ function filterTeachers() {
             else if (retirement === 'over_5') matchesRetirement = rowYearsLeft > 5 && rowYearsLeft !== 999;
         }
 
-        // 8. Subject filter
-        let matchesSubject = true;
-        if (subject) {
-            if (subject === 'primary') matchesSubject = rowSubject.includes('primary') || rowSubject.includes('101') || rowSubject.includes('199');
-            else if (subject === 'maths') matchesSubject = rowSubject.includes('math') || rowSubject.includes('232');
-            else if (subject === 'science') matchesSubject = rowSubject.includes('science') || rowSubject.includes('234');
-            else if (subject === 'english') matchesSubject = rowSubject.includes('english') || rowSubject.includes('231') || rowSubject.includes('131');
-            else if (subject === 'sinhala') matchesSubject = rowSubject.includes('sinhala') || rowSubject.includes('221');
-            else if (subject === 'ict') matchesSubject = rowSubject.includes('ict') || rowSubject.includes('information') || rowSubject.includes('280');
-            else if (subject === 'buddhism') matchesSubject = rowSubject.includes('buddh') || rowSubject.includes('211');
-            else if (subject === 'history') matchesSubject = rowSubject.includes('history') || rowSubject.includes('233');
-            else if (subject === 'geography') matchesSubject = rowSubject.includes('geography') || rowSubject.includes('261');
-            else if (subject === 'civics') matchesSubject = rowSubject.includes('civic') || rowSubject.includes('262');
-            else if (subject === 'health') matchesSubject = rowSubject.includes('health') || rowSubject.includes('physical') || rowSubject.includes('286');
-            else if (subject === 'commerce') matchesSubject = rowSubject.includes('accounting') || rowSubject.includes('business') || rowSubject.includes('commerce') || rowSubject.includes('260');
+        // 8. Appointment Subject filter
+        let matchesApptSubject = true;
+        if (apptSubject) {
+            matchesApptSubject = rowApptSubject.includes(apptSubject);
+            if (!matchesApptSubject) {
+                const codeMatch = apptSubject.match(/^([0-9]{3})/);
+                if (codeMatch) {
+                    matchesApptSubject = rowApptSubject.includes(codeMatch[1]);
+                }
+            }
         }
 
-        // 9. Gender filter (Strict matching)
+        // 9. First Most Teaching Subject filter
+        let matchesTeachingSubject = true;
+        if (teachingSubject) {
+            matchesTeachingSubject = rowTeachingSubject.includes(teachingSubject);
+            if (!matchesTeachingSubject) {
+                const codeMatch = teachingSubject.match(/^([0-9]{3})/);
+                if (codeMatch) {
+                    matchesTeachingSubject = rowTeachingSubject.includes(codeMatch[1]);
+                }
+            }
+        }
+
+        // 10. Service at Current School filter (>= 8 years)
+        let matchesSchoolService = true;
+        if (schoolService) {
+            if (schoolService === '8_plus') {
+                matchesSchoolService = rowYearsAtSchool >= 8.0;
+            } else if (schoolService === 'under_8') {
+                matchesSchoolService = rowYearsAtSchool >= 0 && rowYearsAtSchool < 8.0;
+            }
+        }
+
+        // 11. Gender filter (Strict matching)
         let matchesGender = true;
         if (gender) {
             if (gender === 'Male') {
@@ -820,7 +890,7 @@ function filterTeachers() {
             }
         }
 
-        // 10. Medium filter
+        // 12. Medium filter
         let matchesMedium = true;
         if (medium) {
             if (medium === 'sinhala') matchesMedium = rowMedium.includes('sinhala');
@@ -828,7 +898,7 @@ function filterTeachers() {
             else if (medium === 'english') matchesMedium = rowMedium.includes('english');
         }
 
-        // 11. Attachment filter
+        // 13. Attachment filter
         let matchesAttachment = true;
         if (attachment) {
             if (attachment === 'attached_any') matchesAttachment = rowAttached.startsWith('yes');
@@ -838,7 +908,8 @@ function filterTeachers() {
         }
 
         if (matchesSearch && matchesDivision && matchesSchool && matchesPosition && matchesService &&
-            matchesGrade && matchesRetirement && matchesSubject && matchesGender && matchesMedium && matchesAttachment) {
+            matchesGrade && matchesRetirement && matchesApptSubject && matchesTeachingSubject && matchesSchoolService &&
+            matchesGender && matchesMedium && matchesAttachment) {
             row.style.display = '';
             visibleCount++;
         } else {
@@ -907,7 +978,9 @@ function setQuickFilter(type) {
     } else if (type === 'male') {
         s.gender.value = 'Male';
     } else if (type === 'primary') {
-        s.subject.value = 'primary';
+        s.firstMostTeachingSubject.value = '101 - Primary General';
+    } else if (type === 'service_8_plus') {
+        s.currentSchoolService.value = '8_plus';
     }
 
     filterTeachers();
@@ -943,7 +1016,9 @@ function resetFilters(runFilter = true) {
         s.service.value = '';
         s.grade.value = '';
         s.retirement.value = '';
-        s.subject.value = '';
+        s.appointmentSubject.value = '';
+        s.firstMostTeachingSubject.value = '';
+        s.currentSchoolService.value = '';
         s.gender.value = '';
         s.medium.value = '';
         s.attachment.value = '';
@@ -969,7 +1044,7 @@ function exportTeachers() {
     const s = window.teacherFilterState;
     if (!s) return;
 
-    let csv = 'Name,NIC,Gender,School,Division,Position,Service,Grade,Retirement Left (Yrs),Attached\n';
+    let csv = 'Name,NIC,Gender,School,Division,Position,Service,Grade,Appointment Subject,Teaching Subject,Years at School,Retirement Left (Yrs),Attached\n';
     s.rows.forEach(function(row) {
         if (row.style.display === 'none') return;
         const name = (row.getAttribute('data-name') || '').toUpperCase();
@@ -980,10 +1055,13 @@ function exportTeachers() {
         const position = row.getAttribute('data-position') || '';
         const service = row.getAttribute('data-service') || '';
         const grade = row.getAttribute('data-grade') || '';
+        const appt = (row.getAttribute('data-appointment-subject') || '').toUpperCase();
+        const teaching = (row.getAttribute('data-teaching-subject') || '').toUpperCase();
+        const yrsSchool = row.getAttribute('data-years-at-school') || '';
         const yearsLeft = row.getAttribute('data-years-left') || '';
         const attached = row.getAttribute('data-attached') || 'No';
 
-        csv += `"${name}","${nic}","${gender}","${school}","${division}","${position}","${service}","${grade}","${yearsLeft === '999' ? 'N/A' : yearsLeft}","${attached}"\n`;
+        csv += `"${name}","${nic}","${gender}","${school}","${division}","${position}","${service}","${grade}","${appt}","${teaching}","${yrsSchool === '-1' ? 'N/A' : yrsSchool}","${yearsLeft === '999' ? 'N/A' : yearsLeft}","${attached}"\n`;
     });
 
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
