@@ -80,7 +80,7 @@ class BuildingController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $validated = $request->validateWithBag('building', [
             'schoolId' => 'required|exists:school,id',
             'buildingName' => 'required|string|max:191',
             'size' => 'nullable|string|max:100',
@@ -116,7 +116,7 @@ class BuildingController extends Controller
     {
         $building = Building::findOrFail($id);
 
-        $validated = $request->validate([
+        $validated = $request->validateWithBag('building', [
             'schoolId' => 'required|exists:school,id',
             'buildingName' => 'required|string|max:191',
             'size' => 'nullable|string|max:100',

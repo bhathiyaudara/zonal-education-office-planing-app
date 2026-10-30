@@ -27,7 +27,7 @@
                 <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                 <span>Export CSV</span>
             </a>
-            <button type="button" @click="openCreateModal('{{ $schoolId ?? '' }}')" class="zems-btn-primary !bg-white !text-blue-700 hover:!bg-blue-50 text-xs sm:text-sm !py-2 sm:!py-2.5 !px-4 justify-center shadow-md">
+            <button type="button" @click="openCreateModal()" class="zems-btn-primary !bg-white !text-blue-700 hover:!bg-blue-50 text-xs sm:text-sm !py-2 sm:!py-2.5 !px-4 justify-center shadow-md">
                 <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                 <span>Add Building</span>
             </button>
@@ -289,7 +289,7 @@
                     <svg class="w-3.5 h-3.5 text-blue-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                     <span>Edit Building</span>
                 </button>
-                <button type="button" @click="openDeleteModal('{{ route('zonal.buildings.destroy', $b->id) }}', '{{ addslashes($b->buildingName) }}')" class="zems-btn-secondary !py-2 !px-3 text-xs text-rose-600 hover:bg-rose-50 flex-1 justify-center">
+                <button type="button" @click="openDeleteModal(@js(route('zonal.buildings.destroy', $b->id)), @js($b->buildingName))" class="zems-btn-secondary !py-2 !px-3 text-xs text-rose-600 hover:bg-rose-50 flex-1 justify-center">
                     <svg class="w-3.5 h-3.5 text-rose-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
                     <span>Delete</span>
                 </button>
@@ -301,7 +301,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
             </svg>
             <p class="text-xs font-black uppercase tracking-wider text-slate-500">No building records found</p>
-            <button type="button" @click="openCreateModal('{{ $schoolId ?? '' }}')" class="text-xs font-bold text-blue-600 hover:underline mt-2 inline-block">
+            <button type="button" @click="openCreateModal()" class="text-xs font-bold text-blue-600 hover:underline mt-2 inline-block">
                 + Add New Building
             </button>
         </div>
@@ -427,7 +427,7 @@
                                 <button type="button" @click="openEditModal({{ json_encode($b) }})" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition" title="Edit Building">
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                                 </button>
-                                <button type="button" @click="openDeleteModal('{{ route('zonal.buildings.destroy', $b->id) }}', '{{ addslashes($b->buildingName) }}')" class="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition" title="Delete Building">
+                                <button type="button" @click="openDeleteModal(@js(route('zonal.buildings.destroy', $b->id)), @js($b->buildingName))" class="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition" title="Delete Building">
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
                                 </button>
                             </div>
@@ -441,7 +441,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                                 </svg>
                                 <p class="text-sm font-black uppercase tracking-wider text-slate-500">No building records found</p>
-                                <button type="button" @click="openCreateModal('{{ $schoolId ?? '' }}')" class="text-xs font-bold text-blue-600 hover:underline">
+                                <button type="button" @click="openCreateModal()" class="text-xs font-bold text-blue-600 hover:underline">
                                     + Add New Building
                                 </button>
                             </div>
@@ -453,27 +453,17 @@
         </div>
     </div>
 
-    {{-- Create / Edit Building Modal (Teleported to document.body with z-[70] to cover everything including sidebar) --}}
-    <template x-teleport="body">
-        <div x-show="showFormModal" 
-             @keydown.escape.window="showFormModal = false"
-             class="fixed inset-0 z-[70] overflow-y-auto" 
-             style="display:none;">
-            
-            {{-- Backdrop (Fully covers entire viewport, including sidebar) --}}
-            <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" 
-                 @click="showFormModal = false" 
-                 aria-hidden="true"></div>
+    {{-- Native dialog uses the browser top layer so overlays cannot intercept form clicks. --}}
+    <dialog x-ref="buildingDialog"
+            x-effect="showFormModal ? (!$el.open && $el.showModal()) : $el.close()"
+            @cancel.prevent="showFormModal = false"
+            @click.self="showFormModal = false"
+            aria-labelledby="building-dialog-title"
+            class="m-auto w-[calc(100%-1.5rem)] max-w-lg md:max-w-2xl lg:max-w-3xl max-h-[calc(100dvh-2rem)] p-0 border-0 rounded-2xl shadow-2xl backdrop:bg-slate-900/60 backdrop:backdrop-blur-sm">
+                <div class="flex flex-col max-h-[calc(100dvh-2rem)] bg-white text-left">
 
-            {{-- Centering Container (on desktop, shifts right slightly or centers in content) --}}
-            <div class="flex min-h-full items-center justify-center p-3 sm:p-4 md:p-6 text-center">
-                
-                {{-- Dialog Panel (Responsive Width: max-w-lg on mobile, max-w-2xl on tablet, max-w-3xl on PC) --}}
-                <div class="relative w-full max-w-lg md:max-w-2xl lg:max-w-3xl bg-white rounded-2xl shadow-2xl text-left overflow-hidden transform transition-all my-6 z-10 animate-scale-in"
-                     @click.stop>
-                    
                     {{-- Modal Header --}}
-                    <div class="flex items-center justify-between px-6 py-4 md:px-8 md:py-5 border-b border-slate-100 bg-slate-50/80">
+                    <div class="flex items-center justify-between shrink-0 px-4 sm:px-6 py-4 md:px-8 md:py-5 border-b border-slate-100 bg-slate-50/80">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 shadow-sm">
                                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -481,7 +471,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-base sm:text-lg md:text-xl font-black text-slate-900 leading-tight" x-text="isEdit ? 'Edit Building Record' : 'Add New Building Record'"></h3>
+                                <h3 id="building-dialog-title" class="text-base sm:text-lg md:text-xl font-black text-slate-900 leading-tight" x-text="isEdit ? 'Edit Building Record' : 'Add New Building Record'"></h3>
                                 <p class="text-xs text-slate-500 mt-0.5">Wilgamuwa Educational Zone Physical Infrastructure Registry</p>
                             </div>
                         </div>
@@ -491,15 +481,26 @@
                     </div>
 
                     {{-- Form Element --}}
-                    <form :action="formAction" method="POST" id="buildingForm" class="flex flex-col">
+                    <form :action="formAction" method="POST" id="buildingForm" class="flex flex-col min-h-0">
                         @csrf
+                        <input type="hidden" name="_building_id" :value="isEdit ? editingBuildingId : ''">
                         <template x-if="isEdit">
                             <input type="hidden" name="_method" value="PUT">
                         </template>
 
                         {{-- Form Fields in 2-Column Responsive Desktop Grid --}}
-                        <div class="p-6 md:p-8 space-y-5 max-h-[75vh] md:max-h-[78vh] overflow-y-auto">
+                        <div class="p-4 sm:p-6 md:p-8 space-y-5 min-h-0 overflow-y-auto overscroll-contain">
                             
+                            @if($errors->getBag('building')->any())
+                            <div x-show="showValidationErrors" role="alert" class="rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-800">
+                                <p class="font-bold">Please correct the following errors:</p>
+                                <ul class="mt-2 list-disc pl-5">
+                                    @foreach($errors->getBag('building')->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                                 {{-- Assigned School (Spans 2 columns on PC) --}}
                                 <div class="md:col-span-2">
@@ -522,13 +523,13 @@
                                 {{-- Building Name / Hall (1 column on PC) --}}
                                 <div class="md:col-span-1">
                                     <label class="zems-input-label">Building Name / Hall Identifier <span class="text-rose-500">*</span></label>
-                                    <input type="text" name="buildingName" x-model="formData.buildingName" required placeholder="e.g. Main Auditorium, Science Lab, Grade 6 Block" class="zems-input h-[44px] text-xs sm:text-sm">
+                                    <input type="text" name="buildingName" maxlength="191" x-model="formData.buildingName" required placeholder="e.g. Main Auditorium, Science Lab, Grade 6 Block" class="zems-input h-[44px] text-xs sm:text-sm">
                                 </div>
 
                                 {{-- Size / Dimensions (1 column on PC) --}}
                                 <div class="md:col-span-1">
                                     <label class="zems-input-label">Size / Dimensions</label>
-                                    <input type="text" name="size" x-model="formData.size" placeholder="e.g. 80*20 or 100*50 - 2 floor" class="zems-input h-[44px] text-xs sm:text-sm">
+                                    <input type="text" name="size" maxlength="100" x-model="formData.size" placeholder="e.g. 80*20 or 100*50 - 2 floor" class="zems-input h-[44px] text-xs sm:text-sm">
                                 </div>
 
                                 {{-- Floors Count (1 column on PC) --}}
@@ -571,7 +572,7 @@
                         </div>
 
                         {{-- Modal Footer --}}
-                        <div class="flex flex-col-reverse sm:flex-row items-center justify-end gap-3 px-6 py-4 md:px-8 md:py-4 border-t border-slate-100 bg-slate-50/80">
+                        <div class="flex flex-col-reverse sm:flex-row items-center justify-end gap-3 shrink-0 px-4 sm:px-6 py-4 md:px-8 md:py-4 border-t border-slate-100 bg-slate-50/80">
                             <button type="button" @click="showFormModal = false" class="zems-btn-secondary w-full sm:w-auto text-xs sm:text-sm !py-2.5 px-5">
                                 Cancel
                             </button>
@@ -580,9 +581,7 @@
                         </div>
                     </form>
                 </div>
-            </div>
-        </div>
-    </template>
+    </dialog>
 
     {{-- Delete Confirmation Modal (Teleported to document.body with z-[70] to cover everything including sidebar) --}}
     <template x-teleport="body">
@@ -617,29 +616,36 @@
 
 <script>
 function buildingManager() {
+    const hasErrors = @js($errors->getBag('building')->any());
+    const previousId = @js(old('_building_id'));
+    const previousData = @js([
+        'schoolId' => old('schoolId', $schoolId ?? ''),
+        'buildingName' => old('buildingName', ''),
+        'size' => old('size', ''),
+        'floors' => old('floors', 1),
+        'constructionYear' => old('constructionYear', ''),
+        'lastRepairYear' => old('lastRepairYear', ''),
+        'status' => old('status', 'Good / Usable'),
+        'notes' => old('notes', ''),
+    ]);
     return {
-        showFormModal: false,
-        isEdit: false,
-        formAction: '{{ route("zonal.buildings.store") }}',
-        formData: {
-            schoolId: '{{ $schoolId ?? "" }}',
-            buildingName: '',
-            size: '',
-            floors: 1,
-            constructionYear: '',
-            lastRepairYear: '',
-            status: 'Good / Usable',
-            notes: ''
-        },
+        showFormModal: hasErrors,
+        showValidationErrors: hasErrors,
+        editingBuildingId: hasErrors ? previousId : null,
+        isEdit: hasErrors && !!previousId,
+        formAction: hasErrors && previousId ? @js(url('dashboard/zonal/buildings')) + '/' + encodeURIComponent(previousId) : @js(route('zonal.buildings.store')),
+        formData: previousData,
         showDeleteModal: false,
         deleteAction: '',
         deleteBuildingName: '',
 
         openCreateModal(defaultSchoolId = '') {
+            this.showValidationErrors = false;
+            this.editingBuildingId = null;
             this.isEdit = false;
             this.formAction = '{{ route("zonal.buildings.store") }}';
             this.formData = {
-                schoolId: defaultSchoolId || '{{ $schoolId ?? "" }}',
+                schoolId: defaultSchoolId || @js($schoolId ?? ''),
                 buildingName: '',
                 size: '',
                 floors: 1,
@@ -652,6 +658,8 @@ function buildingManager() {
         },
 
         openEditModal(building) {
+            this.showValidationErrors = false;
+            this.editingBuildingId = building.id;
             this.isEdit = true;
             this.formAction = '{{ url("dashboard/zonal/buildings") }}/' + building.id;
             this.formData = {

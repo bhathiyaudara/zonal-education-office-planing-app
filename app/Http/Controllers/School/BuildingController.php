@@ -33,7 +33,7 @@ class BuildingController extends Controller
         $user = Auth::user();
         $school = School::findOrFail($user->schoolId);
 
-        $validated = $request->validate([
+        $validated = $request->validateWithBag('building', [
             'buildingName' => 'required|string|max:191',
             'size' => 'nullable|string|max:100',
             'floors' => 'nullable|integer|min:1|max:20',
@@ -70,7 +70,7 @@ class BuildingController extends Controller
         $user = Auth::user();
         $building = Building::where('schoolId', $user->schoolId)->findOrFail($id);
 
-        $validated = $request->validate([
+        $validated = $request->validateWithBag('building', [
             'buildingName' => 'required|string|max:191',
             'size' => 'nullable|string|max:100',
             'floors' => 'nullable|integer|min:1|max:20',
