@@ -470,11 +470,14 @@
                 </template>
 
                 <div class="p-4 sm:p-6 md:p-8 space-y-5 min-h-0 overflow-y-auto overscroll-contain">
-                    @if($errors->getBag('building')->any())
+                    @php
+                        $buildingErrors = isset($errors) ? $errors->getBag('building') : new \Illuminate\Support\MessageBag();
+                    @endphp
+                    @if($buildingErrors->any())
                     <div x-show="showValidationErrors" role="alert" class="rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-800">
                         <p class="font-bold">Please correct the following errors:</p>
                         <ul class="mt-2 list-disc pl-5">
-                            @foreach($errors->getBag('building')->all() as $error)
+                            @foreach($buildingErrors->all() as $error)
                             <li>{{ $error }}</li>
                             @endforeach
                         </ul>
@@ -613,7 +616,7 @@
 
 <script>
 function schoolBuildingManager() {
-    const hasErrors = @js($errors->getBag('building')->any());
+    const hasErrors = @js(isset($errors) && $errors->getBag('building')->any());
     const previousId = @js(old('_building_id'));
     const previousData = @js([
         'buildingName' => old('buildingName', ''),
