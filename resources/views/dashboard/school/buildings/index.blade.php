@@ -2,7 +2,7 @@
 @section('title', 'Buildings & Physical Facilities')
 
 @section('content')
-<div class="space-y-6 animate-fade-in" x-data="schoolBuildingManager()">
+<div class="space-y-6 animate-fade-in relative z-20" x-data="schoolBuildingManager()">
 
     {{-- Gradient Header --}}
     <div class="zems-header !p-4 sm:!p-6 md:!p-8">
@@ -328,138 +328,142 @@
         </div>
     </div>
 
-    {{-- Create / Edit Building Modal (Responsive & Optimized for PC, Tablet & Mobile) --}}
-    <div x-show="showFormModal" 
-         @keydown.escape.window="showFormModal = false"
-         class="fixed inset-0 z-50 overflow-y-auto" 
-         style="display:none;">
-        
-        {{-- Backdrop --}}
-        <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" 
-             @click="showFormModal = false" 
-             aria-hidden="true"></div>
-
-        {{-- Centering Container --}}
-        <div class="flex min-h-full items-center justify-center p-3 sm:p-4 md:p-6 text-center">
+    {{-- Create / Edit Building Modal (Teleported to document.body with z-[70] to cover everything including sidebar) --}}
+    <template x-teleport="body">
+        <div x-show="showFormModal" 
+             @keydown.escape.window="showFormModal = false"
+             class="fixed inset-0 z-[70] overflow-y-auto" 
+             style="display:none;">
             
-            {{-- Dialog Panel (Responsive Width: max-w-lg on mobile, max-w-2xl on tablet, max-w-3xl on PC) --}}
-            <div class="relative w-full max-w-lg md:max-w-2xl lg:max-w-3xl bg-white rounded-2xl shadow-2xl text-left overflow-hidden transform transition-all my-6 z-10 animate-scale-in"
-                 @click.stop>
+            {{-- Backdrop (Covers entire viewport including sidebar) --}}
+            <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" 
+                 @click="showFormModal = false" 
+                 aria-hidden="true"></div>
+
+            {{-- Centering Container --}}
+            <div class="flex min-h-full items-center justify-center p-3 sm:p-4 md:p-6 text-center">
                 
-                {{-- Header --}}
-                <div class="flex items-center justify-between px-6 py-4 md:px-8 md:py-5 border-b border-slate-100 bg-slate-50/80">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 shadow-sm">
-                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                            </svg>
+                {{-- Dialog Panel (Responsive Width: max-w-lg on mobile, max-w-2xl on tablet, max-w-3xl on PC) --}}
+                <div class="relative w-full max-w-lg md:max-w-2xl lg:max-w-3xl bg-white rounded-2xl shadow-2xl text-left overflow-hidden transform transition-all my-6 z-10 animate-scale-in"
+                     @click.stop>
+                    
+                    {{-- Header --}}
+                    <div class="flex items-center justify-between px-6 py-4 md:px-8 md:py-5 border-b border-slate-100 bg-slate-50/80">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 shadow-sm">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-base sm:text-lg md:text-xl font-black text-slate-900 leading-tight" x-text="isEdit ? 'Edit Building Record' : 'Add New Building Record'"></h3>
+                                <p class="text-xs text-slate-500 mt-0.5">{{ $school->name }} &bull; Facilities Registry</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="text-base sm:text-lg md:text-xl font-black text-slate-900 leading-tight" x-text="isEdit ? 'Edit Building Record' : 'Add New Building Record'"></h3>
-                            <p class="text-xs text-slate-500 mt-0.5">{{ $school->name }} &bull; Facilities Registry</p>
-                        </div>
+                        <button type="button" @click="showFormModal = false" class="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 transition">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                        </button>
                     </div>
-                    <button type="button" @click="showFormModal = false" class="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 transition">
-                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-                    </button>
+
+                    {{-- Form Body --}}
+                    <form :action="formAction" method="POST" id="schoolBuildingForm" class="flex flex-col">
+                        @csrf
+                        <template x-if="isEdit">
+                            <input type="hidden" name="_method" value="PUT">
+                        </template>
+
+                        <div class="p-6 md:p-8 space-y-5 max-h-[75vh] md:max-h-[78vh] overflow-y-auto">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+                                {{-- Building Name (1 column on PC) --}}
+                                <div class="md:col-span-1">
+                                    <label class="zems-input-label">Building Name / Hall <span class="text-rose-500">*</span></label>
+                                    <input type="text" name="buildingName" x-model="formData.buildingName" required placeholder="e.g. Main Hall, Primary Block" class="zems-input h-[44px] text-xs sm:text-sm">
+                                </div>
+
+                                {{-- Size / Dimensions (1 column on PC) --}}
+                                <div class="md:col-span-1">
+                                    <label class="zems-input-label">Size / Dimensions</label>
+                                    <input type="text" name="size" x-model="formData.size" placeholder="e.g. 80*20 or 100*50" class="zems-input h-[44px] text-xs sm:text-sm">
+                                </div>
+
+                                {{-- Floors Count (1 column on PC) --}}
+                                <div class="md:col-span-1">
+                                    <label class="zems-input-label">Floors Count</label>
+                                    <input type="number" name="floors" min="1" max="20" x-model="formData.floors" class="zems-input h-[44px] text-xs sm:text-sm" placeholder="1">
+                                </div>
+
+                                {{-- Condition / Status (1 column on PC) --}}
+                                <div class="md:col-span-1">
+                                    <label class="zems-input-label">Condition / Status</label>
+                                    <select name="status" x-model="formData.status" class="zems-input h-[44px] text-xs sm:text-sm">
+                                        <option value="Good / Usable">Good / Usable</option>
+                                        <option value="Minor Repairs Needed">Minor Repairs Needed</option>
+                                        <option value="Needs Major Renovation">Needs Major Renovation (&ge;10 yrs)</option>
+                                        <option value="Dangerous / Condemned">Dangerous / Condemned</option>
+                                    </select>
+                                </div>
+
+                                {{-- Year Built (1 column on PC) --}}
+                                <div class="md:col-span-1">
+                                    <label class="zems-input-label">Year Built</label>
+                                    <input type="number" name="constructionYear" min="1800" max="2050" x-model="formData.constructionYear" placeholder="e.g. 2005" class="zems-input h-[44px] text-xs sm:text-sm">
+                                </div>
+
+                                {{-- Last Repair Year (1 column on PC) --}}
+                                <div class="md:col-span-1">
+                                    <label class="zems-input-label">Last Repair Year</label>
+                                    <input type="number" name="lastRepairYear" min="1800" max="2050" x-model="formData.lastRepairYear" placeholder="e.g. 2018" class="zems-input h-[44px] text-xs sm:text-sm">
+                                    <span class="text-[10px] text-slate-400 mt-1 block">Leave empty or enter year (flags urgency if &ge; 10 yrs)</span>
+                                </div>
+
+                                {{-- Notes (Spans 2 columns on PC) --}}
+                                <div class="md:col-span-2">
+                                    <label class="zems-input-label">Notes & Description</label>
+                                    <textarea name="notes" x-model="formData.notes" rows="3" placeholder="Specific repairs needed, funding remarks..." class="zems-input text-xs sm:text-sm py-2.5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- Footer --}}
+                        <div class="flex flex-col-reverse sm:flex-row items-center justify-end gap-3 px-6 py-4 md:px-8 md:py-4 border-t border-slate-100 bg-slate-50/80">
+                            <button type="button" @click="showFormModal = false" class="zems-btn-secondary w-full sm:w-auto text-xs sm:text-sm !py-2.5 px-5">Cancel</button>
+                            <button type="submit" class="zems-btn-primary w-full sm:w-auto text-xs sm:text-sm !py-2.5 px-6 shadow-md" x-text="isEdit ? 'Save Changes' : 'Create Building'"></button>
+                        </div>
+                    </form>
                 </div>
-
-                {{-- Form Body --}}
-                <form :action="formAction" method="POST" id="schoolBuildingForm" class="flex flex-col">
-                    @csrf
-                    <template x-if="isEdit">
-                        <input type="hidden" name="_method" value="PUT">
-                    </template>
-
-                    <div class="p-6 md:p-8 space-y-5 max-h-[75vh] md:max-h-[78vh] overflow-y-auto">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-                            {{-- Building Name (1 column on PC) --}}
-                            <div class="md:col-span-1">
-                                <label class="zems-input-label">Building Name / Hall <span class="text-rose-500">*</span></label>
-                                <input type="text" name="buildingName" x-model="formData.buildingName" required placeholder="e.g. Main Hall, Primary Block" class="zems-input h-[44px] text-xs sm:text-sm">
-                            </div>
-
-                            {{-- Size / Dimensions (1 column on PC) --}}
-                            <div class="md:col-span-1">
-                                <label class="zems-input-label">Size / Dimensions</label>
-                                <input type="text" name="size" x-model="formData.size" placeholder="e.g. 80*20 or 100*50" class="zems-input h-[44px] text-xs sm:text-sm">
-                            </div>
-
-                            {{-- Floors Count (1 column on PC) --}}
-                            <div class="md:col-span-1">
-                                <label class="zems-input-label">Floors Count</label>
-                                <input type="number" name="floors" min="1" max="20" x-model="formData.floors" class="zems-input h-[44px] text-xs sm:text-sm" placeholder="1">
-                            </div>
-
-                            {{-- Condition / Status (1 column on PC) --}}
-                            <div class="md:col-span-1">
-                                <label class="zems-input-label">Condition / Status</label>
-                                <select name="status" x-model="formData.status" class="zems-input h-[44px] text-xs sm:text-sm">
-                                    <option value="Good / Usable">Good / Usable</option>
-                                    <option value="Minor Repairs Needed">Minor Repairs Needed</option>
-                                    <option value="Needs Major Renovation">Needs Major Renovation (&ge;10 yrs)</option>
-                                    <option value="Dangerous / Condemned">Dangerous / Condemned</option>
-                                </select>
-                            </div>
-
-                            {{-- Year Built (1 column on PC) --}}
-                            <div class="md:col-span-1">
-                                <label class="zems-input-label">Year Built</label>
-                                <input type="number" name="constructionYear" min="1800" max="2050" x-model="formData.constructionYear" placeholder="e.g. 2005" class="zems-input h-[44px] text-xs sm:text-sm">
-                            </div>
-
-                            {{-- Last Repair Year (1 column on PC) --}}
-                            <div class="md:col-span-1">
-                                <label class="zems-input-label">Last Repair Year</label>
-                                <input type="number" name="lastRepairYear" min="1800" max="2050" x-model="formData.lastRepairYear" placeholder="e.g. 2018" class="zems-input h-[44px] text-xs sm:text-sm">
-                                <span class="text-[10px] text-slate-400 mt-1 block">Leave empty or enter year (flags urgency if &ge; 10 yrs)</span>
-                            </div>
-
-                            {{-- Notes (Spans 2 columns on PC) --}}
-                            <div class="md:col-span-2">
-                                <label class="zems-input-label">Notes & Description</label>
-                                <textarea name="notes" x-model="formData.notes" rows="3" placeholder="Specific repairs needed, funding remarks..." class="zems-input text-xs sm:text-sm py-2.5"></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Footer --}}
-                    <div class="flex flex-col-reverse sm:flex-row items-center justify-end gap-3 px-6 py-4 md:px-8 md:py-4 border-t border-slate-100 bg-slate-50/80">
-                        <button type="button" @click="showFormModal = false" class="zems-btn-secondary w-full sm:w-auto text-xs sm:text-sm !py-2.5 px-5">Cancel</button>
-                        <button type="submit" class="zems-btn-primary w-full sm:w-auto text-xs sm:text-sm !py-2.5 px-6 shadow-md" x-text="isEdit ? 'Save Changes' : 'Create Building'"></button>
-                    </div>
-                </form>
             </div>
         </div>
-    </div>
+    </template>
 
-    {{-- Delete Confirmation Modal (Responsive & Centered) --}}
-    <div x-show="showDeleteModal" 
-         @keydown.escape.window="showDeleteModal = false"
-         class="fixed inset-0 z-50 overflow-y-auto" 
-         style="display:none;">
-        
-        <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" 
-             @click="showDeleteModal = false" 
-             aria-hidden="true"></div>
+    {{-- Delete Confirmation Modal (Teleported to document.body with z-[70] to cover everything including sidebar) --}}
+    <template x-teleport="body">
+        <div x-show="showDeleteModal" 
+             @keydown.escape.window="showDeleteModal = false"
+             class="fixed inset-0 z-[70] overflow-y-auto" 
+             style="display:none;">
+            
+            <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" 
+                 @click="showDeleteModal = false" 
+                 aria-hidden="true"></div>
 
-        <div class="flex min-h-full items-center justify-center p-4 text-center">
-            <div class="relative w-full max-w-sm bg-white rounded-2xl shadow-2xl p-6 text-center transform transition-all my-8 z-10 animate-scale-in"
-                 @click.stop>
-                <div class="w-14 h-14 rounded-full bg-rose-50 flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-7 h-7 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            <div class="flex min-h-full items-center justify-center p-4 text-center">
+                <div class="relative w-full max-w-sm bg-white rounded-2xl shadow-2xl p-6 text-center transform transition-all my-8 z-10 animate-scale-in"
+                     @click.stop>
+                    <div class="w-14 h-14 rounded-full bg-rose-50 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Delete Building?</h3>
+                    <p class="text-sm text-slate-500 mt-2">Are you sure you want to delete <span x-text="deleteBuildingName" class="font-bold text-slate-700"></span>? This action cannot be undone.</p>
+                    <form :action="deleteAction" method="POST" class="mt-6 flex flex-col-reverse sm:flex-row gap-2 sm:gap-3">
+                        @csrf
+                        @method('DELETE')
+                        <button type="button" @click="showDeleteModal = false" class="zems-btn-secondary w-full sm:flex-1 text-xs sm:text-sm py-2.5">Cancel</button>
+                        <button type="submit" class="zems-btn-primary !bg-rose-600 hover:!bg-rose-700 w-full sm:flex-1 text-xs sm:text-sm py-2.5 shadow-md">Delete</button>
+                    </form>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900">Delete Building?</h3>
-                <p class="text-sm text-slate-500 mt-2">Are you sure you want to delete <span x-text="deleteBuildingName" class="font-bold text-slate-700"></span>? This action cannot be undone.</p>
-                <form :action="deleteAction" method="POST" class="mt-6 flex flex-col-reverse sm:flex-row gap-2 sm:gap-3">
-                    @csrf
-                    @method('DELETE')
-                    <button type="button" @click="showDeleteModal = false" class="zems-btn-secondary w-full sm:flex-1 text-xs sm:text-sm py-2.5">Cancel</button>
-                    <button type="submit" class="zems-btn-primary !bg-rose-600 hover:!bg-rose-700 w-full sm:flex-1 text-xs sm:text-sm py-2.5 shadow-md">Delete</button>
-                </form>
             </div>
         </div>
-    </div>
+    </template>
 </div>
 
 <script>
