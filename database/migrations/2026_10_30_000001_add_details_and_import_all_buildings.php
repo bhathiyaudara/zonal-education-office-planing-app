@@ -79,7 +79,7 @@ return new class extends Migration
                                 'constructionYear' => $b['constructionYear'] ?? null,
                                 'lastRepairYear' => $b['lastRepairYear'] ?? null,
                                 'status' => $b['status'] ?? 'Good / Usable',
-                                'notes' => $b['notes'] ?? 'Wilgamuwa Zone Physical Infrastructure Registry',
+                                'notes' => $b['notes'] ?? null,
                                 'createdAt' => $now,
                                 'updatedAt' => $now,
                             ]);

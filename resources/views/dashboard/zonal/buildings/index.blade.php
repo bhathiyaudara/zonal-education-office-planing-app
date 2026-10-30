@@ -341,7 +341,7 @@
                         <span class="text-amber-700 text-xs font-bold">No repair record</span>
                     @endif
                 </div>
-                @if($b->notes)
+                @if($b->notes && !str_starts_with($b->notes, 'Imported') && !str_starts_with($b->notes, 'Wilgamuwa'))
                 <div class="col-span-2 text-[11px] text-slate-600 bg-white p-2 rounded-lg border border-slate-200">
                     <b class="text-slate-800">Remarks:</b> {{ $b->notes }}
                 </div>
@@ -434,7 +434,7 @@
                                             {{ $b->buildingType ?: 'Learning / ඉගෙනුම්' }}
                                         </span>
                                     </div>
-                                    @if($b->notes)
+                                    @if($b->notes && !str_starts_with($b->notes, 'Imported') && !str_starts_with($b->notes, 'Wilgamuwa'))
                                     <div class="text-[11px] text-slate-400 font-medium truncate max-w-xs mt-0.5">{{ $b->notes }}</div>
                                     @endif
                                 </div>
