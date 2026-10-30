@@ -47,6 +47,8 @@ echo view('dashboard.zonal.buildings.index', [
     'schools' => $schools,
     'schoolId' => $school ? $school->id : null,
     'buildingType' => null,
+    'status' => null,
+    'floors' => null,
     'selectedSchool' => $school,
     'renovationOnly' => false,
     'search' => '',

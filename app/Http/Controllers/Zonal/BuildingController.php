@@ -15,6 +15,8 @@ class BuildingController extends Controller
     {
         $schoolId = $request->get('school_id');
         $buildingType = $request->get('building_type');
+        $status = $request->get('status');
+        $floors = $request->get('floors');
         $renovationOnly = $request->boolean('renovation_needed') || $request->boolean('needs_renovation');
         $search = trim($request->get('search', ''));
 
@@ -26,6 +28,24 @@ class BuildingController extends Controller
 
         if ($buildingType) {
             $query->where('buildingType', $buildingType);
+        }
+
+        if ($status) {
+            $prefix = explode(' (', $status)[0];
+            $query->where(function ($q) use ($status, $prefix) {
+                $q->where('status', $status)
+                  ->orWhere('status', 'like', "%{$prefix}%");
+            });
+        }
+
+        if ($floors !== null && $floors !== '') {
+            if ($floors === 'multi') {
+                $query->where('floors', '>', 1);
+            } elseif ($floors === '3' || $floors === '3+') {
+                $query->where('floors', '>=', 3);
+            } else {
+                $query->where('floors', (int)$floors);
+            }
         }
 
         if ($renovationOnly) {
@@ -104,6 +124,8 @@ class BuildingController extends Controller
             'totalReqGirlsToilets',
             'totalReqTeacherToilets',
             'renovationOnly',
+            'status',
+            'floors',
             'search'
         ));
     }
@@ -270,6 +292,8 @@ class BuildingController extends Controller
         $renovationOnly = $request->boolean('renovation_needed') || $request->boolean('needs_renovation');
         $schoolId = $request->get('school_id');
         $buildingType = $request->get('building_type');
+        $status = $request->get('status');
+        $floors = $request->get('floors');
 
         $query = Building::with('school')->orderBy('schoolId');
 
@@ -279,6 +303,24 @@ class BuildingController extends Controller
 
         if ($buildingType) {
             $query->where('buildingType', $buildingType);
+        }
+
+        if ($status) {
+            $prefix = explode(' (', $status)[0];
+            $query->where(function ($q) use ($status, $prefix) {
+                $q->where('status', $status)
+                  ->orWhere('status', 'like', "%{$prefix}%");
+            });
+        }
+
+        if ($floors !== null && $floors !== '') {
+            if ($floors === 'multi') {
+                $query->where('floors', '>', 1);
+            } elseif ($floors === '3' || $floors === '3+') {
+                $query->where('floors', '>=', 3);
+            } else {
+                $query->where('floors', (int)$floors);
+            }
         }
 
         if ($renovationOnly) {

@@ -198,4 +198,61 @@ class BuildingFormTest extends TestCase
             $filterResponse->assertDontSee('Recent Repair Hall');
         }
     }
+
+    #[DataProvider('areas')]
+    public function test_filter_by_structural_condition_and_floors(string $area, string $role): void
+    {
+        $this->signIn($role);
+
+        $goodSingle = Building::create([
+            'schoolId' => $this->school->id,
+            'buildingName' => 'Alpha Single Good',
+            'floors' => 1,
+            'status' => 'Good / Usable (හොඳයි / භාවිතයට සුදුසුයි)',
+        ]);
+
+        $majorTwo = Building::create([
+            'schoolId' => $this->school->id,
+            'buildingName' => 'Beta Double Major',
+            'floors' => 2,
+            'status' => 'Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)',
+        ]);
+
+        $dangerThree = Building::create([
+            'schoolId' => $this->school->id,
+            'buildingName' => 'Gamma Triple Danger',
+            'floors' => 3,
+            'status' => 'Dilapidated / Dangerous (ඉතා අබලන් / අවදානම්)',
+        ]);
+
+        // Filter by Structural Condition
+        $statusResp = $this->get(route("$area.buildings", [
+            'status' => 'Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)'
+        ]));
+        $statusResp->assertOk();
+        $statusResp->assertSee('Beta Double Major');
+        $statusResp->assertDontSee('Alpha Single Good');
+        $statusResp->assertDontSee('Gamma Triple Danger');
+
+        // Filter by Number of Floors: 2
+        $floors2Resp = $this->get(route("$area.buildings", ['floors' => 2]));
+        $floors2Resp->assertOk();
+        $floors2Resp->assertSee('Beta Double Major');
+        $floors2Resp->assertDontSee('Alpha Single Good');
+        $floors2Resp->assertDontSee('Gamma Triple Danger');
+
+        // Filter by Number of Floors: 1
+        $floors1Resp = $this->get(route("$area.buildings", ['floors' => 1]));
+        $floors1Resp->assertOk();
+        $floors1Resp->assertSee('Alpha Single Good');
+        $floors1Resp->assertDontSee('Beta Double Major');
+        $floors1Resp->assertDontSee('Gamma Triple Danger');
+
+        // Filter by Multi-story: 2+
+        $multiResp = $this->get(route("$area.buildings", ['floors' => 'multi']));
+        $multiResp->assertOk();
+        $multiResp->assertSee('Beta Double Major');
+        $multiResp->assertSee('Gamma Triple Danger');
+        $multiResp->assertDontSee('Alpha Single Good');
+    }
 }

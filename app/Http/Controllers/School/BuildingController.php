@@ -12,23 +12,72 @@ use Illuminate\Support\Facades\Auth;
 
 class BuildingController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $user = Auth::user();
-        $school = School::with(['buildings' => fn($q) => $q->orderBy('buildingName'), 'sanitation'])->findOrFail($user->schoolId);
+        $school = School::with('sanitation')->findOrFail($user->schoolId);
 
-        $buildings = $school->buildings;
-        $sanitation = $school->sanitation;
+        $buildingType = $request->get('building_type');
+        $status = $request->get('status');
+        $floors = $request->get('floors');
+        $renovationOnly = $request->boolean('renovation_needed') || $request->boolean('needs_renovation');
+        $search = trim($request->get('search', ''));
+
+        $query = Building::where('schoolId', $school->id)->orderBy('buildingName');
+
+        if ($buildingType) {
+            $query->where('buildingType', $buildingType);
+        }
+
+        if ($status) {
+            $prefix = explode(' (', $status)[0];
+            $query->where(function ($q) use ($status, $prefix) {
+                $q->where('status', $status)
+                  ->orWhere('status', 'like', "%{$prefix}%");
+            });
+        }
+
+        if ($floors !== null && $floors !== '') {
+            if ($floors === 'multi') {
+                $query->where('floors', '>', 1);
+            } elseif ($floors === '3' || $floors === '3+') {
+                $query->where('floors', '>=', 3);
+            } else {
+                $query->where('floors', (int)$floors);
+            }
+        }
+
+        if ($renovationOnly) {
+            $tenYearsAgo = (int)date('Y') - 10;
+            $query->whereNotNull('lastRepairYear')
+                  ->where('lastRepairYear', '<=', $tenYearsAgo);
+        }
+
+        if ($search !== '') {
+            $query->where(function ($q) use ($search) {
+                $q->where('buildingName', 'like', "%{$search}%")
+                  ->orWhere('buildingType', 'like', "%{$search}%")
+                  ->orWhere('size', 'like', "%{$search}%")
+                  ->orWhere('status', 'like', "%{$search}%");
+            });
+        }
+
+        $buildings = $query->get();
+        $allSchoolBuildings = Building::where('schoolId', $school->id)->get();
 
         $tenYearsAgo = (int)date('Y') - 10;
-        $renovationCount = $buildings->filter(function ($b) use ($tenYearsAgo) {
+        $renovationCount = $allSchoolBuildings->filter(function ($b) use ($tenYearsAgo) {
             return !empty($b->lastRepairYear) && $b->lastRepairYear <= $tenYearsAgo;
         })->count();
 
-        $multiFloorCount = $buildings->where('floors', '>', 1)->count();
-        $totalSqft = $buildings->sum('areaSqft');
+        $multiFloorCount = $allSchoolBuildings->where('floors', '>', 1)->count();
+        $totalSqft = $allSchoolBuildings->sum('areaSqft');
+        $sanitation = $school->sanitation;
 
-        return view('dashboard.school.buildings.index', compact('school', 'buildings', 'sanitation', 'renovationCount', 'multiFloorCount', 'totalSqft'));
+        return view('dashboard.school.buildings.index', compact(
+            'school', 'buildings', 'sanitation', 'renovationCount', 'multiFloorCount', 'totalSqft',
+            'buildingType', 'status', 'floors', 'renovationOnly', 'search'
+        ));
     }
 
     public function store(Request $request)

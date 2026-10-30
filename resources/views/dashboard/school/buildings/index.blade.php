@@ -54,9 +54,9 @@
         </div>
 
         {{-- Needs Renovation (>=10 Yrs) --}}
-        <div class="zems-card-base p-4 sm:p-5 flex items-center gap-3 sm:gap-4">
-            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-amber-50 flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <a href="{{ route('school.buildings', ['renovation_needed' => 1]) }}" class="zems-card-base p-4 sm:p-5 flex items-center gap-3 sm:gap-4 hover:border-amber-400 hover:shadow-md transition group {{ ($renovationOnly ?? false) ? 'ring-2 ring-amber-500 bg-amber-50/20' : '' }}">
+            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-amber-50 group-hover:bg-amber-500 flex items-center justify-center shrink-0 transition">
+                <svg class="w-6 h-6 text-amber-600 group-hover:text-white transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                 </svg>
             </div>
@@ -66,23 +66,23 @@
                     <span class="px-1.5 py-0.2 rounded text-[9px] font-black bg-amber-100 text-amber-800">&ge; 10 Yrs</span>
                 </div>
                 <p class="text-xl sm:text-2xl font-black text-slate-900 mt-0.5">{{ $renovationCount }}</p>
-                <span class="text-[10px] text-amber-600 font-semibold truncate block">Priority repair list</span>
+                <span class="text-[10px] text-amber-600 font-semibold truncate block group-hover:underline">Click to filter urgency</span>
             </div>
-        </div>
+        </a>
 
         {{-- Multi-Floor Structures --}}
-        <div class="zems-card-base p-4 sm:p-5 flex items-center gap-3 sm:gap-4">
-            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-purple-50 flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <a href="{{ route('school.buildings', ['floors' => 'multi']) }}" class="zems-card-base p-4 sm:p-5 flex items-center gap-3 sm:gap-4 hover:border-purple-400 hover:shadow-md transition group {{ (($floors ?? '') === 'multi') ? 'ring-2 ring-purple-500 bg-purple-50/20' : '' }}">
+            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-purple-50 group-hover:bg-purple-600 flex items-center justify-center shrink-0 transition">
+                <svg class="w-6 h-6 text-purple-600 group-hover:text-white transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/>
                 </svg>
             </div>
             <div class="min-w-0">
                 <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Multi-Story Buildings</p>
                 <p class="text-xl sm:text-2xl font-black text-slate-900 mt-0.5">{{ $multiFloorCount }}</p>
-                <span class="text-[10px] text-purple-600 font-semibold truncate block">2+ Floors</span>
+                <span class="text-[10px] text-purple-600 font-semibold truncate block group-hover:underline">Click to filter 2+ Floors</span>
             </div>
-        </div>
+        </a>
 
         {{-- Total Sq.ft --}}
         <div class="zems-card-base p-4 sm:p-5 flex items-center gap-3 sm:gap-4">
@@ -163,6 +163,65 @@
                 <button type="submit" class="zems-btn-primary h-10 px-5 text-xs font-bold w-full sm:w-auto justify-center shadow-md">
                     Update Sanitation
                 </button>
+            </div>
+        </form>
+    </div>
+
+    {{-- Filter Bar for School Buildings --}}
+    <div class="zems-card-base p-4 sm:p-5 space-y-3">
+        <form method="GET" action="{{ route('school.buildings') }}" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-3 items-end">
+            {{-- Category --}}
+            <div class="sm:col-span-1 md:col-span-3">
+                <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Building Category / වර්ගය</label>
+                <select name="building_type" onchange="this.form.submit()" class="zems-input h-[42px] text-xs sm:text-sm font-semibold">
+                    <option value="">All Categories (සියල්ල)</option>
+                    <option value="Learning / ඉගෙනුම්" {{ ($buildingType ?? '') == 'Learning / ඉගෙනුම්' ? 'selected' : '' }}>Learning / ඉගෙනුම්</option>
+                    <option value="Administrative / පරිපාලන" {{ ($buildingType ?? '') == 'Administrative / පරිපාලන' ? 'selected' : '' }}>Administrative / පරිපාලන</option>
+                    <option value="Teachers Quarters / ගුරු නිවාස" {{ ($buildingType ?? '') == 'Teachers Quarters / ගුරු නිවාස' ? 'selected' : '' }}>Teachers Quarters / ගුරු නිවාස</option>
+                    <option value="Principal Quarters / විදුහල්පති නිල නිවාස" {{ ($buildingType ?? '') == 'Principal Quarters / විදුහල්පති නිල නිවාස' ? 'selected' : '' }}>Principal Quarters / වි. නිල නිවාස</option>
+                    <option value="Other / වෙනත්" {{ ($buildingType ?? '') == 'Other / වෙනත්' ? 'selected' : '' }}>Other / වෙනත්</option>
+                </select>
+            </div>
+
+            {{-- Structural Condition --}}
+            <div class="sm:col-span-1 md:col-span-4">
+                <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Structural Condition / තත්ත්වය</label>
+                <select name="status" onchange="this.form.submit()" class="zems-input h-[42px] text-xs sm:text-sm font-semibold">
+                    <option value="">All Conditions (තත්ත්වය - සියල්ල)</option>
+                    <option value="Good / Usable (හොඳයි / භාවිතයට සුදුසුයි)" {{ ($status ?? '') == 'Good / Usable (හොඳයි / භාවිතයට සුදුසුයි)' ? 'selected' : '' }}>Good / Usable (හොඳයි / භාවිතයට සුදුසුයි)</option>
+                    <option value="Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)" {{ ($status ?? '') == 'Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)' ? 'selected' : '' }}>Minor Repairs Needed (සුළු අලුත්වැඩියා අවශ්‍යයි)</option>
+                    <option value="Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)" {{ ($status ?? '') == 'Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)' ? 'selected' : '' }}>Needs Major Renovation (ප්‍රධාන අලුත්වැඩියා අවශ්‍යයි)</option>
+                    <option value="Dilapidated / Dangerous (ඉතා අබලන් / අවදානම්)" {{ ($status ?? '') == 'Dilapidated / Dangerous (ඉතා අබලන් / අවදානම්)' ? 'selected' : '' }}>Dilapidated / Dangerous (ඉතා අබලන් / අවදානම්)</option>
+                    <option value="Condemned / Unusable (භාවිතයෙන් ඉවත් කළ යුතු)" {{ ($status ?? '') == 'Condemned / Unusable (භාවිතයෙන් ඉවත් කළ යුතු)' ? 'selected' : '' }}>Condemned / Unusable (භාවිතයෙන් ඉවත් කළ යුතු)</option>
+                </select>
+            </div>
+
+            {{-- Number of Floors --}}
+            <div class="sm:col-span-1 md:col-span-2">
+                <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Number of Floors / මහල්</label>
+                <select name="floors" onchange="this.form.submit()" class="zems-input h-[42px] text-xs sm:text-sm font-semibold">
+                    <option value="">All Floors (සියල්ල)</option>
+                    <option value="1" {{ (string)($floors ?? '') === '1' ? 'selected' : '' }}>1 Floor (තනි මහල)</option>
+                    <option value="2" {{ (string)($floors ?? '') === '2' ? 'selected' : '' }}>2 Floors (දෙමහල්)</option>
+                    <option value="3" {{ (string)($floors ?? '') === '3' ? 'selected' : '' }}>3+ Floors (තෙමහල්+)</option>
+                    <option value="multi" {{ (string)($floors ?? '') === 'multi' ? 'selected' : '' }}>Multi-Story (2+)</option>
+                </select>
+            </div>
+
+            {{-- Search & Actions --}}
+            <div class="sm:col-span-1 md:col-span-3 flex items-center gap-2">
+                <div class="relative flex-1">
+                    <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    <input type="text" name="search" value="{{ $search ?? '' }}" placeholder="Search buildings..." class="zems-input pl-10 h-[42px] text-xs sm:text-sm">
+                </div>
+                <button type="submit" class="zems-btn-secondary h-[42px] px-3 shrink-0" title="Filter results">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
+                </button>
+                @if(!empty($buildingType) || !empty($status) || (isset($floors) && $floors !== '') || !empty($renovationOnly) || !empty($search))
+                <a href="{{ route('school.buildings') }}" class="zems-btn-secondary h-[42px] px-2.5 text-rose-600 hover:bg-rose-50 shrink-0" title="Clear all filters">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </a>
+                @endif
             </div>
         </form>
     </div>
